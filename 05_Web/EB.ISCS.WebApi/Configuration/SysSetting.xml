@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" ?>
+<configuration>
+  <datapullconfig>
+    <config platform="ali" time-corn="24"></config>
+    <config platform="jd" time-corn="24"></config>
+  </datapullconfig>
+</configuration>

@@ -1,0 +1,116 @@
+﻿@using System.Web.Http
+@using System.Web.Http.Controllers
+@using System.Web.Http.Description
+@using EB.ISCS.WebApi.Areas.HelpPage
+@using EB.ISCS.WebApi.Areas.HelpPage.Models
+@model IGrouping<HttpControllerDescriptor, ApiDescription>
+@{
+    var controllerDocumentation = ViewBag.DocumentationProvider != null ?
+        ViewBag.DocumentationProvider.GetDocumentation(Model.Key) :
+        null;
+}
+<div class="group_controller">
+    <h2 title="单击展开" id="@Model.Key.ControllerName">
+        @Model.Key.ControllerName
+        @if (!String.IsNullOrEmpty(controllerDocumentation))
+        {
+            <span>@controllerDocumentation</span>
+        }
+    </h2>
+    <div class="div_action_info" id="div_@Model.Key.ControllerName">
+        @foreach (var api in Model)
+        {
+            <p>
+                @{
+                    var vv = api.RelativePath.Split('/');
+                    if (vv.Length >= 3)
+                    {
+                        string version = vv[1];
+                        var data = version.Split('.');
+                        if (data.Length == 2)
+                        {
+                            version = data[0];
+                        }
+                        api.RelativePath = api.RelativePath.Replace(version + ".", "");
+                        api.RelativePath = api.RelativePath.Replace("{namespace}", version);
+                    }
+
+                    var style = "";
+                    switch (api.HttpMethod.Method)
+                    {
+                        case "POST":
+                            style = "background:#7CCD7C;color:#fff;";
+                            break;
+                        case "GET":
+                            style = "background:#9400D3;color:#fff;";
+                            break;
+                        case "OPTIONS":
+                            style = "background:#6B6B6B;color:#fff;";
+                            break;
+                        case "HEAD":
+                            style = "background:#FFC125;color:#fff;";
+                            break;
+                        case "PUT":
+                            style = "background:#FF6A6A;color:#fff;";
+                            break;
+                        case "DELETE":
+                            style = "background:#4876FF;color:#fff;";
+                            break;
+                        case "TRACE":
+                            style = "background:#B03060;color:#fff;";
+                            break;
+                        case "MOVE":
+                            style = "background:#B3EE3A;color:#fff;";
+                            break;
+                        case "COPY":
+                            style = "background:#CD8500;color:#fff;";
+                            break;
+                        case "LINK":
+                            style = "background:#EE3B3B;color:#fff;";
+                            break;
+                        case "UNLINK":
+                            style = "background:#8EE5EE;color:#fff;";
+                            break;
+                        case "WRAPPED":
+                            style = "background:#43CD80;color:#fff;";
+                            break;
+                    }
+
+                    var testUrl = api.RelativePath.Replace("{id}", "0");
+                }
+
+
+
+                <span class="method_" style="@style">@api.HttpMethod.Method</span>
+                <span>
+                    <a class="api_url" target="_search"  href="@Url.Action("Api", "Help", new { apiId = api.GetFriendlyId() })"> @api.RelativePath</a>
+                </span>
+                <span>
+
+                    @if (api.Documentation != null)
+                    {
+                        var index = api.Documentation.IndexOf("<br");
+                        if (index == -1)
+                        {
+                            @api.Documentation
+                        }
+                        else
+                        {
+                            @Html.Raw(api.Documentation.Substring(0, index))
+                        }
+                    }
+                    else
+                    {
+                        <i> - </i>
+                    }
+                </span>
+                <span>
+
+                    <a href="/Home/Test?id=@api.RelativePath" target="_search">测试</a>
+                </span>
+            </p>
+        }
+
+
+    </div>
+</div>

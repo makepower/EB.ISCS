@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <parameter Name="登录日志ID" FieldName="Id" Width="0"  Desc="在用" />
+  <parameter Name="程序渠道Id" FieldName="AccessChannelId"  Width="0"  Desc="在用" />
+  <parameter Name="程序渠道" FieldName="AccessChannelName"  Width="200"  Desc="在用" IsSort="false" />
+  <parameter Name="登录用户" FieldName="UserId"  Width="0"  Desc="在用" />
+  <parameter Name="用户名称" FieldName="UserName"  Width="100" IsSort="false" Desc="在用" />
+  <parameter Name="登录时间" FieldName="LogDate"  Width="160"  Desc="在用" />
+  <parameter Name="登录Token" FieldName="Token"  Width="0"  Desc="在用" />
+  <parameter Name="退出时间" FieldName="LogOutDate"  Width="100"  Desc="在用" />
+  <parameter Name="客户端Ip地址" FieldName="ClientIpAddress"  Width="100"  Desc="在用" />
+  <parameter Name="客户端名称" FieldName="ClientName"  Width="130"  Desc="在用" />
+  <parameter Name="在线时间" FieldName="OnlineDate"  Width="0"  Desc="在用" />
+  <parameter Name="是否成功" FieldName="IsSucceed"  Width="0"  Desc="在用" />
+  <parameter Name="失败原因" FieldName="LogReason"  Width="200"  Desc="在用" />
+  <parameter Name="用户SessionId" FieldName="SessionId"  Width="130"  Desc="在用" />
+  <parameter Name="创建人类型" FieldName="InUserType"  Width="0"  Desc="在用" />
+  <parameter Name="IP数值" FieldName="IPNum"  Width="150"  Desc="在用" />
+  <parameter Name="是否有效" FieldName="Enabled"  Width="0"  Desc="在用" />
+</config>

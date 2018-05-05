@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <parameter Name="主键ID" FieldName="Id" Width="0"  Desc="在用" />
+  <parameter Name="父ID" FieldName="ParentId"  Width="0"  Desc="在用" />
+  <parameter Name="节点名称" FieldName="Name"  Width="300"  Desc="在用" />
+  <parameter Name="排序号" FieldName="Sort"  Width="300"  Desc="在用" />
+  <parameter Name="级别" FieldName="Level"  Width="300"  Desc="在用" />
+  <parameter Name="状态" FieldName="Status"  Width="0"  Desc="在用" />
+  <parameter Name="节点状态" FieldName="StatusName"  Width="300"  Desc="在用" />
+  <parameter Name="是否有效" FieldName="Enabled"  Width="0"  Desc="在用" />
+  <parameter Name="修改日期" FieldName="StrEditDate"  Width="300"  Desc="在用" />
+  <parameter Name="删除标志" FieldName="DelState"  Width="0"  Desc="在用" />
+</config>

@@ -1,0 +1,32 @@
+﻿@model EB.ISCS.FrameworkEntity.SystemEntity.SysUser
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>角色权限</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/viewscript/sys/user/userpermission.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="modal-body row">
+            <div class="col-sm-4">
+                <h4>当前用户: @Model.UserName</h4>
+                @Html.Hidden("UserId", Model.Id, new { id = "UserId" })
+                @Html.Hidden("InUser", Model.InUser, new { id = "InUser" })
+
+            </div>
+            <div class="col-sm-8">
+                <div class="easyui-panel" style="padding:5px; height:500px;">
+                    <ul id="menu-tree"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="btn_save_permission" class="btn btn-primary">保存用户权限</button>
+            <button type="button" class="btn btn-default" onclick="parent.layer.close(parent.layer.getFrameIndex(window.name))">关闭</button>
+        </div>
+    </div>
+</body>
+</html>

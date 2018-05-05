@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <parameter Name="应用程序Id" FieldName="ApplicationId"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="应用程序名称" FieldName="ApplicationName"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="排序" FieldName="MenuSort"  Width="80"  Desc="在用" IsSort="false" />
+  <parameter Name="模块编码" FieldName="Id"  Width="100"  Desc="在用" IsSort="false" />
+  <parameter Name="模块名称" FieldName="MenuName"  Width="230"  Desc="在用" IsSort="false" />
+  <parameter Name="父模块Id" FieldName="FatherId"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="页面路径" FieldName="PageUrl"  Width="300"  Desc="在用" IsSort="false" />
+  <parameter Name="是否有效" FieldName="MenuState"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="控制器Key" FieldName="MenuControllerKey"  Width="200"  Desc="在用" IsSort="false" />
+  <parameter Name="操作Key" FieldName="MenuActionKey"  Width="200"  Desc="在用" IsSort="false" />
+  <parameter Name="模块说明" FieldName="MenuDescription"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="是否功能模块" FieldName="IsFunction"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="是否角色显示" FieldName="IsRoseShow"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="功能是否显示" FieldName="IsShow"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="模块首页" FieldName="HeadPage"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="图片路径" FieldName="PictureUrl"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="级数" FieldName="NoteLevel"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="父模块编号路径" FieldName="FatherIDPath"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="是否事件" FieldName="MenuIsEvent"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="开发框架" FieldName="DevFframework"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="是否操作权限" FieldName="IsOperatingMenu"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="目标" FieldName="Target"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="动态按钮" FieldName="AllowButton"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="动态视图" FieldName="AllowView"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="动态表单" FieldName="AllowForm"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="访问权限" FieldName="Authority"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="数据范围" FieldName="DataScope"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="级别层级" FieldName="MenuLevel"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="展开" FieldName="Isexpand"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="菜单分类" FieldName="MenuClass"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="图标CSS样式" FieldName="IconCSS"  Width="90"  Desc="在用" IsSort="false" />
+  <parameter Name="导航地址" FieldName="NavgateUrl"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="窗体名称" FieldName="FormName"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="程序集名称" FieldName="AssemblyName"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="操作权限编号" FieldName="OperatingNumber"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="数据权限范围" FieldName="DataAccessRange"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="录入人员ID" FieldName="InUser"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="录入人员" FieldName="InUserName"  Width="0"   IsSort="false" Desc="在用"  />
+  <parameter Name="录入日期" FieldName="InDate"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="修改人员ID" FieldName="EditUser"  Width="0"  Desc="在用" IsSort="false" />
+  <parameter Name="修改人员" FieldName="EditUserName"  Width="0"  IsSort="false" Desc="在用"  />
+  <parameter Name="修改日期" FieldName="EditDate"  Width="0"  Desc="在用" IsSort="false" />
+</config>

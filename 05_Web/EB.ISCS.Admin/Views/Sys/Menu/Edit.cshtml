@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <script src="~/ViewScript/Sys/menu/Edit.js"></script>
+    <meta charset="utf-8" />
+    <title>新增/编辑 功能模块（菜单）</title>
+</head>
+<body>
+    <div class="wrapper" ng-app="MenuApp" ng-controller="MenuController" ng-init="onload('@ViewBag.ActionType','@ViewBag.Id')">
+        <div class="container">
+            <form class="form-horizontal" role="form" id="search_form" w5c-form-validate="" novalidate name="validateForm">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <div class="form-group">
+
+                            <label class="col-sm-2 control-label">模块名称:</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" ng-model="menu.MenuName" maxlength="50" name="MenuName" ng-required="true" />
+                            </div>
+
+                            <label class="col-sm-2 control-label">模块编码:</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" ng-model="menu.Id" name="MenuCode" readonly="readonly" />
+                                <input type="hidden" name="Id" value="{{menu.Id}}" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">页面路径:</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="text" ng-model="menu.PageUrl" maxlength="100" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">控制器Key:</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" ng-model="menu.MenuControllerKey" name="MenuControllerKey" maxlength="20" />
+                            </div>
+                            <label class="col-sm-2 control-label">操作Key:</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" ng-model="menu.MenuActionKey" maxlength="50" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">图标样式:</label>
+                            <div class="col-md-4">
+                                <select class="form-control" ng-model="menu.IconCSS" ng-options="icon.id as icon.name for icon in icons" name="IconCSS" ng-selected="icon.id=='fa fa-th'"></select>
+                            </div>
+                            <label class="col-sm-2 control-label">是否可用:</label>
+                            <div class="col-md-4">
+
+                                <label class="radio-inline">
+                                    <input name="MenuState" type="radio" value="1" ng-model="menu.MenuState"  checked>启用
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="MenuState" type="radio" value="0" ng-model="menu.MenuState">禁用
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">父级模块</label>
+                            <div class="col-md-4">
+                                <select id="selMenuFrom" class="easyui-combotree" name="city" style="width:290px; height:35px;"></select>
+                            </div>
+
+                            <label class="col-sm-2 control-label">排序</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="number" ng-model="menu.MenuSort" maxlength="10" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">模块说明</label>
+                            <div class="col-sm-10">
+                                <textarea ng-model="menu.MenuDescription" class="form-control" style="height:60px;" maxlength="4000"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="btn_Save" class="btn btn-primary" w5c-form-submit="onSave()">保存</button>
+                    <button id="btn_return" class="btn btn-default" ng-click="onclose()">返回</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript">
+        $(function () {
+            $('.dropdown-toggle').dropdown();
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>公司管理</title>
+</head>
+<body>
+    <div class="container" ng-app="UserApp" ng-controller="UserController" ng-init="onload('@ViewBag.Id')">
+        <form class="form-horizontal" role="form" w5c-form-validate="" novalidate name="validateForm">
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">登录名称</label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" ng-model="user.LoginName" name="LoginName" maxlength="20" ng-required="true" />
+                        </div>
+                        <label class="col-sm-2 control-label">员工姓名</label>
+
+                        <div class="col-md-4" style="display:table">
+                            <input class="form-control" type="text" ng-model="user.UserName" maxlength="20" name="UserName" ng-required="true" readonly="readonly" />
+                            <span class="input-group-btn" ng-if="UserIsManage==1 || user.Id==0">
+                                <button class="btn btn-default" type="button" ng-click="onSelect()">选择</button>
+                            </span>
+                            <input type="text" style="display:none" ng-model="user.EmployeeId" name="EmployeeId" />
+                        </div>
+                    </div>
+                    <div class="form-group" ng-if="user.Id<1">
+                        <label class="col-sm-2 control-label">密码</label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="password" ng-model="user.PassWord" w5c-dynamic-element name="PassWord" maxlength="20" ng-required="true" ng-minlength="6" ng-maxlength="16" />
+                        </div>
+                        <label class="col-sm-2 control-label">确认密码</label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="password" ng-model="SurePwd" w5c-dynamic-element name="SurePwd" maxlength="20" ng-required="true" w5c-repeat="PassWord" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @*<label class="col-sm-2 control-label" ng-if="UserIsManage==1">部门</label>
+                        <div class="col-md-4" ng-if="UserIsManage==1">
+                            <select id="selDepartmentFrom" class="easyui-combotree" name="UserDepId" style="width:290px; height:35px;"></select>
+                        </div>*@
+                        <label class="col-sm-2 control-label">是否冻结</label>
+                        <div class="col-md-4">
+                            <label class="radio-inline">
+                                <input name="UserIsFreeze" type="radio" value="0" ng-model="user.UserIsFreeze" checked required>非冻结
+                            </label>
+                            <label class="radio-inline">
+                                <input name="UserIsFreeze" type="radio" value="1" ng-model="user.UserIsFreeze">冻结
+                            </label>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">是否启用有效期</label>
+                        <div class="col-md-4">
+                            <label class="radio-inline">
+                                <input name="IsExpireDate" type="radio" value="0" ng-model="user.IsExpireDate" checked required>否
+                            </label>
+                            <label class="radio-inline">
+                                <input name="IsExpireDate" type="radio" value="1" ng-model="user.IsExpireDate">是
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">有效期开始</label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" id="txt_BeginDate" ng-model="user.BeginDate" name="BeginDate" maxlength="10" max="{{user.ExpireDade}}" />
+                        </div>
+                        <label class="col-sm-2 control-label">有效期截止</label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" id="txt_ExpireDade" ng-model="user.ExpireDade" name="ExpireDade" maxlength="10" min="{{user.BeginDate}}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">座机号码</label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" ng-model="user.PlaneNumber" name="PlaneNumber" maxlength="10" />
+                        </div>
+                        <label class="col-sm-2 control-label">安全级别</label>
+                        <div class="col-md-4">
+                            <select class="form-control" ng-model="user.Securitylevel" ng-options="x.DetailNumber as x.DetailName for x in securitylevels" name="Securitylevel">
+                                <option value="">---请选择---</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">备注</label>
+                        <div class="col-sm-10">
+                            <textarea ng-model="user.UserRemark" class="form-control" style="height:70px;" maxlength="4000"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button id="btn_Save" class="btn btn-primary" w5c-form-submit="onSave()">保存</button>
+                <button id="btn_return" class="btn btn-default" ng-click="onclose()">返回</button>
+            </div>
+        </form>
+    </div>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/viewscript/sys/user/edit.js"></script>
+</body>
+</html>

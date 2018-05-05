@@ -1,0 +1,95 @@
+﻿@using EB.ISCS.Admin.Models
+<!DOCTYPE html>
+<html>
+<head>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/viewscript/task/taskcompositeInfo/edit.js"></script>
+    <meta charset="utf-8" />
+    <title>表单预览</title>
+</head>
+<body>
+    <div class="container" ng-app="TaskCompositeInfoEditApp" ng-controller="TaskCompositeInfoEditController" ng-init="onload(@ViewBag.Id)">
+        <form class="form-horizontal" role="form" w5c-form-validate name="validateForm" novalidate>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">任务名称 @Html.RequiredFlag()</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" ng-model="composite.Name" name="composite_Name" maxlength="20"  ng-required="true" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">所属部门 @Html.RequiredFlag()</label>
+                        <div class="col-md-4">
+                            <select id="depId" class="form-control easyui-combotree" name="depId" ng-model="composite.DepId" style="width: 280px; height: 35px;" >
+                                <option></option>
+                            </select>
+                        </div>
+                        <label class="col-sm-2 control-label">是否冻结</label>
+                        <div class="col-md-4">
+                            <label class="radio-inline">
+                                <input name="UserIsFreeze" type="radio" value="0" ng-model="composite.Enabled" ng-checked="true">启用
+                            </label>
+                            <label class="radio-inline">
+                                <input name="UserIsFreeze" type="radio" value="1" ng-model="composite.Enabled">冻结
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">所属分类 @Html.RequiredFlag()</label>
+                        <div class="col-md-4">
+                            <select id="dicType" class="form-control easyui-combotree" name="DicTypeId" ng-model="composite.DicTypeId" style="width: 280px; height: 35px;" >
+                                <option></option>
+                            </select>
+                        </div>
+                        <label class="col-sm-2 control-label">是否启用有效期</label>
+                        <div class="col-md-4">
+                            <label class="radio-inline">
+                                <input name="IsExpireDate" ng-checked="true" type="radio" value="1" ng-model="composite.UseTimeState">是
+                            </label>
+                            <label class="radio-inline">
+                                <input name="IsExpireDate" type="radio" value="0" ng-model="composite.UseTimeState">否
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">有效期开始</label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" id="forms_UseStartTime" ng-model="composite.UseStartTime" name="composite_UseStartTime"
+                                   maxlength="10" readonly />
+                        </div>
+                        <label class="col-sm-2 control-label">有效期截止</label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" id="forms_UseStopTime" ng-model="composite.UseStopTime" name="composite_UseStopTime"
+                                   maxlength="10" readonly />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">编码</label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" id="composite_Code" ng-model="composite.Code" name="forms_Code" maxlength="10" min="{{fo.Code}}" />
+                        </div>
+                        <label class="col-sm-2 control-label">版本</label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" ng-model="composite.Version" name="composite_Version" maxlength="10" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">备注</label>
+                        <div class="col-sm-10">
+                            <textarea ng-model="composite.Remark" class="form-control" style="height:80px;" maxlength="4000"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btn_Save" class="btn btn-primary" w5c-form-submit="onSave()">保存</button>
+                <button id="btn_return" class="btn btn-default" ng-click="onclose()">返回</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

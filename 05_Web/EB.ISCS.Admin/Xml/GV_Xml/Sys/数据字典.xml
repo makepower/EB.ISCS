@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <parameter Name="数据字典明细ID" FieldName="Id" Width="0"  Desc="在用" />
+  <parameter Name="数据字典类型" FieldName="DataDictionaryId"  Width="0"  Desc="在用" />
+  <parameter Name="数据字典类型Key" FieldName="DictionaryKey"  Width="0"  Desc="在用" />
+  <parameter Name="编号" FieldName="DetailNumber"  Width="220"  Desc="在用" />
+  <parameter Name="信息名称" FieldName="DetailName"  Width="270"  Desc="在用" />
+  <parameter Name="排序" FieldName="DetailSort"  Width="60"  Desc="在用" />
+  <parameter Name="路径" FieldName="DatePath"  Width="0"  Desc="在用" />
+  <parameter Name="备注" FieldName="DetailRemark"  Width="600"  Desc="在用" />
+  <parameter Name="路径名称" FieldName="PathName"  Width="0"  Desc="在用" />
+  <parameter Name="是否有效" FieldName="Enabled"  Width="0"  Desc="在用" />
+  <parameter Name="录入人员ID" FieldName="InUser"  Width="0"  Desc="在用" />
+  <parameter Name="录入人员" FieldName="InUserName"  Width="0"   IsSort="false" Desc="在用" />
+  <parameter Name="录入日期" FieldName="InDate"  Width="0"  Desc="在用" />
+  <parameter Name="修改人员ID" FieldName="EditUser"  Width="0"  Desc="在用" />
+  <parameter Name="修改人员" FieldName="EditUserName"  Width="0"  IsSort="false" Desc="在用" />
+  <parameter Name="修改日期" FieldName="EditDate"  Width="0"  Desc="在用" />
+</config>

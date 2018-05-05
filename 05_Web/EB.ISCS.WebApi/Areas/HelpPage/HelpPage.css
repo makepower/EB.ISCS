@@ -1,0 +1,211 @@
+.help-page h1,
+.help-page .h1,
+.help-page h2,
+.help-page .h2,
+.help-page h3,
+.help-page .h3,
+#body.help-page,
+.help-page-table th,
+.help-page-table pre,
+.help-page-table p {
+    font-family: "Segoe UI Light", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+
+.api_url {
+    color: #0000FF !important;
+    font-family: Consolas;
+    font-weight: bold;
+}
+
+.help-page pre.wrapped {
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: pre-wrap;
+}
+
+.help-page .warning-message-container {
+    margin-top: 20px;
+    padding: 0 10px;
+    color: #525252;
+    background: #EFDCA9;
+    border: 1px solid #CCCCCC;
+}
+
+.help-page-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 10px auto 30px auto;
+    border: 1px solid #ddd;
+}
+
+    .help-page-table th {
+        text-align: left;
+        font-weight: bold;
+        border-bottom: 1px solid #D4D4D4;
+        padding: 5px 6px 5px 6px;
+    }
+
+    .help-page-table td {
+        border-bottom: 1px solid #D4D4D4;
+        padding: 10px 8px 10px 8px;
+        vertical-align: top;
+    }
+
+    .help-page-table pre,
+    .help-page-table p {
+        margin: 0px;
+        padding: 0px;
+        font-family: inherit;
+        font-size: 100%;
+    }
+
+    .help-page-table tbody tr:hover td {
+        background-color: #F3F3F3;
+    }
+
+.help-page a:hover {
+    background-color: transparent;
+}
+
+.help-page .sample-header {
+    border: 2px solid #D4D4D4;
+    background: #00497E;
+    color: #FFFFFF;
+    padding: 8px 15px;
+    border-bottom: none;
+    display: inline-block;
+    margin: 10px 0px 0px 0px;
+}
+
+.help-page .sample-content {
+    display: block;
+    border-width: 0;
+    padding: 15px 20px;
+    background: #FFFFFF;
+    border: 2px solid #D4D4D4;
+    margin: 0px 0px 10px 0px;
+}
+
+.help-page .api-name {
+    width: 45%;
+}
+
+.help-page .api-documentation {
+    width: 45%;
+}
+
+.help-page .parameter-name {
+    width: 20%;
+}
+
+.help-page .parameter-documentation {
+    width: 40%;
+}
+
+.help-page .parameter-type {
+    width: 20%;
+}
+
+.help-page .parameter-annotations {
+    width: 20%;
+}
+
+.help-page h1,
+.help-page .h1 {
+    font-size: 36px;
+    line-height: normal;
+}
+
+.group_controller h2 {
+    font-size: 14px;
+    color: #333;
+    font-family: 'Microsoft YaHei';
+    cursor: pointer;
+    padding: 10px 5px;
+    border-bottom: 1px solid #ddd;
+    margin: 0px;
+}
+
+    .group_controller h2:hover {
+        color: #000;
+        font-weight: 900;
+    }
+
+    .group_controller h2 span {
+        font-size: 14px;
+        color: #555;
+        float: right;
+    }
+
+.help-page h3,
+.help-page .h3 {
+    font-size: 20px;
+}
+
+#body.help-page {
+    font-size: 14px;
+    line-height: 143%;
+    color: #000;
+}
+
+.help-page a {
+    color: #0000EE;
+    text-decoration: none;
+}
+
+.group_controller {
+    padding: 0 10px;
+}
+
+.info_div p {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 0 10px 0px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Microsoft YaHei';
+    border-bottom: 1px solid #eee;
+}
+
+.div_action_info {
+    width: 100%;
+}
+
+    .div_action_info p {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .div_action_info span {
+        display: inline-block;
+        text-align: left;
+        font-family: 'Microsoft YaHei';
+        font-weight: normal;
+    }
+
+        .div_action_info span:nth-child(1) {
+            padding: 5px 0px;
+            width: 60px;
+            text-align: center;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .div_action_info span:nth-child(2) {
+            padding: 5px 0px;
+            width: 30%;
+            font-weight: bold;
+        }
+
+        .div_action_info span:nth-child(3) {
+            padding: 5px 0px;
+            width: 50%;
+        }
+
+        .div_action_info span:nth-child(4) {
+            padding: 5px 0px;
+            width: 10%;
+        }

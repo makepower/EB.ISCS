@@ -1,0 +1,102 @@
+﻿@model EB.ISCS.Common.BaseController.NavigationModel
+
+@helper renderItem(EB.ISCS.Common.BaseController.NavigationItem item, int depth, int[] path, string category)
+{
+
+var isactive = true;
+for (var i = 0; i <= depth; i++)
+{
+    if (path[i] != Model.ActivePath[i])
+    {
+        isactive = false;
+        break;
+    }
+}
+
+var klass = (isactive ? "active" : "") + (item.Children == null || item.Children.Count <= 0 ? "" : " treeview");
+var icon = (item.IconClass ?? (item.Children.Count > 0 ? "icon-layers" : (depth == 0 ? "icon-link" : "fa-circle-o")));
+var title = item.Title;
+#region 支持参数，modified by lmh
+//var sectionUrl = (!string.IsNullOrEmpty(item.Url) ? string.Format("{0}/{1}", item.Url, item.MenuId) : "javascript:;");
+string sectionUrl = "javascript:;";
+if (!string.IsNullOrEmpty(item.Url))
+{
+    if (item.Url.IndexOf("?") >= 0)
+    {
+        var strPrefix = item.Url.Substring(0, item.Url.IndexOf("?"));
+        sectionUrl = string.Format("{0}/{1}{2}{3}", strPrefix, item.MenuId,
+            item.Url.Substring(item.Url.IndexOf("?")));
+        sectionUrl = string.Format("{0}&content=content-info&title={1}&iframe=true&isExtUrl=false", sectionUrl, item.Title);
+        if (sectionUrl.StartsWith("http://"))
+        {
+            sectionUrl = string.Format("{0}&token={0}", sectionUrl, Uri.EscapeDataString(ViewBag.Token));
+        }
+    }
+    else
+    {
+        sectionUrl = string.Format("{0}/{1}", item.Url, item.MenuId);
+        sectionUrl = string.Format("{0}?content=content-info&title={1}&iframe=true&isExtUrl=false", sectionUrl, item.Title);
+        if (sectionUrl.StartsWith("http://"))
+        {
+            sectionUrl = string.Format("{0}&token={1}", sectionUrl, Uri.EscapeDataString(ViewBag.Token));
+        }
+    }
+}
+#endregion
+
+var target = item.Target; if (target != null) { target += " target=" + target; }
+
+    <li class="@klass">
+        @if (string.IsNullOrWhiteSpace(item.Url) || item.Children != null && item.Children.Count > 0)
+        {
+            <a href="#">
+                <i class="fa @(icon)"></i>
+                <span>@title</span>
+                @if (item.Children != null && item.Children.Count > 0)
+                {
+                    <i class="fa fa-angle-left pull-right"></i>
+                }
+            </a>
+        }
+        else
+        {
+            <a href="#@sectionUrl" @target>
+                <i class="fa @(icon)"></i>
+                <span>@title</span>
+                @if (item.Children != null && item.Children.Count > 0)
+                {
+                    <i class="fa fa-angle-left pull-right"></i>
+                }
+            </a>
+        }
+
+        @if (item.Children.Count > 0)
+        {
+            <ul class="treeview-menu">
+                @{path[depth + 1] = 0; }
+                @foreach (var child in item.Children)
+                {
+                    @renderItem(child, depth + 1, path, category + item.Title + "/");
+                }
+            </ul>
+                    }
+    </li>
+                    path[depth]++;
+}
+
+@{var path = new int[10]; }
+@foreach (var item in Model.Items)
+{
+    @renderItem(item, 0, path, "");
+}
+
+<script type="text/javascript">
+    function openWindow(url, width, height) {
+        height = height || (screen.availHeight - 60);
+        width = width || (screen.availWidth - 10);
+        var x = (screen.availWidth - width) / 2 - 5; if (x < 0) x = 0;
+        var y = (screen.availHeight - height) / 2 - 25; if (y < 0) y = 0;
+        var winPopup = window.open(url, "", "status=0, toolbar=0, width=" + width + ", height=" + height +
+            ", scrollbars=1, resizable=yes, left=" + x + ", top=" + y);
+    }
+</script>

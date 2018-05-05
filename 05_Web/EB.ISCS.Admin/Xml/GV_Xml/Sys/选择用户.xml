@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <parameter Name="员工ID" FieldName="Id" Width="0"  Desc="在用" />
+  <parameter Name="员工ID" FieldName="UserId" Width="0"  Desc="在用" />
+  <parameter Name="角色ID" FieldName="RoleId"  Width="0"  Desc="在用" />
+  <parameter Name="角色名称" FieldName="RoleName"  Width="0"  Desc="在用" />
+  <parameter Name="行政区域Id" FieldName="DistrictId"  Width="0"  Desc="在用" />
+  <parameter Name="员工编码" FieldName="EmployeeCode"  Width="100"  Desc="在用" />
+  <parameter Name="中文名" FieldName="FullName"  Width="150"  Desc="在用" />
+  <parameter Name="部门" FieldName="FullPath"  Width="280"  Desc="在用" />
+  <parameter Name="部门ID" FieldName="EmpDepId"  Width="0"  Desc="在用" />
+  <parameter Name="部门名称" FieldName="DepName"  Width="0" IsSort="false" Desc="在用" />
+  <parameter Name="职位" FieldName="EmpPosition"  Width="0"  Desc="在用" />
+  <parameter Name="职位名称" FieldName="EmpPositionName"  Width="80"  Desc="在用" />
+</config>

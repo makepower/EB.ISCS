@@ -1,0 +1,31 @@
+﻿/*
+ * Core: General Layout Style
+ * -------------------------
+ */
+html,
+body, body.full-height-layout div.wrapper {
+  /*min-height: 100%;*/
+  height: 100%;
+}
+
+body.full-height-layout div.content-wrapper {
+    height: calc(100% - 140px);
+}
+
+body.full-height-layout div#J_mainContent {
+    height: calc(100% - 40px);
+}
+
+.ui-jqgrid-btable tr.jqgrow td {
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow : ellipsis;
+}
+.combo{ padding: 3px 5px !important;}
+
+
+.combo-panel {
+    height: auto !important;
+    max-height: 200px !important;
+}
+.combo-panel>ul>li{margin:2px auto;}

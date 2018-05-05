@@ -1,0 +1,51 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/Scripts/ClientConst.js"></script>
+    <script src="~/ViewScript/common/commonControl.js"></script>
+    <script src="~/Scripts/EB.ISCSDesigner/EB.ISCSDesign.Config.js"></script>
+    <script src="~/Scripts/EB.ISCSDesigner/EB.ISCSDesign.Property.js"></script>
+    <script src="~/Scripts/EB.ISCSDesigner/EB.ISCSDesign.Form.js"></script>
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Scripts/EB.ISCSDesigner/forms/css/main.css" rel="stylesheet" />
+    <script src="~/ViewScript/task/tasksingleinfo/createform.js"></script>
+    <title>创建视图</title>
+</head>
+<body ng-app="TaskSingleCreateApp" ng-controller="TaskSingleCreateController"  ng-init="onload(@ViewBag.Id)">
+    <div class="col-lg-1 col-md-2 col-sm-2" style="background: #D6DBE9;">
+        <h5 class="ui-toolbar">设计工具栏</h5>
+        <div id="bars"></div>
+    </div>
+    <div class="col-lg-9 col-md-7 col-sm-7" id="sortable">
+        <div id="designer_layout_lightheight" class="designer-layerOut-lightheight" style="display: none;">
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-3" style="padding: 0px;">
+        <div class="btn-group" role="group" aria-label="..." style="background:#D6DBE9; width:100%; text-align: center; padding:5px 0 5px 10px;">
+            <button class="btn btn-default btn-sm" id="savesTemp">
+                <i class="fa fa-files-o"></i> 保存草稿
+            </button>
+            <button class="btn btn-default btn-sm" id="saves">
+                <i class="fa fa-save"></i> 保存
+            </button>
+            <button class="btn btn-default btn-sm" id="preview">
+                <i class="fa fa-eye"></i> 预览
+            </button>
+            <button class="btn btn-default btn-sm" id="cancel">
+                <i class="fa fa-close"></i> 取消
+            </button>
+        </div>
+        <h5 style="background: #4D6082; color:#fff; padding:5px; margin:0px; border:1px solid #fff;">属性设置</h5>
+        <div id="property" class="ui-property"></div>
+    </div>
+</body>
+
+</html>

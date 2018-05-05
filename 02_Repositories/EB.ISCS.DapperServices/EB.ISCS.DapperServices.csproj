@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{143BE668-DF9E-4806-9ECB-57B9CD8096B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EB.ISCS.DapperServices</RootNamespace>
+    <AssemblyName>EB.ISCS.DapperServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dapper.1.50.4\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.SimpleCRUD, Version=1.13.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dapper.SimpleCRUD.1.13.0\lib\net45\Dapper.SimpleCRUD.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.SqlBuilder, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dapper.SqlBuilder.1.50.4\lib\net451\Dapper.SqlBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Z.Dapper.Plus, Version=1.3.5.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Z.Dapper.Plus.1.3.5\lib\net45\Z.Dapper.Plus.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\DapperProvider.cs" />
+    <Compile Include="Base\OperateInfo.cs" />
+    <Compile Include="InterFace\Biz\ComplaintInfo.cs" />
+    <Compile Include="InterFace\Biz\GoodInfo.cs" />
+    <Compile Include="InterFace\Biz\GoodMonitorTopN.cs" />
+    <Compile Include="InterFace\Biz\MonitorIndicator.cs" />
+    <Compile Include="InterFace\Biz\OrderDetail.cs" />
+    <Compile Include="InterFace\Biz\OrderInfo.cs" />
+    <Compile Include="InterFace\Biz\ShipInfo.cs" />
+    <Compile Include="InterFace\Biz\SynchronizationConfig.cs" />
+    <Compile Include="InterFace\Biz\WayBillInfo.cs" />
+    <Compile Include="InterFace\Biz\WayBillTraceInfo.cs" />
+    <Compile Include="InterFace\Sys\ISysUserMenuService.cs" />
+    <Compile Include="InterFace\IService.cs" />
+    <Compile Include="InterFace\Sys\ILoginTokenService.cs" />
+    <Compile Include="InterFace\Sys\IRoleMenuService.cs" />
+    <Compile Include="InterFace\Sys\IRolePermissionService.cs" />
+    <Compile Include="InterFace\Sys\ISysExceptionLogService.cs" />
+    <Compile Include="InterFace\Sys\ISysLoginLogService.cs" />
+    <Compile Include="InterFace\Sys\ISysLoginTokenService.cs" />
+    <Compile Include="InterFace\Sys\ISysOperationLogService.cs" />
+    <Compile Include="InterFace\Sys\ISysUser.cs" />
+    <Compile Include="InterFace\Sys\IMenuPermission.cs" />
+    <Compile Include="InterFace\Sys\IMenu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\BaseRepository.cs" />
+    <Compile Include="Repository\Biz\ComplaintInfo.cs" />
+    <Compile Include="Repository\Biz\GoodInfo.cs" />
+    <Compile Include="Repository\Biz\GoodMonitorTopN.cs" />
+    <Compile Include="Repository\Biz\MonitorIndicator.cs" />
+    <Compile Include="Repository\Biz\OrderDetail.cs" />
+    <Compile Include="Repository\Biz\OrderInfo.cs" />
+    <Compile Include="Repository\Biz\ShipInfo.cs" />
+    <Compile Include="Repository\Biz\SynchronizationConfig.cs" />
+    <Compile Include="Repository\Biz\WayBillInfo.cs" />
+    <Compile Include="Repository\Biz\WayBillTraceInfo.cs" />
+    <Compile Include="Repository\Sys\MenuPermissionRepository.cs" />
+    <Compile Include="Repository\Sys\MenuRepository.cs" />
+    <Compile Include="Repository\Sys\RoleMenuRepository.cs" />
+    <Compile Include="Repository\Sys\RolePermissionRepository.cs" />
+    <Compile Include="Repository\Sys\SysExceptionLogRepository.cs" />
+    <Compile Include="Repository\Sys\SysLoginLogRepository.cs" />
+    <Compile Include="Repository\Sys\SysLoginTokenRepository.cs" />
+    <Compile Include="Repository\Sys\SysOperationLogRepository.cs" />
+    <Compile Include="Services\Biz\ComplaintInfo.cs" />
+    <Compile Include="Services\Biz\GoodInfo.cs" />
+    <Compile Include="Services\Biz\GoodMonitorTopN.cs" />
+    <Compile Include="Services\Biz\MonitorIndicator.cs" />
+    <Compile Include="Services\Biz\OrderDetail.cs" />
+    <Compile Include="Services\Biz\OrderInfo.cs" />
+    <Compile Include="Services\Biz\ShipInfo.cs" />
+    <Compile Include="Services\Biz\SynchronizationConfig.cs" />
+    <Compile Include="Services\Biz\WayBillInfo.cs" />
+    <Compile Include="Services\Biz\WayBillTraceInfo.cs" />
+    <Compile Include="Services\Sys\SysUserMenuService.cs" />
+    <Compile Include="Repository\Sys\SysUserMenuRepository.cs" />
+    <Compile Include="Repository\Sys\SysUserPermissionRepository.cs" />
+    <Compile Include="Repository\Sys\SysUserRepository.cs" />
+    <Compile Include="Repository\Sys\UserRoleRepository.cs" />
+    <Compile Include="Services\EBServiceProvider.cs" />
+    <Compile Include="Services\Service.cs" />
+    <Compile Include="Services\ServiceProvider.cs" />
+    <Compile Include="Services\Sys\MenuPermissionService.cs" />
+    <Compile Include="Services\Sys\MenuService.cs" />
+    <Compile Include="Services\Sys\RoleMenuService.cs" />
+    <Compile Include="Services\Sys\RolePermissionService.cs" />
+    <Compile Include="Services\Sys\SysExceptionLogService.cs" />
+    <Compile Include="Services\Sys\SysLoginLogService.cs" />
+    <Compile Include="Services\Sys\SysLoginTokenService.cs" />
+    <Compile Include="Services\Sys\SysOperationLogService.cs" />
+    <Compile Include="Services\Sys\SysUserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\01_Framewrok\EB.ISCS.FrameworkEntity\EB.ISCS.FrameworkEntity.csproj">
+      <Project>{ada56b1a-fc57-423c-ba04-7500b25e69fe}</Project>
+      <Name>EB.ISCS.FrameworkEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\01_Framewrok\EB.ISCS.FrameworkHelp\EB.ISCS.FrameworkHelp.csproj">
+      <Project>{e63e87cc-005f-4538-828d-345a90d3c54b}</Project>
+      <Name>EB.ISCS.FrameworkHelp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\01_Framewrok\EB.ISCS.FrameworkLog\EB.ISCS.FrameworkLog.csproj">
+      <Project>{1d278961-c024-449b-b878-1de256eb0715}</Project>
+      <Name>EB.ISCS.FrameworkLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\04_Common\EB.ISCS.Common\EB.ISCS.Common.csproj">
+      <Project>{5c1f5e0c-536d-416a-992d-622050dac453}</Project>
+      <Name>EB.ISCS.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

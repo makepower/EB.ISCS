@@ -1,0 +1,1903 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QS.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:QS.WebApi.ApiCacheDicts">
+            <summary>
+            Api全局缓存数据
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.ApiCacheDicts.GetLoginToken(System.String)">
+            <summary>
+            根据token，得到用户的信息
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.ApiCacheDicts.RemoveUserByToken(System.String)">
+            <summary>
+            移除用户token信息
+            </summary>
+            <param name="token"></param>
+        </member>
+        <member name="T:QS.WebApi.BaseApiController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.BaseApiController.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="F:QS.WebApi.BaseApiController._serviceProvider">
+            <summary>
+            服务提供商
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.BaseApiController.GetService``1">
+            <summary>
+            得到指定类型的服务 不建议在api控制器构造里调用
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.BaseApiController.GetService``1(System.String)">
+            <summary>
+            得到指定类型的服务
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="connString">设定服务的连接字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.BaseApiController.GetServiceSpec``1(System.String)">
+            <summary>
+            得到指定类型的服务
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="companyCode">设定公司编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.BaseApiController.GetService``1(QS.DapperServices.Services.Service)">
+            <summary>
+            得到指定类型的服务
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="service">设定服务的连接字符串，从服务中获得</param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.BaseApiController.GetInfo">
+            <summary>
+            得到操作信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:QS.WebApi.BaseApiController.Context">
+            <summary>
+            当前上下文
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.BaseApiController.BModel">
+            <summary>
+            基础信息
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.BaseApiController.CheckUserToken(System.String)">
+            <summary>
+            根据token获取用户ID
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="P:QS.WebApi.BaseModel.SysLoginToken">
+            <summary>
+            登录信息
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.BaseModel.User">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="T:QS.WebApi.BundleConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.BundleConfig.RegisterBundles(System.Web.Optimization.BundleCollection)">
+            <summary>
+            
+            </summary>
+            <param name="bundles"></param>
+        </member>
+        <member name="T:QS.WebApi.FilterConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:QS.WebApi.RouteConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            
+            </summary>
+            <param name="routes"></param>
+        </member>
+        <member name="T:QS.WebApi.UnityConfig">
+            <summary>
+            Specifies the Unity configuration for the main container.
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.UnityConfig.GetConfiguredContainer">
+            <summary>
+            Gets the configured Unity container.
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.UnityConfig.RegisterTypes(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>Registers the type mappings with the Unity container.</summary>
+            <param name="container">The unity container to configure.</param>
+            <remarks>There is no need to register concrete types such as controllers or API controllers (unless you want to 
+            change the defaults), as Unity allows resolving a concrete type even if it was not previously registered.</remarks>
+        </member>
+        <member name="T:QS.WebApi.WebApiConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:QS.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:QS.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:QS.WebApi.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:QS.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:QS.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:QS.WebApi.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,QS.WebApi.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,QS.WebApi.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:QS.WebApi.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},QS.WebApi.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:QS.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:QS.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(QS.WebApi.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:QS.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,QS.WebApi.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:QS.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:QS.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:QS.WebApi.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:QS.WebApi.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:QS.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider">
+            <summary>A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/>
+            that reads the API documentation from a collection of XML documentation files.
+            </summary>
+        </member>
+        <member name="F:QS.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.Providers">
+            <summary>The internal documentation providers for specific files.</summary>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.#ctor(System.String[])">
+            <summary>Construct an instance.</summary>
+            <param name="paths">The physical paths to the XML documents.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Reflection.MemberInfo)">
+            <summary>Gets the documentation for a subject.</summary>
+            <param name="subject">The subject to document.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Type)">
+            <summary>Gets the documentation for a subject.</summary>
+            <param name="subject">The subject to document.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpControllerDescriptor)">
+            <summary>Gets the documentation for a subject.</summary>
+            <param name="subject">The subject to document.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>Gets the documentation for a subject.</summary>
+            <param name="subject">The subject to document.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetDocumentation(System.Web.Http.Controllers.HttpParameterDescriptor)">
+            <summary>Gets the documentation for a subject.</summary>
+            <param name="subject">The subject to document.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetResponseDocumentation(System.Web.Http.Controllers.HttpActionDescriptor)">
+            <summary>Gets the documentation for a subject.</summary>
+            <param name="subject">The subject to document.</param>
+        </member>
+        <member name="M:QS.WebApi.Areas.HelpPage.MultiXmlDocumentationProvider.GetFirstMatch(System.Func{QS.WebApi.Areas.HelpPage.XmlDocumentationProvider,System.String})">
+            <summary>Get the first valid result from the collection of XML documentation providers.</summary>
+            <param name="expr">The method to invoke.</param>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyController.TemplateGetAllList(QS.Common.DataModel.QueryFromModel)">
+            <summary>
+            根据查询条件所有的表头信息
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyController.Add(QS.FrameworkEntity.FormsEntity.FormAssembly)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyController.Update(QS.FrameworkEntity.FormsEntity.FormAssembly)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyController.DelFormAssembly(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id 删除
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyController.GetAllList">
+            <summary>
+            Get All
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyDataInfoController.Add(QS.FrameworkEntity.FormsEntity.FormAssemblyDataInfo)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyDataInfoController.Update(QS.FrameworkEntity.FormsEntity.FormAssemblyDataInfo)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyDataInfoController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyDataInfoController.DelFormAssemblyDataInfo(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id 删除
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyDataInfoController.GetAllList">
+            <summary>
+            Get All
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyStructureController.Add(QS.FrameworkEntity.FormsEntity.FormAssemblyStructure)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyStructureController.Update(QS.FrameworkEntity.FormsEntity.FormAssemblyStructure)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyStructureController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyStructureController.DelFormAssemblyStructure(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id 删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormAssemblyStructureController.GetAllList">
+            <summary>
+            Get All
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormDataInfoController.Add(QS.FrameworkEntity.FormsEntity.FormDataInfo)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormDataInfoController.Update(QS.FrameworkEntity.FormsEntity.FormDataInfo)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormDataInfoController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormDataInfoController.DelFormDataInfo(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id 删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormDataInfoController.GetAllList">
+            <summary>
+            Get All
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormFlowActionController.Add(QS.FrameworkEntity.FormsEntity.FormFlowAction)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormFlowActionController.Update(QS.FrameworkEntity.FormsEntity.FormFlowAction)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormFlowActionController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormFlowActionController.DelFormFlowAction(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id 删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormFlowActionController.GetAllList">
+            <summary>
+            Get All
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormFlowActionLogController.Add(QS.FrameworkEntity.FormsEntity.FormFlowActionLog)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormFlowActionLogController.Update(QS.FrameworkEntity.FormsEntity.FormFlowActionLog)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormFlowActionLogController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormFlowActionLogController.DelFormFlowActionLog(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id 删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormFlowActionLogController.GetAllList">
+            <summary>
+            Get All
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormInfoController.Add(QS.FrameworkEntity.FormsEntity.FormInfo)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormInfoController.Update(QS.FrameworkEntity.FormsEntity.FormInfo)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormInfoController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormInfoController.DelFormInfo(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id 删除
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormInfoController.GetAllList(QS.Common.DataModel.QueryFromModel)">
+            <summary>
+            Get All by paged
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormPropertyController.Add(QS.Common.DataModel.FormPropertyModel)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormPropertyController.Update(QS.FrameworkEntity.FormsEntity.FormProperty)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormPropertyController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormPropertyController.DelFormProperty(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id 删除
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Forms.FormPropertyController.GetList(System.Int32)">
+            <summary>
+            Get All
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.BusinessProjectController.Add(QS.FrameworkEntity.ProjectEntity.BusinessProject)">
+            <summary>
+            新增
+            </summary>
+            <param name="businessProject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.BusinessProjectController.Update(QS.FrameworkEntity.ProjectEntity.BusinessProject)">
+            <summary>
+            修改
+            </summary>
+            <param name="businessProject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.BusinessProjectController.DelData(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            删除数据
+            </summary>
+            <param name="delModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.BusinessProjectController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.BusinessProjectController.GetAllList">
+            <summary>
+            Get All
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.BusinessProjectController.GetList(QS.Common.DataModel.SearchCondition)">
+            <summary>
+            获取分页数据
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.BusinessProjectGroupController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.BusinessProjectGroupController.Add(QS.FrameworkEntity.ProjectEntity.BusinessProjectGroup)">
+            <summary>
+            新增
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.BusinessProjectGroupController.Update(QS.FrameworkEntity.ProjectEntity.BusinessProjectGroup)">
+            <summary>
+            修改
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.BusinessProjectGroupController.GetList(QS.Common.DataModel.SearchCondition)">
+            <summary>
+            GetList
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.GroupUserController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.GroupUserController.Add(QS.FrameworkEntity.ProjectEntity.GroupUser)">
+            <summary>
+            新增
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.GroupUserController.Update(QS.FrameworkEntity.ProjectEntity.GroupUser)">
+            <summary>
+            修改
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Project.GroupUserController.GetList(QS.Common.DataModel.SearchCondition)">
+            <summary>
+            GetList
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.CommonController.GetNavigationList(QS.Common.Models.CurrentUserModel)">
+            <summary>
+            根据用户Id获取功能菜单 
+            </summary>
+            <param name="model">用户实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.CommonController.GetUserMenusByMenuCodes(QS.Common.DataModel.QueryMenuModel)">
+            <summary>
+            根据用户Id获取功能菜单 
+            </summary>
+            <param name="model">用户实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.CommonController.GetChildren(System.Collections.Generic.IEnumerable{QS.FrameworkEntity.SystemEntity.SysMenu},System.Int32,System.String)">
+            <summary>
+            递归获取功能菜单
+            </summary>
+            <param name="menu"></param>
+            <param name="id"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QS.WebApi.Controllers.Sys.AccountController">
+            <summary>
+            账号管理
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.AccountController.SignIn(QS.Common.ViewModel.LoginModel)">
+            <summary>
+            登录  
+            </summary>
+            <param name="model"></param>
+            <returns></returns>    
+        </member>
+        <member name="T:QS.WebApi.Controllers.Sys.DepartmentController">
+            <summary>
+            部门管理Api
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DepartmentController.GetList(System.Int32)">
+            <summary>
+            根据查询条件获取公司列表
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DepartmentController.Delete(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id删除公司信息
+            </summary>
+            <param name="delModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DepartmentController.Add(QS.FrameworkEntity.SystemEntity.SysDepartment)">
+            <summary>
+            新增公司信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DepartmentController.Update(QS.FrameworkEntity.SystemEntity.SysDepartment)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DepartmentController.GetModelById(System.Int32)">
+            <summary>
+            根据公司Id获取公司信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QS.WebApi.Controllers.Sys.DictionaryController">
+            <summary>
+            dictionary management
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.GetDictionaryAllDetails(System.Int32)">
+            <summary>
+            get all details of a dictionary
+            </summary>
+            <param name="id">dictionary id</param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.GetDictionaryAllDetails(QS.Common.DataModel.QueryDataDictionaryDetailModel)">
+            <summary>
+            获取要查询字典列表（支持多个查询）
+            </summary>
+            <param name="query">查询类别数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.AddDetail(QS.FrameworkEntity.SystemEntity.SysDataDictionaryDetail)">
+            <summary>
+            add a dictionary detail
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.DelDetail(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            delete a dictionary detail
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.EditDetail(QS.FrameworkEntity.SystemEntity.SysDataDictionaryDetail)">
+            <summary>
+            edit dictionary detail
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.GetDetail(System.Int32)">
+            <summary>
+            get a dictionary detail
+            </summary>
+            <param name="id">dictionary detail id</param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.DeleteDictionaryById(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id删除SysDataDictionary
+            </summary>
+            <param name="delModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.GetDictionariesByQuery">
+            <summary>
+            get Dictionary list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.Add(QS.FrameworkEntity.SystemEntity.SysDataDictionary)">
+            <summary>
+            新增字典信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.Update(QS.FrameworkEntity.SystemEntity.SysDataDictionary)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.GetModelById(System.Int32)">
+            <summary>
+            根据公司Id获取数据字典信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.GetDicJob">
+            <summary>
+            返回职位列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.GetDicDataAccess">
+            <summary>
+            返回数据访问范围
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.GetDicTaskType">
+            <summary>
+            返回任务类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.GetDicFormSource">
+            <summary>
+            返回表单数据绑定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DictionaryController.GetDicTableHead">
+            <summary>
+            返回表头分类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:QS.WebApi.Controllers.Sys.EmployeeController">
+            <summary>
+            员工信息管理Api
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.EmployeeController.GetListByQuery(QS.Common.DataModel.QueryEmployeeModel)">
+            <summary>
+            根据查询条件获取员工列表
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.EmployeeController.Delete(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id删除员工信息
+            </summary>
+            <param name="delModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.EmployeeController.Add(QS.FrameworkEntity.SystemEntity.SysEmployee)">
+            <summary>
+            新增员工信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.EmployeeController.Update(QS.FrameworkEntity.SystemEntity.SysEmployee)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.EmployeeController.GetModelById(System.Int32)">
+            <summary>
+            根据员工Id获取员工信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QS.WebApi.Controllers.Sys.MenuController">
+            <summary>
+            功能菜单管理
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuController.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuController.GetSysMenuList(QS.Common.DataModel.QueryMenuModel)">
+            <summary>
+            根据查询条件获取功能模块菜单列表
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuController.Delete(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id删除功能模块菜单
+            </summary>
+            <param name="delModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuController.Add(QS.FrameworkEntity.SystemEntity.SysMenu)">
+            <summary>
+            新增功能模块菜单
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuController.Update(QS.FrameworkEntity.SystemEntity.SysMenu)">
+            <summary>
+            修改功能模块菜单
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuController.GetModelById(System.Int32)">
+            <summary>
+            根据公司Id获取功能模块菜单
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuController.GetMenuPermissionsList(QS.FrameworkEntity.SystemEntity.SysRole)">
+            <summary>
+            查询给定角色、公司下的菜单、功能操作权限列表（包括菜单、功能操作权限的选中状态）
+            </summary>
+            <param name="roleModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuController.GetMenuPermissionsListByUserId(QS.FrameworkEntity.SystemEntity.SysUser)">
+            <summary>
+            查询给定用户、公司下的菜单、功能操作权限列表（包括菜单、功能操作权限的选中状态）
+            </summary>
+            <param name="userModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuController.GetMenuByUserId(QS.Common.Models.CurrentUserModel)">
+            <summary>
+            根据用户Id获取功能菜单 
+            </summary>
+            <param name="model">用户实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuController.GetChildren(System.Collections.Generic.IEnumerable{QS.FrameworkEntity.SystemEntity.SysMenu},System.Int32)">
+            <summary>
+            递归获取功能菜单
+            </summary>
+            <param name="menu"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuController.GetUserPagePermissions(QS.Common.DataModel.QueryUserPermissionModel)">
+            <summary>
+            查询给定公司的用户在当前页面上的按钮权限列表
+            </summary>
+            <param name="queryModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuController.GetUserMenuById(System.Int32)">
+            <summary>
+            所有的菜单和动作
+            获取用户当前权限勾选项
+            </summary>
+            <param name="id">用户Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:QS.WebApi.Controllers.Sys.MenuPermissionController">
+            <summary>
+            功能能操作管理API
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuPermissionController.Delete(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id删除功能操作
+            </summary>
+            <param name="delModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuPermissionController.Add(QS.FrameworkEntity.SystemEntity.SysMenuPermission)">
+            <summary>
+            新增功能操作
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuPermissionController.Update(QS.FrameworkEntity.SystemEntity.SysMenuPermission)">
+            <summary>
+            修改功能操作
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuPermissionController.GetModelById(System.Int32)">
+            <summary>
+            根据公司Id获取功能操作
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuPermissionController.GetMenuPermissionsList(QS.FrameworkEntity.SystemEntity.SysMenu)">
+            <summary>
+            查询给定角色、公司下的菜单、功能操作权限列表（包括菜单、功能操作权限的选中状态）
+            </summary>
+            <param name="menuModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.MenuPermissionController.GetUserPagePermissions(QS.Common.DataModel.QueryUserPermissionModel)">
+            <summary>
+            查询给定公司的用户在当前页面上的按钮权限列表
+            </summary>
+            <param name="queryModel"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QS.WebApi.Controllers.Sys.RoleController">
+            <summary>
+            操作记录管理
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.RoleController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.RoleController.GetListByQuery(QS.Common.DataModel.QueryRoleModel)">
+            <summary>
+            根据查询条件获取操作日志列表
+            </summary>
+            <param name="queryModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.RoleController.Delete(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id删除操作记录
+            </summary>
+            <param name="delModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.RoleController.Add(QS.FrameworkEntity.SystemEntity.SysRole)">
+            <summary>
+            新增公司信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.RoleController.Update(QS.FrameworkEntity.SystemEntity.SysRole)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.RoleController.GetModelById(System.Int32)">
+            <summary>
+            根据公司Id获取角色信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QS.WebApi.Controllers.Sys.RoleMenuController">
+            <summary>
+            操作记录管理
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.RoleMenuController.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.RoleMenuController.SaveRoleMenuPermissions(QS.Common.ViewModel.RoleMenuPermissionViewModel)">
+            <summary>
+            保存角色操作权限列表
+            </summary>
+            <param name="roleMenuPermissionVm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.RoleMenuController.Delete(System.Int32)">
+            <summary>
+            根据Id删除操作记录
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.RoleMenuController.Add(QS.FrameworkEntity.SystemEntity.SysRoleMenu)">
+            <summary>
+            新增公司信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QS.WebApi.Controllers.Sys.DepartmentPostController">
+            <summary>
+            部门管理Api
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DepartmentPostController.GetList(System.Int32)">
+            <summary>
+            根据查询条件获取公司列表
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DepartmentPostController.Delete(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id删除公司信息
+            </summary>
+            <param name="delModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DepartmentPostController.Add(QS.FrameworkEntity.SystemEntity.SysDepartment)">
+            <summary>
+            新增公司信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DepartmentPostController.Update(QS.FrameworkEntity.SystemEntity.SysDepartment)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.DepartmentPostController.GetModelById(System.Int32)">
+            <summary>
+            根据公司Id获取公司信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.SysUserController.Insert(QS.FrameworkEntity.SystemEntity.SysUser)">
+            <summary>
+            新增
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.SysUserController.GetList">
+            <summary>
+            新增
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.SysUserController.SuperLogin(System.String,System.String)">
+            <summary>
+            管理员登录
+            </summary>
+            <param name="loginName"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.SysUserController.GetUserListByQuery(QS.Common.DataModel.QueryUserModel)">
+            <summary>
+            根据查询条件获取公司列表
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.SysUserController.Delete(QS.Common.DataModel.DeleteModel)">
+            <summary>
+            根据Id删除用户
+            </summary>
+            <param name="delModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.SysUserController.Add(QS.FrameworkEntity.SystemEntity.SysUser)">
+            <summary>
+            新增用户
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.SysUserController.Update(QS.FrameworkEntity.SystemEntity.SysUser)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.SysUserController.GetModelById(System.Int32)">
+            <summary>
+            根据用户Id获取用户信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.SysUserController.GetList(System.Int32)">
+            <summary>
+            获取查询用户
+            </summary>
+            <param name="id">公司Id,废弃参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.SysUserController.ChangePassword(QS.FrameworkEntity.SystemEntity.SysUser)">
+            <summary>
+            修改用户密码
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.SysUserController.SaveUserMenuPermissions(QS.Common.DataModel.UserMenuPermission)">
+            <summary>
+            保存用户操作权限列表
+            </summary>
+            <param name="userMenuPermissionVm"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QS.WebApi.Controllers.Sys.UserRoleController">
+            <summary>
+            用户角色Api
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.UserRoleController.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.UserRoleController.GetNoUserListByRoleId(QS.Common.DataModel.QueryUserModel)">
+            <summary>
+            根据角色编号获取用户列表（未分配）
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.UserRoleController.GetUserListByRoleId(QS.Common.DataModel.QueryUserModel)">
+            <summary>
+            根据角色编号获取用户列表（已分配）
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.UserRoleController.GetNoRoleListByUserId(QS.Common.DataModel.QueryUserModel)">
+            <summary>
+            根据用户编号获取角色列表（未分配）
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.UserRoleController.GetRoleListByUserId(QS.Common.DataModel.QueryUserModel)">
+            <summary>
+            根据用户编号获取角色列表（已分配）
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.UserRoleController.AddRoleForUser(QS.FrameworkEntity.SystemEntity.SysUserRole)">
+            <summary>
+            给用户分配角色
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Sys.UserRoleController.AddUserForRole(QS.FrameworkEntity.SystemEntity.SysUserRole)">
+            <summary>
+            给角色分配用户
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowInfoController.Add(QS.FrameworkEntity.FlowEntity.WorkFlowInfo)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowInfoController.Update(QS.FrameworkEntity.FlowEntity.WorkFlowInfo)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowInfoController.GetById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowInfoController.GetAllList(QS.Common.DataModel.QueryFromModel)">
+            <summary>
+            Get All
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowInfoController.UpdateContent(QS.FrameworkEntity.FlowEntity.WorkFlowInfo)">
+            <summary>
+            更新Json内容数据
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QS.WebApi.Controllers.Flow.WorkFlowNodeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowNodeController.Add(QS.Common.DataModel.FlowNodeModel)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowNodeController.Update(QS.FrameworkEntity.FlowEntity.WorkFlowNode)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowNodeController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowNodeController.GetAllList">
+            <summary>
+            Get All
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowNodeActionController.Add(QS.FrameworkEntity.FlowEntity.WorkFlowNodeAction)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowNodeActionController.Update(QS.FrameworkEntity.FlowEntity.WorkFlowNodeAction)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowNodeActionController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowNodeActionController.GetAllList">
+            <summary>
+            Get All
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowNodeControlController.Add(QS.FrameworkEntity.FlowEntity.WorkFlowNodeControl)">
+            <summary>
+            新增
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowNodeControlController.Update(QS.FrameworkEntity.FlowEntity.WorkFlowNodeControl)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowNodeControlController.GetModelById(System.Int32)">
+            <summary>
+            根据Id获取
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Controllers.Flow.WorkFlowNodeControlController.GetAllList">
+            <summary>
+            Get All
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:QS.WebApi.Filters.ApiAuthorizeFilter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Filters.ApiAuthorizeFilter.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            登录认证
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="T:QS.WebApi.Filters.MenuAttribute">
+            <summary>
+            菜单权限
+            </summary>   
+        </member>
+        <member name="M:QS.WebApi.Filters.MenuAttribute.IsAuthorized(System.String)">
+            <summary>
+            根据token信息判断是否有权限
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QS.WebApi.Filters.OperateLogAttribute">
+            <summary>
+            操作日志
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Filters.OperateLogAttribute.Permission">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Filters.OperateLogAttribute.Permissions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:QS.WebApi.Filters.OperateLogAttribute.msg">
+            <summary>
+            自定义参数
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Filters.OperateLogAttribute.#ctor(System.String)">
+            <summary>
+            初始化时填入类的说明
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="F:QS.WebApi.Filters.OperateLogAttribute.key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.Filters.OperateLogAttribute.OnActionExecutedAsync(System.Web.Http.Filters.HttpActionExecutedContext,System.Threading.CancellationToken)">
+            <summary>
+            在请求执行完后 记录请求的数据以及返回数据
+            </summary>
+            <param name="actionExecutedContext"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Filters.OperateLogAttribute.GetRequestValues(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            读取request 的提交内容
+            </summary>
+            <param name="actionExecutedContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Filters.OperateLogAttribute.GetRequestActionValues(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            读取request 的提交内容
+            </summary>
+            <param name="actionExecutedContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Filters.OperateLogAttribute.GetResponseValues(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            读取action返回的result
+            </summary>
+            <param name="actionExecutedContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Filters.OperateLogAttribute.SkipLogging(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            判断类和方法头上的特性是否要进行Action拦截
+            </summary>
+            <param name="actionContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QS.WebApi.Filters.WebApiDisposeFilter.OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            回收，Api调用的Services的连接
+            </summary>
+            <param name="actionExecutedContext"></param>
+        </member>
+        <member name="T:QS.WebApi.WebApiApplication">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.WebApiApplication.Application_Start">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:QS.WebApi.WebApiApplication.Application_Error(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:QS.WebApi.Models.CorsHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sea2.WebAPI.SwaggerConfig.GetXmlCommentsPath(System.String)">
+            <summary>
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

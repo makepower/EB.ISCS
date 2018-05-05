@@ -1,0 +1,68 @@
+﻿@using System.Web.Http
+@using System.Web.Http.Controllers
+@using System.Web.Http.Description
+@using System.Collections.ObjectModel
+@using EB.ISCS.WebApi.Areas.HelpPage.Models
+@model Collection<ApiDescription>
+
+@{
+    ViewBag.Title = "API 帮助手册";
+
+    // Group APIs by controller
+    ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
+
+}
+<script src="~/Scripts/jquery-3.0.0.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var id = "";
+        $("h2").click(function () {
+            var ids = $(this).attr("id");
+            if (ids == id) {
+                $("#div_" + ids).hide();
+                id = "";
+            } else {
+                $(".info_div").hide();
+                id = ids;
+                $("#div_" + ids).fadeIn();
+            }
+        });
+
+        $.each($("#trees").find(".div_action_info"), function (i, x) {
+            var ids = $(x).attr("id").split('_')[1];
+            var spans = $("#" + ids).find("span");
+            var newE = "<div class='info_div' style='display:none' id='div_" + ids + "'><p>" + spans.text() + "</p></div>"
+            spans.remove();
+            var E = $(newE).append(x);
+            $("#tree_values").append(E);
+        });
+
+        var h = $(window).height()- 220;
+        $("#trees").height(h);
+        $("#tree_values").height(h);
+    })
+</script>
+
+<link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<header class="help-page">
+    <div class="content-wrapper">
+        <div class="float-left">
+            <h1>@ViewBag.Title</h1>
+        </div>
+    </div>
+</header>
+<div id="body" class="help-page">
+    <div class="row api-help">
+        <div class="col-lg-5" id="trees" style="border-right:1px solid #ccc; overflow-y:auto;">
+            @foreach (var group in apiGroups)
+            {
+                @Html.DisplayFor(m => group, "ApiGroup")
+            }
+        </div>
+
+        <div class="col-lg-5" style=" overflow-y:auto;" id="tree_values">
+
+        </div>
+    </div>
+
+</div>

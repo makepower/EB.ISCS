@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <parameter Name="Id" FieldName="Id" Width="0"  Desc="在用" />
+  <parameter Name="CodeId" FieldName="CodeId"  Width="0"  Desc="在用" />
+  <parameter Name="排序" FieldName="RuleSort"  Width="100"  Desc="在用" />
+  <parameter Name="规则类型Id" FieldName="RuleType"  Width="0"  Desc="在用" />
+  <parameter Name="规则类型" FieldName="RuleTypeName"  Width="150"  Desc="在用" />
+  <parameter Name="规则名称" FieldName="RuleName"  Width="300"  Desc="在用" />
+  <parameter Name="格式" FieldName="Format"  Width="200"  Desc="在用" />
+  <parameter Name="长度" FieldName="Length"  Width="100"  Desc="在用" />
+  <parameter Name="拼接字符" FieldName="ConnectChar"  Width="100"  Desc="在用" />
+
+</config>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C1F5E0C-536D-416A-992D-622050DAC453}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EB.ISCS.Common</RootNamespace>
+    <AssemblyName>EB.ISCS.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseController\BaseController.cs" />
+    <Compile Include="BaseController\ExtendJsonResult.cs" />
+    <Compile Include="BaseController\NavigationItem.cs" />
+    <Compile Include="BaseController\NavigationModel.cs" />
+    <Compile Include="BaseController\TreeItemViewModel.cs" />
+    <Compile Include="Enum\EnumDefine.cs" />
+    <Compile Include="Models\FormDataModel.cs" />
+    <Compile Include="TreeNode.cs" />
+    <Compile Include="Cache\GlobalApiCacheClasses.cs" />
+    <Compile Include="Cache\RCache.cs" />
+    <Compile Include="DataModel\BaseModel.cs" />
+    <Compile Include="DataModel\DeleteModel.cs" />
+    <Compile Include="DataModel\FormViewModel.cs" />
+    <Compile Include="DataModel\JqGridParam.cs" />
+    <Compile Include="DataModel\QueryExceptionLogModel.cs" />
+    <Compile Include="DataModel\QueryLoginLogModel.cs" />
+    <Compile Include="DataModel\QueryMenuModel.cs" />
+    <Compile Include="DataModel\QueryOperationLogModel.cs" />
+    <Compile Include="DataModel\QueryTableHeadModel.cs" />
+    <Compile Include="DataModel\QueryUserModel.cs" />
+    <Compile Include="DataModel\QueryUserPermissionModel.cs" />
+    <Compile Include="TreeBuilder.cs" />
+    <Compile Include="ViewModel\DashBoardIndicatorModel.cs" />
+    <Compile Include="ViewModel\RoleMenuPermissionViewModel.cs" />
+    <Compile Include="ViewModel\RolePermissionViewModel.cs" />
+    <Compile Include="DataModel\SearchCondition.cs" />
+    <Compile Include="DataModel\SysLoginTokenModel.cs" />
+    <Compile Include="DataModel\SysUserPermissionModel.cs" />
+    <Compile Include="Models\BaseResult.cs" />
+    <Compile Include="Models\Configs.cs" />
+    <Compile Include="Models\CurrentUserModel.cs" />
+    <Compile Include="Models\Extensions.cs" />
+    <Compile Include="Models\NameValuePair.cs" />
+    <Compile Include="Models\ResultCode.cs" />
+    <Compile Include="Models\ServiceConst.cs" />
+    <Compile Include="Models\ServiceHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\LoginModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\01_Framewrok\EB.ISCS.FrameworkEntity\EB.ISCS.FrameworkEntity.csproj">
+      <Project>{ada56b1a-fc57-423c-ba04-7500b25e69fe}</Project>
+      <Name>EB.ISCS.FrameworkEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\01_Framewrok\EB.ISCS.FrameworkHelp\EB.ISCS.FrameworkHelp.csproj">
+      <Project>{e63e87cc-005f-4538-828d-345a90d3c54b}</Project>
+      <Name>EB.ISCS.FrameworkHelp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\01_Framewrok\EB.ISCS.FrameworkLog\EB.ISCS.FrameworkLog.csproj">
+      <Project>{1d278961-c024-449b-b878-1de256eb0715}</Project>
+      <Name>EB.ISCS.FrameworkLog</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

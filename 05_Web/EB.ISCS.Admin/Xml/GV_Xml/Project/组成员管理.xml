@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <parameter Name="ID" FieldName="Id" Width="0"  Desc="在用" />
+  <parameter Name="组ID" FieldName="GroupId"  Width="0"  Desc="在用" />
+  <parameter Name="组名称" FieldName="GroupName"  Width="160"  Desc="在用" />
+  <parameter Name="成员ID" FieldName="UserId"  Width="0"  Desc="在用" />
+  <parameter Name="成员名称" FieldName="UserName"  Width="160"  Desc="在用" />
+  <parameter Name="组长Id" FieldName="Leader"  Width="0"  Desc="在用" IsSort="false"/>
+  <!--<parameter Name="组长" FieldName="LeaderName"  Width="120"  Desc="在用" IsSort="false"/>-->
+  <parameter Name="加入时间" FieldName="InGroupDate"  Width="160"  Desc="在用" IsSort="false"/>
+  <parameter Name="职责" FieldName="Duty"  Width="120"  Desc="在用" IsSort="false"/>
+  <parameter Name="描述" FieldName="Remark"  Width="160"  Desc="在用" IsSort="false"/>
+  <parameter Name="是否启用Id" FieldName="Enabled"  Width="0"  Desc="在用" IsSort="false"/>
+  <parameter Name="是否启用" FieldName="EnableStr"  Width="120"  Desc="在用" IsSort="false"/>
+  <parameter Name="创建人Id" FieldName="InUser"  Width="0"  Desc="在用" />
+  <parameter Name="创建人" FieldName="InUserName"  Width="150"  Desc="在用" />
+  <parameter Name="创建时间" FieldName="InDate"  Width="160"  Desc="在用" IsSort="false"/>
+  <parameter Name="编辑人Id" FieldName="EditUser"  Width="0"  Desc="在用" IsSort="false"/>
+  <parameter Name="编辑人" FieldName="EditUserName"  Width="120"  Desc="在用" IsSort="false"/>
+  <parameter Name="编辑时间" FieldName="EditDate"  Width="160"  Desc="在用" IsSort="false"/>
+  <!--<parameter Name="删除人" FieldName="DelUser"  Width="150"  Desc="在用" />
+  <parameter Name="删除时间" FieldName="DelDate"  Width="160"  Desc="在用" IsSort="false"/>
+  <parameter Name="删除标记" FieldName="DelState"  Width="120"  Desc="在用" IsSort="false"/>-->
+</config>

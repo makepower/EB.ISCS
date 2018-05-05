@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <parameter Name="功能模块" FieldName="FunctionController"  Width="150"  Desc="在用" />
+  <parameter Name="方法名称" FieldName="MethodAction"  Width="150"  Desc="在用" />
+  <parameter Name="操作日志ID" FieldName="Id" Width="0"  Desc="在用" />
+  <parameter Name="程序渠道Id" FieldName="AccessChannelId"  Width="0"  Desc="在用" />
+  <parameter Name="程序渠道" FieldName="AccessChannelName"  Width="200" IsSort="false" Desc="在用" />
+  <parameter Name="用户ID" FieldName="UserId"  Width="0"  Desc="在用" />
+  <parameter Name="用户名称" FieldName="UserName"  Width="0"  Desc="在用" />
+  <parameter Name="客户ID" FieldName="CustomerId"  Width="0"  Desc="在用" />
+  <parameter Name="客户端Ip地址" FieldName="ClientIpAddress"  Width="150"  Desc="在用" />
+  <parameter Name="模块ID" FieldName="MenuId"  Width="0"  Desc="在用" />
+  <parameter Name="模块名称" FieldName="MenuName"  Width="0"  Desc="在用" />
+  <parameter Name="功能操作ID" FieldName="MenuActionId"  Width="0"  Desc="在用" />
+  <parameter Name="功能操作名称" FieldName="MenuActionName"  Width="0"  Desc="在用" />
+  <parameter Name="服务名称" FieldName="ServiceName"  Width="0"  Desc="在用" />
+  <parameter Name="参数" FieldName="Parameters"  Width="0"  Desc="在用" />
+  <parameter Name="执行时间" FieldName="ExecutionTime"  Width="0"  Desc="在用" />
+  <parameter Name="执行耗时" FieldName="ExecutionDuration"  Width="0"  Desc="在用" />
+  <parameter Name="客户端名称" FieldName="ClientName"  Width="0"  Desc="在用" />
+  <parameter Name="浏览器信息" FieldName="BrowserInfo"  Width="200"  Desc="在用" />
+  <parameter Name="操作内容" FieldName="Exception"  Width="0"  Desc="在用" />
+  <parameter Name="类的说明" FieldName="Description"  Width="0"  Desc="在用" />
+  <parameter Name="来源设备" FieldName="SourceEquipment"  Width="0"  Desc="在用" />
+  <parameter Name="自定义信息" FieldName="CustomData"  Width="0"  Desc="在用" />
+  <parameter Name="IP数值" FieldName="IPNum"  Width="0"  Desc="在用" />
+  <parameter Name="登录Token" FieldName="Token"  Width="200"  Desc="在用" />
+  <parameter Name="浏览器代理" FieldName="Navigator"  Width="0"  Desc="在用" />
+  <parameter Name="浏览地址" FieldName="RequestUri"  Width="200"  Desc="在用" />
+  <parameter Name="上次请求地址" FieldName="UrlReferrer"  Width="0"  Desc="在用" />
+  <parameter Name="请求类型" FieldName="RequestType"  Width="0"  Desc="在用" />
+  <parameter Name="是否有效" FieldName="Enabled"  Width="0"  Desc="在用" />
+  <parameter Name="录入人员ID" FieldName="InUser"  Width="0"  Desc="在用" />
+  <parameter Name="操作人员" FieldName="InUserName"  Width="0"   IsSort="false" Desc="在用" />
+  <parameter Name="操作时间" FieldName="InDate"  Width="150"  Desc="在用" />
+</config>

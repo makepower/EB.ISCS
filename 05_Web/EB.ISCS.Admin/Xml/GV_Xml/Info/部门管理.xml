@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <parameter Name="部门ID" FieldName="Id" Width="0"  Desc="在用" />
+  <parameter Name="部门类别Id" FieldName="DeptTypeId"  Width="0"  Desc="在用" />
+  <parameter Name="部门说明" FieldName="Description"  Width="0"  Desc="在用" />
+  <parameter Name="部门负责人" FieldName="Principal"  Width="150"  Desc="在用" />
+  <parameter Name="部门类别" FieldName="DepType"  Width="0"  Desc="在用" />
+  <parameter Name="备注" FieldName="DepRemark"  Width="0"  Desc="在用" />
+  <parameter Name="部门父Id" FieldName="DepFatherId"  Width="0"  Desc="在用" />
+  <parameter Name="父ID路径" FieldName="FatherIDPath"  Width="0"  Desc="在用" />
+  <parameter Name="办公室电话" FieldName="DepPhone"  Width="120"  Desc="在用" />
+  <parameter Name="部门层数" FieldName="DeptLevel"  Width="0"  Desc="在用" />
+  <parameter Name="传真" FieldName="DepFax"  Width="120"  Desc="在用" />
+  <parameter Name="邮编" FieldName="DepPost"  Width="120"  Desc="在用" />
+  <parameter Name="地址" FieldName="DepAddress"  Width="320"  Desc="在用" />
+  <parameter Name="排序" FieldName="DepSort"  Width="0"  Desc="在用" />
+  <parameter Name="是否有效" FieldName="Enabled"  Width="0"  Desc="在用" />
+  <parameter Name="录入人员" FieldName="InUserName"  Width="120"  Desc="在用" IsSort="false"/>
+  <parameter Name="录入日期" FieldName="InDate"  Width="160"  Desc="在用" IsSort="false"/>
+  <parameter Name="修改人员" FieldName="EditUserName"  Width="120"  Desc="在用" IsSort="false"/>
+  <parameter Name="修改日期" FieldName="EditDate"  Width="160"  Desc="在用" IsSort="false"/>
+</config>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <parameter Name="员工ID" FieldName="Id" Width="0"  Desc="在用" />
+  <parameter Name="员工ID" FieldName="UserId" Width="0"  Desc="在用" />
+  <parameter Name="角色ID" FieldName="RoleId"  Width="0"  Desc="在用" />
+  <parameter Name="角色名称" FieldName="RoleName"  Width="0"  Desc="在用" />
+  <parameter Name="行政区域Id" FieldName="DistrictId"  Width="0"  Desc="在用" />
+  <parameter Name="员工编码" FieldName="EmployeeCode"  Width="100"  Desc="在用" />
+  <parameter Name="中文名" FieldName="FullName"  Width="150"  Desc="在用" />
+  <parameter Name="部门" FieldName="FullPath"  Width="280"  Desc="在用" />
+  <parameter Name="部门ID" FieldName="EmpDepId"  Width="0"  Desc="在用" />
+  <parameter Name="部门名称" FieldName="DepName"  Width="0" IsSort="false" Desc="在用" />
+  <parameter Name="职位" FieldName="EmpPosition"  Width="0"  Desc="在用" />
+  <parameter Name="职位名称" FieldName="EmpPositionName"  Width="80"  Desc="在用" />
+  <parameter Name="学历" FieldName="StudyStep"  Width="0"  Desc="在用" />
+  <parameter Name="电子邮件" FieldName="EmployeeEmail"  Width="0"  Desc="在用" />
+  <parameter Name="办工电话" FieldName="OfficePhone"  Width="150"  Desc="在用" />
+  <parameter Name="身份证号码" FieldName="IDCard"  Width="150"  Desc="在用" />
+  <parameter Name="性别" FieldName="EmployeeSex"  Width="0"  Desc="在用" />
+  <parameter Name="出生日期" FieldName="DateofBirth"  Width="0"  Desc="在用" />
+  <parameter Name="生日" FieldName="Birthday"  Width="0"  Desc="在用" />
+  <parameter Name="籍贯" FieldName="NativePlace"  Width="0"  Desc="在用" />
+  <parameter Name="QQ号码" FieldName="EmployeeQQ"  Width="0"  Desc="在用" />
+  <parameter Name="移动电话" FieldName="MobileTel"  Width="90"  Desc="在用" />
+  <parameter Name="专业职务" FieldName="EmpPositionNameText"  Width="0" IsSort="false" Desc="在用"/>
+  <parameter Name="家庭地址" FieldName="FamilyAddress"  Width="0"  Desc="在用" />
+  <parameter Name="是否离职" FieldName="EmployeeIsDuty"  Width="0"  Desc="在用" />
+  <parameter Name="备注" FieldName="EmployeeRemark"  Width="0"  Desc="在用" />
+  <parameter Name="是否系统员工" FieldName="IsSysEmp"  Width="0"  Desc="在用" />
+  <parameter Name="婚姻状态" FieldName="MaritalStatu"  Width="0"  Desc="在用" />
+  <parameter Name="技术职称" FieldName="TitleTechnical"  Width="0"  Desc="在用" />
+  <parameter Name="常驻地址" FieldName="PermanentAddress"  Width="0"  Desc="在用" />
+  <parameter Name="专业" FieldName="Professional"  Width="0"  Desc="在用" />
+  <parameter Name="毕业学校" FieldName="GraduateSchool"  Width="0"  Desc="在用" />
+  <parameter Name="毕业日期" FieldName="GraduationDate"  Width="0"  Desc="在用" />
+  <parameter Name="政治面貌" FieldName="PoliticalAffiliation"  Width="0"  Desc="在用" />
+  <parameter Name="入党入团日期" FieldName="DateJoinedParty"  Width="0"  Desc="在用" />
+  <parameter Name="技能等级证" FieldName="SkillLevelCertificate"  Width="0"  Desc="在用" />
+  <parameter Name="上岗证" FieldName="Certificate"  Width="0"  Desc="在用" />
+  <parameter Name="参工日期" FieldName="ParticipationDate"  Width="0"  Desc="在用" />
+  <parameter Name="执业资格" FieldName="Qualification"  Width="0"  Desc="在用" />
+  <parameter Name="入职日期" FieldName="GangDate"  Width="0"  Desc="在用" />
+  <parameter Name="离职日期" FieldName="DepartureDate"  Width="0"  Desc="在用" />
+  <parameter Name="人事档案号" FieldName="PersonnelFileNo"  Width="0"  Desc="在用" />
+  <parameter Name="工作简历" FieldName="Resume"  Width="0"  Desc="在用" />
+  <parameter Name="是否有效" FieldName="Enabled"  Width="0"  Desc="在用" />
+  <parameter Name="录入人员ID" FieldName="InUser"  Width="0"  Desc="在用" />
+  <parameter Name="录入人员" FieldName="InUserName"  Width="90"   IsSort="false" Desc="在用" />
+  <parameter Name="录入日期" FieldName="StrInDate"  Width="150" IsSort="false"   Desc="在用" />
+  <parameter Name="修改人员ID" FieldName="EditUser"  Width="0"  Desc="在用" />
+  <parameter Name="修改人员" FieldName="EditUserName"  Width="90"  IsSort="false" Desc="在用" />
+  <parameter Name="修改日期" FieldName="StrEditDate"  Width="150" IsSort="false"   Desc="在用" />
+</config>

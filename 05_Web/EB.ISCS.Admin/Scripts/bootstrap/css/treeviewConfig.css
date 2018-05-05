@@ -1,0 +1,18 @@
+﻿.choseDepartment {
+    width: 100%;
+}
+
+.treeview-selectable {
+    position: absolute;
+    width: 90%;
+    z-index: 999999;
+    display:none;
+}
+
+.treeBox {
+    position: relative;
+}
+
+.node-treeview-selectable p {
+    display: inline-block;
+}

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <parameter Name="ID" FieldName="Id" Width="0"  Desc="在用" />
+  <parameter Name="父级项目Id" FieldName="ParentId"  Width="0"  Desc="在用" />
+  <parameter Name="父级项目名称" FieldName="ParentName"  Width="160"  Desc="在用" />
+  <parameter Name="项目名称" FieldName="Name"  Width="160"  Desc="在用" />
+  <parameter Name="项目类型Id" FieldName="ProjectType"  Width="0"  Desc="在用" />
+  <parameter Name="项目类型" FieldName="TypeName"  Width="260"  Desc="在用" />
+  <parameter Name="负责人Id" FieldName="Leader"  Width="0"  Desc="在用" IsSort="false"/>
+  <parameter Name="负责人" FieldName="LeaderName"  Width="120"  Desc="在用" IsSort="false"/>
+  <parameter Name="项目描述" FieldName="Describe"  Width="160"  Desc="在用" IsSort="false"/>
+  <parameter Name="是否启用" FieldName="Enabled"  Width="0"  Desc="在用" IsSort="false"/>
+  <parameter Name="是否启用" FieldName="EnableStr"  Width="120"  Desc="在用" IsSort="false"/>
+  <parameter Name="开始时间" FieldName="StartTime"  Width="160"  Desc="在用" IsSort="false"/>
+  <parameter Name="结束时间" FieldName="EndTime"  Width="150"  Desc="在用" />
+  <parameter Name="实际开始时间" FieldName="RealStartTime"  Width="160"  Desc="在用" IsSort="false"/>
+  <parameter Name="实际结束时间" FieldName="RealEndTime"  Width="120"  Desc="在用" IsSort="false"/>
+  <parameter Name="是否分阶段Id" FieldName="IsStage"  Width="0"  Desc="在用" IsSort="false"/>
+  <parameter Name="是否分阶段" FieldName="IsStageStr"  Width="160"  Desc="在用" IsSort="false"/>
+  <parameter Name="创建人Id" FieldName="InUser"  Width="0"  Desc="在用" />
+  <parameter Name="创建人" FieldName="InUserName"  Width="150"  Desc="在用" />
+  <parameter Name="创建时间" FieldName="InDate"  Width="160"  Desc="在用" IsSort="false"/>
+  <parameter Name="编辑人Id" FieldName="EditUser"  Width="0"  Desc="在用" IsSort="false"/>
+  <parameter Name="编辑人" FieldName="EditUserName"  Width="120"  Desc="在用" IsSort="false"/>
+  <parameter Name="编辑时间" FieldName="EditDate"  Width="160"  Desc="在用" IsSort="false"/>
+  <!--<parameter Name="删除人Id" FieldName="DelUser"  Width="150"  Desc="在用" />
+  <parameter Name="删除人" FieldName="DelUserName"  Width="150"  Desc="在用" />
+  <parameter Name="删除时间" FieldName="DelDate"  Width="160"  Desc="在用" IsSort="false"/>
+  <parameter Name="删除标记" FieldName="DelState"  Width="120"  Desc="在用" IsSort="false"/>-->
+  <parameter Name="状态" FieldName="State"  Width="160"  Desc="在用" IsSort="false"/>
+</config>

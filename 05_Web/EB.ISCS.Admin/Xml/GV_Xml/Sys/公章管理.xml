@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <parameter Name="公章Id" FieldName="Id" Width="0"  Desc="在用" />
+  <parameter Name="Id" FieldName="Id" Width="0"  Desc="在用" />
+  <parameter Name="名称" FieldName="Name"  Width="150"  Desc="在用" />
+  <parameter Name="公章类型" FieldName="TypeName"  Width="150"  Desc="在用" />
+  <parameter Name="类型" FieldName="Type"  Width="0"  Desc="在用" />
+  <parameter Name="部门" FieldName="FullPath"  Width="280"  Desc="在用" />
+  <parameter Name="部门ID" FieldName="DepartmentId"  Width="0"  Desc="在用" />
+  <parameter Name="是否有效" FieldName="Enabled"  Width="0"  Desc="在用" />
+  <parameter Name="录入人员ID" FieldName="InUser"  Width="0"  Desc="在用" />
+  <parameter Name="录入人员" FieldName="InUserName"  Width="90"   IsSort="false" Desc="在用" />
+  <parameter Name="录入日期" FieldName="StrInDate"  Width="150" IsSort="false"   Desc="在用" />
+  <parameter Name="修改人员ID" FieldName="EditUser"  Width="0"  Desc="在用" />
+  <parameter Name="修改人员" FieldName="EditUserName"  Width="90"  IsSort="false" Desc="在用" />
+  <parameter Name="修改日期" FieldName="StrEditDate"  Width="150" IsSort="false"   Desc="在用" />
+</config>

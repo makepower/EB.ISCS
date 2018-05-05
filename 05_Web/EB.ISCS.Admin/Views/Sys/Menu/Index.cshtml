@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    <meta charset="utf-8" />
+    <title>菜单管理</title>
+    <script src="~/viewscript/sys/menu/index.js"></script>
+</head>
+<body>
+    <div style="margin:10px 0px; padding:5px;">
+        <div style="margin-bottom:10px;">
+            <div class="btn-group" role="group" aria-label="...">
+                <button id="btn_add" class="btn btn-default" data-permisson="actionbutton">新增</button>
+                <button id="btn_edit" class="btn btn-default" data-permisson="actionbutton">编辑</button>
+                <button id="btn_del" class="btn btn-default" data-permisson="actionbutton">删除</button>
+                <button id="btn_refresh" class="btn btn-default" data-permisson="actionbutton">刷新</button>
+                <input type="hidden" name="MenuId" id="MenuId" value="@ViewBag.MenuId" />
+            </div>
+        </div>
+        <table id="jqGrid"></table>
+    </div>
+</body>
+</html>

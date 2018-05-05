@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADA56B1A-FC57-423C-BA04-7500B25E69FE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EB.ISCS.FrameworkEntity</RootNamespace>
+    <AssemblyName>EB.ISCS.FrameworkEntity</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\EB.ISCS.FrameworkEntity.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dapper.1.50.4\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.SimpleCRUD, Version=1.13.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dapper.SimpleCRUD.1.13.0\lib\net45\Dapper.SimpleCRUD.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseIndicator.cs" />
+    <Compile Include="Base\SearchCondition.cs" />
+    <Compile Include="Base\PagingInfo.cs" />
+    <Compile Include="Biz\ComplaintInfo.cs" />
+    <Compile Include="Biz\GoodInfo.cs" />
+    <Compile Include="Biz\GoodMonitorTopN.cs" />
+    <Compile Include="Biz\MonitorIndicator.cs" />
+    <Compile Include="Biz\OrderDetail.cs" />
+    <Compile Include="Biz\OrderInfo.cs" />
+    <Compile Include="Biz\ShipInfo.cs" />
+    <Compile Include="Biz\SynchronizationConfig.cs" />
+    <Compile Include="Biz\WayBillInfo.cs" />
+    <Compile Include="Biz\WayBillTraceInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemEntity\SysExceptionLog.cs" />
+    <Compile Include="SystemEntity\SysLoginLog.cs" />
+    <Compile Include="SystemEntity\SysLoginToken.cs" />
+    <Compile Include="SystemEntity\SysMenu.cs" />
+    <Compile Include="SystemEntity\SysMenuPermission.cs" />
+    <Compile Include="SystemEntity\SysOperationLog.cs" />
+    <Compile Include="SystemEntity\SysRole.cs" />
+    <Compile Include="SystemEntity\SysRoleMenu.cs" />
+    <Compile Include="SystemEntity\SysRolePermission.cs" />
+    <Compile Include="SystemEntity\SysTree.cs" />
+    <Compile Include="SystemEntity\SysUser.cs" />
+    <Compile Include="SystemEntity\SysUserMenu.cs" />
+    <Compile Include="SystemEntity\SysUserPermission.cs" />
+    <Compile Include="SystemEntity\SysUserRole.cs" />
+    <Compile Include="SystemEntity\SysUserSession.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EB.ISCS.FrameworkHelp\EB.ISCS.FrameworkHelp.csproj">
+      <Project>{e63e87cc-005f-4538-828d-345a90d3c54b}</Project>
+      <Name>EB.ISCS.FrameworkHelp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

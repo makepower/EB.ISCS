@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "接口测试";
+}
+<style>
+    .red {
+        color: Red;
+    }
+
+    #url, #reqMsg, #result {
+        max-width: 1000px;
+    }
+
+    .input, .textarea {
+        width: 800px;
+    }
+
+    input {
+        max-width: none;
+    }
+
+    a {
+        cursor: pointer;
+    }
+</style>
+<link href="~/Scripts/jsonFormat.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.0.0.js"></script>
+<script src="~/Scripts/JsonFormat.js"></script>
+<script src="~/Scripts/json2.js"></script>
+<script src="~/Scripts/hmac-sha256.js"></script>
+<h2>测试请求</h2>
+<script type="text/javascript">
+    $(function () {
+        // $("#result").val(JSON.stringify(result));
+        var quoteIt = true;
+        var op = {
+            dom: '#result',
+            isCollapsible: true,
+            quoteKeys: true,
+            tabSize: 2
+        };
+        var format = function (e) {
+            var options = op;
+            window.jf = new JsonFormater(options);
+            window.jf.doFormat(e);
+        };
+
+
+
+        $("#collapse-btn").click(function () { window.jf.collapseAll(); });
+        $("#expand-btn").click(function () { window.jf.expandAll(); });
+        $("#add_").click(function () {
+            if (!quoteIt) {
+                op.quoteKeys = true;
+                quoteIt = true;
+            }
+            getData();
+        });
+        $("#over_").click(function () {
+            if (quoteIt) {
+                op.quoteKeys = false;
+                quoteIt = false;
+            }
+            getData();
+        });
+
+        $("#geshihua").click(function () {
+            inputCheck();
+        });
+        function inputCheck() {
+            var options = {
+                dom: '#inputParameter',
+                isCollapsible: false,
+                quoteKeys: false,
+                tabSize: 2
+            };
+            window.jf = new JsonFormater(options);
+            if (window.jf.doFormats($("#reqMsg").val(), "请求参数")) {
+                $("#reqMsg").val($("#inputParameter").text());
+                return true;
+            } else { $("#reqMsg").val("{}");
+                return false;
+            }
+        }
+
+        var appId = "website|93BBB59D-F39A-4744-BD75-61B5223F5BED";
+        var token = "61-11441011A37025A7445BAA59B3E8282DD68D863969489331";
+        var secretKey =
+            "20da4a805a76214ef24844d42bdb04152f07a86398b09617263c92066d9c0c5905e77b0f8699eff4b41f9c6351acace4d28136ac0273fbd9009a67cdf598e599";
+        $("#testQuery").click(function () {
+            if (inputCheck())
+                getData();
+        });
+
+        function getData() {
+            if ($("#url").val() == "") {
+                alert("请求地址不能为空");
+                return;
+            }
+            $("#result").val("处理中...");
+            var jsonData = $("#reqMsg").val();
+            $.ajax({
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', ' basic ' + appId + ';' + token);
+                },
+                url: $("#url").val(),
+                // processData:false,
+                type: "post",
+                data: jsonData,
+                dataType: "json",
+                contentType: "application/json",
+                success: function (result) {
+                    format(result);
+                },
+                error: function (a, b, c) {
+                   // $("#result").val("出错了:" + JSON.stringify(a));
+                    format(JSON.stringify(a));
+                }
+            });
+        }
+
+        $("#btn-json-viewer").click(function () {
+            var input = eval("(" + $("#result").val() + ")");
+            var options = {
+            };
+            $("#result").jsonViewer(input, options);
+        });
+
+        var h = $(document).height() - 270;
+        $("#row1").css("height", h + "px");
+        $("#result").css("height", h - 10 + "px");
+        $("#reqMsg").css("height", h - 10 + "px");
+
+    });
+    function generateAuthorizationHeaderValue(appId, token, secretKey) {
+        var timestampString = new Date().toISOString();
+        var message = appId + '&' + timestampString;
+        var hash = CryptoJS.HmacSHA256(message, CryptoJS.enc.Hex.parse(secretKey));
+        var headerValue = appId + ';' + timestampString + ';' + hash + ';' + token;
+        return headerValue;
+    }
+
+</script>
+<div class="container-fluid" style="width: 1100px !important; margin:0 auto;">
+    <div class="row" style="border-bottom:1px solid #ccc; padding:10px 0;">
+        <div class="form-inline ">
+            <label class="control-label col-sm-1">请求地址</label>
+            <label class="col-sm-10">
+                <input type="text" class="form-control input-sm" id="url" placeholder="如:/v1/XXX/XXX" style="font-size:14px; font-weight: bold;" value="@ViewBag.Id">
+            </label>
+            <button class="btn btn-default btn-sm btn-primary" id="testQuery">执行测试</button>
+        </div>
+    </div>
+    <div class="row" id="row1">
+        <div style="display:none;" id="inputParameter"></div>
+        <div class="col-lg-4">
+            请求参数：<span style="color: #f00;">有参数，为json格式字符串,无参给{}</span> <a id="geshihua">格式化</a><br />
+            <textarea id="reqMsg" class="form-control" rows="10" cols="100" style="resize: none;">{}</textarea>
+        </div>
+        <div class="col-lg-8">
+            响应参数：&nbsp;&nbsp;&nbsp;<a id="collapse-btn">折叠</a>&nbsp;&nbsp;&nbsp;<a id="expand-btn">展开</a>&nbsp;&nbsp;&nbsp;<a id="add_">加入引号</a>&nbsp;&nbsp;&nbsp;<a id="over_">去掉引号</a>
+            <div id="result" style="width: 100%; border: 1px solid #ccc; overflow: auto;"></div>
+        </div>
+    </div>
+</div>
+
