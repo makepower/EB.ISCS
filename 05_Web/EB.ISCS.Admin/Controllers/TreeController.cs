@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using EB.ISCS.Common.BaseController;
+using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
-using EB.ISCS.Common.BaseController;
-using EB.ISCS.Common.Models;
-using EB.ISCS.FrameworkEntity.SystemEntity;
 
 namespace EB.ISCS.Admin.Controllers
 {
@@ -12,8 +9,6 @@ namespace EB.ISCS.Admin.Controllers
     /// </summary>
     public class TreeController : BaseController
     {
-
-
         /// <summary>
         /// generate client tree model
         /// </summary>
@@ -32,10 +27,7 @@ namespace EB.ISCS.Admin.Controllers
 
             return result;
         }
-
-      
-
-
+ 
         private IList<TreeItemViewModel> MockData()
         {
             var model = new List<TreeItemViewModel>();

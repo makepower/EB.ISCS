@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EB.ISCS.Common.DataModel;
-using EB.ISCS.DapperServices.Base;
-using EB.ISCS.DapperServices.InterFace.Sys;
+﻿using EB.ISCS.Common.DataModel;
+using EB.ISCS.Common.Enum;
+using EB.ISCS.DapperServices.Repository;
 using EB.ISCS.DapperServices.Repository.Sys;
 using EB.ISCS.FrameworkEntity.Base;
 using EB.ISCS.FrameworkEntity.SystemEntity;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 
 namespace EB.ISCS.DapperServices.Services.Sys
 {
@@ -19,6 +17,7 @@ namespace EB.ISCS.DapperServices.Services.Sys
         private readonly UserRoleRepository _userRoleRepository;
         private readonly SysUserMenuRepository _sysUserMenuRepository;
         private readonly SysUserPermissionRepository _sysUserPermissionRepository;
+        private readonly ShipInfoRepository _shipInfoRepository;
 
         public SysUserService() : this(string.Empty)
         {
@@ -30,6 +29,7 @@ namespace EB.ISCS.DapperServices.Services.Sys
             this._sysUserPermissionRepository = new SysUserPermissionRepository(Provider, OInfo);
             this._sysUserRepository = new SysUserRepository(Provider, OInfo);
             this._userRoleRepository = new UserRoleRepository(Provider, OInfo);
+            this._shipInfoRepository = new ShipInfoRepository(Provider, OInfo);
         }
 
         #region 基本增删改查
@@ -56,7 +56,16 @@ namespace EB.ISCS.DapperServices.Services.Sys
                 try
                 {
                     var maxId = _sysUserRepository.Insert(entity, ts);
-                   
+                    _shipInfoRepository.Insert(new Maticsoft.Model.ShipInfo()
+                    {
+                        InDate = DateTime.Now,
+                        Name = $"shop-{entity.LoginName}",
+                        Code = Guid.NewGuid().ToString(),
+                        Plat = (int)ApiPlatform.Local,
+                        Status = 1,
+                        UserId = maxId,
+                        Description = "virtual-shop for statistis"
+                    }, ts);
                     ts.Commit();
                     return maxId;
                 }
@@ -79,7 +88,7 @@ namespace EB.ISCS.DapperServices.Services.Sys
                 try
                 {
                     var results = _sysUserRepository.Update(entity, ts);
-                 
+
                     ts.Commit();
                     return true;
                 }
@@ -120,7 +129,7 @@ namespace EB.ISCS.DapperServices.Services.Sys
         }
         #endregion
 
-      
+
         #region 角色用户（给角色挂用户）
 
         /// <summary>

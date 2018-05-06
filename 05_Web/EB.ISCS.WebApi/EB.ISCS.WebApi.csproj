@@ -204,7 +204,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\ApiCacheDicts.cs" />
     <Compile Include="App_Start\BaseApiController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -242,6 +241,9 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Areas\HelpPage\MultiXmlDocumentationProvider.cs" />
     <Compile Include="Controllers\Action\IController.cs" />
+    <Compile Include="Controllers\Biz\DashBoardController.cs" />
+    <Compile Include="Controllers\Biz\ShopManagerController.cs" />
+    <Compile Include="Controllers\Biz\SyncConfigController.cs" />
     <Compile Include="Controllers\Sys\CommonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Sys\AccountController.cs" />
@@ -255,6 +257,7 @@
     <Compile Include="Filters\MenuAttribute.cs" />
     <Compile Include="Filters\NoLogAttribute.cs" />
     <Compile Include="Filters\OperateLogAttribute.cs" />
+    <Compile Include="Filters\OutputCacheAttribute.cs" />
     <Compile Include="Filters\WebApiDisposeFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

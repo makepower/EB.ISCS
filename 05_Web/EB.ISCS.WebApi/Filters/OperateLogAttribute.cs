@@ -1,4 +1,9 @@
-﻿using System;
+﻿using EB.ISCS.Framework.Utilities.String;
+using EB.ISCS.FrameworkEntity.SystemEntity;
+using EB.ISCS.FrameworkHelp.Tools;
+using EB.ISCS.ToolService.LogService;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,14 +14,6 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using EB.ISCS.Framework.Utilities.String;
-using EB.ISCS.FrameworkEntity.SystemEntity;
-using EB.ISCS.FrameworkHelp.Configuration;
-using EB.ISCS.FrameworkHelp.Tools;
-using EB.ISCS.ToolService.LogService;
-using WebGrease;
 
 namespace EB.ISCS.WebApi.Filters
 {

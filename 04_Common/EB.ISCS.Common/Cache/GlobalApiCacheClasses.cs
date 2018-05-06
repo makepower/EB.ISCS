@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Caching;
 
 namespace EB.ISCS.Common.Cache
@@ -8,108 +9,75 @@ namespace EB.ISCS.Common.Cache
     /// <summary>
     /// 全局缓存词典
     /// </summary>
-    public class GlobalApiCacheClasses
+    public class MemoryCacheDefault
     {
-        private static MemoryCache cache = MemoryCache.Default;
-        /// <summary>
-        /// 得到缓存词典
-        /// </summary>
-        /// <typeparam name="T">词典存储的类型</typeparam>
-        /// <param name="action">词典没有词时，取值的函数定义</param>
-        /// <returns></returns>
-        public static List<T> GetCacheList<T>(Func<List<T>> action ) where T :class
+        private static readonly MemoryCache _cache = MemoryCache.Default;
+
+        public void RemoveStartsWith(string key)
         {
-            if (cache.Contains(typeof(T).Name))
+            lock (_cache)
             {
-                return cache.Get(typeof(T).Name) as List<T>;
-            }
-            else
-            {
-                CacheItemPolicy policy = new CacheItemPolicy();
-                policy.Priority =CacheItemPriority.NotRemovable;
-                var list = action();
-                cache.Set(typeof(T).Name, list,policy);
-                return list;
+                _cache.Remove(key);
             }
         }
 
-        /// <summary>
-        /// 在缓存中缓存一个对象
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="key"></param>
-        /// <param name="action"></param>
-        /// <param name="absoluteExpiration"></param>
-        /// <returns></returns>
-        public static T GetCacheData<T>(string key,Func<string, T> action, DateTime absoluteExpiration) where T :class
+        public T Get<T>(string key) where T : class
         {
-            if (string.IsNullOrEmpty(key))
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
-            if (cache.Contains(key))
-            {
-                return cache.Get(key) as T;
-            }
-            else
-            {
-                CacheItemPolicy policy = new CacheItemPolicy();
-                policy.Priority = CacheItemPriority.NotRemovable;
-                policy.AbsoluteExpiration = absoluteExpiration;
-                var entity = action(key);
-                cache.Set(key, entity, policy);
-                return entity;
-            }
+            var o = _cache.Get(key) as T;
+            return o;
         }
-        public static T GetCacheData<T>(string key,Func<string, Tuple<T,DateTime>> action) where T :class
+
+
+
+        [Obsolete("Use Get<T> instead")]
+        public object Get(string key)
         {
-            if (string.IsNullOrEmpty(key))
+            return _cache.Get(key);
+        }
+
+
+
+
+
+        public void Remove(string key)
+        {
+            lock (_cache)
             {
-                throw new ArgumentNullException(nameof(key));
-            }
-            if (cache.Contains(key))
-            {
-                return cache.Get(key) as T;
-            }
-            else
-            {
-                CacheItemPolicy policy = new CacheItemPolicy();
-                policy.Priority = CacheItemPriority.NotRemovable;
-                var entity = action(key);
-                if (entity != null)
-                {
-                    policy.AbsoluteExpiration = entity.Item2;
-                    cache.Set(key, entity.Item1, policy);
-                }
-                return entity?.Item1;
+                _cache.Remove(key);
             }
         }
 
-        /// <summary>
-        /// 移除所有缓存数据
-        /// </summary>
-        public static void ClearAll()
+        public bool Contains(string key)
         {
-            cache.Dispose();
+            return _cache.Contains(key);
         }
 
-        /// <summary>
-        /// 移除指定类型的缓存
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        public static void Remove<T>()
+        public void Add(string key, object o, DateTimeOffset expiration, string dependsOnKey = null)
         {
-            cache.Remove(typeof(T).Name);
+            var cachePolicy = new CacheItemPolicy
+            {
+                AbsoluteExpiration = expiration
+            };
 
+            if (!string.IsNullOrWhiteSpace(dependsOnKey))
+            {
+                cachePolicy.ChangeMonitors.Add(
+                    _cache.CreateCacheEntryChangeMonitor(new[] { dependsOnKey })
+                );
+            }
+            lock (_cache)
+            {
+                _cache.Add(key, o, cachePolicy);
+            }
         }
 
-        /// <summary>
-        /// 移除指定的名称词典值
-        /// </summary>
-        /// <param name="key"></param>
-        public static void Remove(string key)
+
+        public IEnumerable<string> AllKeys
         {
-            cache.Remove(key);
+            get
+            {
+                return _cache.Select(x => x.Key);
+            }
         }
     }
 }

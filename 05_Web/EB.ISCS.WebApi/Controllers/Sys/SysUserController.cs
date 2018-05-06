@@ -184,7 +184,6 @@ namespace EB.ISCS.WebApi.Controllers.Sys
         {
             // 更新权限 同步更新缓存
             var token = Request.Token();
-            ApiCacheDicts.RemoveUserInfoByToken(token);
 
             var userService = GetService<SysUserService>();
             var result = userService.SaveUserPermission(userMenuPermissionVm);

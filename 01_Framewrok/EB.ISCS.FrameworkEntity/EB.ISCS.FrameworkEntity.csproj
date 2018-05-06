@@ -51,6 +51,7 @@
     <Compile Include="Base\SearchCondition.cs" />
     <Compile Include="Base\PagingInfo.cs" />
     <Compile Include="Biz\ComplaintInfo.cs" />
+    <Compile Include="Biz\DataSyncRecord.cs" />
     <Compile Include="Biz\GoodInfo.cs" />
     <Compile Include="Biz\GoodMonitorTopN.cs" />
     <Compile Include="Biz\MonitorIndicator.cs" />

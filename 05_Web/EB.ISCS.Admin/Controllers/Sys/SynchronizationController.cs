@@ -1,0 +1,109 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using Newtonsoft.Json;
+using EB.ISCS.Common.BaseController;
+using EB.ISCS.Common.DataModel;
+using EB.ISCS.Common.Models;
+using EB.ISCS.FrameworkEntity.SystemEntity;
+using Maticsoft.Model;
+
+namespace EB.ISCS.Admin.Controllers.Sys
+{
+    public class SynchronizationController : BaseController
+    {
+        // GET: MenuPermission
+        public ActionResult Index(int id)
+        {
+            ViewBag.MenuId = id;
+            return View();
+        }
+
+        #region 功能操作增删改查
+
+        /// <summary>
+        /// 获取功能操作信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public JsonResult GetConfig()
+        {
+            var Id = CurrentUser.UserId;
+            var result = new BaseResult<SynchronizationConfig>();
+            result.Data = new SynchronizationConfig();
+            if (Id > 0)
+            {
+                result = ServiceHelper.CallService<SynchronizationConfig>(string.Format(ServiceConst.BizApi.SyncConfigGetByUserId,
+                    Id.ToString()), null, this.CurrentUser.Token);
+            }
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// 保存功能操作信息
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public JsonResult SaveConfig(SynchronizationConfig model)
+        {
+            var result = new BaseResult() { Code = (int)ResultCode.Faild };
+            if (model != null)
+            {
+                result = ServiceHelper.CallService(ServiceConst.BizApi.SyncConfigSave,
+                         JsonConvert.SerializeObject(model),
+                         this.CurrentUser.Token);
+            }
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// 获取结构数
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public ContentResult GetSyncShopTree()
+        {
+            var result = new BaseResult() { Code = (int)ResultCode.Faild };
+            var cfg = ServiceHelper.CallService<SynchronizationConfig>(string.Format(ServiceConst.BizApi.SyncConfigGetByUserId,
+                 CurrentUser.UserId.ToString()), null, this.CurrentUser.Token);
+            var shops = ServiceHelper.CallService<List<ShipInfo>>(string.Format(ServiceConst.BizApi.SyncConfigGetByUserId,
+               CurrentUser.UserId.ToString()), null, this.CurrentUser.Token);
+
+            var treeList = new List<MenuTree>();
+
+            if (shops.Data != null && shops.Data.Any())
+            {
+                var gp = from p in shops.Data
+                         group p by p.Plat into g
+                         select g;
+
+                foreach (var item in gp)
+                {
+                    var childList = new List<MenuTree>();
+                    item?.ToList().ForEach(x =>
+                    {
+                        childList.Add(new MenuTree()
+                        {
+                            id = x.Id,
+                            @checked = cfg.Data.StoreIds.Contains(x.Id.ToString()),
+                            text = x.Name,
+                            isFreeze = 0,
+                            attributes = x.Plat
+                        });
+                    });
+                    treeList.Add(new MenuTree()
+                    {
+                        id = -item.Key,
+                        text = item.First().PlatName,
+                        children = childList,
+                        @checked = childList.All(x => x.@checked)
+                    });
+                }
+            }
+            return Content(JsonConvert.SerializeObject(treeList), "text/json");
+        }
+
+
+        #endregion
+    }
+}

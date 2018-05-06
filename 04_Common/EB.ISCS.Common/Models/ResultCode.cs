@@ -56,11 +56,6 @@ namespace EB.ISCS.Common.Models
         /// </summary>
         [Description("密码不能为空")]
         PasswordIsNull = 10007,
-        /// <summary>
-        /// 公司编号不能为空
-        /// </summary>
-        [Description("公司编号不能为空")]
-        CompanyCodeIsNull = 10008,
 
         /// <summary>
         /// 无功能操作权限
@@ -87,50 +82,11 @@ namespace EB.ISCS.Common.Models
         InvalidVCodeExpire = 10012,
 
         /// <summary>
-        /// 手机号码已被注册
+        /// 暂未获取到数据
         /// </summary>
-        [Description("手机号码已被注册")]
-        InvalidPhoneNumber = 10013,
+        [Description("暂未获取到数据")]
+        MissingData = 10013,
 
-        /// <summary>
-        /// 流程更新失败
-        /// </summary>
-        [Description("流程更新失败")]
-        FailedFlowUpdate = 10015,
-
-        /// <summary>
-        /// 公司不存在或未激活
-        /// </summary>
-        [Description("公司不存在或未激活")]
-        CompanyCodeIsInvalid = 10016,
-        /// <summary>
-        /// 组不存在或非法
-        /// </summary>
-        [Description("组不存在或非法，无法加入")]
-        RejectAddGroup = 11406,
-        /// <summary>
-        /// 不能删除，有任务未完成
-        /// </summary>
-        [Description("不能删除组，有任务未完成")]
-        CantDeleteGroup = 11107,
-
-        /// <summary>
-        /// 不能重复加入或申请新建组，已经加入或担任其他组组长
-        /// </summary>
-        [Description("不能同时加入或者新建多个组")]
-        RejectJoinOrNewGroup = 11108,
-
-        /// <summary>
-        /// 不能退出项目，已经加入或担任其他组组长
-        /// </summary>
-        [Description("不能退出项目，已经加入或担任其他组组长")]
-        RejectExitProject = 11109,
-
-        /// <summary>
-        /// 不能同时加入多个项目
-        /// </summary>
-        [Description("不能同时加入多个项目")]
-        RejectJoinProject = 11110,
 
         /// <summary>
         /// 参数传递有误，请检查调用参数

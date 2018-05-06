@@ -23,8 +23,11 @@ namespace EB.ISCS.WebApi
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                defaults: new { controller = "Help", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "EB.ISCS.WebApi.Areas.HelpPage.Controllers" }
+
+            ).DataTokens.Add("Area", "HelpPage");
+
             routes.MapRoute(
                 name: "DefaultNameSpace",
                 url: "{namespace}/{controller}/{action}/{id}",

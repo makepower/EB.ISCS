@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <parameter Name="ID" FieldName="Id" Width="0"  Desc="在用" />
+  <parameter Name="平台Id" FieldName="Plat"  Width="0"  Desc="在用" />
+  <parameter Name="平台" FieldName="PlatName"  Width="160"  Desc="在用" />
+  <parameter Name="名称" FieldName="Name"  Width="160"  Desc="在用" />
+  <parameter Name="编号" FieldName="Code"  Width="150"  Desc="在用" />
+  <parameter Name="注册时间" FieldName="InDate"  Width="140"  Desc="在用" />
+  <parameter Name="发货地址" FieldName="DeliveryAddress"  Width="260"  Desc="在用" IsSort="false"/>
+  <parameter Name="联系方式" FieldName="Contract"  Width="200"  Desc="在用" IsSort="false"/>
+</config>

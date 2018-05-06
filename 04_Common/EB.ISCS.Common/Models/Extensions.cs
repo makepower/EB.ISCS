@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
+﻿using EB.ISCS.FrameworkEntity.Base;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.Net.Http;
-using EB.ISCS.FrameworkEntity.Base;
+using System.Security.Claims;
+using System.Web;
 
 namespace EB.ISCS.Common.Models
 {

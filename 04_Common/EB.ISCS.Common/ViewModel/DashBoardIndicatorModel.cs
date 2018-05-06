@@ -1,21 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EB.ISCS.Common.ViewModel
+﻿namespace EB.ISCS.Common.ViewModel
 {
     public class DashBoardIndicatorModel
     {
         #region 今日实时  运营指标
 
+        /// <summary>
+        /// 
+        /// </summary>
         public const string PayOrderNum = "PayOrderNum";
+        /// <summary>
+        /// 
+        /// </summary>
         public const string PayMoney = "PayOrderNum";
+        /// <summary>
+        /// 
+        /// </summary>
         public const string PayGoodNum = "PayGoodNum";
+        /// <summary>
+        /// 
+        /// </summary>
         public const string VisitorNum = "VisitorNum";
+        /// <summary>
+        /// 
+        /// </summary>
         public const string SalesAmount = "SalesAmount";
+        /// <summary>
+        /// 
+        /// </summary>
         public const string PV = "PV";
+        /// <summary>
+        /// 
+        /// </summary>
         public const string UV = "UV";
         public static readonly string[] DailyMonitor = new string[] { PayOrderNum, PayMoney, PayGoodNum, VisitorNum };
 

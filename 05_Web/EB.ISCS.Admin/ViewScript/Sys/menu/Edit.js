@@ -87,7 +87,7 @@
         //保存数据
         function save(postData) {
             service.saveMenuInfo(postData).success(function (result) {
-                if (result.Code = 10000 && result.Data) {
+                if (result.Code === 10000 && result.Data) {
                     layer.msg(result.Message, { icon: 1 });
                     setTimeout(function () {
                         parent.layer.close(index);
@@ -104,7 +104,7 @@
         function getQueryString(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
             var r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]);
+            if (r !== null) return unescape(r[2]);
             return null;
         }
 

@@ -1,18 +1,17 @@
-﻿using System;
-using System.Web;
-using System.Web.Mvc;
-using EB.ISCS.Common.BaseController;
-using EB.ISCS.Common.DataModel;
+﻿using EB.ISCS.Common.DataModel;
 using EB.ISCS.Common.Models;
 using EB.ISCS.Common.ViewModel;
 using EB.ISCS.DapperServices.Services.Sys;
+using EB.ISCS.Framework.Utilities.String;
 using EB.ISCS.FrameworkEntity.SystemEntity;
 using EB.ISCS.FrameworkHelp.Tools;
-using EB.ISCS.ToolService.LogService;
-using EB.ISCS.Framework.Utilities.String;
 using EB.ISCS.FrameworkLog.LogModel;
-using System.Security.Claims;
+using EB.ISCS.ToolService.LogService;
+using System;
 using System.Collections.Generic;
+using System.Security.Claims;
+using System.Web;
+using System.Web.Mvc;
 
 namespace EB.ISCS.WebApi.Controllers.Sys
 {
@@ -165,7 +164,7 @@ namespace EB.ISCS.WebApi.Controllers.Sys
                 idbTrans = loginTokenServices.BeginTrans();
                 loginTokenServices.DisableToken(token, idbTrans);
                 loginLogService.LoginOutByToken(token, idbTrans);
-                ApiCacheDicts.RemoveUserInfoByToken(token);
+              
                 idbTrans?.Commit();
                 return ResponseResult<bool>.GenSuccessResponse(true);
             }

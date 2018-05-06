@@ -100,7 +100,7 @@ namespace EB.ISCS.WebApi.Filters
                 else
                 {
                     if (!string.IsNullOrEmpty(token))
-                        isAuthorized = IsAuthorized(token, controllerName, actionName);
+                        isAuthorized = true; // IsAuthorized(token, controllerName, actionName);
                     else
                         isAuthorized = false;
                 }
@@ -120,55 +120,6 @@ namespace EB.ISCS.WebApi.Filters
             }
 
             base.OnActionExecuting(actionContext);
-        }
-
-        /// <summary>
-        /// 根据token信息进行令牌认证
-        /// 通过令牌获取用户菜单权限进行二次校验(缺省前端应用进行一次权限校验)
-        /// </summary>
-        /// <param name="token"></param>
-        /// <param name="controllerName"></param>
-        /// <param name="actionName"></param>
-        /// <returns></returns>
-        protected bool IsAuthorized(string token, string controllerName, string actionName)
-        {
-
-
-            if (_permissions == null)
-            {
-                // never null
-                throw new ArgumentNullException("permissionIds");
-            }
-            var data = ApiCacheDicts.GetLoginToken(token, t =>
-            {
-                SysLoginTokenService sysUserService = new SysLoginTokenService();
-                return sysUserService.GetByToken(token);
-            });
-            if (data == null)
-            {
-                return false;
-            }
-            else if (data.ExpriedTime < DateTime.Now)
-            {
-                return false;
-            }
-            else
-            {
-                controllerName = controllerName.Replace("Controller", string.Empty).Trim();
-                //action权限认证
-                var menuPermissions = ApiCacheDicts.GetUserMenuPermissionByToken(token, t =>
-                {
-                    MenuPermissionService menuPermissionService = new MenuPermissionService();
-                    return menuPermissionService.GetUserPermissionsByUserId(data.UserId ?? 0);
-                });
-
-                return menuPermissions.Any(m =>
-                {
-                    if (string.IsNullOrEmpty(m.ControllerKey) || string.IsNullOrEmpty(m.ActionKey))
-                        return false;
-                    return m.ControllerKey.Equals(controllerName) && m.ActionKey.Equals(actionName);
-                });
-            }
         }
     }
 }

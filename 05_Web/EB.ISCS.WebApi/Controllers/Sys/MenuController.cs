@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using System.Web.Http.Description;
-using EB.ISCS.Common.BaseController;
+﻿using EB.ISCS.Common.BaseController;
 using EB.ISCS.Common.DataModel;
 using EB.ISCS.Common.Models;
 using EB.ISCS.DapperServices.Services.Sys;
 using EB.ISCS.FrameworkEntity.SystemEntity;
 using EB.ISCS.FrameworkHelp.BizException;
 using EB.ISCS.WebApi.Filters;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace EB.ISCS.WebApi.Controllers.Sys
 {
@@ -28,10 +26,6 @@ namespace EB.ISCS.WebApi.Controllers.Sys
         /// </summary>
         public MenuController()
         {
-            sysMenuList.Add(new SysMenu() {  });
-            sysMenuList.Add(new SysMenu() { });
-            sysMenuList.Add(new SysMenu() { });
-            sysMenuList.Add(new SysMenu() { });
         }
 
         /// <summary>

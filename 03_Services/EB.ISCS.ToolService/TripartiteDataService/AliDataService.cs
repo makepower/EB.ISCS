@@ -11,7 +11,7 @@ namespace EB.ISCS.ToolService.TripartiteDataService
 
     public class AliDataService : ExternalServices, IDataService
     {
-        public ApiPlatform Platform => ApiPlatform.Ali;
+        public ApiPlatform Platform => ApiPlatform.Ali_Tb;
 
         public string ServiceName => throw new NotImplementedException();
 

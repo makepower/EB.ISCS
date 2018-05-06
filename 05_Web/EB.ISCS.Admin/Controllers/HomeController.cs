@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using EB.ISCS.Common.BaseController;
 using System.Web.Mvc;
-using EB.ISCS.Common.BaseController;
 
 namespace EB.ISCS.Admin.Controllers
 {
@@ -32,10 +28,7 @@ namespace EB.ISCS.Admin.Controllers
         {
             return View();
         }
-        public ActionResult DashBoard2()
-        {
-            return View();
-        }
+ 
         public ActionResult LeftNavigation()
         {
             ViewBag.Token = this.CurrentUser.Token;

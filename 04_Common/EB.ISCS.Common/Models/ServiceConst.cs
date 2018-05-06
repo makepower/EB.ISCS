@@ -15,19 +15,23 @@ namespace EB.ISCS.Common.Models
 
             #endregion
 
+            #region 业务服务
+            BizApi = new BizApi();
+            #endregion
         }
 
 
         #region 系统服务
         public static Account Account { get; }
-      
+
         public static CommonService CommonService { get; }
         public static SysUserApi SysUserApi { get; }
         public static MenuApi MenuApi { get; }
 
         #endregion
-
-
+        #region 业务服务
+        public static BizApi BizApi { get; }
+        #endregion
     }
 
     #region 系统服务
@@ -181,12 +185,30 @@ namespace EB.ISCS.Common.Models
         public string GetMenuPermissionListPage = "Sys/MenuPermission/GetMenuPermissionList";
 
     }
-    
+
 
     #endregion
 
-    #region 工具服务
+    #region 业务服务
+    public class BizApi
+    {
+        public string DashBoardMonitorIndicator = "Biz/DashBoard/GetMonitorIndicator/{0}";
+        public string DashBoardMonitorTopN = "Biz/DashBoard/GetMonitorStstisForThirtyDays/{0}";
+        public string DashBoardTodayRealMonitorIndicator = "Biz/DashBoard/GetTodayRealMonitorIndicator/{0}";
 
+        public string ShopInsert = "Biz/ShopManager/Insert";
+        public string ShopUpdate = "Biz/ShopManager/Update";
+        public string ShopDel = "Biz/ShopManager/Delete";
+
+        public string ShopGetModelById = "Biz/ShopManager/GetModelById";
+        public string ShopGetPage = "Biz/ShopManager/GetPage";
+        public string ShopGetAllByUser = "Biz/ShopManager/GetAll/{0}";
+
+
+
+        public string SyncConfigSave = "Biz/SyncConfig/Save";
+        public string SyncConfigGetByUserId = "Biz/SyncConfig/GetByUserId/{0}";
+    }
     #endregion
 
-  }
+}

@@ -34,7 +34,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Db", "Db", "{304C4260-BECD-43D9-A710-DD2BAF1BC8EB}"
 	ProjectSection(SolutionItems) = preProject
 		06_Design\Db\ElectronicBusiness.pdm = 06_Design\Db\ElectronicBusiness.pdm
-		tables.txt = tables.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{64230CCD-333F-470D-B03F-0427FB10DA9A}"

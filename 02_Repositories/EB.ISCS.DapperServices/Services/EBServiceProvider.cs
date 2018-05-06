@@ -1,4 +1,6 @@
-﻿using EB.ISCS.DapperServices.InterFace.Sys;
+﻿using EB.ISCS.DapperServices.InterFace;
+using EB.ISCS.DapperServices.InterFace.Sys;
+using EB.ISCS.DapperServices.Repository;
 using EB.ISCS.DapperServices.Repository.Sys;
 using EB.ISCS.DapperServices.Services.Sys;
 using System;
@@ -29,7 +31,17 @@ namespace EB.ISCS.DapperServices.Services
             #endregion
 
             #region 业务级数据库服务
-
+            RegisterService<IMonitorIndicatorService, MonitorIndicatorService>();
+            RegisterService<IComplaintInfoService, ComplaintInfoService>();
+            RegisterService<IGoodInfoService, GoodInfoService>();
+            RegisterService<IGoodMonitorTopNService, GoodMonitorTopNService>();
+            RegisterService<IOrderDetailService, OrderDetailService>();
+            RegisterService<IOrderInfoService, OrderInfoService>();
+            RegisterService<IShipInfoService, ShipInfoService>();
+            RegisterService<ISynchronizationConfigService, SynchronizationConfigService>();
+            RegisterService<IWayBillInfoService, WayBillInfoService>();
+            RegisterService<IWayBillTraceInfoService, WayBillTraceInfoService>();
+            RegisterService<IDataSyncRecordService, DataSyncRecordService>();
 
             #endregion
         }
