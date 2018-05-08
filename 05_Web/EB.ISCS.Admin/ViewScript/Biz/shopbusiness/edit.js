@@ -1,5 +1,5 @@
 ﻿/*
-人员新增修改
+新增修改
 */
 (function () {
     var app = angular.module('ShopApp', ['w5c.validator', 'CommonApp']);
@@ -84,7 +84,7 @@
                 _scope.UserIsManage = result.UserIsManage;
             });
 
-
+            comControl.datepicker('txt_InDate');
             _scope.plats = [{ id: "0", name: "淘宝" },
                 { id: "1", name: "天猫" },{ id: "2", name: "京东" }];
 

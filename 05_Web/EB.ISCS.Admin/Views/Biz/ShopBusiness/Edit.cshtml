@@ -22,35 +22,29 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">平台</label>
+                            <label class="col-sm-2 control-label">所属平台</label>
                             <div class="col-md-4">
-                                <label class="radio-inline">
-                                    <select class="form-control" ng-model="Shop.Plat" ng-options="icon.id as icon.name for icon in plats" name="Plat"></select>
-                                </label>
+                                <select class="form-control" ng-model="Shop.Plat" ng-options="p.name as p.name for p in plats" name="Plat" required></select>
                             </div>
                             <label class="col-sm-2 control-label">注册时间</label>
                             <div class="col-md-4">
-                                <label class="radio-inline">
-                                    <input name="txt_InDate" type="text" ng-model="Shop.InDate" checked>
-                                </label>
+                                <input class="form-control" id="txt_InDate" name="txt_InDate" type="text" ng-model="Shop.InDate" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">App令牌</label>
                             <div class="col-md-4">
-                                <input class="form-control" type="text" ng-model="Shop.AppKey" name="AppKey" maxlength="20" />
+                                <input class="form-control" type="text" ng-model="Shop.AppKey" name="AppKey" required />
                             </div>
                             <label class="col-sm-2 control-label">App密钥</label>
                             <div class="col-md-4">
-                                <input class="form-control" type="text" ng-model="Shop.AppSecret" name="AppSecret" maxlength="100" />
+                                <input class="form-control" type="text" ng-model="Shop.AppSecret" name="AppSecret" required />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">发货地址 </label>
                             <div class="col-md-4">
-                                <label class="radio-inline">
-                                    <input name="ActionType" class="form-control" type="text" ng-model="Shop.DeliveryAddress" maxlength="500">
-                                </label>
+                                <input name="ActionType" class="form-control" type="text" ng-model="Shop.DeliveryAddress" maxlength="500">
                             </div>
                         </div>
                         <div class="form-group">

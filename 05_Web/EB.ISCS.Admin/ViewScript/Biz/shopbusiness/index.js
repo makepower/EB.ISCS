@@ -38,7 +38,6 @@
             where = " ";
             _this.InitData();
             _this.AddEventListener();
-            ZhiDun.setButtonPermission($("#MenuId").val());
         },
 
         InitData: function () {
@@ -92,11 +91,11 @@
                     _this.showEdit(row.Id, '编辑店铺信息');
                 }
             });
-          
+
             //点击删除
             $("#btn_del").click(function () {
                 var row = gridView.tgvGetSelectRow();
-                if (row.Id) {
+                if (row && row.Id) {
                     layer.confirm('确认要删除选择的数据吗？',
                         {
                             time: 20000,
@@ -115,9 +114,12 @@
                         function () {
                         });
                 }
+                else {
+                    layer.msg("请选择要删除的数据");
+                }
             });
 
- 
+
             //点击刷新
             $("#btn_refresh").click(function () {
                 gridView.gvRefreshGrid(where);
@@ -132,7 +134,7 @@
             layer.open({
                 type: 2,
                 title: title,
-                area: ['1000px', id > 0 ? '550px' : '600px'],
+                area: ['1000px', '460px'],
                 fix: true, //不固定
                 scrollbar: false,
                 maxmin: true,

@@ -20,6 +20,7 @@ namespace EB.ISCS.Admin
             );
 
 
+
             scripts.Include(
                 "~/Scripts/jqGrid/i18n/grid.locale-cn.js",
                 "~/Scripts/jqGrid/plugins/jquery.contextmenu.js",
@@ -28,7 +29,7 @@ namespace EB.ISCS.Admin
                 "~/Scripts/jquery-easyui-1.4.5/jquery.easyui.min.js",
                 "~/Scripts/easyui/jquery.easyui.min.js",
                 "~/Scripts/bootstrap/js/bootstrap.min.js",
-                "~/ViewScript/ZhiDun.framework.js",
+                "~/ViewScript/framework.js",
                 "~/ViewScript/common/dataGrid.js"
   
             );

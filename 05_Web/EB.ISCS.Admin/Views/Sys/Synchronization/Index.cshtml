@@ -12,32 +12,33 @@
     <div class="container">
         <form class="form-horizontal" role="form" id="search_form" w5c-form-validate="" novalidate name="validateForm" ng-app="CfgApp" ng-controller="CfgController" ng-init="onload('@ViewBag.Id')">
             <div class="modal-body row">
+                <p>店铺结构树</p>
                 <div class="col-md-4">
-                    <div class="easyui-panel" style="padding:5px; height:500px;">
+                    <div class="easyui-panel" style=" height:500px; padding-left:0px">
                         <ul id="shop-tree"></ul>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="form-group">
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">同步周期</label>
+                            <label class="col-sm-2 control-label">同步周期：</label>
                             <div class="col-md-4">
-                                <input class="form-control" type="text" ng-model="cfg.SyncPeriod" name="SyncPeriod" maxlength="20" required />
+                                <input class="form-control" type="number" ng-model="cfg.SyncPeriod" name="SyncPeriod" maxlength="20" required />
                             </div>
-                            <label class="col-sm-2 control-label">同步单位</label>
+                            <label class="col-sm-2 control-label">同步单位：</label>
                             <div class="col-md-4">
-                                <select class="form-control" ng-model="cfg.SyncUnit" ng-options="icon.id as icon.name for icon in icons" name="SyncUnit" ng-selected="icon.id=='fa fa-th'"></select>
+                                <select class="form-control" ng-model="cfg.SyncUnit" ng-options="icon.id as icon.name for icon in icons" name="SyncUnit" ng-selected="icon.id=='0'"></select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">最后一次修改时间</label>
+                            <label class="col-sm-2 control-label">修改时间：</label>
                             <div class="col-md-4">
-                                <p class="form-control-static" ng-model="cfg.EditDate"></p>
+                                <p class="form-control-static" ng-model="cfg.EditDate">--</p>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">说明</label>
+                            <label class="col-sm-2 control-label">说明：</label>
                             <div class="col-sm-10">
                                 <p class="form-control-static">调整完毕在下一个同步时间点生效</p>
                             </div>

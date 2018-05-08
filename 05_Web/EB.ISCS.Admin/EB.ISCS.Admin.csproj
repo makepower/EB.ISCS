@@ -200,6 +200,7 @@
     <Compile Include="Content\ueditor\net\App_Code\UploadHandler.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\Biz\ComplaintController.cs" />
     <Compile Include="Controllers\Biz\ShopBusinessController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2399,7 +2400,7 @@
     <Content Include="Scripts\sparkline\jquery.sparkline.js" />
     <Content Include="Scripts\sparkline\jquery.sparkline.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="ViewScript\ZhiDun.framework.js" />
+    <Content Include="ViewScript\framework.js" />
     <Content Include="ViewScript\Sys\menu\Edit.js" />
     <Content Include="ViewScript\Sys\menu\Index.js" />
     <Content Include="Web.config" />
@@ -2451,6 +2452,7 @@
     <Content Include="Views\Home\DashBoard.cshtml" />
     <Content Include="Views\Biz\ShopBusiness\Index.cshtml" />
     <Content Include="Views\Biz\ShopBusiness\Edit.cshtml" />
+    <Content Include="Views\Biz\Complaint\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

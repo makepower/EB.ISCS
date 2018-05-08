@@ -13,11 +13,8 @@ namespace EB.ISCS.Admin
                 "~/Views/Account/{0}.cshtml",
                 "~/Views/Common/{0}.cshtml",
                 "~/Views/Sys/{1}/{0}.cshtml",//系统管理
-                "~/Views/Forms/{1}/{0}.cshtml",//表单管理
-                "~/Views/Flow/{1}/{0}.cshtml",//表单管理
-                "~/Views/Project/{1}/{0}.cshtml",//表单管理
-                "~/Views/BuiltIn/{1}/{0}.cshtml",//系统内置流程
-                "~/Views/Task/{1}/{0}.cshtml",//任务页面
+                "~/Views/Biz/{1}/{0}.cshtml"//业务管理
+
             };
         }
         public override ViewEngineResult FindView(ControllerContext controllerContext, string viewName, string masterName, bool useCache)

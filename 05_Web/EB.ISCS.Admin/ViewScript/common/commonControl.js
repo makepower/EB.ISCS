@@ -110,8 +110,8 @@ var comControl = (function (jq) {
                 var t = jq("#" + e);
                 t.combotree({
                     url: url,
-                    valueField: "Id",
-                    textField: "DetailName",
+                    valueField: "id",
+                    textField: "text",
                     required: true,
                     onClick: function (node) {
                         if (node.children) {
@@ -184,91 +184,7 @@ var comControl = (function (jq) {
                 return "";
             }
         },
-        //部门控件
-        departTree: function (elmId, value) {
-            var $elm = $("#" + elmId + "");
-            $("#" + elmId + "").combotree({
-                url: "/Department/GetDepartmentTree",
-                valueField: "id",
-                textField: "text",
-                required: true,
-                editable: false,
-                onClick: function (node) {
-                },
-                onLoadSuccess: function (node, data) {
-                    $elm.combotree('setValue', value);
-                },
-                onSelect: function (row) {
-                    if (row != null) {
-                        $("#employee_EmpPostion").combotree({
-                            url: "/Post/GetPostListByDepartmentId/" + row.id + "?&isGrid=" + false,
-                            onLoadSuccess: function (node, data) {
-                                $element.combotree('setValue', 0);
-                            }
-                        });
-                    }
-                }
-            });
-        },
-
-        //员工职务控件
-        postTree: function (elementId, value, departmentId) {
-            var $element = $('#' + elementId + '');
-            $('#' + elementId).combotree({
-                url: "/Post/GetPostListByDepartmentId/" + departmentId + "?&isGrid=" + false,
-                valueField: 'id',
-                textField: 'text',
-                required: true,
-                editable: false,
-                onClick: function (node) {
-                },
-                onLoadSuccess: function (node, data) {
-                    $element.combotree('setValue', value);
-                }
-            });
-        },
-
-        postWithDepartmentTree: function (elementId, value) {
-            var $element = $('#' + elementId + '');
-            $('#' + elementId).combotree({
-                url: "/Post/GetPostWithDepartmentTreeList",
-                valueField: 'id',
-                textField: 'text',
-                required: true,
-                editable: false,
-                checkbox: true,
-                onSelect: function (node) {
-                    if (node.isDepartment != 0) {
-                        layer.msg("请选择岗位！", { icon: 5 });
-                        $element.combotree('setValue', 0);
-                    }
-                },
-                onLoadSuccess: function (node, data) {
-                    $element.combotree('setValue', value);
-                },
-                onShowPanel: function () {
-                    var tree = $('#' + elementId).combotree("tree");
-                    var roots = tree.tree('getRoots');
-                    var nodes = [];
-                    roots.forEach(function (v) {
-                        nodes.push(v);
-                    });
-
-                    for (var j = 0, len1 = roots.length; j < len1; j++) {
-                        tree.tree('getChildren', roots[j].target).forEach(function (v) {
-                            nodes.push(v);
-                        });
-                    }
-
-                    for (var i = 0, len2 = nodes.length; i < len2; i++) {
-                        if (nodes[i].isDepartment !== 0) {
-                            $("#" + nodes[i].domId + " .tree-checkbox").remove();
-                        }
-                    }
-                }
-            });
-        },
-
+     
         //获取树形Model值
         getTreeModel: function (elmId) {
             var selectNode = $("#" + elmId).combotree("tree").tree("getSelected"); // 得到树对象  
@@ -277,33 +193,8 @@ var comControl = (function (jq) {
             }
             return "";
         },
-        //数据字典函数库
-        dirGet: {
-            //返回字典详情列表
-            DicTree: function (e, v, d) {
-                comControl.comboxTree.returnTree(e, v, "/Dictionary/GetDetailListBykey/" + d, null);
-            },
-            //返回字典大类下所有子类及字典详情
-            DicAllTree: function (e, v, d, scb) {
-                comControl.comboxTree.onlyLeafTree(e, v, "/Dictionary/GetDicWithDetail/" + d, scb);
-            }
-        },
-        //任务类型控制器
-        taskGet: {
-            /**
-             * 获取任务类型树
-             * @param {Html Element Control id} e 
-             * @param {Default Value} v 
-             * @param {Params} d 
-             * @returns {} 
-             */
-            type: function (e, v, d) {
-                comControl.comboxTree.returnTree(e, v, "/Common/GetEnumKeyDescripion?name=" + d, null);
-            },
-            flowTaskList: function (e, v, d, scb) {
-                comControl.comboxTree.returnTree(e, v, "/MyTaskOrder/GetTaskTmpList?dicTypeId=" + d, scb);
-            }
-        },
+     
+       
         //选择程序
         selectRules: function (callback, isSingleSelect, sqlWhere) {
             var index2, body;
@@ -342,25 +233,8 @@ var comControl = (function (jq) {
                     }
                 }
             });
-        },
-        //选择员工
-        selectEmployee: function (callback, isSingleSelect, sqlWhere) {
-            var index2, body;
-            parent.layer.open({
-                type: 2,
-                title: '选择员工信息',
-                area: ['800px', '600px'],
-                fix: false, //不固定
-                maxmin: true,
-                zIndex: 20161010,
-                content: ["/Employee/Select?_t=" + Math.random() + "&isSingleSelect=" + isSingleSelect + "&sqlWhere=" + sqlWhere, 'no'],
-                end: function () {
-                    if (callback && $.isFunction(callback)) {
-                        callback();
-                    }
-                }
-            });
         }
+      
     };
 })(jQuery);
 

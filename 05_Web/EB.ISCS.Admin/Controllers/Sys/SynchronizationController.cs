@@ -69,6 +69,11 @@ namespace EB.ISCS.Admin.Controllers.Sys
             var shops = ServiceHelper.CallService<List<ShipInfo>>(string.Format(ServiceConst.BizApi.SyncConfigGetByUserId,
                CurrentUser.UserId.ToString()), null, this.CurrentUser.Token);
 
+            shops.Data = new List<ShipInfo>();
+            shops.Data.Add(new ShipInfo() { Id = 1, Plat = 0, PlatName = "淘宝", Name = "淘宝小店" });
+            shops.Data.Add(new ShipInfo() { Id = 2, Plat = 1, PlatName = "天猫", Name = "天猫小店" });
+            shops.Data.Add(new ShipInfo() { Id = 3, Plat = 2, PlatName = "京东", Name = "京东小店" });
+
             var treeList = new List<MenuTree>();
 
             if (shops.Data != null && shops.Data.Any())
@@ -85,7 +90,7 @@ namespace EB.ISCS.Admin.Controllers.Sys
                         childList.Add(new MenuTree()
                         {
                             id = x.Id,
-                            @checked = cfg.Data.StoreIds.Contains(x.Id.ToString()),
+                            @checked = cfg.Data?.StoreIds?.Contains(x.Id.ToString()) ?? false,
                             text = x.Name,
                             isFreeze = 0,
                             attributes = x.Plat
