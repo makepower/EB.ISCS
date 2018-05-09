@@ -29,13 +29,15 @@ namespace EB.ISCS.Admin.Controllers.Sys
         public JsonResult GetConfig()
         {
             var Id = CurrentUser.UserId;
-            var result = new BaseResult<SynchronizationConfig>();
-            result.Data = new SynchronizationConfig();
+            var result = new BaseResult<SynchronizationConfig>() { Code = (int)ResultCode.Success, Data = new SynchronizationConfig() { UserId = CurrentUser.UserId } };
             if (Id > 0)
             {
-                result = ServiceHelper.CallService<SynchronizationConfig>(string.Format(ServiceConst.BizApi.SyncConfigGetByUserId,
-                    Id.ToString()), null, this.CurrentUser.Token);
+                var tmp = ServiceHelper.CallService<SynchronizationConfig>(string.Format(ServiceConst.BizApi.SyncConfigGetByUserId,
+                     Id.ToString()), null, this.CurrentUser.Token);
+                if (tmp.Data != null && tmp.Code == (int)ResultCode.Success)
+                    result = tmp;
             }
+
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 

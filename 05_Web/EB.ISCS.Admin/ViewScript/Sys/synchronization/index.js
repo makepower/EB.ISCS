@@ -21,18 +21,6 @@
         $scope.onload = function (id) {
             init(id > 0 ? id : 0);
         }
-        $scope.onSave = function () {
-            var nodes = $('#shop-tree').tree('getChecked');
-            var ids = new Array();
-            for (var i = 0; i < nodes.length; i++) {
-                var node = nodes[i];
-                if (node.id > 0) {
-                    ids.push(node.id);
-                }
-            }
-            $scope.cfg.StoreIds = ids.join();
-            save($scope.cfg);
-        }
   
         //初始化
         function init(id) {
@@ -46,7 +34,7 @@
                 animate: true,
                 checkbox: true
             });
-
+          
             service.getCfg(0).success(function (result) {
                 if (result.Code = 10000 && result.Data) {
                     $scope.cfg = result.Data;
@@ -56,6 +44,21 @@
                 }
             }).error(function (error) {
                 layer.msg(result.Message, { icon: 5 });
+                });
+
+
+            //点击用户权限
+            $('#btn_save_cfg').click(function () {
+                var nodes = $('#shop-tree').tree('getChecked');
+                var ids = new Array();
+                for (var i = 0; i < nodes.length; i++) {
+                    var node = nodes[i];
+                    if (node.id > 0) {
+                        ids.push(node.id);
+                    }
+                }
+                $scope.cfg.StoreIds = ids.join();
+                save($scope.cfg);
             });
         }
 
@@ -64,9 +67,6 @@
             service.saveCfg(postData).success(function (result) {
                 if (result.Code = 10000 && result.Data) {
                     layer.msg(result.Message, { icon: 1 });
-                    setTimeout(function () {
-                        parent.layer.close(index);
-                    }, 500);
                 }
                 else {
                     layer.msg(result.Message, { icon: 5 });
@@ -81,7 +81,7 @@
     app.factory('service', ['$http', function ($http) {
 
         var getCfg = function (id) {
-            return $http.post('/Synchronization/GetConfig', {  });
+            return $http.post('/Synchronization/GetConfig');
         }
         var saveCfg = function (postData) {
             return $http.post('/Synchronization/SaveConfig', postData);

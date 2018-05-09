@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EB.ISCS.FrameworkHelp.Encryption;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -9,6 +10,7 @@ namespace EB.ISCS.DapperServices.Base
     /// </summary>
     public static class DapperProvider
     {
+        const string DB_SERVER = "dbServer";
 
         public static SqlServerProvider GetProvider(string connString)
         {
@@ -21,7 +23,10 @@ namespace EB.ISCS.DapperServices.Base
         /// <returns></returns>
         public static string GetConnString()
         {
-            return "Data Source=localhost;Initial Catalog=QS_DEV;Persist Security Info=True;User ID=sa;Password=p@ssw0rd;";
+            var dbServer = System.Configuration.ConfigurationManager.AppSettings[DB_SERVER];
+            var connectSettingsCollection = System.Configuration.ConfigurationManager.ConnectionStrings[dbServer];
+            var connectStr = connectSettingsCollection.ConnectionString;
+            return EncryptionHelper.Decrypt(EncryptionAlgorithm.Rijndael, connectStr);
         }
     }
 

@@ -9,7 +9,7 @@
     <script src="~/viewscript/sys/synchronization/index.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" ng-app="CfgApp" ng-controller="CfgController">
         <form class="form-horizontal" role="form" id="search_form" w5c-form-validate="" novalidate name="validateForm" ng-app="CfgApp" ng-controller="CfgController" ng-init="onload('@ViewBag.Id')">
             <div class="modal-body row">
                 <p>店铺结构树</p>
@@ -23,7 +23,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">同步周期：</label>
                             <div class="col-md-4">
-                                <input class="form-control" type="number" ng-model="cfg.SyncPeriod" name="SyncPeriod" maxlength="20" required />
+                                <input class="form-control" type="number" ng-model="cfg.SyncPeriod" name="SyncPeriod" maxlength="20" min="1" required />
                             </div>
                             <label class="col-sm-2 control-label">同步单位：</label>
                             <div class="col-md-4">
@@ -43,11 +43,11 @@
                                 <p class="form-control-static">调整完毕在下一个同步时间点生效</p>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <button type="button" id="btn_save_cfg" ng-click="onSave" class="btn btn-primary col-sm-offset-2">保存同步配置</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" id="btn_save_permission" class="btn btn-primary">保存同步配置</button>
             </div>
         </form>
     </div>

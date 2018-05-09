@@ -85,20 +85,6 @@ namespace EB.ISCS.Admin.Controllers
             }
             var modelData = ServiceHelper.CallService<CurrentUserModel>(ServiceConst.Account.SignIn, CenterCollection);
 
-            //var modelData = new BaseResult<CurrentUserModel>()
-            //{
-            //    Code = 10000,
-            //    Message = "登录成功",
-            //    Data = new CurrentUserModel()
-            //    {
-            //        LoginName = "admin",
-            //        EmployeeName = "管理员",
-            //        Token = "123456789",
-            //        UserName = "管理员",
-            //        UserIsManage = 1
-            //    }
-            //};
-
             var result = ClaimHelper.SignIn(modelData, loginModel.RememberMe);
             if (result != SignInStatus.Success)
             {

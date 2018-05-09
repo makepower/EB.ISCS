@@ -41,6 +41,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{64230CCD-333
 		06_Design\Doc\数据分析平台设计方案.docx = 06_Design\Doc\数据分析平台设计方案.docx
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07_UnitTest", "07_UnitTest", "{A02E9F59-196F-4C81-98F2-2ADC8D0F77D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.EB", "UnitTest.EB\UnitTest.EB.csproj", "{511FE52D-0737-4168-89B8-173CEB2BF46F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +83,10 @@ Global
 		{75394B3E-E733-4D6A-9917-0707908DC82D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75394B3E-E733-4D6A-9917-0707908DC82D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75394B3E-E733-4D6A-9917-0707908DC82D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{511FE52D-0737-4168-89B8-173CEB2BF46F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{511FE52D-0737-4168-89B8-173CEB2BF46F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{511FE52D-0737-4168-89B8-173CEB2BF46F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{511FE52D-0737-4168-89B8-173CEB2BF46F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +102,7 @@ Global
 		{75394B3E-E733-4D6A-9917-0707908DC82D} = {8D0164DD-F16A-4B26-B64A-CA6394DF53CB}
 		{304C4260-BECD-43D9-A710-DD2BAF1BC8EB} = {FFC64C02-39C0-486A-B402-A751FE669D8E}
 		{64230CCD-333F-470D-B03F-0427FB10DA9A} = {FFC64C02-39C0-486A-B402-A751FE669D8E}
+		{511FE52D-0737-4168-89B8-173CEB2BF46F} = {A02E9F59-196F-4C81-98F2-2ADC8D0F77D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC2E5F16-959A-4E56-92B5-B23F326A1342}

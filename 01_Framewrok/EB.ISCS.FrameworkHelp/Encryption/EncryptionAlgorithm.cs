@@ -16,7 +16,7 @@ namespace EB.ISCS.FrameworkHelp.Encryption
         ///</summary>
         Rc2,
         /// <summary>
-        /// 
+        /// AES
         /// </summary>
         Rijndael,
         /// <summary>
