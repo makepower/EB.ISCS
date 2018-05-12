@@ -250,6 +250,7 @@
     <Content Include="Content\adminlte\skins\skin-yellow.min.css" />
     <Content Include="Content\adminlte\skins\_all-skins.css" />
     <Content Include="Content\adminlte\skins\_all-skins.min.css" />
+    <Content Include="Content\images\adminlte\admin.jpg" />
     <Content Include="Content\ueditor\dialogs\anchor\anchor.html" />
     <Content Include="Content\ueditor\dialogs\attachment\attachment.css" />
     <Content Include="Content\ueditor\dialogs\attachment\attachment.html" />

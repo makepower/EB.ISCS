@@ -1,4 +1,4 @@
-2018-05-09 00:22:35.7094 | Error | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+2018-05-12 16:52:26.1828 | Error | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
                        DECLARE @Order NVARCHAR(200);      
                        IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
                             BEGIN
@@ -16,29 +16,34 @@
                    WITH  Select_List  AS
                    (
 					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
-                        Id
-                              ,UserId
-                              ,Code
-                              ,Name
-                              ,Plat
-                              ,Description
-                              ,AppKey
-                              ,AppSecret
-                              ,DeliveryAddress
-                              ,InUser
-                              ,InDate
-                              ,Contract
-                              ,Status
-                              ,Remark
-                        FROM ShipInfo
-						WHERE  Status=1  ' + @Where + '
+                        [Id]
+                              ,[AccessChannelId]
+                              ,[UserId]
+                              ,[UserName]
+                              ,[LogDate]
+                              ,[Token]
+                              ,[LogOutDate]
+                              ,[ClientIpAddress]
+                              ,[ClientName]
+                              ,[OnlineDate]
+                              ,[IsSucceed]
+                              ,[LogReason]
+                              ,[SessionId]
+                              ,[InUserType]
+                              ,[IPNum]
+                              ,[Enabled]
+                              ,[DelUser]
+                              ,[DelState]
+                              ,[DelDate]
+                        FROM SysLoginLog
+						WHERE  ' + @Where + '
                   )
                   SELECT
-			          A.* , B.UserName FROM Select_List A 
-                   LEFT JOIN SysUser B ON A.UserId=B.Id 
+			          A.*  FROM Select_List A 
+                  
                   WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
           
-                 SELECT @Count = COUNT(1) FROM ShipInfo WHERE  Status=1  ' + @Where;              
+                 SELECT @Count = COUNT(1) FROM SysLoginLog WHERE  ' + @Where;              
                        EXECUTE sp_executesql @Sql,N' 
                        @CurrentPageIndex INT,
                        @PageSize  INT,
@@ -49,8 +54,8 @@
 			           @PageSize,
                        @Where,
                        @OrderBy,
-                       @Count OUTPUT;  System.Data.SqlClient.SqlException (0x80131904): “UserId”附近有语法错误。
-“UserId”附近有语法错误。
+                       @Count OUTPUT;  System.Data.SqlClient.SqlException (0x80131904): “)”附近有语法错误。
+“WHERE”附近有语法错误。
    在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
@@ -71,30 +76,11 @@
    在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
    在 EB.ISCS.DapperServices.Repository.BaseRepository`1.<>c__DisplayClass34_0.<Query>b__0() 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 631
    在 EB.ISCS.DapperServices.Repository.BaseRepository`1.TraceExecFunc[T2](Func`1 funcProcess, String msg) 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 72
-ClientConnectionId:103c4223-aee7-4641-933d-fa1bb81b47dd
+ClientConnectionId:da921f39-8864-4040-bfbf-4869f75b911d
 Error Number:102,State:1,Class:15 
  BaseRepository`1.Query => BaseRepository`1.TraceExecFunc => LogHelper.WriteErrorLog 
 
-2018-05-09 09:05:06.7910 | Error | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , PlatId = 0 , StoreIds = 1 , SyncPeriod = 5 , SyncUnit = 1 , EditDate = 0001/1/1 星期一 0:00:00 , Remark = null System.Data.SqlTypes.SqlTypeException: SqlDateTime 溢出。必须介于 1/1/1753 12:00:00 AM 和 12/31/9999 11:59:59 PM 之间。
-   在 System.Data.SqlClient.TdsParser.TdsExecuteRPC(SqlCommand cmd, _SqlRPC[] rpcArray, Int32 timeout, Boolean inSchema, SqlNotificationRequest notificationRequest, TdsParserStateObject stateObj, Boolean isCommandProc, Boolean sync, TaskCompletionSource`1 completion, Int32 startRpc, Int32 startParam)
-   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
-   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
-   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
-   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   在 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
-   在 Dapper.SqlMapper.<QueryImpl>d__136`1.MoveNext()
-   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
-   在 Dapper.SimpleCRUD.Insert[TKey](IDbConnection connection, Object entityToInsert, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 C:\Users\ecoffman\Documents\GitHub\Dapper.SimpleCRUD\Dapper.SimpleCRUD\SimpleCRUD.cs:行号 376
-   在 Dapper.SimpleCRUD.Insert(IDbConnection connection, Object entityToInsert, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 C:\Users\ecoffman\Documents\GitHub\Dapper.SimpleCRUD\Dapper.SimpleCRUD\SimpleCRUD.cs:行号 303
-   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.<>c__DisplayClass17_0.<Insert>b__0() 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 212
-   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.TraceExecFunc[T2](Func`1 funcProcess, String msg) 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 72 
- BaseRepository`1.Insert => BaseRepository`1.TraceExecFunc => LogHelper.WriteErrorLog 
-
-2018-05-09 09:07:02.4779 | Error | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+2018-05-12 16:52:27.2698 | Error | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
                        DECLARE @Order NVARCHAR(200);      
                        IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
                             BEGIN
@@ -112,29 +98,40 @@ Error Number:102,State:1,Class:15
                    WITH  Select_List  AS
                    (
 					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
-                        Id
-                              ,UserId
-                              ,Code
-                              ,Name
-                              ,Plat
-                              ,Description
-                              ,AppKey
-                              ,AppSecret
-                              ,DeliveryAddress
-                              ,InUser
-                              ,InDate
-                              ,Contract
-                              ,Status
-                              ,Remark
-                        FROM ShipInfo
-						WHERE  Status=1  ' + @Where + '
+                        [Id]
+                              ,[AccessChannelId]
+                              ,[UserId]
+                              ,[CustomerId]
+                              ,[ExceptionDate]
+                              ,[ExceptionFunction]
+                              ,[ExceptionVersions]
+                              ,[ExceptionSource]
+                              ,[ExceptionDescription]
+                              ,[ExceptionStackTrace]
+                              ,[ExceptionType]
+                              ,[ExceptionTargetSite]
+                              ,[ExceptionTypeName]
+                              ,[ExceptionIP]
+                              ,[IPNum]
+                              ,[ComputerName]
+                              ,[ExploreName]
+                              ,[ExplorerVersions]
+                              ,[SourceEquipment]
+                              ,[Enabled]
+                              ,[InUser]
+                              ,[InDate]
+                              ,[DeleteState]
+                              ,[DeleteUser]
+                              ,[DeleteDate]
+                        FROM SysExceptionLog
+						WHERE  ' + @Where + '
                   )
                   SELECT
 			          A.* , B.UserName FROM Select_List A 
-                   LEFT JOIN SysUser B ON A.UserId=B.Id 
+                   SysUser B on  A.UserId =B.Id
                   WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
           
-                 SELECT @Count = COUNT(1) FROM ShipInfo WHERE  Status=1  ' + @Where;              
+                 SELECT @Count = COUNT(1) FROM SysExceptionLog WHERE  ' + @Where;              
                        EXECUTE sp_executesql @Sql,N' 
                        @CurrentPageIndex INT,
                        @PageSize  INT,
@@ -145,8 +142,9 @@ Error Number:102,State:1,Class:15
 			           @PageSize,
                        @Where,
                        @OrderBy,
-                       @Count OUTPUT;  System.Data.SqlClient.SqlException (0x80131904): “UserId”附近有语法错误。
-“UserId”附近有语法错误。
+                       @Count OUTPUT;  System.Data.SqlClient.SqlException (0x80131904): “)”附近有语法错误。
+“SysUser”附近有语法错误。
+“WHERE”附近有语法错误。
    在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
@@ -167,92 +165,11 @@ Error Number:102,State:1,Class:15
    在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
    在 EB.ISCS.DapperServices.Repository.BaseRepository`1.<>c__DisplayClass34_0.<Query>b__0() 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 631
    在 EB.ISCS.DapperServices.Repository.BaseRepository`1.TraceExecFunc[T2](Func`1 funcProcess, String msg) 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 72
-ClientConnectionId:7bd63328-1a8c-4552-a936-973258f21026
+ClientConnectionId:da921f39-8864-4040-bfbf-4869f75b911d
 Error Number:102,State:1,Class:15 
  BaseRepository`1.Query => BaseRepository`1.TraceExecFunc => LogHelper.WriteErrorLog 
 
-2018-05-09 09:07:35.1556 | Error | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , Code = 123 , Plat = 0 , Name = 阿里 , Description = 随时随地的的 , InDate = 2018/5/9 星期三 9:07:35 , Status = 1 , AppKey = ghghgh , AppSecret = asasas , DeliveryAddress = 撒旦撒旦撒 , Remark = null , Contract = null , PlatName = null System.Data.SqlClient.SqlException (0x80131904): 对象名 'ShipInfo' 无效。
-   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
-   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
-   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
-   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
-   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
-   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
-   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   在 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
-   在 Dapper.SqlMapper.<QueryImpl>d__136`1.MoveNext()
-   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
-   在 Dapper.SimpleCRUD.Insert[TKey](IDbConnection connection, Object entityToInsert, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 C:\Users\ecoffman\Documents\GitHub\Dapper.SimpleCRUD\Dapper.SimpleCRUD\SimpleCRUD.cs:行号 376
-   在 Dapper.SimpleCRUD.Insert(IDbConnection connection, Object entityToInsert, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 C:\Users\ecoffman\Documents\GitHub\Dapper.SimpleCRUD\Dapper.SimpleCRUD\SimpleCRUD.cs:行号 303
-   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.<>c__DisplayClass17_0.<Insert>b__0() 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 212
-   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.TraceExecFunc[T2](Func`1 funcProcess, String msg) 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 72
-ClientConnectionId:7cfa64d8-4f2e-465f-832c-4e4f765a20c2
-Error Number:208,State:1,Class:16 
- BaseRepository`1.Insert => BaseRepository`1.TraceExecFunc => LogHelper.WriteErrorLog 
-
-2018-05-09 09:07:51.0682 | Error | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , Code = 123 , Plat = 0 , Name = 阿里 , Description = 随时随地的的 , InDate = 2018/5/9 星期三 9:07:51 , Status = 1 , AppKey = ghghgh , AppSecret = asasas , DeliveryAddress = 撒旦撒旦撒 , Remark = null , Contract = null , PlatName = null System.Data.SqlClient.SqlException (0x80131904): 对象名 'ShipInfo' 无效。
-   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
-   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
-   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
-   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
-   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
-   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
-   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   在 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
-   在 Dapper.SqlMapper.<QueryImpl>d__136`1.MoveNext()
-   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
-   在 Dapper.SimpleCRUD.Insert[TKey](IDbConnection connection, Object entityToInsert, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 C:\Users\ecoffman\Documents\GitHub\Dapper.SimpleCRUD\Dapper.SimpleCRUD\SimpleCRUD.cs:行号 376
-   在 Dapper.SimpleCRUD.Insert(IDbConnection connection, Object entityToInsert, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 C:\Users\ecoffman\Documents\GitHub\Dapper.SimpleCRUD\Dapper.SimpleCRUD\SimpleCRUD.cs:行号 303
-   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.<>c__DisplayClass17_0.<Insert>b__0() 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 212
-   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.TraceExecFunc[T2](Func`1 funcProcess, String msg) 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 72
-ClientConnectionId:7cfa64d8-4f2e-465f-832c-4e4f765a20c2
-Error Number:208,State:1,Class:16 
- BaseRepository`1.Insert => BaseRepository`1.TraceExecFunc => LogHelper.WriteErrorLog 
-
-2018-05-09 09:12:23.4140 | Error | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , Code = 123 , Plat = 0 , Name = 阿里 , Description = 随时随地的的 , InDate = 2018/5/9 星期三 9:12:23 , Status = 1 , AppKey = ghghgh , AppSecret = asasas , DeliveryAddress = 撒旦撒旦撒 , Remark = null , Contract = null , PlatName = null System.Data.SqlClient.SqlException (0x80131904): 对象名 'ShipInfo' 无效。
-   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
-   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
-   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
-   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
-   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
-   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
-   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   在 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
-   在 Dapper.SqlMapper.<QueryImpl>d__136`1.MoveNext()
-   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
-   在 Dapper.SimpleCRUD.Insert[TKey](IDbConnection connection, Object entityToInsert, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 C:\Users\ecoffman\Documents\GitHub\Dapper.SimpleCRUD\Dapper.SimpleCRUD\SimpleCRUD.cs:行号 376
-   在 Dapper.SimpleCRUD.Insert(IDbConnection connection, Object entityToInsert, IDbTransaction transaction, Nullable`1 commandTimeout) 位置 C:\Users\ecoffman\Documents\GitHub\Dapper.SimpleCRUD\Dapper.SimpleCRUD\SimpleCRUD.cs:行号 303
-   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.<>c__DisplayClass17_0.<Insert>b__0() 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 212
-   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.TraceExecFunc[T2](Func`1 funcProcess, String msg) 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 72
-ClientConnectionId:7cfa64d8-4f2e-465f-832c-4e4f765a20c2
-Error Number:208,State:1,Class:16 
- BaseRepository`1.Insert => BaseRepository`1.TraceExecFunc => LogHelper.WriteErrorLog 
-
-2018-05-09 09:12:36.8241 | Error | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+2018-05-12 16:52:27.8959 | Error | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
                        DECLARE @Order NVARCHAR(200);      
                        IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
                             BEGIN
@@ -270,29 +187,48 @@ Error Number:208,State:1,Class:16
                    WITH  Select_List  AS
                    (
 					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
-                        Id
-                              ,UserId
-                              ,Code
-                              ,Name
-                              ,Plat
-                              ,Description
-                              ,AppKey
-                              ,AppSecret
-                              ,DeliveryAddress
-                              ,InUser
-                              ,InDate
-                              ,Contract
-                              ,Status
-                              ,Remark
-                        FROM ShipInfo
-						WHERE  Status=1  ' + @Where + '
+                        [Id]
+                              ,[AccessChannelId]
+                              ,[UserId]
+                              ,[CustomerId]
+                              ,[ClientIpAddress]
+                              ,[MenuName]
+                              ,[MenuId]
+                              ,[MenuActionId]
+                              ,[MenuActionName]
+                              ,[ServiceName]
+                              ,[FunctionController]
+                              ,[MethodAction]
+                              ,[Parameters]
+                              ,[ExecutionTime]
+                              ,[ExecutionDuration]
+                              ,[ClientName]
+                              ,[BrowserInfo]
+                              ,[Exception]
+                              ,[Description]
+                              ,[SourceEquipment]
+                              ,[CustomData]
+                              ,[IPNum]
+                              ,[Token]
+                              ,[Navigator]
+                              ,[RequestUri]
+                              ,[UrlReferrer]
+                              ,[RequestType]
+                              ,[Enabled]
+                              ,[InUser]
+                              ,[InDate]
+                              ,[DelUser]
+                              ,[DelState]
+                              ,[DelDate]
+                        FROM SysOperationLog
+						WHERE  ' + @Where + '
                   )
                   SELECT
 			          A.* , B.UserName FROM Select_List A 
-                   LEFT JOIN SysUser B ON A.UserId=B.Id 
+                   SysUser B on  A.UserId =B.Id
                   WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
           
-                 SELECT @Count = COUNT(1) FROM ShipInfo WHERE  Status=1  ' + @Where;              
+                 SELECT @Count = COUNT(1) FROM SysOperationLog WHERE  ' + @Where;              
                        EXECUTE sp_executesql @Sql,N' 
                        @CurrentPageIndex INT,
                        @PageSize  INT,
@@ -303,8 +239,9 @@ Error Number:208,State:1,Class:16
 			           @PageSize,
                        @Where,
                        @OrderBy,
-                       @Count OUTPUT;  System.Data.SqlClient.SqlException (0x80131904): “UserId”附近有语法错误。
-“UserId”附近有语法错误。
+                       @Count OUTPUT;  System.Data.SqlClient.SqlException (0x80131904): “)”附近有语法错误。
+“SysUser”附近有语法错误。
+“WHERE”附近有语法错误。
    在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
@@ -325,7 +262,332 @@ Error Number:208,State:1,Class:16
    在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
    在 EB.ISCS.DapperServices.Repository.BaseRepository`1.<>c__DisplayClass34_0.<Query>b__0() 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 631
    在 EB.ISCS.DapperServices.Repository.BaseRepository`1.TraceExecFunc[T2](Func`1 funcProcess, String msg) 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 72
-ClientConnectionId:7bd63328-1a8c-4552-a936-973258f21026
+ClientConnectionId:d0d2b67f-7747-4e8a-8799-f86c12350cbb
 Error Number:102,State:1,Class:15 
+ BaseRepository`1.Query => BaseRepository`1.TraceExecFunc => LogHelper.WriteErrorLog 
+
+2018-05-12 17:02:29.2082 | Error | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+                       DECLARE @Order NVARCHAR(200);      
+                       IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                            BEGIN
+				                SET @Order = 'ORDER BY ' + @OrderBy;
+                            END;
+                       ELSE
+                            BEGIN
+                                SET @Order = '  ORDER BY InDate DESC ';
+                            END;
+                       IF ( @Where IS  NULL)
+                            BEGIN
+				                SET @Where = '';
+                            END;
+                       SET @Sql = N' 
+                   WITH  Select_List  AS
+                   (
+					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        [Id]
+                              ,[AccessChannelId]
+                              ,[UserId]
+                              ,[UserName]
+                              ,[LogDate]
+                              ,[Token]
+                              ,[LogOutDate]
+                              ,[ClientIpAddress]
+                              ,[ClientName]
+                              ,[OnlineDate]
+                              ,[IsSucceed]
+                              ,[LogReason]
+                              ,[SessionId]
+                              ,[InUserType]
+                              ,[IPNum]
+                              ,[Enabled]
+                              ,[DelUser]
+                              ,[DelState]
+                              ,[DelDate]
+                        FROM SysLoginLog
+						WHERE  ' + @Where + '
+                  )
+                  SELECT
+			          A.*  FROM Select_List A 
+                  
+                  WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
+          
+                 SELECT @Count = COUNT(1) FROM SysLoginLog WHERE  ' + @Where;              
+                       EXECUTE sp_executesql @Sql,N' 
+                       @CurrentPageIndex INT,
+                       @PageSize  INT,
+                       @Where NVARCHAR(1000),
+                       @OrderBy NVARCHAR(200),         
+                       @Count int OUT',
+                       @CurrentPageIndex,
+			           @PageSize,
+                       @Where,
+                       @OrderBy,
+                       @Count OUTPUT;  System.Data.SqlClient.SqlException (0x80131904): “)”附近有语法错误。
+“WHERE”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__136`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.<>c__DisplayClass34_0.<Query>b__0() 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 631
+   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.TraceExecFunc[T2](Func`1 funcProcess, String msg) 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 72
+ClientConnectionId:0041f6b7-5aa8-4a1f-848a-fcac0edf3cf7
+Error Number:102,State:1,Class:15 
+ BaseRepository`1.Query => BaseRepository`1.TraceExecFunc => LogHelper.WriteErrorLog 
+
+2018-05-12 17:12:38.8304 | Error | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+                       DECLARE @Order NVARCHAR(200);      
+                       IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                            BEGIN
+				                SET @Order = 'ORDER BY ' + @OrderBy;
+                            END;
+                       ELSE
+                            BEGIN
+                                SET @Order = '  ORDER BY InDate DESC ';
+                            END;
+                       IF ( @Where IS  NULL)
+                            BEGIN
+				                SET @Where = '';
+                            END;
+                       SET @Sql = N' 
+                   WITH  Select_List  AS
+                   (
+					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        [Id]
+                              ,[AccessChannelId]
+                              ,[UserId]
+                              ,[UserName]
+                              ,[LogDate]
+                              ,[Token]
+                              ,[LogOutDate]
+                              ,[ClientIpAddress]
+                              ,[ClientName]
+                              ,[OnlineDate]
+                              ,[IsSucceed]
+                              ,[LogReason]
+                              ,[SessionId]
+                              ,[InUserType]
+                              ,[IPNum]
+                              ,[Enabled]
+                              ,[DelUser]
+                              ,[DelState]
+                              ,[DelDate]
+                        FROM SysLoginLog
+						WHERE  1=1 ' + @Where + '
+                  )
+                  SELECT
+			          A.*  FROM Select_List A 
+                  
+                  WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
+          
+                 SELECT @Count = COUNT(1) FROM SysLoginLog WHERE  1=1 ' + @Where;              
+                       EXECUTE sp_executesql @Sql,N' 
+                       @CurrentPageIndex INT,
+                       @PageSize  INT,
+                       @Where NVARCHAR(1000),
+                       @OrderBy NVARCHAR(200),         
+                       @Count int OUT',
+                       @CurrentPageIndex,
+			           @PageSize,
+                       @Where,
+                       @OrderBy,
+                       @Count OUTPUT;  System.Data.SqlClient.SqlException (0x80131904): 列名 'InDate' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__136`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.<>c__DisplayClass34_0.<Query>b__0() 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 631
+   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.TraceExecFunc[T2](Func`1 funcProcess, String msg) 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 72
+ClientConnectionId:6fcf7fc8-eb0d-48cb-8f11-df8d5e6eeba4
+Error Number:207,State:1,Class:16 
+ BaseRepository`1.Query => BaseRepository`1.TraceExecFunc => LogHelper.WriteErrorLog 
+
+2018-05-12 17:13:13.4064 | Error | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+                       DECLARE @Order NVARCHAR(200);      
+                       IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                            BEGIN
+				                SET @Order = 'ORDER BY ' + @OrderBy;
+                            END;
+                       ELSE
+                            BEGIN
+                                SET @Order = '  ORDER BY InDate DESC ';
+                            END;
+                       IF ( @Where IS  NULL)
+                            BEGIN
+				                SET @Where = '';
+                            END;
+                       SET @Sql = N' 
+                   WITH  Select_List  AS
+                   (
+					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        [Id]
+                              ,[AccessChannelId]
+                              ,[UserId]
+                              ,[UserName]
+                              ,[LogDate]
+                              ,[Token]
+                              ,[LogOutDate]
+                              ,[ClientIpAddress]
+                              ,[ClientName]
+                              ,[OnlineDate]
+                              ,[IsSucceed]
+                              ,[LogReason]
+                              ,[SessionId]
+                              ,[InUserType]
+                              ,[IPNum]
+                              ,[Enabled]
+                              ,[DelUser]
+                              ,[DelState]
+                              ,[DelDate]
+                        FROM SysLoginLog
+						WHERE  1=1 ' + @Where + '
+                  )
+                  SELECT
+			          A.*  FROM Select_List A 
+                  
+                  WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
+          
+                 SELECT @Count = COUNT(1) FROM SysLoginLog WHERE  1=1 ' + @Where;              
+                       EXECUTE sp_executesql @Sql,N' 
+                       @CurrentPageIndex INT,
+                       @PageSize  INT,
+                       @Where NVARCHAR(1000),
+                       @OrderBy NVARCHAR(200),         
+                       @Count int OUT',
+                       @CurrentPageIndex,
+			           @PageSize,
+                       @Where,
+                       @OrderBy,
+                       @Count OUTPUT;  System.Data.SqlClient.SqlException (0x80131904): 列名 'InDate' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__136`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.<>c__DisplayClass34_0.<Query>b__0() 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 631
+   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.TraceExecFunc[T2](Func`1 funcProcess, String msg) 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 72
+ClientConnectionId:6fcf7fc8-eb0d-48cb-8f11-df8d5e6eeba4
+Error Number:207,State:1,Class:16 
+ BaseRepository`1.Query => BaseRepository`1.TraceExecFunc => LogHelper.WriteErrorLog 
+
+2018-05-12 17:42:32.8285 | Error | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+                       DECLARE @Order NVARCHAR(200);      
+                       IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                            BEGIN
+				                SET @Order = 'ORDER BY ' + @OrderBy;
+                            END;
+                       ELSE
+                            BEGIN
+                                SET @Order = '  ORDER BY InDate DESC ';
+                            END;
+                       IF ( @Where IS  NULL)
+                            BEGIN
+				                SET @Where = '';
+                            END;
+                       SET @Sql = N' 
+                   WITH  Select_List  AS
+                   (
+					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        [Id]
+                              ,[AccessChannelId]
+                              ,[UserId]
+                              ,[UserName]
+                              ,[LogDate]
+                              ,[Token]
+                              ,[LogOutDate]
+                              ,[ClientIpAddress]
+                              ,[ClientName]
+                              ,[OnlineDate]
+                              ,[IsSucceed]
+                              ,[LogReason]
+                              ,[SessionId]
+                              ,[InUserType]
+                              ,[IPNum]
+                              ,[Enabled]
+                              ,[DelUser]
+                              ,[DelState]
+                              ,[DelDate]
+                        FROM SysLoginLog
+						WHERE  1=1 ' + @Where + '
+                  )
+                  SELECT
+			          A.*  FROM Select_List A 
+                  
+                  WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
+          
+                 SELECT @Count = COUNT(1) FROM SysLoginLog WHERE  1=1 ' + @Where;              
+                       EXECUTE sp_executesql @Sql,N' 
+                       @CurrentPageIndex INT,
+                       @PageSize  INT,
+                       @Where NVARCHAR(1000),
+                       @OrderBy NVARCHAR(200),         
+                       @Count int OUT',
+                       @CurrentPageIndex,
+			           @PageSize,
+                       @Where,
+                       @OrderBy,
+                       @Count OUTPUT;  System.Data.SqlClient.SqlException (0x80131904): 列名 'InDate' 无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior)
+   在 Dapper.SqlMapper.<QueryImpl>d__136`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.<>c__DisplayClass34_0.<Query>b__0() 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 631
+   在 EB.ISCS.DapperServices.Repository.BaseRepository`1.TraceExecFunc[T2](Func`1 funcProcess, String msg) 位置 C:\Users\Administrator\source\repos\EB.ISCS\02_Repositories\EB.ISCS.DapperServices\Repository\BaseRepository.cs:行号 72
+ClientConnectionId:2e9b6694-c452-4dff-a4a1-96f2a97a76bf
+Error Number:207,State:1,Class:16 
  BaseRepository`1.Query => BaseRepository`1.TraceExecFunc => LogHelper.WriteErrorLog 
 

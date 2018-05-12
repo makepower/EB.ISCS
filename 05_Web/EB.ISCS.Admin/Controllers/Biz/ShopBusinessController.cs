@@ -80,7 +80,7 @@ namespace EB.ISCS.Admin.Controllers.Biz
                 PageIndex = jqgridparam.page,
                 PageSize = jqgridparam.rows,
                 OrderBy = jqgridparam.sord,
-                Where = $" UserId={CurrentUser.UserId}"
+                Where = $" and UserId={CurrentUser.UserId}"
             };
             var result = ServiceHelper.CallService<PagedListData<List<ShipInfo>>>(ServiceConst.BizApi.ShopGetPage,
                 JsonConvert.SerializeObject(query), this.CurrentUser.Token);
@@ -97,6 +97,7 @@ namespace EB.ISCS.Admin.Controllers.Biz
         public JsonResult SaveShop(ShipInfo model)
         {
             var result = new BaseResult() { Code = (int)ResultCode.Faild };
+            model.UserId = CurrentUser.UserId;
             if (model != null)
             {
                 if (model.Id > 0)

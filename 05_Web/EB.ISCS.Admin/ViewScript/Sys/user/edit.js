@@ -84,22 +84,7 @@
             _scope.onload = function (id) {
                 _this.InitData(id ? id : 0);
             }
-            //选择用户
-            _scope.onSelect = function () {
-                comControl.selectEmployee(function () {
-                    var data = parent.$('body').data("dataUser");
-                    if (data) {
-                        if (_scope.user) {
-                            _scope.user.UserName = data.Name;
-                            _scope.user.EmployeeId = data.Id;
-                            _scope.$apply();
-                        } else {
-                            
-                        }
-                    }
-                }, false," and (b.id is null or  b.DelState =1)");
 
-            }
             //点击保存
             _scope.onSave = function () {
                 if (_scope.user.IsExpireDate === 1 && _scope.user.BeginDate > _scope.user.ExpireDade) {
@@ -120,13 +105,6 @@
                 _scope.UserIsManage = result.UserIsManage;
             });
 
-            //获取参数
-            _commonService.getDictionaryList(enumDicType.System.Securitylevel).success(function (result) {
-                if (result.Data) {
-                    //职位
-                    _scope.securitylevels = result.Data;
-                }
-            });
             //获取用户信息
             _service.getUser(id).success(function (result) {
                 _scope.user = result.Data;

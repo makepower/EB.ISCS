@@ -1,5 +1,4 @@
 ﻿using EB.ISCS.ToolService.Interface;
-using System;
 using System.Collections.Generic;
 
 namespace EB.ISCS.ToolService
@@ -11,7 +10,7 @@ namespace EB.ISCS.ToolService
     {
         public virtual string Signature(IDictionary<string, string> parameters, string secret, string signMethod)
         {
-            throw new NotImplementedException();
+            return string.Empty;
         }
     }
 }

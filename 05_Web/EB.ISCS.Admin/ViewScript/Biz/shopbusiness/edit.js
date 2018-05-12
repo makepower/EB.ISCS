@@ -68,7 +68,7 @@
             _scope.onload = function (id) {
                 _this.InitData(id ? id : 0);
             }
-     
+
             //点击保存
             _scope.onSave = function () {
                 _this.SaveData(_scope.Shop);
@@ -85,8 +85,8 @@
             });
 
             comControl.datepicker('txt_InDate');
-            _scope.plats = [{ id: "0", name: "淘宝" },
-                { id: "1", name: "天猫" },{ id: "2", name: "京东" }];
+            _scope.plats = [{ id: 0, name: "淘宝" },
+            { id: 1, name: "天猫" }, { id: 2, name: "京东" }];
 
             //获取信息
             _service.getShop(id).success(function (result) {

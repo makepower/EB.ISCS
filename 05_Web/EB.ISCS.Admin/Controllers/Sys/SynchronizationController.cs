@@ -7,6 +7,7 @@ using EB.ISCS.Common.DataModel;
 using EB.ISCS.Common.Models;
 using EB.ISCS.FrameworkEntity.SystemEntity;
 using Maticsoft.Model;
+using System;
 
 namespace EB.ISCS.Admin.Controllers.Sys
 {
@@ -32,8 +33,7 @@ namespace EB.ISCS.Admin.Controllers.Sys
             var result = new BaseResult<SynchronizationConfig>() { Code = (int)ResultCode.Success, Data = new SynchronizationConfig() { UserId = CurrentUser.UserId } };
             if (Id > 0)
             {
-                var tmp = ServiceHelper.CallService<SynchronizationConfig>(string.Format(ServiceConst.BizApi.SyncConfigGetByUserId,
-                     Id.ToString()), null, this.CurrentUser.Token);
+                var tmp = ServiceHelper.CallService<SynchronizationConfig>(string.Format(ServiceConst.BizApi.SyncConfigGetByUserId,Id.ToString()), null, this.CurrentUser.Token);
                 if (tmp.Data != null && tmp.Code == (int)ResultCode.Success)
                     result = tmp;
             }
@@ -51,6 +51,7 @@ namespace EB.ISCS.Admin.Controllers.Sys
             var result = new BaseResult() { Code = (int)ResultCode.Faild };
             if (model != null)
             {
+                model.EditDate = DateTime.Now;
                 result = ServiceHelper.CallService(ServiceConst.BizApi.SyncConfigSave,
                          JsonConvert.SerializeObject(model),
                          this.CurrentUser.Token);
@@ -68,13 +69,13 @@ namespace EB.ISCS.Admin.Controllers.Sys
             var result = new BaseResult() { Code = (int)ResultCode.Faild };
             var cfg = ServiceHelper.CallService<SynchronizationConfig>(string.Format(ServiceConst.BizApi.SyncConfigGetByUserId,
                  CurrentUser.UserId.ToString()), null, this.CurrentUser.Token);
-            var shops = ServiceHelper.CallService<List<ShipInfo>>(string.Format(ServiceConst.BizApi.SyncConfigGetByUserId,
+            var shops = ServiceHelper.CallService<List<ShipInfo>>(string.Format(ServiceConst.BizApi.ShopGetAllByUser,
                CurrentUser.UserId.ToString()), null, this.CurrentUser.Token);
 
-            shops.Data = new List<ShipInfo>();
-            shops.Data.Add(new ShipInfo() { Id = 1, Plat = 0, PlatName = "淘宝", Name = "淘宝小店" });
-            shops.Data.Add(new ShipInfo() { Id = 2, Plat = 1, PlatName = "天猫", Name = "天猫小店" });
-            shops.Data.Add(new ShipInfo() { Id = 3, Plat = 2, PlatName = "京东", Name = "京东小店" });
+            //shops.Data = new List<ShipInfo>();
+            //shops.Data.Add(new ShipInfo() { Id = 1, Plat = 0, PlatName = "淘宝", Name = "淘宝小店" });
+            //shops.Data.Add(new ShipInfo() { Id = 2, Plat = 1, PlatName = "天猫", Name = "天猫小店" });
+            //shops.Data.Add(new ShipInfo() { Id = 3, Plat = 2, PlatName = "京东", Name = "京东小店" });
 
             var treeList = new List<MenuTree>();
 

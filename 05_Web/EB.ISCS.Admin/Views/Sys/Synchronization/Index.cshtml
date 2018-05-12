@@ -27,13 +27,13 @@
                             </div>
                             <label class="col-sm-2 control-label">同步单位：</label>
                             <div class="col-md-4">
-                                <select class="form-control" ng-model="cfg.SyncUnit" ng-options="icon.id as icon.name for icon in icons" name="SyncUnit" ng-selected="icon.id=='0'"></select>
+                                <select class="form-control" ng-model="cfg.SyncUnit" ng-options="icon.id as icon.name for icon in icons" name="SyncUnit"></select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">修改时间：</label>
                             <div class="col-md-4">
-                                <p class="form-control-static" ng-model="cfg.EditDate">--</p>
+                                <input type="datetime" class="form-control" ng-model="cfg.EditDate" readonly />
                             </div>
                         </div>
 

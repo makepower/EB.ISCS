@@ -128,7 +128,7 @@ namespace EB.ISCS.Admin.Controllers.Sys
         /// <returns></returns>
         public JsonResult GetUser(int Id)
         {
-            var result = new BaseResult<SysUser> { Data = new SysUser() };
+            var result = new BaseResult<SysUser> { Data = new SysUser() { IsExpireDate = 0, UserIsFreeze = false } };
             if (Id > 0)
             {
                 result = ServiceHelper.CallService<SysUser>($"{ServiceConst.SysUserApi.GetModelById}/{Id}", null, this.CurrentUser.Token);
@@ -236,6 +236,7 @@ namespace EB.ISCS.Admin.Controllers.Sys
                 }
                 else
                 {
+                    model.UserName = model.LoginName;
                     model.PassWord = EncryptionHelper.Encrypt(EncryptionAlgorithm.Rijndael, model.PassWord);
                     model.UserType = (int)EnumUserType.User;
                     model.Enabled = 1;

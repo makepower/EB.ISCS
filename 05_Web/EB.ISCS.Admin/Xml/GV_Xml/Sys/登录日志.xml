@@ -2,7 +2,7 @@
 <config>
   <parameter Name="登录日志ID" FieldName="Id" Width="0"  Desc="在用" />
   <parameter Name="程序渠道Id" FieldName="AccessChannelId"  Width="0"  Desc="在用" />
-  <parameter Name="程序渠道" FieldName="AccessChannelName"  Width="200"  Desc="在用" IsSort="false" />
+  <parameter Name="程序渠道" FieldName="AccessChannelName"  Width="0"  Desc="在用" IsSort="false" />
   <parameter Name="登录用户" FieldName="UserId"  Width="0"  Desc="在用" />
   <parameter Name="用户名称" FieldName="UserName"  Width="100" IsSort="false" Desc="在用" />
   <parameter Name="登录时间" FieldName="LogDate"  Width="160"  Desc="在用" />

@@ -27,7 +27,8 @@ namespace EB.ISCS.DapperServices.Services
             RegisterService<ISysLoginTokenService, SysLoginTokenService>();
             RegisterService<ISysUserMenuService, SysUserMenuService>();
             RegisterService<ISysLoginLogService, SysLoginLogService>();
-
+            RegisterService<ISysOperationLogService, SysOperationLogService>();
+            RegisterService<ISysExceptionLogService, SysExceptionLogService>();
             #endregion
 
             #region 业务级数据库服务

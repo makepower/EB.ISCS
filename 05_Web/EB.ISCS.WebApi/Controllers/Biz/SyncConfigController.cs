@@ -28,13 +28,13 @@ namespace EB.ISCS.WebApi.Controllers.Biz
         /// <summary>
         /// 获取用户同步配置信息
         /// </summary>
-        /// <param name="userId"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
         [HttpPost]
-        public ResponseResult<SynchronizationConfig> GetByUserId(int userId)
+        public ResponseResult<SynchronizationConfig> GetByUserId(int id)
         {
             var service = GetService<SynchronizationConfigService>();
-            var result = service.GetByUserId(userId);
+            var result = service.GetByUserId(id);
             return ResponseResult<SynchronizationConfig>.GenSuccessResponse(result);
         }
     }

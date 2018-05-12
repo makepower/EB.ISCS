@@ -15,9 +15,9 @@
                         <div class="col-md-4">
                             <input class="form-control" type="text" ng-model="user.LoginName" name="LoginName" maxlength="20" ng-required="true" />
                         </div>
-                   
+
                     </div>
-                    <div class="form-group" ng-if="user.Id<1">
+                    <div class="form-group" ng-if="user.Id <1">
                         <label class="col-sm-2 control-label">密码</label>
                         <div class="col-md-4">
                             <input class="form-control" type="password" ng-model="user.PassWord" w5c-dynamic-element name="PassWord" maxlength="20" ng-required="true" ng-minlength="6" ng-maxlength="16" />
@@ -31,26 +31,26 @@
                         <label class="col-sm-2 control-label">是否冻结</label>
                         <div class="col-md-4">
                             <label class="radio-inline">
-                                <input name="UserIsFreeze" type="radio" value="0" ng-model="user.UserIsFreeze" checked required>非冻结
+                                <input id="UserIsFreeze_ok" name="UserIsFreeze" type="radio" value="0" ng-model="user.UserIsFreeze" checked>非冻结
                             </label>
                             <label class="radio-inline">
-                                <input name="UserIsFreeze" type="radio" value="1" ng-model="user.UserIsFreeze">冻结
+                                <input id="UserIsFreeze_cancle" name="UserIsFreeze" type="radio" value="1" ng-model="user.UserIsFreeze">冻结
                             </label>
                         </div>
                     </div>
-                   
+
                     <div class="form-group">
                         <label class="col-sm-2 control-label">是否启用有效期</label>
                         <div class="col-md-4">
                             <label class="radio-inline">
-                                <input name="IsExpireDate" type="radio" value="0" ng-model="user.IsExpireDate" checked required>否
+                                <input id="IsExpireDate_ok" name="IsExpireDate" type="radio" value="0" ng-model="user.IsExpireDate" checked>否
                             </label>
                             <label class="radio-inline">
-                                <input name="IsExpireDate" type="radio" value="1" ng-model="user.IsExpireDate">是
+                                <input id="IsExpireDate_cancle" name="IsExpireDate" type="radio" value="1" ng-model="user.IsExpireDate">是
                             </label>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-show="user.IsExpireDate!='0'">
                         <label class="col-sm-2 control-label">有效期开始</label>
                         <div class="col-md-4">
                             <input class="form-control" type="text" id="txt_BeginDate" ng-model="user.BeginDate" name="BeginDate" maxlength="10" max="{{user.ExpireDade}}" />

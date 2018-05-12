@@ -95,7 +95,6 @@ namespace EB.ISCS.WebApi.Controllers.Sys
                         UserIsManage = data.UserIsManage,
                         UserName = data.UserName,
                         UserPosition = data.UserPosition,
-                        UserDepId = data.UserDepId,
                         UserCustomerId = data.UserCustomerId,
                         Token = token.Token
                     };

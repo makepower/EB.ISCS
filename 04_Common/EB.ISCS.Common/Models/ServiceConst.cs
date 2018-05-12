@@ -12,6 +12,7 @@ namespace EB.ISCS.Common.Models
             CommonService = new CommonService();
             SysUserApi = new SysUserApi();
             MenuApi = new MenuApi();
+            LogApi = new LogApi();
 
             #endregion
 
@@ -23,7 +24,7 @@ namespace EB.ISCS.Common.Models
 
         #region 系统服务
         public static Account Account { get; }
-
+        public static LogApi LogApi { get; }
         public static CommonService CommonService { get; }
         public static SysUserApi SysUserApi { get; }
         public static MenuApi MenuApi { get; }
@@ -185,8 +186,12 @@ namespace EB.ISCS.Common.Models
         public string GetMenuPermissionListPage = "Sys/MenuPermission/GetMenuPermissionList";
 
     }
-
-
+    public class LogApi
+    {
+        public string GetLoginLogPageList = "Sys/Log/GetLoginLogPageList";
+        public string GetOperaterLogPageList = "Sys/Log/GetOperaterLogPageList";
+        public string GetExceptionLogPageList = "Sys/Log/GetExceptionLogPageList";
+    }
     #endregion
 
     #region 业务服务

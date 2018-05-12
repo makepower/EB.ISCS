@@ -2,7 +2,7 @@
 <config>
   <parameter Name="日志ID" FieldName="Id" Width="0"  Desc="在用" />
   <parameter Name="渠道ID" FieldName="AccessChannelId"  Width="0"  Desc="在用" />
-  <parameter Name="程序渠道" FieldName="AccessChannelName"  Width="150"  Desc="在用" IsSort="false" />
+  <parameter Name="程序渠道" FieldName="AccessChannelName"  Width="0"  Desc="在用" IsSort="false" />
   <parameter Name="用户ID" FieldName="UserId"  Width="0"  Desc="在用" />
   <parameter Name="用户名称" FieldName="UserName"  Width="0"  Desc="在用" />
   <parameter Name="客户ID" FieldName="CustomerId"  Width="0"  Desc="在用" />
@@ -19,10 +19,11 @@
   <parameter Name="IP数值" FieldName="IPNum"  Width="150"  Desc="在用" />
   <parameter Name="机器名" FieldName="ComputerName"  Width="150"  Desc="在用" />
   <parameter Name="浏览器名称" FieldName="ExploreName"  Width="80"  Desc="在用" />
+  <parameter Name="发生时间" FieldName="InDate"  Width="150"  Desc="在用" />
   <parameter Name="浏览器版本" FieldName="ExplorerVersions"  Width="0"  Desc="在用" />
   <parameter Name="来源设备" FieldName="SourceEquipment"  Width="0"  Desc="在用" />
   <parameter Name="是否有效" FieldName="Enabled"  Width="0"  Desc="在用" />
   <parameter Name="录入人员ID" FieldName="InUser"  Width="0"  Desc="在用" />
   <parameter Name="录入人员" FieldName="InUserName"  Width="0"   IsSort="false" Desc="在用" />
-  <parameter Name="发生时间" FieldName="InDate"  Width="150"  Desc="在用" />
+
 </config>

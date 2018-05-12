@@ -12,7 +12,7 @@
             gridView = $("#jqGrid");
             _this.InitGrid();
             _this.AddEventListener();
-            ZhiDun.setButtonPermission($("#MenuId").val());
+            //ZhiDun.setButtonPermission($("#MenuId").val());
         },
         //加载Grid
         InitGrid: function () {

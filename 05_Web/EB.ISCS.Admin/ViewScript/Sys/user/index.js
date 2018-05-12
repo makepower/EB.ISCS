@@ -38,7 +38,7 @@
             where = " AND UserType=0";
             _this.InitData();
             _this.AddEventListener();
-            ZhiDun.setButtonPermission($("#MenuId").val());
+            //ZhiDun.setButtonPermission($("#MenuId").val());
         },
 
         InitData: function () {
@@ -82,7 +82,7 @@
 
             //点击新增
             $('#btn_add').click(function () {
-                _this.showEdit(0, '编辑用户信息');
+                _this.showEdit(0, '新增用户信息');
             });
 
             //点击编辑
@@ -170,7 +170,7 @@
             layer.open({
                 type: 2,
                 title: title,
-                area: ['1000px', id > 0 ? '550px' : '600px'],
+                area: ['1000px', id > 0 ? '450px' : '520px'],
                 fix: true, //不固定
                 scrollbar: false,
                 maxmin: true,
@@ -206,7 +206,7 @@
             layer.open({
                 type: 2,
                 title: title,
-                area: ['600px', '700px'],
+                area: ['600px', '500px'],
                 fix: false, //不固定
                 maxmin: true,
                 content: [url, 'no'],

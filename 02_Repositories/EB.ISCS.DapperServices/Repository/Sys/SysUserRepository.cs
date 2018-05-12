@@ -65,9 +65,8 @@ namespace EB.ISCS.DapperServices.Repository.Sys
             return TraceExecFunc(() =>
             {
                 var sql = @"INSERT INTO [dbo].[SysUser]
-           ([UserDepId]
-           ,[EmployeeId]
-           ,[UserName]
+           (
+            [UserName]
            ,[LoginName]
            ,[PassWord]
            ,[LastPassword]
@@ -79,8 +78,6 @@ namespace EB.ISCS.DapperServices.Repository.Sys
            ,[BeginDate]
            ,[ExpireDade]
            ,[IsExpireDate]
-           ,[RoleId]
-           ,[EmployeeName]
            ,[PartitionFalg]
            ,[FlowDepId]
            ,[FlowTypeCode]
@@ -100,9 +97,8 @@ namespace EB.ISCS.DapperServices.Repository.Sys
            ,[DelUser]
            ,[DelDate])
      VALUES
-           (@UserDepId
-           ,@EmployeeId
-           ,@UserName
+           (
+           @UserName
            ,@LoginName
            ,@PassWord
            ,@LastPassword
@@ -114,9 +110,7 @@ namespace EB.ISCS.DapperServices.Repository.Sys
            ,@BeginDate
            ,@ExpireDade
            ,@IsExpireDate
-           ,@RoleId
-           ,@EmployeeName
-           ,@PartitionFalg
+            ,@PartitionFalg
            ,@FlowDepId
            ,@FlowTypeCode
            ,@UserType
@@ -185,8 +179,6 @@ namespace EB.ISCS.DapperServices.Repository.Sys
         {
             var command = $@"SELECT 
 			                    Id ,
-			                    UserDepId ,
-			                    EmployeeId ,
 			                    UserName ,
 			                    LoginName ,
 			                    PassWord ,
@@ -199,8 +191,6 @@ namespace EB.ISCS.DapperServices.Repository.Sys
 			                    BeginDate ,
 			                    ExpireDade ,
 			                    IsExpireDate ,
-			                    RoleId ,
-			                    EmployeeName ,
 			                    PartitionFalg ,
 			                    FlowDepId ,
 			                    FlowTypeCode ,
@@ -335,8 +325,6 @@ namespace EB.ISCS.DapperServices.Repository.Sys
                       (
                        SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
                         [Id]
-                          ,[UserDepId]
-                          ,[EmployeeId]
                           ,[UserName]
                           ,[LoginName]
                           ,[UserExtent]
@@ -347,8 +335,6 @@ namespace EB.ISCS.DapperServices.Repository.Sys
                           ,[BeginDate]
                           ,[ExpireDade]
                           ,[IsExpireDate]
-                          ,[RoleId]
-                          ,[EmployeeName]
                           ,[PartitionFalg]
                           ,[FlowDepId]
                           ,[FlowTypeCode]
@@ -371,8 +357,6 @@ namespace EB.ISCS.DapperServices.Repository.Sys
                        )
                       SELECT
                          A.[Id]
-                        ,A.[UserDepId]
-                        ,A.[EmployeeId]
                         ,A.[UserName]
                         ,A.[LoginName]
                         ,A.[UserExtent]
@@ -383,8 +367,6 @@ namespace EB.ISCS.DapperServices.Repository.Sys
                         ,A.[BeginDate]
                         ,A.[ExpireDade]
                         ,A.[IsExpireDate]
-                        ,A.[RoleId]
-                        ,A.[EmployeeName]
                         ,A.[PartitionFalg]
                         ,A.[FlowDepId]
                         ,A.[FlowTypeCode]

@@ -62,7 +62,7 @@ namespace EB.ISCS.DapperServices.Repository
         /// <returns></returns>
         public IEnumerable<ShipInfo> GetShipsByUserId(int userId)
         {
-            var sql = $@" select * FROM ShipInfo where UserId={ userId} ";
+            var sql = $@" select * FROM ShipInfo where UserId={ userId} and Plat < 3 ";
             return TraceExecFunc(() => this.Conn.Query<ShipInfo>(sql));
         }
 
@@ -84,7 +84,6 @@ namespace EB.ISCS.DapperServices.Repository
                               ,AppKey
                               ,AppSecret
                               ,DeliveryAddress
-                              ,InUser
                               ,InDate
                               ,Contract
                               ,Status
