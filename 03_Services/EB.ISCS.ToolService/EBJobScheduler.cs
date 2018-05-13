@@ -1,68 +1,114 @@
-﻿using EB.ISCS.FrameworkHelp.Utilities;
-using EB.ISCS.ToolService.TripartiteDataService;
+﻿using EB.ISCS.ToolService.Adapter;
+using Hangfire;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace EB.ISCS.ToolService
 {
+    /// <summary>
+    /// 任务调度池
+    /// </summary>
     public class EBJobScheduler
     {
-        private List<IDataService> _dataProviderThirdPart;
+        private TradeSyncContextService tradeSyncContextService;
+        private string _constr = null;
 
-        private System.Threading.CancellationToken cancellationToken;
+        private List<UserSyncContext> syncList = null;
 
-        EBJobScheduler()
+
+        public EBJobScheduler(string constr)
         {
-            _dataProviderThirdPart = new List<IDataService>
-            {
-                new AliDataService(),
-                new JdDataService()
-            };
-            cancellationToken = new System.Threading.CancellationToken();
+            _constr = constr;
+            tradeSyncContextService = new TradeSyncContextService(constr);
         }
 
-
-        public static EBJobScheduler Default
+        /// <summary>
+        /// 初始化调度计划
+        /// </summary>
+        public bool Start()
         {
-            get
+            try
             {
-                return new EBJobScheduler();
+                FrameworkLog.LogModel.LogHelper.WriteInfoLog($"开始启动任务调度");
+                tradeSyncContextService.BuildContext();
+                syncList = tradeSyncContextService.SyncContext.Context;
+
+                syncList.ForEach(x =>
+                {
+                    var syncService = new TradeSyncService(_constr);
+                    x.TaskId = Guid.NewGuid().ToString();
+                    RecurringJob.AddOrUpdate(x.TaskId, () => syncService.DoJob(x.Shops), Cron.HourInterval(x.SyncPeriodHours));
+                });
+                FrameworkLog.LogModel.LogHelper.WriteInfoLog($"启动任务调度完毕");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                FrameworkLog.LogModel.LogHelper.WriteErrorLog($"启动任务调度失败", ex);
+                return false;
             }
         }
 
-        public void DoJob()
+        /// <summary>
+        /// 重新载入调度 
+        /// </summary>
+        public bool ReStart()
         {
-            FrameworkLog.LogModel.LogHelper.WriteInfoLog($"开始同步数据");
-            var task = new Task(() =>
+            try
             {
-                _dataProviderThirdPart.ForEach(d =>
-                {
-                    try
-                    {
-                        d.SyncData();
-                    }
-                    catch (Exception ex)
-                    {
-                        FrameworkLog.LogModel.LogHelper.WriteErrorLog($"同步数据出错{d.Platform.GetDescription()}{ d.ServiceName}", ex);
-                    }
-
-                });
-            }, cancellationToken).ContinueWith((t) =>
+                Stop();
+                Start();
+                return true;
+            }
+            catch (Exception ex)
             {
-                FrameworkLog.LogModel.LogHelper.WriteInfoLog($"同步数据完成,开始统计数据");
-                var statis = new StatisticalService();
-                statis.Start();
-            }, cancellationToken).ContinueWith((t) =>
-            {
-                if (t.IsCompleted)
-                    FrameworkLog.LogModel.LogHelper.WriteInfoLog($"统计数据完成");
-                else
-                    FrameworkLog.LogModel.LogHelper.WriteInfoLog($"同步统计数据未正常结束,请检查运行日志");
-            });
+                FrameworkLog.LogModel.LogHelper.WriteErrorLog($"重新启动任务调度失败", ex);
+                return false;
+            }
 
         }
 
-        public string CornExpression { get; set; }
+        /// <summary>
+        /// 根据用户重新载入任务
+        /// </summary>
+        /// <returns></returns>
+        public bool ReloadByUserId(params int[] userIds)
+        {
+            try
+            {
+                var syncService = new TradeSyncService(_constr);
+                tradeSyncContextService.BuildContext(userIds);
+                var array = tradeSyncContextService.SyncContext;
+                array.Context.ForEach(x =>
+                {
+                    var tmp = syncList.Find(y => y.UserId == x.UserId);
+                    if (tmp != null)
+                    {
+                        RecurringJob.RemoveIfExists(tmp.TaskId);
+                    }
+                    else
+                    {
+                        x.TaskId = Guid.NewGuid().ToString();
+                        syncList.Add(x);
+                    }
+                    RecurringJob.AddOrUpdate(x.TaskId, () => syncService.DoJob(x.Shops), Cron.HourInterval(x.SyncPeriodHours));
+
+                });
+                return true;
+            }
+            catch (Exception ex)
+            {
+                FrameworkLog.LogModel.LogHelper.WriteErrorLog($"根据用户重新载入任务", ex);
+                return false;
+            }
+        }
+
+        public void Stop()
+        {
+            syncList.ForEach(x =>
+            {
+                RecurringJob.RemoveIfExists(x.TaskId);
+            });
+        }
     }
 }

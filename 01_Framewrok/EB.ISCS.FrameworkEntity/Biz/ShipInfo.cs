@@ -40,7 +40,7 @@ namespace Maticsoft.Model
         /// </summary>		
         public DateTime InDate { get; set; }
         /// <summary>
-        /// Status
+        /// Status 0 不可用  1 可用  2 初始化 
         /// </summary>		
         public int Status { get; set; }
         /// <summary>

@@ -5,6 +5,7 @@ using Owin;
 using Hangfire;
 using Hangfire.MemoryStorage;
 using EB.ISCS.ToolService;
+using EB.ISCS.DapperServices.Base;
 
 [assembly: OwinStartup(typeof(EB.ISCS.WebApi.Startup))]
 
@@ -30,9 +31,8 @@ namespace EB.ISCS.WebApi
 
             FrameworkLog.LogModel.LogHelper.WriteInfoLog("数据同步任务启动...");
 
-            RecurringJob.AddOrUpdate(
-           () => EBJobScheduler.Default.DoJob(), ReadCorn()
-         );
+            new EBJobScheduler(DapperProvider.GetConnString()).Start();
+
         }
 
         /// <summary>

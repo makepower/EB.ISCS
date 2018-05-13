@@ -1,9 +1,9 @@
-﻿namespace EB.ISCS.ToolService
+﻿using EB.ISCS.Common.Enum;
+
+namespace EB.ISCS.ToolService
 {
     interface IService
     {
-        string ServiceName { get; }
-
-        string ServiceDescription { get; }
+        ApiPlatform Platform { get; }
     }
 }

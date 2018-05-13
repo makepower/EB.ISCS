@@ -23,6 +23,12 @@ namespace EB.ISCS.DapperServices.Services.Sys
         {
 
         }
+
+        public SysUserService(Service service) : base(service)
+        {
+
+        }
+
         public SysUserService(string connString) : base(connString)
         {
             this._sysUserMenuRepository = new SysUserMenuRepository(Provider, OInfo);

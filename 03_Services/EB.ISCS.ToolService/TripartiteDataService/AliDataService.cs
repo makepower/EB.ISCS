@@ -1,4 +1,5 @@
 ﻿using EB.ISCS.Common.Enum;
+using Maticsoft.Model;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -9,18 +10,18 @@ namespace EB.ISCS.ToolService.TripartiteDataService
     //    爬取生意参谋浏览量数据接口
     //https://sycm.taobao.com/bda/flow/summary/getGeneral.json?dateRange=2017-03-20%7C2017-03-20&dateType=day&device=0&token=ec79a344f&_=1490151815229
 
-    public class AliDataService : ExternalServices, IDataService
+    public class AliDataService : ExternalServices, ISyncDataService
     {
         public ApiPlatform Platform => ApiPlatform.Ali_Tb;
 
-        public string ServiceName => throw new NotImplementedException();
+        public string TradesSoldGetUrl => throw new NotImplementedException();
 
-        public string ServiceDescription => throw new NotImplementedException();
+        public string TradesSoldIncrementGetUrl => throw new NotImplementedException();
 
-        public void SyncData()
-        {
-            throw new NotImplementedException();
-        }
+        public string TradeFullinfoGetUrl => throw new NotImplementedException();
+
+        public string LogisticsOrdersGetUrl => throw new NotImplementedException();
+
 
         public override string Signature(IDictionary<string, string> parameters, string secret, string signMethod)
         {

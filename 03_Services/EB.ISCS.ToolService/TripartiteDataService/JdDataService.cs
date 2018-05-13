@@ -1,4 +1,5 @@
 ﻿using EB.ISCS.Common.Enum;
+using Maticsoft.Model;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -6,18 +7,23 @@ using System.Text;
 
 namespace EB.ISCS.ToolService.TripartiteDataService
 {
-    public class JdDataService : ExternalServices, IDataService
+    public class JdDataService : ExternalServices, ISyncDataService
     {
+
+        public JdDataService()
+        { }
+
+
         public ApiPlatform Platform => ApiPlatform.Jd;
 
-        public string ServiceName => throw new NotImplementedException();
+        public string TradesSoldGetUrl => throw new NotImplementedException();
 
-        public string ServiceDescription => throw new NotImplementedException();
+        public string TradesSoldIncrementGetUrl => throw new NotImplementedException();
 
-        public void SyncData()
-        {
-            throw new NotImplementedException();
-        }
+        public string TradeFullinfoGetUrl => throw new NotImplementedException();
+
+        public string LogisticsOrdersGetUrl => throw new NotImplementedException();
+
 
         public override string Signature(IDictionary<string, string> parameters, string secret, string signMethod)
         {

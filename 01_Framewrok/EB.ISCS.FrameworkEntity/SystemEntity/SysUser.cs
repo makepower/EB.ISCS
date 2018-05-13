@@ -30,6 +30,9 @@ namespace EB.ISCS.FrameworkEntity.SystemEntity
         public Nullable<int> UserType { get; set; }
         public Nullable<int> UserPosition { get; set; }
         public Nullable<int> UserCustomerId { get; set; }
+        /// <summary>
+        /// 任务批次号
+        /// </summary>
         public string PlaneNumber { get; set; }
         public Nullable<int> WhetherDog { get; set; }
         public Nullable<int> Securitylevel { get; set; }
