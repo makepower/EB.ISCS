@@ -1,4 +1,5 @@
-﻿using Maticsoft.Model;
+﻿using EB.ISCS.ToolService.TripartiteDataService;
+using Maticsoft.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,10 @@ namespace EB.ISCS.ToolService
 
         }
 
-        public void SyncData(ShipInfo ship)
+        public void SyncData(ShipInfo info)
         {
+            var service = new AliDataService();
+            service.InitTradeSold(info);
         }
     }
 }

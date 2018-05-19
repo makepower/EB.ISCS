@@ -6,7 +6,7 @@ namespace EB.ISCS.ToolService
     /// <summary>
     /// 外部服务
     /// </summary>
-    public abstract class ExternalServices : IThirdAuth
+    public abstract class ExternalServices 
     {
         public virtual string Signature(IDictionary<string, string> parameters, string secret, string signMethod)
         {

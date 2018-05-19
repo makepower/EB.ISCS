@@ -1,6 +1,8 @@
 ﻿using Maticsoft.Model;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Threading;
+using System.Linq;
 
 namespace EB.ISCS.ToolService
 {
@@ -10,14 +12,37 @@ namespace EB.ISCS.ToolService
     public class TradeSyncService
     {
         private string _connstr;
+        Task[] taskArrray = null;
+        CountdownEvent countdown = null;
+        private Dictionary<string, ShipInfo> dictionary = null;
 
         public TradeSyncService(string connstr)
         {
             _connstr = connstr;
+            dictionary = new Dictionary<string, ShipInfo>();
+            AuthServer.AuthFactory.Instance.AuthHandleEvent += Instance_AuthHandleEvent;
+        }
+
+        private void Instance_AuthHandleEvent(AuthServer.AuthModel obj)
+        {
+            if (dictionary.ContainsKey(obj.Key))
+                dictionary[obj.Key].SessionKey = obj.AccessToken;
+            countdown.Signal();
         }
 
         public void DoJob(List<ShipInfo> list)
         {
+            // 1. 所有服务认证完成
+            dictionary = list.ToDictionary(x => x.Id.ToString());
+            countdown = new CountdownEvent(list.Count);
+            foreach (var item in list)
+            {
+                AuthServer.AuthFactory.Instance.RegisterShopAuth(item);
+            }
+            countdown.Wait(new System.TimeSpan(0, 30, 0));/* 30分钟超时 */
+            countdown.Dispose();
+
+            // 2. 同步数据 
             var taskArray = new Task[list.Count];
             var num = list.Count;
             for (int i = 0; i < num; i++)

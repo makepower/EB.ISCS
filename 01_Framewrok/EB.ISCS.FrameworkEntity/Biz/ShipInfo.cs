@@ -70,5 +70,11 @@ namespace Maticsoft.Model
         [NotMapped]
         public string PlatName { get; set; }
 
+        /// <summary>
+        /// SessionKey
+        /// </summary>	
+        [NotMapped]
+        public string SessionKey { get; set; }
+
     }
 }

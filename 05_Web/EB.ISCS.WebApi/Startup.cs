@@ -33,15 +33,9 @@ namespace EB.ISCS.WebApi
 
             new EBJobScheduler(DapperProvider.GetConnString()).Start();
 
-        }
+            
 
-        /// <summary>
-        /// 默认24小时更新一次数据
-        /// </summary>
-        /// <returns></returns>
-        private string ReadCorn()
-        {
-            return Cron.Daily();
         }
+    
     }
 }

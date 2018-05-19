@@ -34,11 +34,11 @@ namespace Maticsoft.Model
         /// <summary>
         /// buyerId
         /// </summary>		
-        public int buyerId { get; set; }
+        public string BuyerId { get; set; }
         /// <summary>
         /// GoodNum
         /// </summary>		
-        public int GoodNum { get; set; }
+        public double GoodNum { get; set; }
         /// <summary>
         /// GoodFee
         /// </summary>		

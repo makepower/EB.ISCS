@@ -30,6 +30,12 @@ namespace EB.ISCS.WebApi.Controllers.Sys
         {
             try
             {
+                if (ApiCacheDic.Get(ApiCacheDic.RedirectUri) == null)
+                {
+                    var u = Request.RequestUri.GetLeftPart(UriPartial.Authority);
+                    ApiCacheDic.Add(ApiCacheDic.RedirectUri, u, DateTime.Now.AddYears(1));
+                }
+
                 LogHelper.WriteInfoLog("SignIn....");
 
                 #region 参数验证
@@ -163,7 +169,7 @@ namespace EB.ISCS.WebApi.Controllers.Sys
                 idbTrans = loginTokenServices.BeginTrans();
                 loginTokenServices.DisableToken(token, idbTrans);
                 loginLogService.LoginOutByToken(token, idbTrans);
-              
+
                 idbTrans?.Commit();
                 return ResponseResult<bool>.GenSuccessResponse(true);
             }

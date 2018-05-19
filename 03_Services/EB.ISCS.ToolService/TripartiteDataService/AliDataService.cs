@@ -2,8 +2,10 @@
 using Maticsoft.Model;
 using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Text;
+using Top.Api;
+using Top.Api.Domain;
+using Top.Api.Request;
+using Top.Api.Response;
 
 namespace EB.ISCS.ToolService.TripartiteDataService
 {
@@ -14,55 +16,175 @@ namespace EB.ISCS.ToolService.TripartiteDataService
     {
         public ApiPlatform Platform => ApiPlatform.Ali_Tb;
 
-        public string TradesSoldGetUrl => throw new NotImplementedException();
+        const string url = "http://gw.api.taobao.com/router/rest";
 
-        public string TradesSoldIncrementGetUrl => throw new NotImplementedException();
-
-        public string TradeFullinfoGetUrl => throw new NotImplementedException();
-
-        public string LogisticsOrdersGetUrl => throw new NotImplementedException();
-
-
-        public override string Signature(IDictionary<string, string> parameters, string secret, string signMethod)
+        /// <summary>
+        /// 同步交易数据
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        public List<Trade> InitTradeSold(ShipInfo info)
         {
-            // 第一步：把字典按Key的字母顺序排序
-            IDictionary<string, string> sortedParams = new SortedDictionary<string, string>(parameters, StringComparer.Ordinal);
-            IEnumerator<KeyValuePair<string, string>> dem = sortedParams.GetEnumerator();
-            // 第二步：把所有参数名和参数值串在一起
-            StringBuilder query = new StringBuilder();
-            if ("MD5".Equals(signMethod))
+            ITopClient client = new DefaultTopClient(url, info.AppKey, info.AppSecret);
+
+            var pageIndex = 1L;
+            TradesSoldGetResponse rsp = null;
+            var list = new List<Trade>();
+            do
             {
-                query.Append(secret);
-            }
-            while (dem.MoveNext())
-            {
-                string key = dem.Current.Key;
-                string value = dem.Current.Value;
-                if (!string.IsNullOrEmpty(key) && !string.IsNullOrEmpty(value))
+                try
                 {
-                    query.Append(key).Append(value);
+                    TradesSoldGetRequest req = new TradesSoldGetRequest
+                    {
+                        Fields = "tid,type,status,payment,orders,rx_audit_status",
+                        StartCreated = DateTime.Now.AddMonths(-3),
+                        EndCreated = DateTime.Now,
+                        PageNo = pageIndex,
+                        PageSize = 100L,
+                        UseHasNext = true
+                    };
+                    rsp = client.Execute(req, info.SessionKey);
+                    pageIndex++;
+
+                    if (!rsp.IsError)
+                    {
+                        list.AddRange(rsp.Trades);
+                    }
                 }
-            }
-            // 第三步：使用MD5/HMAC加密
-            byte[] bytes;
-            if ("HMAC_MD5".Equals(signMethod))
-            {
-                HMACMD5 hmac = new HMACMD5(Encoding.UTF8.GetBytes(secret));
-                bytes = hmac.ComputeHash(Encoding.UTF8.GetBytes(query.ToString()));
-            }
-            else
-            {
-                query.Append(secret);
-                MD5 md5 = MD5.Create();
-                bytes = md5.ComputeHash(Encoding.UTF8.GetBytes(query.ToString()));
-            }
-            // 第四步：把二进制转化为大写的十六进制
-            StringBuilder result = new StringBuilder();
-            for (int i = 0; i < bytes.Length; i++)
-            {
-                result.Append(bytes[i].ToString("X2"));
-            }
-            return result.ToString();
+                catch (Exception e)
+                {
+                    break;
+                }
+            } while (rsp.HasNext);
+            return list;
         }
+
+        /// <summary>
+        /// 同步增量交易数据
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        public List<Trade> QueryTradeSoldIncrement(ShipInfo info)
+        {
+            ITopClient client = new DefaultTopClient(url, info.AppKey, info.AppSecret);
+
+            var pageIndex = 1L;
+            TradesSoldGetResponse rsp = null;
+            var list = new List<Trade>();
+            do
+            {
+                try
+                {
+                    TradesSoldGetRequest req = new TradesSoldGetRequest
+                    {
+                        Fields = "tid,type,status,payment,orders,rx_audit_status",
+                        StartCreated = DateTime.Now.AddMonths(-3),
+                        EndCreated = DateTime.Now,
+                        PageNo = pageIndex,
+                        PageSize = 100L,
+                        UseHasNext = true
+                    };
+                    rsp = client.Execute(req, info.SessionKey);
+                    pageIndex++;
+
+                    if (!rsp.IsError)
+                    {
+                        list.AddRange(rsp.Trades);
+                    }
+                }
+                catch (Exception e)
+                {
+                    break;
+                }
+            } while (rsp.HasNext);
+            return list;
+        }
+
+        /// <summary>
+        /// 同步交易详情数据
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        public List<Trade> QueryTradeFullinfo(ShipInfo info)
+        {
+            ITopClient client = new DefaultTopClient(url, info.AppKey, info.AppSecret);
+
+            var pageIndex = 1L;
+            TradesSoldGetResponse rsp = null;
+            var list = new List<Trade>();
+            do
+            {
+                try
+                {
+                    TradesSoldGetRequest req = new TradesSoldGetRequest
+                    {
+                        Fields = "tid,type,status,payment,orders,rx_audit_status",
+                        StartCreated = DateTime.Now.AddMonths(-3),
+                        EndCreated = DateTime.Now,
+                        PageNo = pageIndex,
+                        PageSize = 100L,
+                        UseHasNext = true
+                    };
+                    rsp = client.Execute(req, info.SessionKey);
+                    pageIndex++;
+
+                    if (!rsp.IsError)
+                    {
+                        list.AddRange(rsp.Trades);
+                    }
+                }
+                catch (Exception e)
+                {
+                    break;
+                }
+            } while (rsp.HasNext);
+            return list;
+        }
+
+        
+        /// <summary>
+        /// 商品类目
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        public List<Trade> QueryShopCatsInfo(ShipInfo info)
+        {
+            ITopClient client = new DefaultTopClient(url, info.AppKey, info.AppSecret);
+
+            var pageIndex = 1L;
+            TradesSoldGetResponse rsp = null;
+            var list = new List<Trade>();
+            do
+            {
+                try
+                {
+                    TradesSoldGetRequest req = new TradesSoldGetRequest
+                    {
+                        Fields = "tid,type,status,payment,orders,rx_audit_status",
+                        StartCreated = DateTime.Now.AddMonths(-3),
+                        EndCreated = DateTime.Now,
+                        PageNo = pageIndex,
+                        PageSize = 100L,
+                        UseHasNext = true
+                    };
+                    rsp = client.Execute(req, info.SessionKey);
+                    pageIndex++;
+
+                    if (!rsp.IsError)
+                    {
+                        list.AddRange(rsp.Trades);
+                    }
+                }
+                catch (Exception e)
+                {
+                    break;
+                }
+            } while (rsp.HasNext);
+            return list;
+        }
+
+
+
+
     }
 }
