@@ -3,43 +3,114 @@
 <head>
     <title>网店鹰眼 | Dashboard</title>
     <!-- Font Awesome -->
-    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
-    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">*@
-    <!-- jvectormap -->
-    <link href="~/Scripts/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
 </head>
 <body style="height:auto;">
     <section class="content">
         <!-- /.row -->
-        <div class="row">
-            <div class="col-md-12" style="height: 100%;background: url('/Content/images/sea2-main.png') no-repeat fixed center">
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="chart-uv" style="width:600px; height: 400px;"></div>
+                </div>
+                <div class="col-md-4">
+                    <div id="chart-map" style="width:600px; height: 400px;"></div>
+                </div>
+                <div class="col-md-4">
+                    <div id="chart-topn" style="width:600px; height: 400px;"></div>
+                </div>
             </div>
-            <!-- /.col -->
-        </div>
+            <div class="row">
+                <div class="col-md-4"><div id="chartmain" style="width:600px; height: 400px;"></div></div>
+                <div class="col-md-4"><div id="chartmain" style="width:600px; height: 400px;"></div></div>
+                <div class="col-md-4"><div id="chartmain" style="width:600px; height: 400px;"></div></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"><div id="chartmain" style="width:600px; height: 400px;"></div></div>
+                <div class="col-md-4"><div id="chartmain" style="width:600px; height: 400px;"></div></div>
+                <div class="col-md-4"><div id="chartmain" style="width:600px; height: 400px;"></div></div>
+            </div>
         <!-- /.row -->
-
     </section>
-    <!-- jQuery 2.2.0 -->
-    @*<script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>*@
-    <!-- Bootstrap 3.3.6 -->
-    @*<script src="bootstrap/js/bootstrap.min.js"></script>*@
-    <!-- FastClick -->
-    @*<script src="plugins/fastclick/fastclick.js"></script>*@
-    <!-- AdminLTE App -->
-    @*<script src="dist/js/app.min.js"></script>*@
-    <!-- Sparkline -->
-    <script src="~/Scripts/sparkline/jquery.sparkline.min.js"></script>
-    <!-- jvectormap -->
-    <script src="~/Scripts/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="~/Scripts/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <!-- SlimScroll 1.3.0 -->
-    @*<script src="~/Scripts/slimScroll/jquery.slimscroll.min.js"></script>*@
+    <script src="~/Scripts/jQuery/jquery-3.0.0.min.js"></script>
     <!-- ChartJS 1.0.1 -->
-    <script src="~/Scripts/chartjs/Chart.min.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="~/Scripts/adminlte/pages/dashboard2.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="~/Scripts/adminlte/demo.js"></script>
-</body>
-</html>
+    <script src="~/Scripts/echarts/dist/echarts.js"></script>
+    <script src="~/Scripts/echarts/map/js/china.js"></script>
+    <script src="~/Scripts/echarts/theme/shine.js"></script>
+
+   
+    <script>
+
+       
+        //指定图标的配置和数据
+        var option = {
+            title: {
+                text: 'ECharts 数据统计'
+            },
+            tooltip: {},
+            legend: {
+                data: ['用户来源']
+            },
+            xAxis: {
+                data: ["Android", "IOS", "PC", "Ohter"]
+            },
+            yAxis: {
+
+            },
+            series: [{
+                name: '访问量',
+                type: 'line',
+                data: [500, 200, 360, 100]
+            }]
+        };
+        //初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart-uv'));
+
+        //使用制定的配置项和数据显示图表
+        myChart.setOption(option);
+
+
+        var chart = echarts.init(document.getElementById('chart-map'), 'shine'); 
+        var option = {
+            //tooltip: {
+            //    //                    show: false //不显示提示标签
+            //    formatter: '{b}', //提示标签格式
+            //    backgroundColor: "#ff7f50",//提示标签背景颜色
+            //    textStyle: { color: "#fff" } //提示标签字体颜色
+            //},
+            series: [{
+                type: 'map',
+                mapType: 'china',
+                //label: {
+                //    normal: {
+                //        show: true,//显示省份标签
+                //        textStyle: { color: "#c71585" }//省份标签字体颜色
+                //    },
+                //    emphasis: {//对应的鼠标悬浮效果
+                //        show: true,
+                //        textStyle: { color: "#800080" }
+                //    }
+                //},
+                //itemStyle: {
+                //    normal: {
+                //        borderWidth: .5,//区域边框宽度
+                //        borderColor: '#009fe8',//区域边框颜色
+                //        areaColor: "#ffefd5",//区域颜色
+                //    },
+                //    emphasis: {
+                //        borderWidth: .5,
+                //        borderColor: '#4b0082',
+                //        areaColor: "#ffdead",
+                //    }
+                //},
+                //data: [
+                //    { name: '福建', selected: true }//福建为选中状态
+                //]
+            }],
+        };
+        chart.setOption(option);
+    </script>
+</body >
+</html >

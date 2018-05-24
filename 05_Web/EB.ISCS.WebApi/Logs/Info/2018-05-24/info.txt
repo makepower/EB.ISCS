@@ -1,0 +1,462 @@
+2018-05-24 21:47:57.5420 | Info | 系统启动 
+2018-05-24 21:47:58.7021 | Info | Starting Hangfire Server 
+2018-05-24 21:47:58.7861 | Info | Using job storage: 'Hangfire.MemoryStorage.MemoryStorage' 
+2018-05-24 21:47:58.7861 | Info | Using the following options for Hangfire Server: 
+2018-05-24 21:47:58.7861 | Info |     Worker count: 20 
+2018-05-24 21:47:58.7861 | Info |     Listening queues: 'default' 
+2018-05-24 21:47:58.7861 | Info |     Shutdown timeout: 00:00:15 
+2018-05-24 21:47:58.7861 | Info |     Schedule polling interval: 00:00:15 
+2018-05-24 21:47:58.8581 | Info | 数据同步任务启动... 
+2018-05-24 21:48:01.1922 | Info | 开始启动任务调度 
+2018-05-24 21:48:01.9742 | Info | 执行函数：<GetAllList>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：772 ms 
+2018-05-24 21:48:02.0082 | Info | 执行函数：<GetAllList>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：13 ms 
+2018-05-24 21:48:02.0082 | Info | 启动任务调度完毕 
+2018-05-24 21:52:26.9114 | Info | SignIn.... 
+2018-05-24 21:52:28.0405 | Info | 执行函数：<GetFirst>b__0,返回：SysUser，详细信息：select top 1 * from  SysUser  WHERE DelState = 0 AND LoginName = @LoginName AND PassWord = @PassWord ,函数执行时间：913 ms 
+2018-05-24 21:52:28.0405 | Info | 执行函数：<Login>b__0,返回：SysUser，详细信息：,函数执行时间：918 ms 
+2018-05-24 21:52:28.0955 | Info | login info:{"Id":0,"UserId":0,"UserName":null,"LogDate":"2018-05-24T21:52:27.0764503+08:00","LogOutDate":null,"ClientIpAddress":"169.254.52.192","ClientName":"::1","OnlineDate":null,"IsSucceed":0,"LogReason":"用户不存在或者密码错误","SessionId":null,"InUserType":1,"IPNum":-1442958144,"Enabled":1,"DelUser":null,"DelState":0,"DelDate":null,"Token":null,"LoginName":null} 
+2018-05-24 21:52:28.3475 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , UserName = null , LogDate = 2018/5/24 星期四 21:52:27 , LogOutDate = null , ClientIpAddress = 169.254.52.192 , ClientName = ::1 , OnlineDate = null , IsSucceed = 0 , LogReason = 用户不存在或者密码错误 , SessionId = null , InUserType = 1 , IPNum = -1442958144 , Enabled = 1 , DelUser = null , DelState = 0 , DelDate = null , Token = null , LoginName = null,函数执行时间：245 ms 
+2018-05-24 21:52:28.6355 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"AccountController","MethodAction":"SignIn","Parameters":" {\"model\":{\"LoginName\":\"admin\",\"Password\":\"f72ql8kcOEYabyoYyIwlfw==\",\"RememberMe\":false,\"UserIsManage\":true,\"IsRoot\":false,\"Token\":null}}","ExecutionTime":"2018-05-24T21:52:26.8484373+08:00","ExecutionDuration":697,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Account/SignIn","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:52:28.6195386+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:52:28.7265 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = AccountController , MethodAction = SignIn , Parameters =  {"model":{"LoginName":"admin","Password":"f72ql8kcOEYabyoYyIwlfw==","RememberMe":false,"UserIsManage":true,"IsRoot":false,"Token":null}} , ExecutionTime = 2018/5/24 星期四 21:52:26 , ExecutionDuration = 697 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Account/SignIn , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:52:28 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：87 ms 
+2018-05-24 21:52:36.2949 | Info | SignIn.... 
+2018-05-24 21:52:36.3459 | Info | 执行函数：<GetFirst>b__0,返回：SysUser，详细信息：select top 1 * from  SysUser  WHERE DelState = 0 AND LoginName = @LoginName AND PassWord = @PassWord ,函数执行时间：38 ms 
+2018-05-24 21:52:36.3459 | Info | 执行函数：<Login>b__0,返回：SysUser，详细信息：,函数执行时间：40 ms 
+2018-05-24 21:52:36.3459 | Info | login info:{"Id":0,"UserId":0,"UserName":null,"LogDate":"2018-05-24T21:52:36.3009779+08:00","LogOutDate":null,"ClientIpAddress":"169.254.52.192","ClientName":"::1","OnlineDate":null,"IsSucceed":0,"LogReason":"用户不存在或者密码错误","SessionId":null,"InUserType":1,"IPNum":-1442958144,"Enabled":1,"DelUser":null,"DelState":0,"DelDate":null,"Token":null,"LoginName":null} 
+2018-05-24 21:52:36.3589 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , UserName = null , LogDate = 2018/5/24 星期四 21:52:36 , LogOutDate = null , ClientIpAddress = 169.254.52.192 , ClientName = ::1 , OnlineDate = null , IsSucceed = 0 , LogReason = 用户不存在或者密码错误 , SessionId = null , InUserType = 1 , IPNum = -1442958144 , Enabled = 1 , DelUser = null , DelState = 0 , DelDate = null , Token = null , LoginName = null,函数执行时间：5 ms 
+2018-05-24 21:52:36.3989 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"AccountController","MethodAction":"SignIn","Parameters":" {\"model\":{\"LoginName\":\"admin\",\"Password\":\"at9jhbSHeivy2kwH3Rwsmg==\",\"RememberMe\":false,\"UserIsManage\":true,\"IsRoot\":false,\"Token\":null}}","ExecutionTime":"2018-05-24T21:52:36.2939775+08:00","ExecutionDuration":93,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Account/SignIn","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:52:36.3969834+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:52:36.3989 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = AccountController , MethodAction = SignIn , Parameters =  {"model":{"LoginName":"admin","Password":"at9jhbSHeivy2kwH3Rwsmg==","RememberMe":false,"UserIsManage":true,"IsRoot":false,"Token":null}} , ExecutionTime = 2018/5/24 星期四 21:52:36 , ExecutionDuration = 93 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Account/SignIn , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:52:36 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：11 ms 
+2018-05-24 21:52:42.2553 | Info | SignIn.... 
+2018-05-24 21:52:42.2553 | Info | 执行函数：<GetFirst>b__0,返回：SysUser，详细信息：select top 1 * from  SysUser  WHERE DelState = 0 AND LoginName = @LoginName AND PassWord = @PassWord ,函数执行时间：1 ms 
+2018-05-24 21:52:42.4013 | Info | 执行函数：<Login>b__0,返回：SysUser，详细信息：,函数执行时间：140 ms 
+2018-05-24 21:52:42.4053 | Info | login info:{"Id":0,"UserId":0,"UserName":null,"LogDate":"2018-05-24T21:52:42.2593187+08:00","LogOutDate":null,"ClientIpAddress":"169.254.52.192","ClientName":"::1","OnlineDate":null,"IsSucceed":0,"LogReason":"用户不存在或者密码错误","SessionId":null,"InUserType":1,"IPNum":-1442958144,"Enabled":1,"DelUser":null,"DelState":0,"DelDate":null,"Token":null,"LoginName":null} 
+2018-05-24 21:52:42.4053 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , UserName = null , LogDate = 2018/5/24 星期四 21:52:42 , LogOutDate = null , ClientIpAddress = 169.254.52.192 , ClientName = ::1 , OnlineDate = null , IsSucceed = 0 , LogReason = 用户不存在或者密码错误 , SessionId = null , InUserType = 1 , IPNum = -1442958144 , Enabled = 1 , DelUser = null , DelState = 0 , DelDate = null , Token = null , LoginName = null,函数执行时间：3 ms 
+2018-05-24 21:52:42.4383 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"AccountController","MethodAction":"SignIn","Parameters":" {\"model\":{\"LoginName\":\"admin\",\"Password\":\"f72ql8kcOEYabyoYyIwlfw==\",\"RememberMe\":false,\"UserIsManage\":true,\"IsRoot\":false,\"Token\":null}}","ExecutionTime":"2018-05-24T21:52:42.2553185+08:00","ExecutionDuration":180,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Account/SignIn","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:52:42.4383289+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:52:42.4383 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = AccountController , MethodAction = SignIn , Parameters =  {"model":{"LoginName":"admin","Password":"f72ql8kcOEYabyoYyIwlfw==","RememberMe":false,"UserIsManage":true,"IsRoot":false,"Token":null}} , ExecutionTime = 2018/5/24 星期四 21:52:42 , ExecutionDuration = 180 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Account/SignIn , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:52:42 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：3 ms 
+2018-05-24 21:52:44.6284 | Info | SignIn.... 
+2018-05-24 21:52:44.6364 | Info | 执行函数：<GetFirst>b__0,返回：SysUser，详细信息：select top 1 * from  SysUser  WHERE DelState = 0 AND LoginName = @LoginName AND PassWord = @PassWord ,函数执行时间：0 ms 
+2018-05-24 21:52:44.6364 | Info | 执行函数：<Login>b__0,返回：SysUser，详细信息：,函数执行时间：7 ms 
+2018-05-24 21:52:44.6364 | Info | login info:{"Id":0,"UserId":0,"UserName":null,"LogDate":"2018-05-24T21:52:44.6334545+08:00","LogOutDate":null,"ClientIpAddress":"169.254.52.192","ClientName":"::1","OnlineDate":null,"IsSucceed":0,"LogReason":"用户不存在或者密码错误","SessionId":null,"InUserType":1,"IPNum":-1442958144,"Enabled":1,"DelUser":null,"DelState":0,"DelDate":null,"Token":null,"LoginName":null} 
+2018-05-24 21:52:44.6514 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , UserName = null , LogDate = 2018/5/24 星期四 21:52:44 , LogOutDate = null , ClientIpAddress = 169.254.52.192 , ClientName = ::1 , OnlineDate = null , IsSucceed = 0 , LogReason = 用户不存在或者密码错误 , SessionId = null , InUserType = 1 , IPNum = -1442958144 , Enabled = 1 , DelUser = null , DelState = 0 , DelDate = null , Token = null , LoginName = null,函数执行时间：3 ms 
+2018-05-24 21:52:44.6824 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"AccountController","MethodAction":"SignIn","Parameters":" {\"model\":{\"LoginName\":\"admin\",\"Password\":\"f72ql8kcOEYabyoYyIwlfw==\",\"RememberMe\":false,\"UserIsManage\":true,\"IsRoot\":false,\"Token\":null}}","ExecutionTime":"2018-05-24T21:52:44.6284542+08:00","ExecutionDuration":45,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Account/SignIn","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:52:44.6814572+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:52:44.7264 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = AccountController , MethodAction = SignIn , Parameters =  {"model":{"LoginName":"admin","Password":"f72ql8kcOEYabyoYyIwlfw==","RememberMe":false,"UserIsManage":true,"IsRoot":false,"Token":null}} , ExecutionTime = 2018/5/24 星期四 21:52:44 , ExecutionDuration = 45 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Account/SignIn , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:52:44 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：41 ms 
+2018-05-24 21:52:58.4672 | Info | SignIn.... 
+2018-05-24 21:52:58.4972 | Info | 执行函数：<GetFirst>b__0,返回：SysUser，详细信息：select top 1 * from  SysUser  WHERE DelState = 0 AND LoginName = @LoginName AND PassWord = @PassWord ,函数执行时间：4 ms 
+2018-05-24 21:52:58.5302 | Info | 执行函数：<Login>b__0,返回：SysUser，详细信息：,函数执行时间：37 ms 
+2018-05-24 21:52:58.5302 | Info | login info:{"Id":0,"UserId":0,"UserName":null,"LogDate":"2018-05-24T21:52:58.489247+08:00","LogOutDate":null,"ClientIpAddress":"169.254.52.192","ClientName":"::1","OnlineDate":null,"IsSucceed":0,"LogReason":"用户不存在或者密码错误","SessionId":null,"InUserType":1,"IPNum":-1442958144,"Enabled":1,"DelUser":null,"DelState":0,"DelDate":null,"Token":null,"LoginName":null} 
+2018-05-24 21:52:58.5592 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , UserName = null , LogDate = 2018/5/24 星期四 21:52:58 , LogOutDate = null , ClientIpAddress = 169.254.52.192 , ClientName = ::1 , OnlineDate = null , IsSucceed = 0 , LogReason = 用户不存在或者密码错误 , SessionId = null , InUserType = 1 , IPNum = -1442958144 , Enabled = 1 , DelUser = null , DelState = 0 , DelDate = null , Token = null , LoginName = null,函数执行时间：22 ms 
+2018-05-24 21:52:58.5992 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"AccountController","MethodAction":"SignIn","Parameters":" {\"model\":{\"LoginName\":\"admin\",\"Password\":\"f72ql8kcOEYabyoYyIwlfw==\",\"RememberMe\":false,\"UserIsManage\":true,\"IsRoot\":false,\"Token\":null}}","ExecutionTime":"2018-05-24T21:52:58.4672457+08:00","ExecutionDuration":129,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Account/SignIn","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:52:58.5992533+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:52:58.5992 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = AccountController , MethodAction = SignIn , Parameters =  {"model":{"LoginName":"admin","Password":"f72ql8kcOEYabyoYyIwlfw==","RememberMe":false,"UserIsManage":true,"IsRoot":false,"Token":null}} , ExecutionTime = 2018/5/24 星期四 21:52:58 , ExecutionDuration = 129 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Account/SignIn , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:52:58 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：4 ms 
+2018-05-24 21:53:00.2413 | Info | SignIn.... 
+2018-05-24 21:53:00.2413 | Info | 执行函数：<GetFirst>b__0,返回：SysUser，详细信息：select top 1 * from  SysUser  WHERE DelState = 0 AND LoginName = @LoginName AND PassWord = @PassWord ,函数执行时间：0 ms 
+2018-05-24 21:53:00.2413 | Info | 执行函数：<Login>b__0,返回：SysUser，详细信息：,函数执行时间：2 ms 
+2018-05-24 21:53:00.2513 | Info | login info:{"Id":0,"UserId":0,"UserName":null,"LogDate":"2018-05-24T21:53:00.2443474+08:00","LogOutDate":null,"ClientIpAddress":"169.254.52.192","ClientName":"::1","OnlineDate":null,"IsSucceed":0,"LogReason":"用户不存在或者密码错误","SessionId":null,"InUserType":1,"IPNum":-1442958144,"Enabled":1,"DelUser":null,"DelState":0,"DelDate":null,"Token":null,"LoginName":null} 
+2018-05-24 21:53:00.2513 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , UserName = null , LogDate = 2018/5/24 星期四 21:53:00 , LogOutDate = null , ClientIpAddress = 169.254.52.192 , ClientName = ::1 , OnlineDate = null , IsSucceed = 0 , LogReason = 用户不存在或者密码错误 , SessionId = null , InUserType = 1 , IPNum = -1442958144 , Enabled = 1 , DelUser = null , DelState = 0 , DelDate = null , Token = null , LoginName = null,函数执行时间：9 ms 
+2018-05-24 21:53:00.2973 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"AccountController","MethodAction":"SignIn","Parameters":" {\"model\":{\"LoginName\":\"admin\",\"Password\":\"f72ql8kcOEYabyoYyIwlfw==\",\"RememberMe\":false,\"UserIsManage\":true,\"IsRoot\":false,\"Token\":null}}","ExecutionTime":"2018-05-24T21:53:00.2413472+08:00","ExecutionDuration":53,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Account/SignIn","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:53:00.2963504+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:53:00.2973 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = AccountController , MethodAction = SignIn , Parameters =  {"model":{"LoginName":"admin","Password":"f72ql8kcOEYabyoYyIwlfw==","RememberMe":false,"UserIsManage":true,"IsRoot":false,"Token":null}} , ExecutionTime = 2018/5/24 星期四 21:53:00 , ExecutionDuration = 53 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Account/SignIn , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:53:00 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：12 ms 
+2018-05-24 21:53:35.8573 | Info | SignIn.... 
+2018-05-24 21:53:35.8743 | Info | 执行函数：<GetFirst>b__0,返回：SysUser，详细信息：select top 1 * from  SysUser  WHERE DelState = 0 AND LoginName = @LoginName AND PassWord = @PassWord ,函数执行时间：1 ms 
+2018-05-24 21:53:35.8743 | Info | 执行函数：<Login>b__0,返回：SysUser，详细信息：,函数执行时间：5 ms 
+2018-05-24 21:53:35.8813 | Info | login info:{"Id":0,"UserId":0,"UserName":null,"LogDate":"2018-05-24T21:53:35.8653848+08:00","LogOutDate":null,"ClientIpAddress":"169.254.52.192","ClientName":"::1","OnlineDate":null,"IsSucceed":0,"LogReason":"用户不存在或者密码错误","SessionId":null,"InUserType":1,"IPNum":-1442958144,"Enabled":1,"DelUser":null,"DelState":0,"DelDate":null,"Token":null,"LoginName":null} 
+2018-05-24 21:53:35.9013 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , UserName = null , LogDate = 2018/5/24 星期四 21:53:35 , LogOutDate = null , ClientIpAddress = 169.254.52.192 , ClientName = ::1 , OnlineDate = null , IsSucceed = 0 , LogReason = 用户不存在或者密码错误 , SessionId = null , InUserType = 1 , IPNum = -1442958144 , Enabled = 1 , DelUser = null , DelState = 0 , DelDate = null , Token = null , LoginName = null,函数执行时间：17 ms 
+2018-05-24 21:53:35.9303 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"AccountController","MethodAction":"SignIn","Parameters":" {\"model\":{\"LoginName\":\"admin\",\"Password\":\"f72ql8kcOEYabyoYyIwlfw==\",\"RememberMe\":false,\"UserIsManage\":true,\"IsRoot\":false,\"Token\":null}}","ExecutionTime":"2018-05-24T21:53:35.8563843+08:00","ExecutionDuration":66,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Account/SignIn","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:53:35.9303885+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:53:35.9473 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = AccountController , MethodAction = SignIn , Parameters =  {"model":{"LoginName":"admin","Password":"f72ql8kcOEYabyoYyIwlfw==","RememberMe":false,"UserIsManage":true,"IsRoot":false,"Token":null}} , ExecutionTime = 2018/5/24 星期四 21:53:35 , ExecutionDuration = 66 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Account/SignIn , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:53:35 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：5 ms 
+2018-05-24 21:54:20.6389 | Info | SignIn.... 
+2018-05-24 21:54:20.6579 | Info | 执行函数：<GetFirst>b__0,返回：SysUser，详细信息：select top 1 * from  SysUser  WHERE DelState = 0 AND LoginName = @LoginName AND PassWord = @PassWord ,函数执行时间：12 ms 
+2018-05-24 21:54:20.6579 | Info | 执行函数：<Login>b__0,返回：SysUser，详细信息：,函数执行时间：14 ms 
+2018-05-24 21:54:20.8679 | Info | login info:{"Id":0,"UserId":1,"UserName":"系统管理员","LogDate":"2018-05-24T21:54:20.7999549+08:00","LogOutDate":null,"ClientIpAddress":"169.254.52.192","ClientName":"::1","OnlineDate":null,"IsSucceed":0,"LogReason":null,"SessionId":null,"InUserType":0,"IPNum":-1442958144,"Enabled":1,"DelUser":null,"DelState":0,"DelDate":null,"Token":"-1CBAE6D72AA114EBE88D2E9332F34EEE463662831660","LoginName":null} 
+2018-05-24 21:54:20.8729 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 1 , UserName = 系统管理员 , LogDate = 2018/5/24 星期四 21:54:20 , LogOutDate = null , ClientIpAddress = 169.254.52.192 , ClientName = ::1 , OnlineDate = null , IsSucceed = 0 , LogReason = null , SessionId = null , InUserType = 0 , IPNum = -1442958144 , Enabled = 1 , DelUser = null , DelState = 0 , DelDate = null , Token = -1CBAE6D72AA114EBE88D2E9332F34EEE463662831660 , LoginName = null,函数执行时间：2 ms 
+2018-05-24 21:54:21.1069 | Info | operation info:{"Id":0,"UserId":1,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"AccountController","MethodAction":"SignIn","Parameters":" {\"model\":{\"LoginName\":\"superadmin\",\"Password\":\"f72ql8kcOEYabyoYyIwlfw==\",\"RememberMe\":false,\"UserIsManage\":false,\"IsRoot\":false,\"Token\":null}}","ExecutionTime":"2018-05-24T21:54:20.6389457+08:00","ExecutionDuration":465,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":"","CustomData":null,"IPNum":-1442958144,"Token":"-1CBAE6D72AA114EBE88D2E9332F34EEE463662831660","Navigator":null,"RequestUri":"http://localhost:9089/Sys/Account/SignIn","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:54:21.1069725+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:54:21.1069 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 1 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = AccountController , MethodAction = SignIn , Parameters =  {"model":{"LoginName":"superadmin","Password":"f72ql8kcOEYabyoYyIwlfw==","RememberMe":false,"UserIsManage":false,"IsRoot":false,"Token":null}} , ExecutionTime = 2018/5/24 星期四 21:54:20 , ExecutionDuration = 465 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment =  , CustomData = null , IPNum = -1442958144 , Token = -1CBAE6D72AA114EBE88D2E9332F34EEE463662831660 , Navigator = null , RequestUri = http://localhost:9089/Sys/Account/SignIn , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:54:21 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：3 ms 
+2018-05-24 21:54:23.1360 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：50 ms 
+2018-05-24 21:56:35.0006 | Info | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+                       DECLARE @Order NVARCHAR(200);      
+                       IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                            BEGIN
+				                SET @Order = 'ORDER BY ' + @OrderBy;
+                            END;
+                       ELSE
+                            BEGIN
+                                SET @Order = '  ORDER BY InDate DESC ';
+                            END;
+                       IF ( @Where IS  NULL)
+                            BEGIN
+				                SET @Where = '';
+                            END;
+                       SET @Sql = N' 
+                   WITH  Select_List  AS
+                   (
+					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        Id
+                              ,UserId
+                              ,Code
+                              ,Name
+                              ,Plat
+                              ,Description
+                              ,AppKey
+                              ,AppSecret
+                              ,DeliveryAddress
+                              ,InDate
+                              ,Contract
+                              ,Status
+                              ,Remark
+                        FROM ShipInfo
+						WHERE  Status=1  ' + @Where + '
+                  )
+                  SELECT
+			          A.* , B.UserName FROM Select_List A 
+                   LEFT JOIN SysUser B ON A.UserId=B.Id 
+                  WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
+          
+                 SELECT @Count = COUNT(1) FROM ShipInfo WHERE  Status=1  ' + @Where;              
+                       EXECUTE sp_executesql @Sql,N' 
+                       @CurrentPageIndex INT,
+                       @PageSize  INT,
+                       @Where NVARCHAR(1000),
+                       @OrderBy NVARCHAR(200),         
+                       @Count int OUT',
+                       @CurrentPageIndex,
+			           @PageSize,
+                       @Where,
+                       @OrderBy,
+                       @Count OUTPUT; ,函数执行时间：555 ms 
+2018-05-24 21:56:35.0406 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"ShopManagerController","MethodAction":"GetPage","Parameters":" {\"page\":{\"PageSize\":15,\"PageIndex\":1,\"OrderBy\":null,\"Token\":null,\"Where\":\" and UserId=1\"}}","ExecutionTime":"2018-05-24T21:56:34.428598+08:00","ExecutionDuration":605,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Biz/ShopManager/GetPage","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:56:35.039633+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:56:35.0616 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = ShopManagerController , MethodAction = GetPage , Parameters =  {"page":{"PageSize":15,"PageIndex":1,"OrderBy":null,"Token":null,"Where":" and UserId=1"}} , ExecutionTime = 2018/5/24 星期四 21:56:34 , ExecutionDuration = 605 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Biz/ShopManager/GetPage , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:56:35 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：19 ms 
+2018-05-24 21:57:43.3285 | Info | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：  DECLARE @Sql NVARCHAR(MAX);
+                            DECLARE @Order NVARCHAR(200);      
+                            IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                                BEGIN
+                        SET @Order = 'ORDER BY ' + @OrderBy;
+                                END;
+                            ELSE
+                                BEGIN
+                                    SET @Order = '  ORDER BY InDate DESC ';
+                                END;
+                           IF ( @Where IS  NULL)
+                                BEGIN
+                        SET @Where = '';
+                                END;
+                            SET @Sql = N' 
+                         WITH  SysUserList  AS
+                      (
+                       SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        [Id]
+                          ,[UserName]
+                          ,[LoginName]
+                          ,[UserExtent]
+                          ,[Enabled]
+                          ,[UserIsFreeze]
+                          ,[UserIsManage]
+                          ,[UserRemark]
+                          ,[BeginDate]
+                          ,[ExpireDade]
+                          ,[IsExpireDate]
+                          ,[PartitionFalg]
+                          ,[FlowDepId]
+                          ,[FlowTypeCode]
+                          ,[UserType]
+                          ,[UserPosition]
+                          ,[UserCustomerId]
+                          ,[PlaneNumber]
+                          ,[WhetherDog]
+                          ,[Securitylevel]
+                          ,[DistrictId]
+                          ,[DataGroupId]
+                          ,[InUser]
+                          ,[InDate]
+                          ,[EditUser]
+                          ,[EditDate]
+                          ,[DelUser]
+                          ,[DelState]
+                          ,[DelDate]
+                      FROM    dbo.SysUser WHERE DelState = 0 AND Enabled=1' + @Where + '
+                       )
+                      SELECT
+                         A.[Id]
+                        ,A.[UserName]
+                        ,A.[LoginName]
+                        ,A.[UserExtent]
+                        ,A.[Enabled]
+                        ,A.[UserIsFreeze]
+                        ,A.[UserIsManage]
+                        ,A.[UserRemark]
+                        ,A.[BeginDate]
+                        ,A.[ExpireDade]
+                        ,A.[IsExpireDate]
+                        ,A.[PartitionFalg]
+                        ,A.[FlowDepId]
+                        ,A.[FlowTypeCode]
+                        ,A.[UserType]
+                        ,A.[UserPosition]
+                        ,A.[UserCustomerId]
+                        ,A.[PlaneNumber]
+                        ,A.[WhetherDog]
+                        ,A.[Securitylevel]
+                        ,A.[DistrictId]
+                        ,A.[DataGroupId]
+                        ,A.[InUser]
+                        ,CONVERT(varchar(20), A.[InDate], 20) InDate
+                        ,A.[EditUser]
+                        ,CONVERT(varchar(20), A.[EditDate], 20) EditDate
+                        ,A.[DelUser]
+                        ,A.[DelState]
+                        ,A.[DelDate]
+                        ,D.UserName InUserName
+                        ,E.UserName EditUserName
+                      FROM SysUserList A
+                      LEFT JOIN  SysUser D
+                      ON   A.InUser=D.Id
+                      LEFT JOIN SysUser E
+                      ON A.EditUser=E.Id
+                      WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )
+                                   AND  @PageSize * @CurrentPageIndex )
+
+                     SELECT   @Count = COUNT(1)
+                     FROM dbo.SysUser WHERE DelState = 0 AND Enabled=1  AND UserIsManage=0 ' + @Where;              
+                            EXECUTE sp_executesql @Sql,N'  
+                           @CurrentPageIndex INT,
+                           @PageSize  INT,
+                           @Where NVARCHAR(1000),
+                           @OrderBy NVARCHAR(200),         
+                           @Count int OUT',
+                           @CurrentPageIndex, 
+                           @PageSize,
+                           @Where,
+                           @OrderBy,
+                           @Count OUTPUT;,函数执行时间：51 ms 
+2018-05-24 21:57:43.3635 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"SysUserController","MethodAction":"GetUserListByQuery","Parameters":" {\"query\":{\"Id\":null,\"UserName\":null,\"UserType\":0,\"LoginName\":null,\"UserId\":0,\"RoleId\":0,\"PageSize\":15,\"PageIndex\":1,\"OrderBy\":null,\"Token\":null,\"Where\":null}}","ExecutionTime":"2018-05-24T21:57:43.2405338+08:00","ExecutionDuration":114,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/SysUser/GetUserListByQuery","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:57:43.3635409+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:57:43.3635 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = SysUserController , MethodAction = GetUserListByQuery , Parameters =  {"query":{"Id":null,"UserName":null,"UserType":0,"LoginName":null,"UserId":0,"RoleId":0,"PageSize":15,"PageIndex":1,"OrderBy":null,"Token":null,"Where":null}} , ExecutionTime = 2018/5/24 星期四 21:57:43 , ExecutionDuration = 114 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/SysUser/GetUserListByQuery , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:57:43 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：3 ms 
+2018-05-24 21:58:29.5001 | Info | 执行函数：<GetSysMenuList>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：8 ms 
+2018-05-24 21:58:29.5311 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"MenuController","MethodAction":"GetSysMenuList","Parameters":" {\"query\":null}","ExecutionTime":"2018-05-24T21:58:29.4901792+08:00","ExecutionDuration":37,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Menu/GetSysMenuList","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:58:29.5311815+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:58:29.5411 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = MenuController , MethodAction = GetSysMenuList , Parameters =  {"query":null} , ExecutionTime = 2018/5/24 星期四 21:58:29 , ExecutionDuration = 37 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Menu/GetSysMenuList , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:58:29 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：7 ms 
+2018-05-24 21:59:13.7717 | Info | 执行函数：<GetByUserId>b__0,返回：SynchronizationConfig，详细信息：,函数执行时间：4 ms 
+2018-05-24 21:59:13.8007 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"SyncConfigController","MethodAction":"GetByUserId","Parameters":"null {\"id\":1}","ExecutionTime":"2018-05-24T21:59:13.7647115+08:00","ExecutionDuration":33,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Biz/SyncConfig/GetByUserId/1","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:59:13.8007136+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:59:14.6027 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = SyncConfigController , MethodAction = GetByUserId , Parameters = null {"id":1} , ExecutionTime = 2018/5/24 星期四 21:59:13 , ExecutionDuration = 33 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Biz/SyncConfig/GetByUserId/1 , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:59:13 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：30 ms 
+2018-05-24 21:59:14.6347 | Info | 执行函数：<GetShipsByUserId>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：3 ms 
+2018-05-24 21:59:14.6627 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"ShopManagerController","MethodAction":"GetAll","Parameters":"null {\"id\":1}","ExecutionTime":"2018-05-24T21:59:14.628761+08:00","ExecutionDuration":31,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Biz/ShopManager/GetAll/1","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:59:14.6617628+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:59:14.7637 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = ShopManagerController , MethodAction = GetAll , Parameters = null {"id":1} , ExecutionTime = 2018/5/24 星期四 21:59:14 , ExecutionDuration = 31 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Biz/ShopManager/GetAll/1 , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:59:14 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：98 ms 
+2018-05-24 21:59:14.8337 | Info | 执行函数：<GetByUserId>b__0,返回：SynchronizationConfig，详细信息：,函数执行时间：0 ms 
+2018-05-24 21:59:14.8587 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"SyncConfigController","MethodAction":"GetByUserId","Parameters":"null {\"id\":1}","ExecutionTime":"2018-05-24T21:59:14.8327726+08:00","ExecutionDuration":23,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Biz/SyncConfig/GetByUserId/1","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T21:59:14.8587741+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 21:59:14.8587 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = SyncConfigController , MethodAction = GetByUserId , Parameters = null {"id":1} , ExecutionTime = 2018/5/24 星期四 21:59:14 , ExecutionDuration = 23 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Biz/SyncConfig/GetByUserId/1 , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 21:59:14 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：5 ms 
+2018-05-24 22:03:20.3478 | Info | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+                       DECLARE @Order NVARCHAR(200);      
+                       IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                            BEGIN
+				                SET @Order = 'ORDER BY ' + @OrderBy;
+                            END;
+                       ELSE
+                            BEGIN
+                                SET @Order = '  ORDER BY InDate DESC ';
+                            END;
+                       IF ( @Where IS  NULL)
+                            BEGIN
+				                SET @Where = '';
+                            END;
+                       SET @Sql = N' 
+                   WITH  Select_List  AS
+                   (
+					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        [Id]
+                              ,[AccessChannelId]
+                              ,[UserId]
+                              ,[UserName]
+                              ,[LogDate]
+                              ,[Token]
+                              ,[LogOutDate]
+                              ,[ClientIpAddress]
+                              ,[ClientName]
+                              ,[OnlineDate]
+                              ,[IsSucceed]
+                              ,[LogReason]
+                              ,[SessionId]
+                              ,[InUserType]
+                              ,[IPNum]
+                              ,[Enabled]
+                              ,[DelUser]
+                              ,[DelState]
+                              ,[DelDate]
+                        FROM SysLoginLog
+						WHERE  1=1 ' + @Where + '
+                  )
+                  SELECT
+			          A.*  FROM Select_List A 
+                  
+                  WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
+          
+                 SELECT @Count = COUNT(1) FROM SysLoginLog WHERE  1=1 ' + @Where;              
+                       EXECUTE sp_executesql @Sql,N' 
+                       @CurrentPageIndex INT,
+                       @PageSize  INT,
+                       @Where NVARCHAR(1000),
+                       @OrderBy NVARCHAR(200),         
+                       @Count int OUT',
+                       @CurrentPageIndex,
+			           @PageSize,
+                       @Where,
+                       @OrderBy,
+                       @Count OUTPUT; ,函数执行时间：12 ms 
+2018-05-24 22:03:20.3828 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"LogController","MethodAction":"GetLoginLogPageList","Parameters":" {\"pages\":{\"BeginDate\":null,\"EndDate\":null,\"AccessChannelId\":null,\"UserId\":null,\"MenuName\":null,\"Exception\":null,\"MenuActionName\":null,\"DelState\":null,\"PageSize\":15,\"PageIndex\":1,\"OrderBy\":null,\"Token\":null,\"Where\":null}}","ExecutionTime":"2018-05-24T22:03:20.3328144+08:00","ExecutionDuration":42,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Log/GetLoginLogPageList","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T22:03:20.3828173+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 22:03:20.3908 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = LogController , MethodAction = GetLoginLogPageList , Parameters =  {"pages":{"BeginDate":null,"EndDate":null,"AccessChannelId":null,"UserId":null,"MenuName":null,"Exception":null,"MenuActionName":null,"DelState":null,"PageSize":15,"PageIndex":1,"OrderBy":null,"Token":null,"Where":null}} , ExecutionTime = 2018/5/24 星期四 22:03:20 , ExecutionDuration = 42 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Log/GetLoginLogPageList , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 22:03:20 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：5 ms 
+2018-05-24 22:03:20.9188 | Info | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+                       DECLARE @Order NVARCHAR(200);      
+                       IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                            BEGIN
+				                SET @Order = 'ORDER BY ' + @OrderBy;
+                            END;
+                       ELSE
+                            BEGIN
+                                SET @Order = '  ORDER BY InDate DESC ';
+                            END;
+                       IF ( @Where IS  NULL)
+                            BEGIN
+				                SET @Where = '';
+                            END;
+                       SET @Sql = N' 
+                   WITH  Select_List  AS
+                   (
+					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        [Id]
+                              ,[AccessChannelId]
+                              ,[UserId]
+                              ,[CustomerId]
+                              ,[ExceptionDate]
+                              ,[ExceptionFunction]
+                              ,[ExceptionVersions]
+                              ,[ExceptionSource]
+                              ,[ExceptionDescription]
+                              ,[ExceptionStackTrace]
+                              ,[ExceptionType]
+                              ,[ExceptionTargetSite]
+                              ,[ExceptionTypeName]
+                              ,[ExceptionIP]
+                              ,[IPNum]
+                              ,[ComputerName]
+                              ,[ExploreName]
+                              ,[ExplorerVersions]
+                              ,[SourceEquipment]
+                              ,[Enabled]
+                              ,[InUser]
+                              ,[InDate]
+                              ,[DeleteState]
+                              ,[DeleteUser]
+                              ,[DeleteDate]
+                        FROM SysExceptionLog
+						WHERE  1=1 ' + @Where + '
+                  )
+                  SELECT
+			          A.* , B.UserName FROM Select_List A 
+                   Left join SysUser B on  A.UserId =B.Id
+                  WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
+          
+                 SELECT @Count = COUNT(1) FROM SysExceptionLog WHERE  1=1 ' + @Where;              
+                       EXECUTE sp_executesql @Sql,N' 
+                       @CurrentPageIndex INT,
+                       @PageSize  INT,
+                       @Where NVARCHAR(1000),
+                       @OrderBy NVARCHAR(200),         
+                       @Count int OUT',
+                       @CurrentPageIndex,
+			           @PageSize,
+                       @Where,
+                       @OrderBy,
+                       @Count OUTPUT; ,函数执行时间：322 ms 
+2018-05-24 22:03:20.9608 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"LogController","MethodAction":"GetExceptionLogPageList","Parameters":" {\"pages\":{\"BeginDate\":null,\"EndDate\":null,\"AccessChannelId\":null,\"UserId\":null,\"MenuName\":null,\"Exception\":null,\"MenuActionName\":null,\"DeleteState\":null,\"PageSize\":15,\"PageIndex\":1,\"OrderBy\":null,\"Token\":null,\"Where\":null}}","ExecutionTime":"2018-05-24T22:03:20.5938294+08:00","ExecutionDuration":353,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Log/GetExceptionLogPageList","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T22:03:20.9598503+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 22:03:20.9768 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = LogController , MethodAction = GetExceptionLogPageList , Parameters =  {"pages":{"BeginDate":null,"EndDate":null,"AccessChannelId":null,"UserId":null,"MenuName":null,"Exception":null,"MenuActionName":null,"DeleteState":null,"PageSize":15,"PageIndex":1,"OrderBy":null,"Token":null,"Where":null}} , ExecutionTime = 2018/5/24 星期四 22:03:20 , ExecutionDuration = 353 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Log/GetExceptionLogPageList , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 22:03:20 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：13 ms 
+2018-05-24 22:03:21.4308 | Info | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+                       DECLARE @Order NVARCHAR(200);      
+                       IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                            BEGIN
+				                SET @Order = 'ORDER BY ' + @OrderBy;
+                            END;
+                       ELSE
+                            BEGIN
+                                SET @Order = '  ORDER BY InDate DESC ';
+                            END;
+                       IF ( @Where IS  NULL)
+                            BEGIN
+				                SET @Where = '';
+                            END;
+                       SET @Sql = N' 
+                   WITH  Select_List  AS
+                   (
+					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        [Id]
+                              ,[AccessChannelId]
+                              ,[UserId]
+                              ,[CustomerId]
+                              ,[ClientIpAddress]
+                              ,[MenuName]
+                              ,[MenuId]
+                              ,[MenuActionId]
+                              ,[MenuActionName]
+                              ,[ServiceName]
+                              ,[FunctionController]
+                              ,[MethodAction]
+                              ,[Parameters]
+                              ,[ExecutionTime]
+                              ,[ExecutionDuration]
+                              ,[ClientName]
+                              ,[BrowserInfo]
+                              ,[Exception]
+                              ,[Description]
+                              ,[SourceEquipment]
+                              ,[CustomData]
+                              ,[IPNum]
+                              ,[Token]
+                              ,[Navigator]
+                              ,[RequestUri]
+                              ,[UrlReferrer]
+                              ,[RequestType]
+                              ,[Enabled]
+                              ,[InUser]
+                              ,[InDate]
+                              ,[DelUser]
+                              ,[DelState]
+                              ,[DelDate]
+                        FROM SysOperationLog
+						WHERE  1=1 ' + @Where + '
+                  )
+                  SELECT
+			          A.* , B.UserName FROM Select_List A 
+                   Left join SysUser B on  A.UserId =B.Id
+                  WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
+          
+                 SELECT @Count = COUNT(1) FROM SysOperationLog WHERE  1=1 ' + @Where;              
+                       EXECUTE sp_executesql @Sql,N' 
+                       @CurrentPageIndex INT,
+                       @PageSize  INT,
+                       @Where NVARCHAR(1000),
+                       @OrderBy NVARCHAR(200),         
+                       @Count int OUT',
+                       @CurrentPageIndex,
+			           @PageSize,
+                       @Where,
+                       @OrderBy,
+                       @Count OUTPUT; ,函数执行时间：51 ms 
+2018-05-24 22:03:21.4688 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"LogController","MethodAction":"GetOperaterLogPageList","Parameters":" {\"pages\":{\"BeginDate\":null,\"EndDate\":null,\"AccessChannelId\":null,\"UserId\":null,\"MenuName\":null,\"Exception\":null,\"MenuActionName\":null,\"DelState\":null,\"PageSize\":15,\"PageIndex\":1,\"OrderBy\":null,\"Token\":null,\"Where\":null}}","ExecutionTime":"2018-05-24T22:03:21.3758741+08:00","ExecutionDuration":86,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Log/GetOperaterLogPageList","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T22:03:21.4688794+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 22:03:21.4688 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = LogController , MethodAction = GetOperaterLogPageList , Parameters =  {"pages":{"BeginDate":null,"EndDate":null,"AccessChannelId":null,"UserId":null,"MenuName":null,"Exception":null,"MenuActionName":null,"DelState":null,"PageSize":15,"PageIndex":1,"OrderBy":null,"Token":null,"Where":null}} , ExecutionTime = 2018/5/24 星期四 22:03:21 , ExecutionDuration = 86 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Log/GetOperaterLogPageList , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 22:03:21 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：3 ms 
+2018-05-24 22:09:42.2306 | Info | 执行函数：<DisableToken>b__0,返回：Int32，详细信息：,函数执行时间：13 ms 
+2018-05-24 22:09:42.2306 | Info | 执行函数：<LoginOutByToken>b__0,返回：Int32，详细信息：update  [dbo].[SysLoginLog]  set [LogOutDate] = getdate()  where Token='-1CBAE6D72AA114EBE88D2E9332F34EEE463662831660',函数执行时间：4 ms 
+2018-05-24 22:09:42.7766 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"AccountController","MethodAction":"SignOut","Parameters":"null {}","ExecutionTime":"2018-05-24T22:09:42.1756546+08:00","ExecutionDuration":596,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Account/SignOut","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T22:09:42.776689+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 22:09:42.7766 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = AccountController , MethodAction = SignOut , Parameters = null {} , ExecutionTime = 2018/5/24 星期四 22:09:42 , ExecutionDuration = 596 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Account/SignOut , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 22:09:42 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：3 ms 
+2018-05-24 23:13:37.1408 | Info | SignIn.... 
+2018-05-24 23:13:39.7989 | Info | 执行函数：<GetFirst>b__0,返回：SysUser，详细信息：select top 1 * from  SysUser  WHERE DelState = 0 AND LoginName = @LoginName AND PassWord = @PassWord ,函数执行时间：459 ms 
+2018-05-24 23:13:39.9519 | Info | 执行函数：<Login>b__0,返回：SysUser，详细信息：,函数执行时间：636 ms 
+2018-05-24 23:13:40.2590 | Info | login info:{"Id":0,"UserId":1,"UserName":"系统管理员","LogDate":"2018-05-24T23:13:40.2470054+08:00","LogOutDate":null,"ClientIpAddress":"169.254.52.192","ClientName":"::1","OnlineDate":null,"IsSucceed":0,"LogReason":null,"SessionId":null,"InUserType":0,"IPNum":-1442958144,"Enabled":1,"DelUser":null,"DelState":0,"DelDate":null,"Token":"-1483642B3F97E4979817F2ADCDBB9C70763662836419","LoginName":null} 
+2018-05-24 23:13:40.3450 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 1 , UserName = 系统管理员 , LogDate = 2018/5/24 星期四 23:13:40 , LogOutDate = null , ClientIpAddress = 169.254.52.192 , ClientName = ::1 , OnlineDate = null , IsSucceed = 0 , LogReason = null , SessionId = null , InUserType = 0 , IPNum = -1442958144 , Enabled = 1 , DelUser = null , DelState = 0 , DelDate = null , Token = -1483642B3F97E4979817F2ADCDBB9C70763662836419 , LoginName = null,函数执行时间：75 ms 
+2018-05-24 23:13:40.4370 | Info | operation info:{"Id":0,"UserId":1,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"AccountController","MethodAction":"SignIn","Parameters":" {\"model\":{\"LoginName\":\"superadmin\",\"Password\":\"f72ql8kcOEYabyoYyIwlfw==\",\"RememberMe\":false,\"UserIsManage\":false,\"IsRoot\":false,\"Token\":null}}","ExecutionTime":"2018-05-24T23:13:37.1408277+08:00","ExecutionDuration":293,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":"","CustomData":null,"IPNum":-1442958144,"Token":"-1483642B3F97E4979817F2ADCDBB9C70763662836419","Navigator":null,"RequestUri":"http://localhost:9089/Sys/Account/SignIn","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-05-24T23:13:40.4370163+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-05-24 23:13:40.5160 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 1 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = AccountController , MethodAction = SignIn , Parameters =  {"model":{"LoginName":"superadmin","Password":"f72ql8kcOEYabyoYyIwlfw==","RememberMe":false,"UserIsManage":false,"IsRoot":false,"Token":null}} , ExecutionTime = 2018/5/24 星期四 23:13:37 , ExecutionDuration = 293 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment =  , CustomData = null , IPNum = -1442958144 , Token = -1483642B3F97E4979817F2ADCDBB9C70763662836419 , Navigator = null , RequestUri = http://localhost:9089/Sys/Account/SignIn , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/5/24 星期四 23:13:40 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：77 ms 
+2018-05-24 23:14:09.2036 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1395 ms 
+2018-05-24 23:16:14.9181 | Info | Hangfire Server stopped. 
+2018-05-24 23:18:56.6980 | Info | 系统启动 
+2018-05-24 23:18:57.2310 | Info | Starting Hangfire Server 
+2018-05-24 23:18:57.2310 | Info | Using job storage: 'Hangfire.MemoryStorage.MemoryStorage' 
+2018-05-24 23:18:57.2380 | Info | Using the following options for Hangfire Server: 
+2018-05-24 23:18:57.2380 | Info |     Worker count: 20 
+2018-05-24 23:18:57.2380 | Info |     Listening queues: 'default' 
+2018-05-24 23:18:57.2380 | Info |     Shutdown timeout: 00:00:15 
+2018-05-24 23:18:57.2380 | Info |     Schedule polling interval: 00:00:15 
+2018-05-24 23:18:57.3440 | Info | 数据同步任务启动... 
+2018-05-24 23:18:57.9100 | Info | 开始启动任务调度 
+2018-05-24 23:18:59.0121 | Info | 执行函数：<GetAllList>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：1089 ms 
+2018-05-24 23:18:59.1931 | Info | 执行函数：<GetAllList>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：162 ms 
+2018-05-24 23:18:59.2071 | Info | 启动任务调度完毕 
