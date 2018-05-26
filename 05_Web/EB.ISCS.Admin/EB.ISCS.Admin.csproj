@@ -251,6 +251,7 @@
     <Content Include="Content\adminlte\skins\_all-skins.css" />
     <Content Include="Content\adminlte\skins\_all-skins.min.css" />
     <Content Include="Content\images\adminlte\admin.jpg" />
+    <Content Include="Content\images\ds-bg-2.jpg" />
     <Content Include="Content\ueditor\dialogs\anchor\anchor.html" />
     <Content Include="Content\ueditor\dialogs\attachment\attachment.css" />
     <Content Include="Content\ueditor\dialogs\attachment\attachment.html" />
@@ -1916,6 +1917,7 @@
     <Content Include="ViewScript\Biz\shopbusiness\edit.js" />
     <Content Include="ViewScript\Biz\shopbusiness\index.js" />
     <Content Include="ViewScript\common\commonControl.js" />
+    <Content Include="ViewScript\home\dashbord.js" />
     <Content Include="ViewScript\Sys\log\index.js" />
     <Content Include="ViewScript\Sys\synchronization\index.js" />
     <Content Include="ViewScript\common\commonService.js" />

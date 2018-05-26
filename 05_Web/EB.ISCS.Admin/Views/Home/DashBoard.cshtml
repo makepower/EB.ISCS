@@ -1,116 +1,151 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<html lang="zh-CN">
 <head>
-    <title>网店鹰眼 | Dashboard</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-
-</head>
-<body style="height:auto;">
-    <section class="content">
-        <!-- /.row -->
-            <div class="row">
-                <div class="col-md-4">
-                    <div id="chart-uv" style="width:600px; height: 400px;"></div>
-                </div>
-                <div class="col-md-4">
-                    <div id="chart-map" style="width:600px; height: 400px;"></div>
-                </div>
-                <div class="col-md-4">
-                    <div id="chart-topn" style="width:600px; height: 400px;"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4"><div id="chartmain" style="width:600px; height: 400px;"></div></div>
-                <div class="col-md-4"><div id="chartmain" style="width:600px; height: 400px;"></div></div>
-                <div class="col-md-4"><div id="chartmain" style="width:600px; height: 400px;"></div></div>
-            </div>
-            <div class="row">
-                <div class="col-md-4"><div id="chartmain" style="width:600px; height: 400px;"></div></div>
-                <div class="col-md-4"><div id="chartmain" style="width:600px; height: 400px;"></div></div>
-                <div class="col-md-4"><div id="chartmain" style="width:600px; height: 400px;"></div></div>
-            </div>
-        <!-- /.row -->
-    </section>
-    <script src="~/Scripts/jQuery/jquery-3.0.0.min.js"></script>
-    <!-- ChartJS 1.0.1 -->
-    <script src="~/Scripts/echarts/dist/echarts.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>qs</title>
+    <script src="~/Scripts/jQuery/jquery-3.0.0.js"></script>
+    <script src="~/Scripts/echarts/dist/echarts.min.js"></script>
     <script src="~/Scripts/echarts/map/js/china.js"></script>
-    <script src="~/Scripts/echarts/theme/shine.js"></script>
+    <script src="~/Scripts/bootstrap/js/bootstrap.min.js"></script>
+    <link href="~/Scripts/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="~/Scripts/bootstrap/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
 
-   
-    <script>
+    <style>
+        .dsbody {
+            background-image: url(Content/images/ds-bg-2.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+            background-attachment: fixed;
+            color: white;
+            opacity: 0.8;
+        }
 
-       
-        //指定图标的配置和数据
-        var option = {
-            title: {
-                text: 'ECharts 数据统计'
-            },
-            tooltip: {},
-            legend: {
-                data: ['用户来源']
-            },
-            xAxis: {
-                data: ["Android", "IOS", "PC", "Ohter"]
-            },
-            yAxis: {
+        .info-box-text {
+            padding: 2px
+        }
 
-            },
-            series: [{
-                name: '访问量',
-                type: 'line',
-                data: [500, 200, 360, 100]
-            }]
-        };
-        //初始化echarts实例
-        var myChart = echarts.init(document.getElementById('chart-uv'));
+        .info-box {
+            text-align: center;
+        }
 
-        //使用制定的配置项和数据显示图表
-        myChart.setOption(option);
+        .section {
+            font-weight: bolder;
+            height: 30px;
+            width: auto;
+            line-height: 30px;
+            font-size: 18px;
+            background-color: rgba(255,255,255,0.2);
+            text-align: center;
+            margin: 5px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="dsbody">
+    
+    <div class="container" style="margin-top: 50px">
+        <div class="row">
+            <div class="col-md-4" style="height: 350px;" id="main_tag">
+                <div class="section">
+                    今日实时
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12" style="height: 175px">
+                    <span class="info-box-text">付款订单</span>
+                    <div class="info-box">
+                        <h1>90</h1>
+                        <span class="text-right">环比<i class="glyphicon-arrow-up"></i>  <small>12.1%</small></span>
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12" style="height: 175px">
+                    <span class="info-box-text">付款金额</span>
+                    <div class="info-box">
+                        <h1 class="info-box-number"> <small>¥</small>  41,410</h1>
+                        <span class="text-right">环比<i class="glyphicon-arrow-up"></i><small>12.1%</small></span>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
 
+                <div class="col-md-6 col-sm-12 col-xs-12" style="height: 175px">
+                    <span class="info-box-text">访客数</span>
+                    <div class="info-box">
+                        <h1 class="info-box-number">760</h1>
+                        <span class="text-right">环比<i class="glyphicon-arrow-down"></i><small>12.1%</small></span>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12" style="height: 175px">
+                    <span class="info-box-text">付款件数</span>
+                    <div class="info-box">
+                        <h1 class="info-box-number">2,000</h1>
+                        <span class="text-right">环比<i class="glyphicon-arrow-down"></i><small>12.1%</small></span>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+            </div>
+            <div class="col-md-4" style="height: 400px;" id="main_map"></div>
+            <div class="col-md-4 " style="height: 350px;">
+                <div class="section">
+                    交易分析
+                </div>
+                <div class="row">
+                    <div class="col-md-4 " style="height: 350px;" id="main_line_3"></div>
+                    <div class="col-md-8 " style="height: 350px;">
+                        <div class="col-sm-12" style="height: 175px;" id="main_line_1"></div>
+                        <div class="col-sm-12" style="height: 175px;" id="main_line_2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" style="height: 400px;">
+                <div class="section">
+                    最近30天流量分析
+                </div>
+                <div style="height: 400px;width: 100%" id="main_1">  </div>
+            </div>
+            <div class="col-md-8">
+                <div class="section">
+                    订单分析
+                </div>
+                <div class="col-md-6" style="height: 400px;">
+                    <div class="col-sm-6" style="height: 400px;" id="main_2_1"></div>
+                    <div class="col-sm-6" style="height: 400px;" id="main_2_2"></div>
+                </div>
+                <div class="col-md-6" style="height: 400px;" id="main_3"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" style="height: 240px;">
+                <div class="section">
+                    客户分析
+                </div>
+                <div class="col-sm-6" style="height: 240px;" id="main_4_1"></div>
+                <div class="col-sm-6" style="height: 240px;" id="main_4_2"></div>
+            </div>
+            <div class="col-md-4" style="height: 240px;">
+                <div class="section">
+                    时效分析
+                </div>
+                <div class="col-sm-6" style="height: 240px;" id="main_5_1"></div>
+                <div class="col-sm-6" style="height: 240px;" id="main_5_2"></div>
+            </div>
+            <div class="col-md-4" style="height: 240px;" id="main_6">
+                <div class="section">
+                    客诉分析
+                </div>
+                <div class="col-sm-6" style="height: 240px;" id="main_6_1"></div>
+                <div class="col-sm-6" style="height: 240px;" id="main_6_2"></div>
+            </div>
+        </div>
+    </div>
 
-        var chart = echarts.init(document.getElementById('chart-map'), 'shine'); 
-        var option = {
-            //tooltip: {
-            //    //                    show: false //不显示提示标签
-            //    formatter: '{b}', //提示标签格式
-            //    backgroundColor: "#ff7f50",//提示标签背景颜色
-            //    textStyle: { color: "#fff" } //提示标签字体颜色
-            //},
-            series: [{
-                type: 'map',
-                mapType: 'china',
-                //label: {
-                //    normal: {
-                //        show: true,//显示省份标签
-                //        textStyle: { color: "#c71585" }//省份标签字体颜色
-                //    },
-                //    emphasis: {//对应的鼠标悬浮效果
-                //        show: true,
-                //        textStyle: { color: "#800080" }
-                //    }
-                //},
-                //itemStyle: {
-                //    normal: {
-                //        borderWidth: .5,//区域边框宽度
-                //        borderColor: '#009fe8',//区域边框颜色
-                //        areaColor: "#ffefd5",//区域颜色
-                //    },
-                //    emphasis: {
-                //        borderWidth: .5,
-                //        borderColor: '#4b0082',
-                //        areaColor: "#ffdead",
-                //    }
-                //},
-                //data: [
-                //    { name: '福建', selected: true }//福建为选中状态
-                //]
-            }],
-        };
-        chart.setOption(option);
-    </script>
-</body >
-</html >
+    <script src="viewscript/dashbord.js"></script>
+</body>
+</html>
