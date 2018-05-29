@@ -1,7 +1,7 @@
 ﻿using Dapper;
 using EB.ISCS.Common.DataModel;
 using EB.ISCS.DapperServices.Base;
-using Maticsoft.Model;
+using Maticsoft.Model.ISSC;
 using System;
 using System.Collections.Generic;
 using System.Data;

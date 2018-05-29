@@ -1,9 +1,10 @@
 ﻿using EB.ISCS.Common.DataModel;
 using EB.ISCS.DapperServices.InterFace;
 using EB.ISCS.DapperServices.Services;
-using Maticsoft.Model;
+using Maticsoft.Model.ISSC;
 using System.Collections.Generic;
 using System.Data;
+
 namespace EB.ISCS.DapperServices.Repository
 {
 
@@ -73,5 +74,6 @@ namespace EB.ISCS.DapperServices.Repository
         {
             return this._OrderInfoRepository.GetAllList();
         }
-	}
+   
+    }
 }

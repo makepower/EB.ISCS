@@ -6,22 +6,22 @@ using System.Data;
 namespace EB.ISCS.DapperServices.InterFace
 {
     /// <summary>
-	 	///订单信息 ：接口类
+	 	///交易信息 ：接口类
 		/// </summary>		
-	interface IOrderInfoService : IService
+	interface ITradesService : IService
 	{
 		 /// <summary>
 		 ///  新增
 		 /// </summary>
-         int Add(OrderInfo model,IDbTransaction transaction = null);
+         int Add(Trades model,IDbTransaction transaction = null);
         
          /// <summary>
 		 ///  根据Id获取模型
 		 /// </summary>
-         OrderInfo GetModelById(int id);
+         Trades GetModelById(int id);
         
         /// <summary>
-        ///  删除OrderInfo，并记录删除人
+        ///  删除Trades，并记录删除人
         /// </summary>
         /// <param name="model"></param>
         /// <param name="transaction"></param>
@@ -31,12 +31,12 @@ namespace EB.ISCS.DapperServices.InterFace
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-	    bool Update(OrderInfo model,IDbTransaction transaction = null);
+	    bool Update(Trades model,IDbTransaction transaction = null);
 		
 		/// <summary>
-        /// 获取所有的OrderInfo信息
+        /// 获取所有的Trades信息
         /// </summary>
         /// <returns></returns>
-        IEnumerable<OrderInfo> GetAllList();
+        IEnumerable<Trades> GetAllList();
 	}
 }

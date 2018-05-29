@@ -72,6 +72,7 @@
     <Compile Include="InterFace\Biz\IOrderInfoService.cs" />
     <Compile Include="InterFace\Biz\IShipInfoService.cs" />
     <Compile Include="InterFace\Biz\ISynchronizationConfigService.cs" />
+    <Compile Include="InterFace\Biz\ITradesService.cs" />
     <Compile Include="InterFace\Biz\IWayBillInfoService.cs" />
     <Compile Include="InterFace\Biz\IWayBillTraceInfoService.cs" />
     <Compile Include="InterFace\Sys\ISysUserMenuService.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Repository\Biz\OrderInfoRepository.cs" />
     <Compile Include="Repository\Biz\ShipInfoRepository.cs" />
     <Compile Include="Repository\Biz\SynchronizationConfigRepository.cs" />
+    <Compile Include="Repository\Biz\TradesRepository.cs" />
     <Compile Include="Repository\Biz\WayBillInfoRepository.cs" />
     <Compile Include="Repository\Biz\WayBillTraceInfoRepository.cs" />
     <Compile Include="Repository\Sys\MenuPermissionRepository.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="Services\Biz\OrderInfoService.cs" />
     <Compile Include="Services\Biz\ShipInfoService.cs" />
     <Compile Include="Services\Biz\SynchronizationConfigService.cs" />
+    <Compile Include="Services\Biz\TradesService.cs" />
     <Compile Include="Services\Biz\WayBillInfoService.cs" />
     <Compile Include="Services\Biz\WayBillTraceInfoService.cs" />
     <Compile Include="Services\Sys\SysUserMenuService.cs" />

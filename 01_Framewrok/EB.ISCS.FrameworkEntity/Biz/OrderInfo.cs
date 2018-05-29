@@ -1,7 +1,10 @@
-﻿using Dapper;
-using System;
+﻿using System;
+using System.Text;
+using System.Collections.Generic;
+using System.Data;
+using Dapper;
 
-namespace Maticsoft.Model
+namespace Maticsoft.Model.ISSC
 {
     /// <summary>
     ///订单信息 ：实体类
@@ -16,50 +19,101 @@ namespace Maticsoft.Model
         [Key]
         public int Id { get; set; }
         /// <summary>
-        /// OrderCode
+        /// trade_id
         /// </summary>		
-        public string OrderCode { get; set; }
+        public int trade_id { get; set; }
         /// <summary>
-        /// OrderDate
+        /// item_meal_name
         /// </summary>		
-        public DateTime OrderDate { get; set; }
+        public string item_meal_name { get; set; }
         /// <summary>
-        /// Status
+        /// seller_nick
         /// </summary>		
-        public int Status { get; set; }
+        public string seller_nick { get; set; }
         /// <summary>
-        /// SaleId
+        /// buyer_nick
         /// </summary>		
-        public int SaleId { get; set; }
+        public string buyer_nick { get; set; }
         /// <summary>
-        /// buyerId
+        /// refund_status
         /// </summary>		
-        public string BuyerId { get; set; }
+        public string refund_status { get; set; }
         /// <summary>
-        /// GoodNum
+        /// title
         /// </summary>		
-        public double GoodNum { get; set; }
+        public string title { get; set; }
         /// <summary>
-        /// GoodFee
+        /// price
         /// </summary>		
-        public decimal GoodFee { get; set; }
+        public decimal price { get; set; }
         /// <summary>
-        /// DeliveryType
+        /// num
         /// </summary>		
-        public int DeliveryType { get; set; }
+        public decimal num { get; set; }
         /// <summary>
-        /// EndDate
+        /// total_fee
         /// </summary>		
-        public int EndDate { get; set; }
+        public decimal total_fee { get; set; }
         /// <summary>
-        /// Remark
+        /// payment
         /// </summary>		
-        public string Remark { get; set; }
-
+        public decimal payment { get; set; }
         /// <summary>
-        /// 店铺ID
-        /// </summary>
-        public int ShipId { get; set; }
+        /// oid
+        /// </summary>		
+        public string oid { get; set; }
+        /// <summary>
+        /// type
+        /// </summary>		
+        public string type { get; set; }
+        /// <summary>
+        /// discount_fee
+        /// </summary>		
+        public decimal discount_fee { get; set; }
+        /// <summary>
+        /// adjust_fee
+        /// </summary>		
+        public decimal adjust_fee { get; set; }
+        /// <summary>
+        /// modified
+        /// </summary>		
+        public DateTime modified { get; set; }
+        /// <summary>
+        /// order_attr
+        /// </summary>		
+        public string order_attr { get; set; }
+        /// <summary>
+        /// shipping_type
+        /// </summary>		
+        public string shipping_type { get; set; }
+        /// <summary>
+        /// bind_oid
+        /// </summary>		
+        public string bind_oid { get; set; }
+        /// <summary>
+        /// logistics_company
+        /// </summary>		
+        public string logistics_company { get; set; }
+        /// <summary>
+        /// invoice_no
+        /// </summary>		
+        public string invoice_no { get; set; }
+        /// <summary>
+        /// is_daixiao
+        /// </summary>		
+        public int is_daixiao { get; set; }
+        /// <summary>
+        /// store_code
+        /// </summary>		
+        public string store_code { get; set; }
+        /// <summary>
+        /// end_time
+        /// </summary>		
+        public DateTime end_time { get; set; }
+        /// <summary>
+        /// remark
+        /// </summary>		
+        public string remark { get; set; }
 
     }
 }
