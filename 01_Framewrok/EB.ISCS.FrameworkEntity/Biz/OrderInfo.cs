@@ -21,7 +21,7 @@ namespace Maticsoft.Model.ISSC
         /// <summary>
         /// trade_id
         /// </summary>		
-        public int trade_id { get; set; }
+        public int TradeId { get; set; }
         /// <summary>
         /// item_meal_name
         /// </summary>		

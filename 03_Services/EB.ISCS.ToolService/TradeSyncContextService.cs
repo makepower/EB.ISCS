@@ -37,6 +37,7 @@ namespace EB.ISCS.ToolService
         {
             _configService = new SynchronizationConfigService(constr);
             SyncContext = new SyncContext();
+            AutoMapperFactory.Register();
         }
 
         /// <summary>

@@ -32,7 +32,7 @@ namespace EB.ISCS.DapperServices.Repository
         /// <returns></returns>
         public DataSyncRecord GetRecordByShipId(int shipId)
         {
-            var sql = $@" select * from DataSyncRecord where ShopId ={shipId}";
+            var sql = $@" select * from DataSyncRecord where ShopId ={shipId} order by LastSynDate desc";
             return TraceExecFunc(() => this.Conn.Query<DataSyncRecord>(sql))?.FirstOrDefault();
         }
 

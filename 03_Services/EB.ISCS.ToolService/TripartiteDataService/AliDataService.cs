@@ -1,4 +1,5 @@
 ﻿using EB.ISCS.Common.Enum;
+using EB.ISCS.FrameworkEntity;
 using Maticsoft.Model;
 using System;
 using System.Collections.Generic;
@@ -64,24 +65,30 @@ namespace EB.ISCS.ToolService.TripartiteDataService
         /// </summary>
         /// <param name="info"></param>
         /// <returns></returns>
-        public List<Trade> QueryTradeSoldIncrement(ShipInfo info)
+        public List<Trade> QueryTradeSoldIncrement(ShipInfo info, DataSyncRecord syncRecord)
         {
             ITopClient client = new DefaultTopClient(url, info.AppKey, info.AppSecret);
 
             var pageIndex = 1L;
-            TradesSoldGetResponse rsp = null;
+            TradesSoldIncrementGetResponse rsp = null;
             var list = new List<Trade>();
             do
             {
                 try
                 {
-                    TradesSoldGetRequest req = new TradesSoldGetRequest
+                    TradesSoldIncrementGetRequest req = new TradesSoldIncrementGetRequest
                     {
                         Fields = "tid,type,status,payment,orders,rx_audit_status",
-                        StartCreated = DateTime.Now.AddMonths(-3),
-                        EndCreated = DateTime.Now,
-                        PageNo = pageIndex,
-                        PageSize = 100L,
+                        StartModified = syncRecord.LastSynDate,
+                        EndModified = DateTime.Now,
+                        Status = "TRADE_NO_CREATE_PAY",
+                        Type = "fixed",
+                        BuyerNick = "zhangsan",
+                        ExtType = "service",
+                        Tag = "time_card",
+                        PageNo = 1L,
+                        RateStatus = "RATE_UNBUYER",
+                        PageSize = 40L,
                         UseHasNext = true
                     };
                     rsp = client.Execute(req, info.SessionKey);
@@ -91,6 +98,7 @@ namespace EB.ISCS.ToolService.TripartiteDataService
                     {
                         list.AddRange(rsp.Trades);
                     }
+                    syncRecord.LastSynDate = req.EndModified.Value;
                 }
                 catch (Exception e)
                 {
@@ -105,86 +113,69 @@ namespace EB.ISCS.ToolService.TripartiteDataService
         /// </summary>
         /// <param name="info"></param>
         /// <returns></returns>
-        public List<Trade> QueryTradeFullinfo(ShipInfo info)
+        public Trade QueryTradeFullinfo(ShipInfo info, long? id)
         {
             ITopClient client = new DefaultTopClient(url, info.AppKey, info.AppSecret);
-
             var pageIndex = 1L;
-            TradesSoldGetResponse rsp = null;
-            var list = new List<Trade>();
-            do
+            TradeFullinfoGetResponse rsp = null;
+            var trade = new Trade();
+            try
             {
-                try
+                TradeFullinfoGetRequest req = new TradeFullinfoGetRequest
                 {
-                    TradesSoldGetRequest req = new TradesSoldGetRequest
-                    {
-                        Fields = "tid,type,status,payment,orders,rx_audit_status",
-                        StartCreated = DateTime.Now.AddMonths(-3),
-                        EndCreated = DateTime.Now,
-                        PageNo = pageIndex,
-                        PageSize = 100L,
-                        UseHasNext = true
-                    };
-                    rsp = client.Execute(req, info.SessionKey);
-                    pageIndex++;
+                    Fields = "tid,type,status,payment,orders",
+                    Tid = id
+                };
+                rsp = client.Execute(req, info.SessionKey);
+                pageIndex++;
 
-                    if (!rsp.IsError)
-                    {
-                        list.AddRange(rsp.Trades);
-                    }
-                }
-                catch (Exception e)
+                if (!rsp.IsError)
                 {
-                    break;
+                    trade = rsp.Trade;
                 }
-            } while (rsp.HasNext);
-            return list;
+            }
+            catch (Exception e)
+            {
+
+            }
+            return trade;
         }
 
-        
+
         /// <summary>
         /// 商品类目
         /// </summary>
         /// <param name="info"></param>
         /// <returns></returns>
-        public List<Trade> QueryShopCatsInfo(ShipInfo info)
+        public List<Product> QueryShopCatsInfo(ShipInfo info)
         {
             ITopClient client = new DefaultTopClient(url, info.AppKey, info.AppSecret);
 
             var pageIndex = 1L;
-            TradesSoldGetResponse rsp = null;
-            var list = new List<Trade>();
-            do
-            {
-                try
-                {
-                    TradesSoldGetRequest req = new TradesSoldGetRequest
-                    {
-                        Fields = "tid,type,status,payment,orders,rx_audit_status",
-                        StartCreated = DateTime.Now.AddMonths(-3),
-                        EndCreated = DateTime.Now,
-                        PageNo = pageIndex,
-                        PageSize = 100L,
-                        UseHasNext = true
-                    };
-                    rsp = client.Execute(req, info.SessionKey);
-                    pageIndex++;
+            ProductsGetResponse rsp = null;
+            var list = new List<Product>();
 
-                    if (!rsp.IsError)
-                    {
-                        list.AddRange(rsp.Trades);
-                    }
-                }
-                catch (Exception e)
+            try
+            {
+                ProductsGetRequest req = new ProductsGetRequest
                 {
-                    break;
+                    Fields = "product_id,tsc,cat_name,name",
+
+                };
+                rsp = client.Execute(req, info.SessionKey);
+                pageIndex++;
+
+                if (!rsp.IsError)
+                {
+                    list.AddRange(rsp.Products);
                 }
-            } while (rsp.HasNext);
+            }
+            catch (Exception e)
+            {
+            }
+
             return list;
         }
-
-
-
 
     }
 }

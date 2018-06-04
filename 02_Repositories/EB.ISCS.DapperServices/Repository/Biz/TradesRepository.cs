@@ -1,20 +1,17 @@
-﻿using System; 
-using System.Text;
-using System.Data.SqlClient;
-using System.Collections.Generic; 
-using System.Data;
-using Maticsoft.DBUtility;
-using Maticsoft.Model.ISSC;
-using EB.ISCS.DapperServices.Base;
+﻿using Dapper;
 using EB.ISCS.Common.DataModel;
-using Dapper;
+using EB.ISCS.DapperServices.Base;
+using Maticsoft.Model.ISSC;
+using System;
+using System.Collections.Generic;
+using System.Data;
 
 namespace EB.ISCS.DapperServices.Repository
 {
     /// <summary>
-	 	///交易信息 ：仓储类
-		/// </summary>		
-	public partial class TradesRepository : BaseRepository<Trades>
+    ///交易信息 ：仓储类
+    /// </summary>		
+    public partial class TradesRepository : BaseRepository<Trades>
 	{
    		
    		#region 构造 

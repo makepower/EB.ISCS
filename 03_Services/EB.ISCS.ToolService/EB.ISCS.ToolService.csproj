@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.7.0.0-alpha-0001\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Hangfire.Core, Version=1.6.19.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Hangfire.Core.1.6.19\lib\net45\Hangfire.Core.dll</HintPath>
     </Reference>
@@ -46,6 +49,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -62,6 +66,7 @@
     <Compile Include="Adapter\AdapterModelDefine.cs" />
     <Compile Include="Adapter\AliAdapter\AliDataAdapter.cs" />
     <Compile Include="Adapter\AliAdapter\AliDataServiceWrapper.cs" />
+    <Compile Include="Adapter\AutoMapperFactory.cs" />
     <Compile Include="Adapter\JdAdapter\JdDataAdapter.cs" />
     <Compile Include="Adapter\JdAdapter\JdDataServiceWrapper.cs" />
     <Compile Include="Adapter\KdnaioAdapter\KdBirdModelDefine.cs" />

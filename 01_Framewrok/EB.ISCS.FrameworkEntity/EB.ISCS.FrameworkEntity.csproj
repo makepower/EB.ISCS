@@ -59,7 +59,6 @@
     <Compile Include="Biz\OrderInfo.cs" />
     <Compile Include="Biz\ShipInfo.cs" />
     <Compile Include="Biz\SynchronizationConfig.cs" />
-    <Compile Include="Biz\TradeInfo.cs" />
     <Compile Include="Biz\Trades.cs" />
     <Compile Include="Biz\WayBillInfo.cs" />
     <Compile Include="Biz\WayBillTraceInfo.cs" />
