@@ -36,5 +36,23 @@ namespace EB.ISCS.ToolService.Adapter.AliAdapter
             });
             return tradeList;
         }
+
+        public static OrderInfo ToLocalOrder(this Order order, ShipInfo ship)
+        {
+            var tradeList = new OrderInfo();
+            if (order == null)
+                return tradeList;
+           
+            return Mapper.Map<OrderInfo>(order); ;
+        }
+
+        public static OrderDetail ToLocalOrderDetail(this Order order, ShipInfo ship)
+        {
+            var tradeList = new OrderDetail();
+            if (order == null)
+                return tradeList;
+
+            return Mapper.Map<OrderDetail>(order); ;
+        }
     }
 }
