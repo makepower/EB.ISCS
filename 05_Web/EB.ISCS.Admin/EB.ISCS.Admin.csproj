@@ -560,6 +560,7 @@
     <Content Include="Content\ztree\js\jquery.ztree.exedit.min.js" />
     <Content Include="Content\ztree\js\jquery.ztree.exhide.js" />
     <Content Include="Content\ztree\js\jquery.ztree.exhide.min.js" />
+    <Content Include="Scripts\adminlte\screenfull.js" />
     <Content Include="Scripts\bootstrap\css\bootstrap-multiselect.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap-treeview.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap-treeview.min.css" />

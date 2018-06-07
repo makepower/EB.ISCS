@@ -42,23 +42,23 @@ namespace EB.ISCS.ToolService
             if (info.Status == 1)
             {
                 // 初始化交易订单
-                var trades = service.InitTradeSold(info).ToLocalTrades(info);
-                trades?.ForEach(x =>
-                {
-                    SaveTrade(info, x, service);
-                });
-                // 初始化商品数据
-                var goods = service.QueryShopCatsInfo(info).ToLocalGoods(info);
-                goods?.ForEach(x => goodInfoService.Add(x));
+                //var trades = service.InitTradeSold(info).ToLocalTrades(info);
+                //trades?.ForEach(x =>
+                //{
+                //    SaveTrade(info, x, service);
+                //});
+                //// 初始化商品数据
+                //var goods = service.QueryShopCatsInfo(info).ToLocalGoods(info);
+                //goods?.ForEach(x => goodInfoService.Add(x));
             }
             else
             {
                 // 增量数据
-                var incrementTrades = service.QueryTradeSoldIncrement(info, dataSyncRecord).ToLocalTrades(info);
-                incrementTrades?.ForEach(x =>
-                {
-                    SaveTrade(info, x, service);
-                });
+                //var incrementTrades = service.QueryTradeSoldIncrement(info, dataSyncRecord).ToLocalTrades(info);
+                //incrementTrades?.ForEach(x =>
+                //{
+                //    SaveTrade(info, x, service);
+                //});
             }
 
 
@@ -69,15 +69,15 @@ namespace EB.ISCS.ToolService
         {
             var trade = service.QueryTradeFullinfo(info, x.Tid);
             x.Id = tradesService.Add(x);
-            trade.Orders?.ForEach(o =>
-            {
-                var order = o.ToLocalOrder(info);
-                order.TradeId = x.Id;
-                var id = orderInfoService.Add(order);
-                var detail = o.ToLocalOrderDetail(info);
-                detail.OrderId = id;
-                orderDetailService.Add(detail);
-            });
+            //trade.Orders?.ForEach(o =>
+            //{
+            //    var order = o.ToLocalOrder(info);
+            //    order.TradeId = x.Id;
+            //    var id = orderInfoService.Add(order);
+            //    var detail = o.ToLocalOrderDetail(info);
+            //    detail.OrderId = id;
+            //    orderDetailService.Add(detail);
+            //});
         }
     }
 }

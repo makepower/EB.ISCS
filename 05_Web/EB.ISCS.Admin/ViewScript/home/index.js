@@ -6,6 +6,7 @@ $(function () {
 var changePassword = {
     init: function () {
         this.registerEvents();
+        this.fulScreen();
     },
 
     registerEvents: function () {
@@ -31,5 +32,15 @@ var changePassword = {
                 //parent.window.href = "/Account/LogOff";
             }
         });
+    },
+
+    fulScreen: function () {
+        $("#btn_full").click(function (e) {
+            $("#J_mainContent").fullScreen();
+            e.preventDefault();
+        });
     }
+
+
+
 }

@@ -39,7 +39,7 @@ namespace EB.ISCS.Admin
             bundles.Add(new StyleBundle("~/LayoutHeader/css").Include(
                    "~/Content/font-awesome/font-awesome.min.css",
                    "~/Content/ionicons/ionicons.min.css",
-                   "~/Content/adminlte/AdminLTE.min.css",
+                   "~/Content/adminlte/AdminLTE.css",
                    "~/Content/adminlte/skins/skin-blue.min.css",
                    "~/Scripts/bootstrap/css/bootstrap.min.css",
                    "~/Scripts/bootstrap/css/Site.css",

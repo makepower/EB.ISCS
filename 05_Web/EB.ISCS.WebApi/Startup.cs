@@ -32,8 +32,7 @@ namespace EB.ISCS.WebApi
             FrameworkLog.LogModel.LogHelper.WriteInfoLog("数据同步任务启动...");
 
             new EBJobScheduler(DapperProvider.GetConnString()).Start();
-
-            
+       
 
         }
     

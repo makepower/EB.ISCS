@@ -13,7 +13,7 @@
 
     <style>
         .dsbody {
-            background-image: url(Content/images/ds-bg-2.jpg);
+            background-image: url(/Content/images/ds-bg-2.jpg);
             background-repeat: no-repeat;
             background-size: 100% 100%;
             -moz-background-size: 100% 100%;
@@ -23,15 +23,15 @@
             opacity: 0.8;
         }
 
-        .info-box-text {
+        .ds-info-box-text {
             padding: 2px
         }
 
-        .info-box {
+        .ds-info-box {
             text-align: center;
         }
 
-        .section {
+        .ds-section {
             font-weight: bolder;
             height: 30px;
             width: auto;
@@ -46,24 +46,24 @@
 </head>
 <body class="dsbody">
     
-    <div class="container" style="margin-top: 50px">
+    <div class="container-fluid" style="margin-top: 5px;">
         <div class="row">
             <div class="col-md-4" style="height: 350px;" id="main_tag">
-                <div class="section">
+                <div class="ds-section">
                     今日实时
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12" style="height: 175px">
-                    <span class="info-box-text">付款订单</span>
-                    <div class="info-box">
-                        <h1>90</h1>
+                    <span class="ds-info-box-text">付款订单</span>
+                    <div class="ds-info-box">
+                        <h1 >90</h1>
                         <span class="text-right">环比<i class="glyphicon-arrow-up"></i>  <small>12.1%</small></span>
                     </div>
                     <!-- /.info-box -->
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12" style="height: 175px">
-                    <span class="info-box-text">付款金额</span>
-                    <div class="info-box">
-                        <h1 class="info-box-number"> <small>¥</small>  41,410</h1>
+                    <span class="ds-info-box-text">付款金额</span>
+                    <div class="ds-info-box">
+                        <h1 > <small>¥</small>  41,410</h1>
                         <span class="text-right">环比<i class="glyphicon-arrow-up"></i><small>12.1%</small></span>
                         <!-- /.info-box-content -->
                     </div>
@@ -71,8 +71,8 @@
                 </div>
 
                 <div class="col-md-6 col-sm-12 col-xs-12" style="height: 175px">
-                    <span class="info-box-text">访客数</span>
-                    <div class="info-box">
+                    <span class="ds-info-box-text">访客数</span>
+                    <div class="ds-info-box">
                         <h1 class="info-box-number">760</h1>
                         <span class="text-right">环比<i class="glyphicon-arrow-down"></i><small>12.1%</small></span>
                         <!-- /.info-box-content -->
@@ -80,23 +80,23 @@
                     <!-- /.info-box -->
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12" style="height: 175px">
-                    <span class="info-box-text">付款件数</span>
-                    <div class="info-box">
-                        <h1 class="info-box-number">2,000</h1>
+                    <span class="ds-info-box-text">付款件数</span>
+                    <div class="ds-info-box">
+                        <h1 >2,000</h1>
                         <span class="text-right">环比<i class="glyphicon-arrow-down"></i><small>12.1%</small></span>
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->
                 </div>
             </div>
-            <div class="col-md-4" style="height: 400px;" id="main_map"></div>
-            <div class="col-md-4 " style="height: 350px;">
+            <div class="col-md-4 col-sm-4" style="height: 400px;" id="main_map"></div>
+            <div class="col-md-4 col-sm-4" style="height: 350px;">
                 <div class="section">
                     交易分析
                 </div>
                 <div class="row">
-                    <div class="col-md-4 " style="height: 350px;" id="main_line_3"></div>
-                    <div class="col-md-8 " style="height: 350px;">
+                    <div class="col-md-4 col-sm-4" style="height: 350px;" id="main_line_3"></div>
+                    <div class="col-md-8 col-sm-8" style="height: 350px;">
                         <div class="col-sm-12" style="height: 175px;" id="main_line_1"></div>
                         <div class="col-sm-12" style="height: 175px;" id="main_line_2"></div>
                     </div>
@@ -104,21 +104,21 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4" style="height: 400px;">
+            <div class="col-md-4 col-sm-4" style="height: 400px;">
                 <div class="section">
                     最近30天流量分析
                 </div>
                 <div style="height: 400px;width: 100%" id="main_1">  </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 col-sm-8">
                 <div class="section">
                     订单分析
                 </div>
-                <div class="col-md-6" style="height: 400px;">
+                <div class="col-md-6 col-sm-6" style="height: 400px;">
                     <div class="col-sm-6" style="height: 400px;" id="main_2_1"></div>
                     <div class="col-sm-6" style="height: 400px;" id="main_2_2"></div>
                 </div>
-                <div class="col-md-6" style="height: 400px;" id="main_3"></div>
+                <div class="col-md-6 col-sm-6" style="height: 400px;" id="main_3"></div>
             </div>
         </div>
         <div class="row">
@@ -146,6 +146,6 @@
         </div>
     </div>
 
-    <script src="viewscript/dashbord.js"></script>
+    <script src="~/ViewScript/home/dashbord.js"></script>
 </body>
 </html>

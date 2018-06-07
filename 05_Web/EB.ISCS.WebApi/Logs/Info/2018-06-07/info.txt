@@ -1,0 +1,29 @@
+2018-06-07 21:32:47.9125 | Info | 系统启动 
+2018-06-07 21:32:48.5215 | Info | Starting Hangfire Server 
+2018-06-07 21:32:48.9755 | Info | Using job storage: 'Hangfire.MemoryStorage.MemoryStorage' 
+2018-06-07 21:32:48.9755 | Info | Using the following options for Hangfire Server: 
+2018-06-07 21:32:48.9755 | Info |     Worker count: 20 
+2018-06-07 21:32:48.9755 | Info |     Listening queues: 'default' 
+2018-06-07 21:32:48.9755 | Info |     Shutdown timeout: 00:00:15 
+2018-06-07 21:32:48.9855 | Info |     Schedule polling interval: 00:00:15 
+2018-06-07 21:32:49.0345 | Info | 数据同步任务启动... 
+2018-06-07 21:33:16.3187 | Info | Hangfire Server stopped. 
+2018-06-07 21:35:01.3286 | Info | 系统启动 
+2018-06-07 21:35:01.5526 | Info | Starting Hangfire Server 
+2018-06-07 21:35:01.5556 | Info | Using job storage: 'Hangfire.MemoryStorage.MemoryStorage' 
+2018-06-07 21:35:01.5556 | Info | Using the following options for Hangfire Server: 
+2018-06-07 21:35:01.5556 | Info |     Worker count: 20 
+2018-06-07 21:35:01.5556 | Info |     Listening queues: 'default' 
+2018-06-07 21:35:01.5556 | Info |     Shutdown timeout: 00:00:15 
+2018-06-07 21:35:01.5556 | Info |     Schedule polling interval: 00:00:15 
+2018-06-07 21:35:01.6056 | Info | 数据同步任务启动... 
+2018-06-07 22:12:53.3929 | Info | Hangfire Server stopped. 
+2018-06-07 22:13:43.5889 | Info | 系统启动 
+2018-06-07 22:13:45.5981 | Info | Starting Hangfire Server 
+2018-06-07 22:13:45.5981 | Info | Using job storage: 'Hangfire.MemoryStorage.MemoryStorage' 
+2018-06-07 22:13:45.5981 | Info | Using the following options for Hangfire Server: 
+2018-06-07 22:13:45.5981 | Info |     Worker count: 20 
+2018-06-07 22:13:45.5981 | Info |     Listening queues: 'default' 
+2018-06-07 22:13:45.6111 | Info |     Shutdown timeout: 00:00:15 
+2018-06-07 22:13:45.6111 | Info |     Schedule polling interval: 00:00:15 
+2018-06-07 22:13:45.6891 | Info | 数据同步任务启动... 
