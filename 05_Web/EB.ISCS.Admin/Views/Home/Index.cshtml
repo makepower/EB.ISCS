@@ -6,16 +6,7 @@
     <script src="~/Scripts/adminlte/screenfull.js"></script>
     <script src="~/ViewScript/home/index.js"></script>
     <script type="text/javascript">
-        function openDialog() {
-            $('#myModal').modal({
-                keyboard: false
-            });
-            $("#myModal").draggable({
-                handle: ".modal-header",
-                cursor: 'move',
-                refreshPositions: false
-            });
-        }
+       btnPress =function(){}
     </script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed full-height-layout">
@@ -26,12 +17,12 @@
             <!-- Logo -->
             <a href="/Home/DashBoard" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>运营监控</b>2</span>
+                <span class="logo-mini"><b>运营监控</b></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>网店鹰眼-</b>系统</span>
+                <span class="logo-lg"><b>网店鹰眼</b></span>
             </a>
             <!-- Header Navbar -->
-            <nav class="navbar navbar-static-top" role="navigation">
+            <nav class="navbar navbar-static-top" role="navigation" style="display:none">
                 <!-- Sidebar toggle button-->
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                     <span class="sr-only">Toggle navigation</span>
@@ -71,7 +62,7 @@
                         </li>
                         <!-- Control Sidebar Toggle Button -->
                         <li>
-                            <a href="#" id="btn_full"><i class="fa fa-arrows-alt"></i></a>
+                            <a href="#" id="btn_full_"><i class="fa fa-arrows-alt"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -106,23 +97,21 @@
             <!-- /.sidebar -->
         </aside>
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper" style="margin-top:0px">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <div id="J_mainTabs" class="row content-tabs" style="margin-top: -15px;">
-                    <button class="roll-nav roll-left J_tabLeft">
+                <div id="J_mainTabs" class="row content-tabs" style="margin-left:0px">
+                    <button class="roll-nav roll-left J_tabLeft" onclick="btnPress()">
                         <i class="fa fa-backward"></i>
                     </button>
+
                     <nav class="page-tabs J_menuTabs">
                         <div class="page-tabs-content">
                             <a href="javascript:;" class="active J_menuTab content-main" data-index="0" data-id="#/Home/DashBoard?content=content-main&title=首页&iframe=true&isExtUrl=true">首页</a>
                         </div>
                     </nav>
 
-                    <button class="roll-nav roll-right J_tabRight">
-                        <i class="fa fa-forward"></i>
-                    </button>
-                    <div class="btn-group roll-nav roll-right">
+                    <div class="roll-nav roll-right btn-group">
                         <button class="dropdown J_tabClose" data-toggle="dropdown">
                             选项<span class="caret"></span>
                         </button>
@@ -139,7 +128,8 @@
                             </li>
                         </ul>
                     </div>
-                    <a href="/Account/LogOff" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 注销</a>
+                    <a href="#" id="btn_full" class="roll-nav roll-right J_tabRight"><i class="fa fa-arrows-alt"></i> 全屏 </a>
+                    <a href="/Account/LogOff" class="roll-nav roll-right J_tabExit" style="margin-right:15px"><i class="fa fa fa-sign-out"></i> 注销 </a>
                 </div>
             </section>
             <div id="J_mainContent" class="J_mainContent">

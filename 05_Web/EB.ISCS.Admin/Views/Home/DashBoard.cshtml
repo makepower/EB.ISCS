@@ -4,12 +4,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>qs</title>
+    <link href="~/Scripts/bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet">
     <script src="~/Scripts/jQuery/jquery-3.0.0.js"></script>
     <script src="~/Scripts/echarts/dist/echarts.min.js"></script>
     <script src="~/Scripts/echarts/map/js/china.js"></script>
     <script src="~/Scripts/bootstrap/js/bootstrap.min.js"></script>
-    <link href="~/Scripts/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="~/Scripts/bootstrap/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
+    <script src="~/Scripts/angular/angular.min.js"></script>
+
+    @*<link href="~/Scripts/bootstrap/css/bootstrap-theme.css" type="text/css" rel="stylesheet">*@
 
     <style>
         .dsbody {
@@ -31,6 +33,11 @@
             text-align: center;
         }
 
+        .ds-chart {
+            height: 240px;
+            min-height: 240px;
+        }
+
         .ds-section {
             font-weight: bolder;
             height: 30px;
@@ -42,110 +49,127 @@
             margin: 5px;
             vertical-align: middle;
         }
+
+        .glyphicon-arrow-up {
+            color: darkgreen;
+            font-size: 13px;
+        }
+
+        .glyphicon-arrow-down {
+            color: darkred;
+            font-size: 15px;
+        }
     </style>
 </head>
 <body class="dsbody">
-    
-    <div class="container-fluid" style="margin-top: 5px;">
+
+    <div class="container-fluid" style="margin-top: 5px;" ng-app="DashBoardApp" ng-controller="DashBoardController">
+        @*第一行*@
         <div class="row">
-            <div class="col-md-4" style="height: 350px;" id="main_tag">
+            @*今日实时*@
+            <div class="col-md-4" style="height: 280px;" id="main_tag">
                 <div class="ds-section">
                     今日实时
                 </div>
-                <div class="col-md-6 col-sm-12 col-xs-12" style="height: 175px">
+                <div class="col-md-6 col-sm-12 col-xs-12" style="height: 140px">
                     <span class="ds-info-box-text">付款订单</span>
                     <div class="ds-info-box">
-                        <h1 >90</h1>
-                        <span class="text-right">环比<i class="glyphicon-arrow-up"></i>  <small>12.1%</small></span>
+                        <h2>{{PayOrder.Value}}</h2>
+                        <span class="text-right">环比<i class="glyphicon {{PayOrder.TagIco}}"></i>  <small>{{PayOrder.MOM}}</small></span>
                     </div>
                     <!-- /.info-box -->
                 </div>
-                <div class="col-md-6 col-sm-12 col-xs-12" style="height: 175px">
+                <div class="col-md-6 col-sm-12 col-xs-12" style="height: 140px">
                     <span class="ds-info-box-text">付款金额</span>
                     <div class="ds-info-box">
-                        <h1 > <small>¥</small>  41,410</h1>
-                        <span class="text-right">环比<i class="glyphicon-arrow-up"></i><small>12.1%</small></span>
+                        <h2> <small>¥</small>{{PayMoney.Value}}</h2>
+                        <span class="text-right">环比<i class="glyphicon {{PayMoney.TagIco}}"></i><small>{{PayMoney.MOM}}</small></span>
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->
                 </div>
 
-                <div class="col-md-6 col-sm-12 col-xs-12" style="height: 175px">
+                <div class="col-md-6 col-sm-12 col-xs-12" style="height: 140px">
                     <span class="ds-info-box-text">访客数</span>
                     <div class="ds-info-box">
-                        <h1 class="info-box-number">760</h1>
-                        <span class="text-right">环比<i class="glyphicon-arrow-down"></i><small>12.1%</small></span>
+                        <h2>{{Visttor.Value}}</h2>
+                        <span class="text-right">环比<i class="glyphicon {{Visttor.TagIco}}"></i><small>{{Visttor.MOM}}</small></span>
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->
                 </div>
-                <div class="col-md-6 col-sm-12 col-xs-12" style="height: 175px">
+                <div class="col-md-6 col-sm-12 col-xs-12" style="height: 140px">
                     <span class="ds-info-box-text">付款件数</span>
                     <div class="ds-info-box">
-                        <h1 >2,000</h1>
-                        <span class="text-right">环比<i class="glyphicon-arrow-down"></i><small>12.1%</small></span>
+                        <h2>{{PayGoodNum.Value}}</h2>
+                        <span class="text-right">环比<i class="glyphicon {{PayGoodNum.TagIco}}"></i><small>{{PayGoodNum.MOM}}</small></span>
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->
                 </div>
             </div>
-            <div class="col-md-4 col-sm-4" style="height: 400px;" id="main_map"></div>
-            <div class="col-md-4 col-sm-4" style="height: 350px;">
-                <div class="section">
+            @*地图*@
+            <div class="col-md-4 col-sm-4" style="height: 280px;" id="main_map"></div>
+            @*交易分析*@
+            <div class="col-md-4 col-sm-4" style="height: 280px;">
+                <div class="ds-section">
                     交易分析
                 </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-4" style="height: 350px;" id="main_line_3"></div>
-                    <div class="col-md-8 col-sm-8" style="height: 350px;">
-                        <div class="col-sm-12" style="height: 175px;" id="main_line_1"></div>
-                        <div class="col-sm-12" style="height: 175px;" id="main_line_2"></div>
+                <div class="row" style="margin:0px">
+                    <div class="col-md-4 col-sm-4" style="height: 280px;" id="main_line_3"></div>
+                    <div class="col-md-8 col-sm-8" style="height: 280px;">
+                        <div class="col-sm-12" style="height: 140px;" id="main_line_1"></div>
+                        <div class="col-sm-12" style="height: 140px;" id="main_line_2"></div>
                     </div>
                 </div>
             </div>
         </div>
+        @*第二行*@
         <div class="row">
-            <div class="col-md-4 col-sm-4" style="height: 400px;">
-                <div class="section">
+            <div class="col-md-4 col-sm-4 ds-chart">
+                <div class="ds-section">
                     最近30天流量分析
                 </div>
-                <div style="height: 400px;width: 100%" id="main_1">  </div>
+                <div style="height: 100%;" id="main_1">  </div>
             </div>
-            <div class="col-md-8 col-sm-8">
-                <div class="section">
+            <div class="col-md-8 col-sm-8 ds-chart">
+                <div class="ds-section">
                     订单分析
                 </div>
-                <div class="col-md-6 col-sm-6" style="height: 400px;">
-                    <div class="col-sm-6" style="height: 400px;" id="main_2_1"></div>
-                    <div class="col-sm-6" style="height: 400px;" id="main_2_2"></div>
+                <div class="col-md-6 col-sm-6 ds-chart">
+                    <div class="col-sm-6" style="height:100%;" id="main_2_1"></div>
+                    <div class="col-sm-6" style="height:100%;" id="main_2_2"></div>
                 </div>
-                <div class="col-md-6 col-sm-6" style="height: 400px;" id="main_3"></div>
+                <div class="col-md-6 col-sm-6" style="height:  100%;" id="main_3"></div>
             </div>
         </div>
+        @*第三行*@
         <div class="row">
-            <div class="col-md-4" style="height: 240px;">
-                <div class="section">
+            <div class="col-md-4 ds-chart">
+                <div class="ds-section">
                     客户分析
                 </div>
-                <div class="col-sm-6" style="height: 240px;" id="main_4_1"></div>
-                <div class="col-sm-6" style="height: 240px;" id="main_4_2"></div>
+                <div class="col-sm-6" style="height: 100%;" id="main_4_1"></div>
+                <div class="col-sm-6" style="height: 100%;" id="main_4_2"></div>
             </div>
-            <div class="col-md-4" style="height: 240px;">
-                <div class="section">
+            <div class="col-md-4 ds-chart">
+                <div class="ds-section">
                     时效分析
                 </div>
-                <div class="col-sm-6" style="height: 240px;" id="main_5_1"></div>
-                <div class="col-sm-6" style="height: 240px;" id="main_5_2"></div>
+                <div class="col-sm-6" style="height: 100%;" id="main_5_1"></div>
+                <div class="col-sm-6" style="height: 100%;" id="main_5_2"></div>
             </div>
-            <div class="col-md-4" style="height: 240px;" id="main_6">
-                <div class="section">
+            <div class="col-md-4 ds-chart" id="main_6">
+                <div class="ds-section">
                     客诉分析
                 </div>
-                <div class="col-sm-6" style="height: 240px;" id="main_6_1"></div>
-                <div class="col-sm-6" style="height: 240px;" id="main_6_2"></div>
+                <div class="col-sm-6" style="height: 100%;" id="main_6_1"></div>
+                <div class="col-sm-6" style="height: 100%;" id="main_6_2"></div>
             </div>
         </div>
     </div>
 
     <script src="~/ViewScript/home/dashbord.js"></script>
+    <script src="~/ViewScript/home/dashboardDataquery.js"></script>
 </body>
 </html>

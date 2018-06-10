@@ -201,6 +201,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\Biz\ComplaintController.cs" />
+    <Compile Include="Controllers\Biz\DashBoardController.cs" />
     <Compile Include="Controllers\Biz\ShopBusinessController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1918,6 +1919,7 @@
     <Content Include="ViewScript\Biz\shopbusiness\edit.js" />
     <Content Include="ViewScript\Biz\shopbusiness\index.js" />
     <Content Include="ViewScript\common\commonControl.js" />
+    <Content Include="ViewScript\home\dashboardDataquery.js" />
     <Content Include="ViewScript\home\dashbord.js" />
     <Content Include="ViewScript\Sys\log\index.js" />
     <Content Include="ViewScript\Sys\synchronization\index.js" />

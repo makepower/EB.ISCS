@@ -15,6 +15,11 @@
     @*<script src="~/Scripts/jquery-2.2.3.js"></script>*@
     <script src="~/Scripts/bootstrap/js/bootstrap.min.js"></script>
     <link href="~/Content/loginStyle/Login.css" rel="stylesheet" />
+    <script type="text/javascript">
+//解决iframe下系统超时无法跳出iframe框架的问题
+if (window != top)
+top.location.href = location.href;
+    </script>
 </head>
 <body>
     <div class="content">

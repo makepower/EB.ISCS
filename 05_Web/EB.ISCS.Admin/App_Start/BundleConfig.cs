@@ -43,7 +43,7 @@ namespace EB.ISCS.Admin
                    "~/Content/adminlte/skins/skin-blue.min.css",
                    "~/Scripts/bootstrap/css/bootstrap.min.css",
                    "~/Scripts/bootstrap/css/Site.css",
-                   "~/Content/page-tab/page-tab.min.css",
+                   "~/Content/page-tab/page-tab.css",
                    "~/Scripts/layer/skin/layer.css"
            ));
 

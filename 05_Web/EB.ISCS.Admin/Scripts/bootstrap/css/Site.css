@@ -8,12 +8,12 @@ body, body.full-height-layout div.wrapper {
   height: 100%;
 }
 
-body.full-height-layout div.content-wrapper {
-    height: calc(100% - 140px);
-}
+    body.full-height-layout div.content-wrapper {
+        height: calc(100% - 42px);
+    }
 
 body.full-height-layout div#J_mainContent {
-    height: calc(100% - 40px);
+    height: calc(100% - 42px);
 }
 
 .ui-jqgrid-btable tr.jqgrow td {

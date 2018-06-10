@@ -199,7 +199,7 @@ namespace EB.ISCS.Common.Models
     {
         public string DashBoardMonitorIndicator = "Biz/DashBoard/GetMonitorIndicator/{0}";
         public string DashBoardMonitorTopN = "Biz/DashBoard/GetMonitorStstisForThirtyDays/{0}";
-        public string DashBoardTodayRealMonitorIndicator = "Biz/DashBoard/GetTodayRealMonitorIndicator/{0}";
+        public string DashBoardTodayRealMonitorIndicator = "Biz/DashBoard/GetTodayRealMonitorIndicator";
 
         public string ShopInsert = "Biz/ShopManager/Insert";
         public string ShopUpdate = "Biz/ShopManager/Update";

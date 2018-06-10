@@ -30,7 +30,7 @@ var itemStyle = {
 map_chart.setOption({
     tooltip: {},
     title: {
-        text: '网店宝数据分析平台',
+        text: '网店鹰眼数据分析平台',
         left: 'center',
         textStyle: {
             fontSize: 20,

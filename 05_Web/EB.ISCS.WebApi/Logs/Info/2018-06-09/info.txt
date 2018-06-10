@@ -1,0 +1,480 @@
+2018-06-09 10:03:49.7506 | Info | 系统启动 
+2018-06-09 10:03:50.1606 | Info | Starting Hangfire Server 
+2018-06-09 10:03:50.2836 | Info | Using job storage: 'Hangfire.MemoryStorage.MemoryStorage' 
+2018-06-09 10:03:50.2836 | Info | Using the following options for Hangfire Server: 
+2018-06-09 10:03:50.2836 | Info |     Worker count: 20 
+2018-06-09 10:03:50.2836 | Info |     Listening queues: 'default' 
+2018-06-09 10:03:50.2836 | Info |     Shutdown timeout: 00:00:15 
+2018-06-09 10:03:50.2836 | Info |     Schedule polling interval: 00:00:15 
+2018-06-09 10:03:50.3747 | Info | 数据同步任务启动... 
+2018-06-09 10:04:15.4916 | Info | Hangfire Server stopped. 
+2018-06-09 10:12:14.4786 | Info | 系统启动 
+2018-06-09 10:12:15.0377 | Info | Starting Hangfire Server 
+2018-06-09 10:12:15.0377 | Info | Using job storage: 'Hangfire.MemoryStorage.MemoryStorage' 
+2018-06-09 10:12:15.0377 | Info | Using the following options for Hangfire Server: 
+2018-06-09 10:12:15.0377 | Info |     Worker count: 20 
+2018-06-09 10:12:15.0377 | Info |     Listening queues: 'default' 
+2018-06-09 10:12:15.0517 | Info |     Shutdown timeout: 00:00:15 
+2018-06-09 10:12:15.0517 | Info |     Schedule polling interval: 00:00:15 
+2018-06-09 10:12:15.0847 | Info | 数据同步任务启动... 
+2018-06-09 10:12:16.5168 | Info | 开始启动任务调度 
+2018-06-09 10:12:16.9428 | Info | 执行函数：<GetAllList>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：419 ms 
+2018-06-09 10:12:16.9428 | Info | 执行函数：<GetAllList>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：6 ms 
+2018-06-09 10:12:16.9558 | Info | 启动任务调度完毕 
+2018-06-09 10:12:46.9701 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：160 ms 
+2018-06-09 10:13:42.2272 | Info | 执行函数：<GetByUserId>b__0,返回：SynchronizationConfig，详细信息：,函数执行时间：9 ms 
+2018-06-09 10:13:42.6963 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"SyncConfigController","MethodAction":"GetByUserId","Parameters":"null {\"id\":1}","ExecutionTime":"2018-06-09T10:13:42.1982801+08:00","ExecutionDuration":79,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Biz/SyncConfig/GetByUserId/1","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-06-09T10:13:42.6733072+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-06-09 10:13:42.9323 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = SyncConfigController , MethodAction = GetByUserId , Parameters = null {"id":1} , ExecutionTime = 2018/6/9 星期六 10:13:42 , ExecutionDuration = 79 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Biz/SyncConfig/GetByUserId/1 , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/6/9 星期六 10:13:42 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：229 ms 
+2018-06-09 10:13:43.0073 | Info | 执行函数：<GetShipsByUserId>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：3 ms 
+2018-06-09 10:13:43.0453 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"ShopManagerController","MethodAction":"GetAll","Parameters":"null {\"id\":1}","ExecutionTime":"2018-06-09T10:13:43.0003259+08:00","ExecutionDuration":42,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Biz/ShopManager/GetAll/1","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-06-09T10:13:43.0453285+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-06-09 10:13:43.1273 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = ShopManagerController , MethodAction = GetAll , Parameters = null {"id":1} , ExecutionTime = 2018/6/9 星期六 10:13:43 , ExecutionDuration = 42 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Biz/ShopManager/GetAll/1 , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/6/9 星期六 10:13:43 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：80 ms 
+2018-06-09 10:13:43.7063 | Info | 执行函数：<GetByUserId>b__0,返回：SynchronizationConfig，详细信息：,函数执行时间：1 ms 
+2018-06-09 10:13:43.7423 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"SyncConfigController","MethodAction":"GetByUserId","Parameters":"null {\"id\":1}","ExecutionTime":"2018-06-09T10:13:43.7033661+08:00","ExecutionDuration":36,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Biz/SyncConfig/GetByUserId/1","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-06-09T10:13:43.7413683+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-06-09 10:13:43.8043 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = SyncConfigController , MethodAction = GetByUserId , Parameters = null {"id":1} , ExecutionTime = 2018/6/9 星期六 10:13:43 , ExecutionDuration = 36 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Biz/SyncConfig/GetByUserId/1 , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/6/9 星期六 10:13:43 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：59 ms 
+2018-06-09 10:14:59.2695 | Info | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+                       DECLARE @Order NVARCHAR(200);      
+                       IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                            BEGIN
+				                SET @Order = 'ORDER BY ' + @OrderBy;
+                            END;
+                       ELSE
+                            BEGIN
+                                SET @Order = '  ORDER BY InDate DESC ';
+                            END;
+                       IF ( @Where IS  NULL)
+                            BEGIN
+				                SET @Where = '';
+                            END;
+                       SET @Sql = N' 
+                   WITH  Select_List  AS
+                   (
+					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        Id
+                              ,UserId
+                              ,Code
+                              ,Name
+                              ,Plat
+                              ,Description
+                              ,AppKey
+                              ,AppSecret
+                              ,DeliveryAddress
+                              ,InDate
+                              ,Contract
+                              ,Status
+                              ,Remark
+                        FROM ShipInfo
+						WHERE  Status=1  ' + @Where + '
+                  )
+                  SELECT
+			          A.* , B.UserName FROM Select_List A 
+                   LEFT JOIN SysUser B ON A.UserId=B.Id 
+                  WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
+          
+                 SELECT @Count = COUNT(1) FROM ShipInfo WHERE  Status=1  ' + @Where;              
+                       EXECUTE sp_executesql @Sql,N' 
+                       @CurrentPageIndex INT,
+                       @PageSize  INT,
+                       @Where NVARCHAR(1000),
+                       @OrderBy NVARCHAR(200),         
+                       @Count int OUT',
+                       @CurrentPageIndex,
+			           @PageSize,
+                       @Where,
+                       @OrderBy,
+                       @Count OUTPUT; ,函数执行时间：223 ms 
+2018-06-09 10:14:59.3165 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"ShopManagerController","MethodAction":"GetPage","Parameters":" {\"page\":{\"PageSize\":15,\"PageIndex\":1,\"OrderBy\":null,\"Token\":null,\"Where\":\" and UserId=1\"}}","ExecutionTime":"2018-06-09T10:14:59.0225491+08:00","ExecutionDuration":287,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Biz/ShopManager/GetPage","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-06-09T10:14:59.3165659+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-06-09 10:14:59.3225 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = ShopManagerController , MethodAction = GetPage , Parameters =  {"page":{"PageSize":15,"PageIndex":1,"OrderBy":null,"Token":null,"Where":" and UserId=1"}} , ExecutionTime = 2018/6/9 星期六 10:14:59 , ExecutionDuration = 287 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Biz/ShopManager/GetPage , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/6/9 星期六 10:14:59 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：3 ms 
+2018-06-09 10:15:22.7819 | Info | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+                       DECLARE @Order NVARCHAR(200);      
+                       IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                            BEGIN
+				                SET @Order = 'ORDER BY ' + @OrderBy;
+                            END;
+                       ELSE
+                            BEGIN
+                                SET @Order = '  ORDER BY InDate DESC ';
+                            END;
+                       IF ( @Where IS  NULL)
+                            BEGIN
+				                SET @Where = '';
+                            END;
+                       SET @Sql = N' 
+                   WITH  Select_List  AS
+                   (
+					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        Id
+                              ,UserId
+                              ,Code
+                              ,Name
+                              ,Plat
+                              ,Description
+                              ,AppKey
+                              ,AppSecret
+                              ,DeliveryAddress
+                              ,InDate
+                              ,Contract
+                              ,Status
+                              ,Remark
+                        FROM ShipInfo
+						WHERE  Status=1  ' + @Where + '
+                  )
+                  SELECT
+			          A.* , B.UserName FROM Select_List A 
+                   LEFT JOIN SysUser B ON A.UserId=B.Id 
+                  WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
+          
+                 SELECT @Count = COUNT(1) FROM ShipInfo WHERE  Status=1  ' + @Where;              
+                       EXECUTE sp_executesql @Sql,N' 
+                       @CurrentPageIndex INT,
+                       @PageSize  INT,
+                       @Where NVARCHAR(1000),
+                       @OrderBy NVARCHAR(200),         
+                       @Count int OUT',
+                       @CurrentPageIndex,
+			           @PageSize,
+                       @Where,
+                       @OrderBy,
+                       @Count OUTPUT; ,函数执行时间：3 ms 
+2018-06-09 10:15:22.8139 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"ShopManagerController","MethodAction":"GetPage","Parameters":" {\"page\":{\"PageSize\":15,\"PageIndex\":1,\"OrderBy\":null,\"Token\":null,\"Where\":\" and UserId=1\"}}","ExecutionTime":"2018-06-09T10:15:22.7779079+08:00","ExecutionDuration":31,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Biz/ShopManager/GetPage","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-06-09T10:15:22.8129099+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-06-09 10:15:22.9129 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = ShopManagerController , MethodAction = GetPage , Parameters =  {"page":{"PageSize":15,"PageIndex":1,"OrderBy":null,"Token":null,"Where":" and UserId=1"}} , ExecutionTime = 2018/6/9 星期六 10:15:22 , ExecutionDuration = 31 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Biz/ShopManager/GetPage , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/6/9 星期六 10:15:22 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：3 ms 
+2018-06-09 10:32:17.9260 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：2 ms 
+2018-06-09 10:40:39.5925 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 10:47:27.3800 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 10:51:22.8705 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 10:53:08.8713 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 10:54:58.0000 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 10:57:48.2114 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 10:58:23.8401 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：2 ms 
+2018-06-09 11:06:24.8462 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 11:07:28.4758 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 11:15:13.0411 | Info | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+                       DECLARE @Order NVARCHAR(200);      
+                       IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                            BEGIN
+				                SET @Order = 'ORDER BY ' + @OrderBy;
+                            END;
+                       ELSE
+                            BEGIN
+                                SET @Order = '  ORDER BY InDate DESC ';
+                            END;
+                       IF ( @Where IS  NULL)
+                            BEGIN
+				                SET @Where = '';
+                            END;
+                       SET @Sql = N' 
+                   WITH  Select_List  AS
+                   (
+					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        [Id]
+                              ,[AccessChannelId]
+                              ,[UserId]
+                              ,[UserName]
+                              ,[LogDate]
+                              ,[Token]
+                              ,[LogOutDate]
+                              ,[ClientIpAddress]
+                              ,[ClientName]
+                              ,[OnlineDate]
+                              ,[IsSucceed]
+                              ,[LogReason]
+                              ,[SessionId]
+                              ,[InUserType]
+                              ,[IPNum]
+                              ,[Enabled]
+                              ,[DelUser]
+                              ,[DelState]
+                              ,[DelDate]
+                        FROM SysLoginLog
+						WHERE  1=1 ' + @Where + '
+                  )
+                  SELECT
+			          A.*  FROM Select_List A 
+                  
+                  WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
+          
+                 SELECT @Count = COUNT(1) FROM SysLoginLog WHERE  1=1 ' + @Where;              
+                       EXECUTE sp_executesql @Sql,N' 
+                       @CurrentPageIndex INT,
+                       @PageSize  INT,
+                       @Where NVARCHAR(1000),
+                       @OrderBy NVARCHAR(200),         
+                       @Count int OUT',
+                       @CurrentPageIndex,
+			           @PageSize,
+                       @Where,
+                       @OrderBy,
+                       @Count OUTPUT; ,函数执行时间：38 ms 
+2018-06-09 11:15:13.0851 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"LogController","MethodAction":"GetLoginLogPageList","Parameters":" {\"pages\":{\"BeginDate\":null,\"EndDate\":null,\"AccessChannelId\":null,\"UserId\":null,\"MenuName\":null,\"Exception\":null,\"MenuActionName\":null,\"DelState\":null,\"PageSize\":15,\"PageIndex\":1,\"OrderBy\":null,\"Token\":null,\"Where\":null}}","ExecutionTime":"2018-06-09T11:15:12.9731145+08:00","ExecutionDuration":104,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Log/GetLoginLogPageList","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-06-09T11:15:13.0851209+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-06-09 11:15:13.0851 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = LogController , MethodAction = GetLoginLogPageList , Parameters =  {"pages":{"BeginDate":null,"EndDate":null,"AccessChannelId":null,"UserId":null,"MenuName":null,"Exception":null,"MenuActionName":null,"DelState":null,"PageSize":15,"PageIndex":1,"OrderBy":null,"Token":null,"Where":null}} , ExecutionTime = 2018/6/9 星期六 11:15:12 , ExecutionDuration = 104 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Log/GetLoginLogPageList , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/6/9 星期六 11:15:13 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：3 ms 
+2018-06-09 11:15:13.4971 | Info | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+                       DECLARE @Order NVARCHAR(200);      
+                       IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                            BEGIN
+				                SET @Order = 'ORDER BY ' + @OrderBy;
+                            END;
+                       ELSE
+                            BEGIN
+                                SET @Order = '  ORDER BY InDate DESC ';
+                            END;
+                       IF ( @Where IS  NULL)
+                            BEGIN
+				                SET @Where = '';
+                            END;
+                       SET @Sql = N' 
+                   WITH  Select_List  AS
+                   (
+					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        [Id]
+                              ,[AccessChannelId]
+                              ,[UserId]
+                              ,[CustomerId]
+                              ,[ClientIpAddress]
+                              ,[MenuName]
+                              ,[MenuId]
+                              ,[MenuActionId]
+                              ,[MenuActionName]
+                              ,[ServiceName]
+                              ,[FunctionController]
+                              ,[MethodAction]
+                              ,[Parameters]
+                              ,[ExecutionTime]
+                              ,[ExecutionDuration]
+                              ,[ClientName]
+                              ,[BrowserInfo]
+                              ,[Exception]
+                              ,[Description]
+                              ,[SourceEquipment]
+                              ,[CustomData]
+                              ,[IPNum]
+                              ,[Token]
+                              ,[Navigator]
+                              ,[RequestUri]
+                              ,[UrlReferrer]
+                              ,[RequestType]
+                              ,[Enabled]
+                              ,[InUser]
+                              ,[InDate]
+                              ,[DelUser]
+                              ,[DelState]
+                              ,[DelDate]
+                        FROM SysOperationLog
+						WHERE  1=1 ' + @Where + '
+                  )
+                  SELECT
+			          A.* , B.UserName FROM Select_List A 
+                   Left join SysUser B on  A.UserId =B.Id
+                  WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
+          
+                 SELECT @Count = COUNT(1) FROM SysOperationLog WHERE  1=1 ' + @Where;              
+                       EXECUTE sp_executesql @Sql,N' 
+                       @CurrentPageIndex INT,
+                       @PageSize  INT,
+                       @Where NVARCHAR(1000),
+                       @OrderBy NVARCHAR(200),         
+                       @Count int OUT',
+                       @CurrentPageIndex,
+			           @PageSize,
+                       @Where,
+                       @OrderBy,
+                       @Count OUTPUT; ,函数执行时间：30 ms 
+2018-06-09 11:15:13.5311 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"LogController","MethodAction":"GetOperaterLogPageList","Parameters":" {\"pages\":{\"BeginDate\":null,\"EndDate\":null,\"AccessChannelId\":null,\"UserId\":null,\"MenuName\":null,\"Exception\":null,\"MenuActionName\":null,\"DelState\":null,\"PageSize\":15,\"PageIndex\":1,\"OrderBy\":null,\"Token\":null,\"Where\":null}}","ExecutionTime":"2018-06-09T11:15:13.4641426+08:00","ExecutionDuration":60,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Log/GetOperaterLogPageList","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-06-09T11:15:13.5311465+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-06-09 11:15:13.9741 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = LogController , MethodAction = GetOperaterLogPageList , Parameters =  {"pages":{"BeginDate":null,"EndDate":null,"AccessChannelId":null,"UserId":null,"MenuName":null,"Exception":null,"MenuActionName":null,"DelState":null,"PageSize":15,"PageIndex":1,"OrderBy":null,"Token":null,"Where":null}} , ExecutionTime = 2018/6/9 星期六 11:15:13 , ExecutionDuration = 60 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Log/GetOperaterLogPageList , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/6/9 星期六 11:15:13 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：5 ms 
+2018-06-09 11:15:14.7332 | Info | 执行函数：<Query>b__0,返回：IEnumerable`1，详细信息：DECLARE @Sql NVARCHAR(MAX);
+                       DECLARE @Order NVARCHAR(200);      
+                       IF ( @OrderBy IS NOT  NULL AND  @OrderBy<>'')
+                            BEGIN
+				                SET @Order = 'ORDER BY ' + @OrderBy;
+                            END;
+                       ELSE
+                            BEGIN
+                                SET @Order = '  ORDER BY InDate DESC ';
+                            END;
+                       IF ( @Where IS  NULL)
+                            BEGIN
+				                SET @Where = '';
+                            END;
+                       SET @Sql = N' 
+                   WITH  Select_List  AS
+                   (
+					   SELECT  ROW_NUMBER() OVER ( ' + @Order + ' ) RowNumber,
+                        [Id]
+                              ,[AccessChannelId]
+                              ,[UserId]
+                              ,[CustomerId]
+                              ,[ExceptionDate]
+                              ,[ExceptionFunction]
+                              ,[ExceptionVersions]
+                              ,[ExceptionSource]
+                              ,[ExceptionDescription]
+                              ,[ExceptionStackTrace]
+                              ,[ExceptionType]
+                              ,[ExceptionTargetSite]
+                              ,[ExceptionTypeName]
+                              ,[ExceptionIP]
+                              ,[IPNum]
+                              ,[ComputerName]
+                              ,[ExploreName]
+                              ,[ExplorerVersions]
+                              ,[SourceEquipment]
+                              ,[Enabled]
+                              ,[InUser]
+                              ,[InDate]
+                              ,[DeleteState]
+                              ,[DeleteUser]
+                              ,[DeleteDate]
+                        FROM SysExceptionLog
+						WHERE  1=1 ' + @Where + '
+                  )
+                  SELECT
+			          A.* , B.UserName FROM Select_List A 
+                   Left join SysUser B on  A.UserId =B.Id
+                  WHERE (RowNumber BETWEEN ( @PageSize * ( @CurrentPageIndex - 1 ) + 1 )  AND  @PageSize * @CurrentPageIndex )
+          
+                 SELECT @Count = COUNT(1) FROM SysExceptionLog WHERE  1=1 ' + @Where;              
+                       EXECUTE sp_executesql @Sql,N' 
+                       @CurrentPageIndex INT,
+                       @PageSize  INT,
+                       @Where NVARCHAR(1000),
+                       @OrderBy NVARCHAR(200),         
+                       @Count int OUT',
+                       @CurrentPageIndex,
+			           @PageSize,
+                       @Where,
+                       @OrderBy,
+                       @Count OUTPUT; ,函数执行时间：13 ms 
+2018-06-09 11:15:14.7712 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"LogController","MethodAction":"GetExceptionLogPageList","Parameters":" {\"pages\":{\"BeginDate\":null,\"EndDate\":null,\"AccessChannelId\":null,\"UserId\":null,\"MenuName\":null,\"Exception\":null,\"MenuActionName\":null,\"DeleteState\":null,\"PageSize\":15,\"PageIndex\":1,\"OrderBy\":null,\"Token\":null,\"Where\":null}}","ExecutionTime":"2018-06-09T11:15:14.7172143+08:00","ExecutionDuration":43,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Sys/Log/GetExceptionLogPageList","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-06-09T11:15:14.7712174+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-06-09 11:15:14.7712 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = LogController , MethodAction = GetExceptionLogPageList , Parameters =  {"pages":{"BeginDate":null,"EndDate":null,"AccessChannelId":null,"UserId":null,"MenuName":null,"Exception":null,"MenuActionName":null,"DeleteState":null,"PageSize":15,"PageIndex":1,"OrderBy":null,"Token":null,"Where":null}} , ExecutionTime = 2018/6/9 星期六 11:15:14 , ExecutionDuration = 43 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Sys/Log/GetExceptionLogPageList , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/6/9 星期六 11:15:14 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：5 ms 
+2018-06-09 11:17:52.5678 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 11:40:29.8460 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 11:43:11.8960 | Info | Hangfire Server stopped. 
+2018-06-09 11:43:56.8496 | Info | 系统启动 
+2018-06-09 11:43:58.0536 | Info | Starting Hangfire Server 
+2018-06-09 11:43:58.0956 | Info | Using job storage: 'Hangfire.MemoryStorage.MemoryStorage' 
+2018-06-09 11:43:58.1016 | Info | Using the following options for Hangfire Server: 
+2018-06-09 11:43:58.1016 | Info |     Worker count: 20 
+2018-06-09 11:43:58.1016 | Info |     Listening queues: 'default' 
+2018-06-09 11:43:58.1016 | Info |     Shutdown timeout: 00:00:15 
+2018-06-09 11:43:58.1216 | Info |     Schedule polling interval: 00:00:15 
+2018-06-09 11:43:58.2577 | Info | 数据同步任务启动... 
+2018-06-09 11:44:00.8608 | Info | 开始启动任务调度 
+2018-06-09 11:44:01.4638 | Info | 执行函数：<GetAllList>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：597 ms 
+2018-06-09 11:44:01.5088 | Info | 执行函数：<GetAllList>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：40 ms 
+2018-06-09 11:44:01.5088 | Info | 启动任务调度完毕 
+2018-06-09 11:44:03.1609 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：119 ms 
+2018-06-09 11:44:54.1459 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 11:45:34.0561 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 11:49:49.4837 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：240 ms 
+2018-06-09 11:54:06.8125 | Info | Hangfire Server stopped. 
+2018-06-09 11:55:31.6763 | Info | 系统启动 
+2018-06-09 11:55:32.1483 | Info | Starting Hangfire Server 
+2018-06-09 11:55:32.1483 | Info | Using job storage: 'Hangfire.MemoryStorage.MemoryStorage' 
+2018-06-09 11:55:32.1483 | Info | Using the following options for Hangfire Server: 
+2018-06-09 11:55:32.1483 | Info |     Worker count: 20 
+2018-06-09 11:55:32.1483 | Info |     Listening queues: 'default' 
+2018-06-09 11:55:32.1483 | Info |     Shutdown timeout: 00:00:15 
+2018-06-09 11:55:32.1483 | Info |     Schedule polling interval: 00:00:15 
+2018-06-09 11:55:32.1973 | Info | 数据同步任务启动... 
+2018-06-09 11:55:33.0784 | Info | 开始启动任务调度 
+2018-06-09 11:55:33.2374 | Info | 执行函数：<GetAllList>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：152 ms 
+2018-06-09 11:55:33.2524 | Info | 执行函数：<GetAllList>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：11 ms 
+2018-06-09 11:55:33.2524 | Info | 启动任务调度完毕 
+2018-06-09 11:55:34.0124 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：45 ms 
+2018-06-09 11:56:46.6216 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：16 ms 
+2018-06-09 13:35:54.4645 | Info | Hangfire Server stopped. 
+2018-06-09 13:37:18.7023 | Info | 系统启动 
+2018-06-09 13:37:21.2044 | Info | Starting Hangfire Server 
+2018-06-09 13:37:22.8855 | Info | Using job storage: 'Hangfire.MemoryStorage.MemoryStorage' 
+2018-06-09 13:37:22.9105 | Info | Using the following options for Hangfire Server: 
+2018-06-09 13:37:22.9105 | Info |     Worker count: 20 
+2018-06-09 13:37:22.9235 | Info |     Listening queues: 'default' 
+2018-06-09 13:37:22.9235 | Info |     Shutdown timeout: 00:00:15 
+2018-06-09 13:37:22.9806 | Info |     Schedule polling interval: 00:00:15 
+2018-06-09 13:37:23.2106 | Info | 数据同步任务启动... 
+2018-06-09 13:37:34.6192 | Info | 开始启动任务调度 
+2018-06-09 13:37:38.7535 | Info | 执行函数：<GetAllList>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：4125 ms 
+2018-06-09 13:37:38.9415 | Info | 执行函数：<GetAllList>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：174 ms 
+2018-06-09 13:37:38.9605 | Info | 启动任务调度完毕 
+2018-06-09 13:38:52.7487 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：3942 ms 
+2018-06-09 13:41:00.6080 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：47 ms 
+2018-06-09 13:41:06.0053 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：40 ms 
+2018-06-09 13:43:14.2226 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：47 ms 
+2018-06-09 13:46:47.7909 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：13 ms 
+2018-06-09 13:47:04.6218 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：68 ms 
+2018-06-09 13:51:04.0545 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：21 ms 
+2018-06-09 13:51:30.6030 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 13:54:16.9215 | Info | 执行函数：<GetByUserId>b__0,返回：SynchronizationConfig，详细信息：,函数执行时间：279 ms 
+2018-06-09 13:54:17.6786 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"SyncConfigController","MethodAction":"GetByUserId","Parameters":"null {\"id\":1}","ExecutionTime":"2018-06-09T13:54:16.5905759+08:00","ExecutionDuration":436,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Biz/SyncConfig/GetByUserId/1","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-06-09T13:54:17.6546368+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-06-09 13:54:18.7496 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = SyncConfigController , MethodAction = GetByUserId , Parameters = null {"id":1} , ExecutionTime = 2018/6/9 星期六 13:54:16 , ExecutionDuration = 436 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Biz/SyncConfig/GetByUserId/1 , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/6/9 星期六 13:54:17 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：1046 ms 
+2018-06-09 13:54:18.9457 | Info | 执行函数：<GetShipsByUserId>b__0,返回：IEnumerable`1，详细信息：,函数执行时间：135 ms 
+2018-06-09 13:54:18.9927 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"ShopManagerController","MethodAction":"GetAll","Parameters":"null {\"id\":1}","ExecutionTime":"2018-06-09T13:54:18.8067027+08:00","ExecutionDuration":184,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Biz/ShopManager/GetAll/1","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-06-09T13:54:18.9927133+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-06-09 13:54:18.9927 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = ShopManagerController , MethodAction = GetAll , Parameters = null {"id":1} , ExecutionTime = 2018/6/9 星期六 13:54:18 , ExecutionDuration = 184 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Biz/ShopManager/GetAll/1 , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/6/9 星期六 13:54:18 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：7 ms 
+2018-06-09 13:54:19.5717 | Info | 执行函数：<GetByUserId>b__0,返回：SynchronizationConfig，详细信息：,函数执行时间：6 ms 
+2018-06-09 13:54:19.5947 | Info | operation info:{"Id":0,"UserId":0,"CustomerId":0,"ClientIpAddress":"169.254.52.192","MenuName":null,"MenuId":0,"MenuActionId":0,"MenuActionName":null,"ServiceName":null,"FunctionController":"SyncConfigController","MethodAction":"GetByUserId","Parameters":"null {\"id\":1}","ExecutionTime":"2018-06-09T13:54:19.563746+08:00","ExecutionDuration":28,"ClientName":"::1","BrowserInfo":"Unknown - 0.0 - Unknown","Exception":null,"Description":null,"SourceEquipment":null,"CustomData":null,"IPNum":-1442958144,"Token":null,"Navigator":null,"RequestUri":"http://localhost:9089/Biz/SyncConfig/GetByUserId/1","UrlReferrer":"","RequestType":0,"Enabled":1,"InUser":null,"InDate":"2018-06-09T13:54:19.5947478+08:00","DelUser":null,"DelState":0,"DelDate":null,"UserName":null,"LoginName":null} 
+2018-06-09 13:54:19.6127 | Info | 执行函数：<Insert>b__0,返回：Int32，详细信息：Id = 0 , UserId = 0 , CustomerId = 0 , ClientIpAddress = 169.254.52.192 , MenuName = null , MenuId = 0 , MenuActionId = 0 , MenuActionName = null , ServiceName = null , FunctionController = SyncConfigController , MethodAction = GetByUserId , Parameters = null {"id":1} , ExecutionTime = 2018/6/9 星期六 13:54:19 , ExecutionDuration = 28 , ClientName = ::1 , BrowserInfo = Unknown - 0.0 - Unknown , Exception = null , Description = null , SourceEquipment = null , CustomData = null , IPNum = -1442958144 , Token = null , Navigator = null , RequestUri = http://localhost:9089/Biz/SyncConfig/GetByUserId/1 , UrlReferrer =  , RequestType = 0 , Enabled = 1 , InUser = null , InDate = 2018/6/9 星期六 13:54:19 , DelUser = null , DelState = 0 , DelDate = null , UserName = null , LoginName = null,函数执行时间：15 ms 
+2018-06-09 14:00:33.3601 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：11 ms 
+2018-06-09 14:04:31.5377 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 14:04:53.2799 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 14:07:20.0773 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 14:07:38.4014 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 14:07:49.6420 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 14:15:27.9962 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：2 ms 
+2018-06-09 14:15:44.1272 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：3 ms 
+2018-06-09 14:17:34.1375 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 14:18:11.1256 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：4 ms 
+2018-06-09 14:21:34.7342 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：14 ms 
+2018-06-09 14:23:17.3091 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：42 ms 
+2018-06-09 14:24:19.6277 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：12 ms 
+2018-06-09 14:27:58.8512 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：13 ms 
+2018-06-09 14:28:15.3501 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：2 ms 
+2018-06-09 14:28:44.6728 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 14:29:03.3059 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：21 ms 
+2018-06-09 14:29:23.4640 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：18 ms 
+2018-06-09 14:29:39.5350 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：2 ms 
+2018-06-09 14:30:04.8254 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：14 ms 
+2018-06-09 14:30:19.3502 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：14 ms 
+2018-06-09 14:31:09.4371 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：12 ms 
+2018-06-09 14:32:03.4852 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：11 ms 
+2018-06-09 14:33:05.8408 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：12 ms 
+2018-06-09 14:33:24.8278 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：19 ms 
+2018-06-09 14:33:37.4926 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：2 ms 
+2018-06-09 14:33:52.1854 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：16 ms 
+2018-06-09 14:36:09.4823 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：18 ms 
+2018-06-09 14:36:34.8067 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：2 ms 
+2018-06-09 14:40:05.4748 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：11 ms 
+2018-06-09 14:40:51.3934 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：12 ms 
+2018-06-09 14:41:44.7204 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：11 ms 
+2018-06-09 14:44:45.1277 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：11 ms 
+2018-06-09 14:46:02.8362 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：26 ms 
+2018-06-09 14:47:47.2082 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：13 ms 
+2018-06-09 14:48:31.3127 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：15 ms 
+2018-06-09 14:52:56.7469 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：11 ms 
+2018-06-09 14:54:18.3405 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：14 ms 
+2018-06-09 14:54:22.6228 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：2 ms 
+2018-06-09 14:55:07.3693 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：14 ms 
+2018-06-09 14:55:23.8083 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：13 ms 
+2018-06-09 14:55:35.8900 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：12 ms 
+2018-06-09 14:59:00.3567 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：13 ms 
+2018-06-09 14:59:34.4586 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：5 ms 
+2018-06-09 14:59:48.2314 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：12 ms 
+2018-06-09 15:00:02.8442 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：14 ms 
+2018-06-09 15:00:15.0719 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：2 ms 
+2018-06-09 15:00:29.3818 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 15:00:45.6657 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：14 ms 
+2018-06-09 15:01:04.1357 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：14 ms 
+2018-06-09 15:01:32.3924 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：1 ms 
+2018-06-09 15:01:48.7033 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：2 ms 
+2018-06-09 15:02:22.0822 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：11 ms 
+2018-06-09 15:05:13.6770 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：11 ms 
+2018-06-09 15:08:25.7220 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：12 ms 
+2018-06-09 15:08:52.7105 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：14 ms 
+2018-06-09 15:12:34.9553 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：11 ms 
+2018-06-09 15:13:32.4435 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：27 ms 
+2018-06-09 15:14:26.3566 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：12 ms 
+2018-06-09 17:03:26.6440 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：77 ms 
+2018-06-09 17:11:17.0119 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：12 ms 
+2018-06-09 17:19:38.6746 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：16 ms 
+2018-06-09 17:26:48.6652 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：11 ms 
+2018-06-09 17:33:05.3397 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：12 ms 
+2018-06-09 17:34:15.8108 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：11 ms 
+2018-06-09 17:35:53.2393 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：13 ms 
+2018-06-09 17:42:22.4736 | Info | 执行函数：<GetUserMenus>b__0,返回：List`1，详细信息：,函数执行时间：18 ms 

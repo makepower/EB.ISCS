@@ -76,7 +76,7 @@
         // for the background and a callback function
 
         var options = $.extend({
-            'background': '#000',
+            'background': '#111',
             'callback': $.noop(),
             'fullscreenClass': 'fullScreen'
         }, props),
