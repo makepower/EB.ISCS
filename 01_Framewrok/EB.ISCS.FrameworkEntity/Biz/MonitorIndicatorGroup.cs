@@ -5,9 +5,14 @@ namespace Maticsoft.Model
 {
     /// <summary>
     ///首页监控指标信息 ：实体类
+    ///存放各种维度的运营统计数据 如 TopN,30天订单状态,客户分析等多目指标
+    ///TopN 
+    ///  --Top1
+    ///  --Top2
+    ///  --Top3
     /// </summary>	
     [Table("GoodMonitorTopN")]
-    public class GoodMonitorTopN
+    public class MonitorIndicatorGroup
     {
 
         /// <summary>
@@ -15,6 +20,12 @@ namespace Maticsoft.Model
         /// </summary>		
         [Key]
         public int Id { get; set; }
+
+        /// <summary>
+        /// 指标组名称 
+        /// </summary>
+        public string IndicatorGroupName { get; set; }
+
         /// <summary>
         /// 指标名称
         /// </summary>		
@@ -36,7 +47,7 @@ namespace Maticsoft.Model
         /// </summary>		
         public DateTime StatisDate { get; set; }
         /// <summary>
-        /// 参考 静态指标 类目枚举
+        /// 参考 静态指标 EB.ISCS.Common.Enum.StatisGroupType类目枚举
         /// </summary>		
         public string StatisType { get; set; }
         /// <summary>

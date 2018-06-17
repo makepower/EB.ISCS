@@ -19,6 +19,15 @@
 //解决iframe下系统超时无法跳出iframe框架的问题
 if (window != top)
 top.location.href = location.href;
+
+        var visitorLogin =function()
+        {
+         $.ajax({
+                type : "POST", //提交方式
+                url : "/Account/VisitorLogin",//路径
+                data : {}
+                });
+        }
     </script>
 </head>
 <body>
@@ -53,6 +62,9 @@ top.location.href = location.href;
                 <button type="submit" class="btn">
                     &nbsp;&nbsp;登&nbsp;&nbsp;&nbsp;录&nbsp;&nbsp;
                 </button>
+            </div>
+            <div class="right" style="width:80px;float: right;">
+                <a href="javascript:visitorLogin()" class="right-align">游客登录</a>
             </div>
             @*</form>*@
         }

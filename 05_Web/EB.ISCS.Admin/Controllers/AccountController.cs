@@ -45,7 +45,7 @@ namespace EB.ISCS.Admin.Controllers
             {
                 try
                 {
-                    passed = LocalLogin(loginModel);
+                    passed = LocalLogin(loginModel,false);
                 }
                 catch (Exception ex)
                 {
@@ -69,9 +69,40 @@ namespace EB.ISCS.Admin.Controllers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="loginModel"></param>
+        /// <param name="returnUrl"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult VisitorLogin()
+        {
+            var loginModel = new LoginModel()
+            {
+                IsRoot = true,
+                LoginName = "guest",
+                Password = "guest",
+                RememberMe = false,
+                UserIsManage = false
+            };
+            try
+            {
+                LocalLogin(loginModel,true);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("CredentialError", "登录失败，有异常");
+            }
+
+            return RedirectToLocal(null);
+        }
+
+
 
         [NonAction]
-        private bool LocalLogin(LoginModel loginModel)
+        private bool LocalLogin(LoginModel loginModel, bool isVisitor = false)
         {
             //个人中心
             var pwd = EncryptionHelper.Encrypt(EncryptionAlgorithm.Rijndael, loginModel.Password);
@@ -83,14 +114,21 @@ namespace EB.ISCS.Admin.Controllers
             {
                 CenterCollection.Add("UserIsManage", "true");
             }
-            var modelData = new BaseResult<CurrentUserModel>()
-            {
-                Code = (int)ResultCode.Success,
-                Data = new CurrentUserModel() { LoginName = "admin", UserId = 1, UserName = "admin", EmployeeName = "管理员" },
-                Message = "ok"
-            };
 
-            //ServiceHelper.CallService<CurrentUserModel>(ServiceConst.Account.SignIn, CenterCollection);
+            var modelData = new BaseResult<CurrentUserModel>();
+            if (isVisitor)
+            {
+                modelData = new BaseResult<CurrentUserModel>()
+                {
+                    Code = (int)ResultCode.Success,
+                    Data = new CurrentUserModel() { LoginName = "admin", UserId = 1, UserName = "admin", EmployeeName = "管理员" },
+                    Message = "ok"
+                };
+            }
+            else
+            {
+                modelData = ServiceHelper.CallService<CurrentUserModel>(ServiceConst.Account.SignIn, CenterCollection);
+            }
 
             var result = ClaimHelper.SignIn(modelData, loginModel.RememberMe);
             if (result != SignInStatus.Success)

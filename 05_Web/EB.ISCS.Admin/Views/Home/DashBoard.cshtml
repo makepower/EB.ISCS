@@ -10,9 +10,6 @@
     <script src="~/Scripts/echarts/map/js/china.js"></script>
     <script src="~/Scripts/bootstrap/js/bootstrap.min.js"></script>
     <script src="~/Scripts/angular/angular.min.js"></script>
-
-    @*<link href="~/Scripts/bootstrap/css/bootstrap-theme.css" type="text/css" rel="stylesheet">*@
-
     <style>
         .dsbody {
             background-image: url(/Content/images/ds-bg-2.jpg);
@@ -109,17 +106,17 @@
                 </div>
             </div>
             @*地图*@
-            <div class="col-md-4 col-sm-4" style="height: 280px;" id="main_map"></div>
+            <div class="col-md-4 col-sm-4" style="height: 280px;" id="div_map"></div>
             @*交易分析*@
             <div class="col-md-4 col-sm-4" style="height: 280px;">
                 <div class="ds-section">
                     交易分析
                 </div>
                 <div class="row" style="margin:0px">
-                    <div class="col-md-4 col-sm-4" style="height: 280px;" id="main_line_3"></div>
+                    <div class="col-md-4 col-sm-4" style="height: 280px;" id="div_topN"></div>
                     <div class="col-md-8 col-sm-8" style="height: 280px;">
-                        <div class="col-sm-12" style="height: 140px;" id="main_line_1"></div>
-                        <div class="col-sm-12" style="height: 140px;" id="main_line_2"></div>
+                        <div class="col-sm-12" style="height: 140px;" id="div_sellMoney"></div>
+                        <div class="col-sm-12" style="height: 140px;" id="div_bottomN"></div>
                     </div>
                 </div>
             </div>
@@ -130,17 +127,17 @@
                 <div class="ds-section">
                     最近30天流量分析
                 </div>
-                <div style="height: 100%;" id="main_1">  </div>
+                <div style="height: 100%;" id="div_flow">  </div>
             </div>
             <div class="col-md-8 col-sm-8 ds-chart">
                 <div class="ds-section">
                     订单分析
                 </div>
                 <div class="col-md-6 col-sm-6 ds-chart">
-                    <div class="col-sm-6" style="height:100%;" id="main_2_1"></div>
-                    <div class="col-sm-6" style="height:100%;" id="main_2_2"></div>
+                    <div class="col-sm-6" style="height:100%;" id="div_orderTrans"></div>
+                    <div class="col-sm-6" style="height:100%;" id="div_orderPay"></div>
                 </div>
-                <div class="col-md-6 col-sm-6" style="height:  100%;" id="main_3"></div>
+                <div class="col-md-6 col-sm-6" style="height:  100%;" id="div_orderStatus"></div>
             </div>
         </div>
         @*第三行*@
@@ -149,27 +146,27 @@
                 <div class="ds-section">
                     客户分析
                 </div>
-                <div class="col-sm-6" style="height: 100%;" id="main_4_1"></div>
-                <div class="col-sm-6" style="height: 100%;" id="main_4_2"></div>
+                <div class="col-sm-6" style="height: 100%;" id="div_customerType"></div>
+                <div class="col-sm-6" style="height: 100%;" id="div_customerAddr"></div>
             </div>
             <div class="col-md-4 ds-chart">
                 <div class="ds-section">
                     时效分析
                 </div>
-                <div class="col-sm-6" style="height: 100%;" id="main_5_1"></div>
-                <div class="col-sm-6" style="height: 100%;" id="main_5_2"></div>
+                <div class="col-sm-6" style="height: 100%;" id="div_logisticsTime"></div>
+                <div class="col-sm-6" style="height: 100%;" id="div_logistics"></div>
             </div>
             <div class="col-md-4 ds-chart" id="main_6">
                 <div class="ds-section">
                     客诉分析
                 </div>
-                <div class="col-sm-6" style="height: 100%;" id="main_6_1"></div>
-                <div class="col-sm-6" style="height: 100%;" id="main_6_2"></div>
+                <div class="col-sm-6" style="height: 100%;" id="div_complain"></div>
+                <div class="col-sm-6" style="height: 100%;" id="div_complainType"></div>
             </div>
         </div>
     </div>
-
-    <script src="~/ViewScript/home/dashbord.js"></script>
-    <script src="~/ViewScript/home/dashboardDataquery.js"></script>
+    <script src="~/ViewScript/home/dashboard-const.js"></script>
+    <script src="~/ViewScript/home/dashboard-chartoption.js"></script>
+    <script src="~/ViewScript/home/dashboard-dataquery.js"></script>
 </body>
 </html>

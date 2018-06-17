@@ -53,7 +53,7 @@
     <Compile Include="Biz\ComplaintInfo.cs" />
     <Compile Include="Biz\DataSyncRecord.cs" />
     <Compile Include="Biz\GoodInfo.cs" />
-    <Compile Include="Biz\GoodMonitorTopN.cs" />
+    <Compile Include="Biz\MonitorIndicatorGroup.cs" />
     <Compile Include="Biz\MonitorIndicator.cs" />
     <Compile Include="Biz\OrderDetail.cs" />
     <Compile Include="Biz\OrderInfo.cs" />

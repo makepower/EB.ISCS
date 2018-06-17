@@ -69,7 +69,7 @@ namespace EB.ISCS.WebApi.Controllers.Biz
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public ResponseResult<List<GoodMonitorTopN>> GetMonitorStstisForThirtyDays(int id)
+        public ResponseResult<List<MonitorIndicatorGroup>> GetMonitorStstisForThirtyDays(int id)
         {
             try
             {
@@ -82,14 +82,14 @@ namespace EB.ISCS.WebApi.Controllers.Biz
                 if (listResult == null)
                 {
                     code = ResultCode.Faild;
-                    return ResponseResult<List<GoodMonitorTopN>>.GenFaildResponse(code);
+                    return ResponseResult<List<MonitorIndicatorGroup>>.GenFaildResponse(code);
                 }
 
-                return ResponseResult<List<GoodMonitorTopN>>.GenSuccessResponse(listResult);
+                return ResponseResult<List<MonitorIndicatorGroup>>.GenSuccessResponse(listResult);
             }
             catch (Exception ex)
             {
-                return ResponseResult<List<GoodMonitorTopN>>.GenFaildResponse(ex.Message);
+                return ResponseResult<List<MonitorIndicatorGroup>>.GenFaildResponse(ex.Message);
             }
 
         }

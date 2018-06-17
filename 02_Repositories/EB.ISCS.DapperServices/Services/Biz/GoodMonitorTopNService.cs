@@ -34,7 +34,7 @@ namespace EB.ISCS.DapperServices.Repository
 		/// <summary>
 		///  新增
 		/// </summary>
-        public int Add(GoodMonitorTopN model,IDbTransaction transaction = null)
+        public int Add(MonitorIndicatorGroup model,IDbTransaction transaction = null)
         {
             return _GoodMonitorTopNRepository.Insert(model,transaction);
         }
@@ -42,7 +42,7 @@ namespace EB.ISCS.DapperServices.Repository
         /// <summary>
 		///  根据Id获取模型
 		/// </summary>
-        public GoodMonitorTopN GetModelById(int id)
+        public MonitorIndicatorGroup GetModelById(int id)
         {
             return _GoodMonitorTopNRepository.Get(id);
         }
@@ -60,7 +60,7 @@ namespace EB.ISCS.DapperServices.Repository
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(GoodMonitorTopN model,IDbTransaction transaction = null)
+		public bool Update(MonitorIndicatorGroup model,IDbTransaction transaction = null)
 		{
             return  _GoodMonitorTopNRepository.Update(model,transaction);
 		}
@@ -69,7 +69,7 @@ namespace EB.ISCS.DapperServices.Repository
         /// 获取所有的Maticsoft.Model.GoodMonitorTopN信息
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<GoodMonitorTopN> GetAllList()
+        public IEnumerable<MonitorIndicatorGroup> GetAllList()
         {
             return this._GoodMonitorTopNRepository.GetAllList();
         }
@@ -79,7 +79,7 @@ namespace EB.ISCS.DapperServices.Repository
         /// 统计截至时间默认为前一天
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<GoodMonitorTopN> GetMonitorStstisForThirtyDays(string shipIds)
+        public IEnumerable<MonitorIndicatorGroup> GetMonitorStstisForThirtyDays(string shipIds)
         {
             return this._GoodMonitorTopNRepository.GetMonitorStstisForThirtyDays(shipIds);
         }

@@ -111,7 +111,7 @@ namespace EB.ISCS.ToolService
             var topNResult = _goodMonitorTopNService.GetMonitorStstisForThirtyDays(enityShipIds);
             var gp = from p in topNResult
                      group p by new { p.StatisType, p.Name } into g
-                     select new GoodMonitorTopN()
+                     select new MonitorIndicatorGroup()
                      {
                          Name = g.First().Name,
                          ShortName = g.First().ShortName,

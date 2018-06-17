@@ -1919,8 +1919,9 @@
     <Content Include="ViewScript\Biz\shopbusiness\edit.js" />
     <Content Include="ViewScript\Biz\shopbusiness\index.js" />
     <Content Include="ViewScript\common\commonControl.js" />
-    <Content Include="ViewScript\home\dashboardDataquery.js" />
-    <Content Include="ViewScript\home\dashbord.js" />
+    <Content Include="ViewScript\home\dashboard-const.js" />
+    <Content Include="ViewScript\home\dashboard-dataquery.js" />
+    <Content Include="ViewScript\home\dashboard-chartoption.js" />
     <Content Include="ViewScript\Sys\log\index.js" />
     <Content Include="ViewScript\Sys\synchronization\index.js" />
     <Content Include="ViewScript\common\commonService.js" />

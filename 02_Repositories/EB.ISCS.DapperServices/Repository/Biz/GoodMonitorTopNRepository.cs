@@ -13,7 +13,7 @@ namespace EB.ISCS.DapperServices.Repository
     /// <summary>
     ///首页监控指标信息 ：仓储类
     /// </summary>		
-    public partial class GoodMonitorTopNRepository : BaseRepository<GoodMonitorTopN>
+    public partial class GoodMonitorTopNRepository : BaseRepository<MonitorIndicatorGroup>
     {
 
         #region 构造 
@@ -39,14 +39,14 @@ namespace EB.ISCS.DapperServices.Repository
         /// 获取所有的Maticsoft.Model.GoodMonitorTopN信息
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<GoodMonitorTopN> GetAllList(string where = null)
+        public IEnumerable<MonitorIndicatorGroup> GetAllList(string where = null)
         {
             var sql = @" select *   FROM GoodMonitorTopN where 1=1 ";
             if (!string.IsNullOrEmpty(where))
             {
                 sql += where;
             }
-            return TraceExecFunc(() => this.Conn.Query<GoodMonitorTopN>(sql));
+            return TraceExecFunc(() => this.Conn.Query<MonitorIndicatorGroup>(sql));
         }
 
 
@@ -55,7 +55,7 @@ namespace EB.ISCS.DapperServices.Repository
         /// 统计截至时间默认为前一天
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<GoodMonitorTopN> GetMonitorStstisForThirtyDays(string shipIds)
+        public IEnumerable<MonitorIndicatorGroup> GetMonitorStstisForThirtyDays(string shipIds)
         {
             var sql = $@" select * FROM GoodMonitorTopN where StatisPeriodType ={(int)StatisPeriodType.LastMonth} and StatisDate ='{ DateTime.Now.Date.AddDays(-1).ToString("yyyy-MM-dd") }'";
 
@@ -63,7 +63,7 @@ namespace EB.ISCS.DapperServices.Repository
             {
                 sql += $" and ShipInfoId int({shipIds})";
             }
-            return TraceExecFunc(() => this.Conn.Query<GoodMonitorTopN>(sql));
+            return TraceExecFunc(() => this.Conn.Query<MonitorIndicatorGroup>(sql));
         }
         #endregion
     }

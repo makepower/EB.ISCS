@@ -12,12 +12,12 @@ namespace EB.ISCS.DapperServices.InterFace
 		 /// <summary>
 		 ///  新增
 		 /// </summary>
-         int Add(GoodMonitorTopN model,IDbTransaction transaction = null);
+         int Add(MonitorIndicatorGroup model,IDbTransaction transaction = null);
         
          /// <summary>
 		 ///  根据Id获取模型
 		 /// </summary>
-         GoodMonitorTopN GetModelById(int id);
+         MonitorIndicatorGroup GetModelById(int id);
         
         /// <summary>
         ///  删除GoodMonitorTopN，并记录删除人
@@ -30,12 +30,12 @@ namespace EB.ISCS.DapperServices.InterFace
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-	    bool Update(GoodMonitorTopN model,IDbTransaction transaction = null);
+	    bool Update(MonitorIndicatorGroup model,IDbTransaction transaction = null);
 		
 		/// <summary>
         /// 获取所有的GoodMonitorTopN信息
         /// </summary>
         /// <returns></returns>
-        IEnumerable<GoodMonitorTopN> GetAllList();
+        IEnumerable<MonitorIndicatorGroup> GetAllList();
 	}
 }

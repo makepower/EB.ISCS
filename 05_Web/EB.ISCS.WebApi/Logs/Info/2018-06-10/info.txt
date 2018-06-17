@@ -1,0 +1,11 @@
+2018-06-10 17:29:33.3407 | Info | Hangfire Server stopped. 
+2018-06-10 17:32:36.3562 | Info | 系统启动 
+2018-06-10 17:32:48.6659 | Info | Starting Hangfire Server 
+2018-06-10 17:32:49.3439 | Info | Using job storage: 'Hangfire.MemoryStorage.MemoryStorage' 
+2018-06-10 17:32:50.3660 | Info | Using the following options for Hangfire Server: 
+2018-06-10 17:32:50.3660 | Info |     Worker count: 20 
+2018-06-10 17:32:50.3660 | Info |     Listening queues: 'default' 
+2018-06-10 17:32:50.3730 | Info |     Shutdown timeout: 00:00:15 
+2018-06-10 17:32:50.3730 | Info |     Schedule polling interval: 00:00:15 
+2018-06-10 17:32:50.9370 | Info | 数据同步任务启动... 
+2018-06-10 17:33:22.6278 | Info | Hangfire Server stopped. 
