@@ -32,7 +32,7 @@ var eBchartOption = {
             tooltip: {},
             title: {
                 text: '网店鹰眼数据分析平台',
-                subtext: '全国订单分布',
+                subtext: '全国订单分布'+d.Tag,
                 left: 'center',
                 textStyle: {
                     fontSize: 20,
@@ -80,7 +80,7 @@ var eBchartOption = {
     sellMoneyOption: function (d) {
         return {
             title: {
-                text: '最近30天销售金额',
+                text: '最近30天销售金额' + d.Tag,
                 x: 'left',                 // 水平安放位置，默认为左对齐，可选为：
                 y: 'top',                  // 垂直安放位置，默认为全图顶端，可选为：
                 backgroundColor: 'rgba(0,0,0,0)',
@@ -133,7 +133,7 @@ var eBchartOption = {
     bottomOption: function (d) {
         return {
             title: {
-                text: '滞销商品',
+                text: '滞销商品' + d.Tag,
                 x: 'left',                 // 水平安放位置，默认为左对齐，可选为：
                 y: 'top',                  // 垂直安放位置，默认为全图顶端，可选为：
                 backgroundColor: 'rgba(0,0,0,0)',
@@ -186,7 +186,7 @@ var eBchartOption = {
     topNoption: function (d) {
         return {
             title: {
-                text: '销售榜单',
+                text: '销售榜单' + d.Tag,
                 x: 'left',                 // 水平安放位置，默认为左对齐，可选为：
                 y: 'top',                  // 垂直安放位置，默认为全图顶端，可选为：
                 backgroundColor: 'rgba(0,0,0,0)',
@@ -305,7 +305,7 @@ var eBchartOption = {
     orderTransOption: function (d) {
         return {
             title: {
-                text: '订单转化情况',
+                text: '订单转化情况' + d.Tag,
                 x: 'left',                 // 水平安放位置，默认为左对齐，可选为：
                 y: 'top',                  // 垂直安放位置，默认为全图顶端，可选为：
                 backgroundColor: 'rgba(0,0,0,0)',
@@ -380,7 +380,7 @@ var eBchartOption = {
     orderPayChannel: function (d) {
         return {
             title: {
-                text: '付款渠道',
+                text: '付款渠道' + d.Tag,
                 x: 'left',                 // 水平安放位置，默认为左对齐，可选为：
                 y: 'top',                  // 垂直安放位置，默认为全图顶端，可选为：
                 backgroundColor: 'rgba(0,0,0,0)',
@@ -427,7 +427,7 @@ var eBchartOption = {
     orderStatusOption: function (d) {
         return {
             title: {
-                text: '近30天订单状态',
+                text: '近30天订单状态' + d.Tag,
                 x: 'left',                 // 水平安放位置，默认为左对齐，可选为：
                 y: 'top',                  // 垂直安放位置，默认为全图顶端，可选为：
                 backgroundColor: 'rgba(0,0,0,0)',
@@ -478,7 +478,7 @@ var eBchartOption = {
     customerTypeOption: function (d) {
         return {
             title: {
-                text: '成交客户分析',
+                text: '成交客户分析' + d.Tag,
                 x: 'left',                 // 水平安放位置，默认为左对齐，可选为：
                 y: 'top',                  // 垂直安放位置，默认为全图顶端，可选为：
                 backgroundColor: 'rgba(0,0,0,0)',
@@ -533,7 +533,7 @@ var eBchartOption = {
     customerAddrOption: function (d) {
         return {
             title: {
-                text: '客户地址位置分析',
+                text: '客户地址位置分析' + d.Tag,
                 x: 'left',                 // 水平安放位置，默认为左对齐，可选为：
                 y: 'top',                  // 垂直安放位置，默认为全图顶端，可选为：
                 backgroundColor: 'rgba(0,0,0,0)',
@@ -584,7 +584,7 @@ var eBchartOption = {
     logisticsTimeOption: function (d) {
         return {
             title: {
-                text: '各环节供应时间',
+                text: '各环节供应时间' + d.Tag,
                 x: 'left',                 // 水平安放位置，默认为左对齐，可选为：
                 y: 'top',                  // 垂直安放位置，默认为全图顶端，可选为：
                 backgroundColor: 'rgba(0,0,0,0)',
@@ -639,7 +639,7 @@ var eBchartOption = {
     logisticsOption: function (d) {
         return {
             title: {
-                text: '物流花费时间',
+                text: '物流花费时间' + d.Tag,
                 x: 'left',                 // 水平安放位置，默认为左对齐，可选为：
                 y: 'top',                  // 垂直安放位置，默认为全图顶端，可选为：
                 backgroundColor: 'rgba(0,0,0,0)',
@@ -690,7 +690,7 @@ var eBchartOption = {
     complainOption: function (d) {
         return {
             title: {
-                text: '各月投诉率',
+                text: '各月投诉率' + d.Tag,
                 x: 'left',                 // 水平安放位置，默认为左对齐，可选为：
                 y: 'top',                  // 垂直安放位置，默认为全图顶端，可选为：
                 backgroundColor: 'rgba(0,0,0,0)',
@@ -737,7 +737,7 @@ var eBchartOption = {
     complainTypeOption: function (d) {
         return {
             title: {
-                text: '投诉种类',
+                text: '投诉种类' + d.Tag,
                 subtext: '',
                 x: 'left',                 // 水平安放位置，默认为左对齐，可选为：
                 y: 'top',                  // 垂直安放位置，默认为全图顶端，可选为：

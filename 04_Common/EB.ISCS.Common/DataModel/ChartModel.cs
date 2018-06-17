@@ -13,5 +13,6 @@ namespace EB.ISCS.Common.DataModel
     {
         public List<dynamic> XAxis { get; set; }
         public List<dynamic>[] Series { get; set; }
+        public string Tag = string.Empty;
     }
 }

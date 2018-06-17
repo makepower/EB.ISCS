@@ -45,7 +45,7 @@ namespace EB.ISCS.Admin.Controllers
             {
                 try
                 {
-                    passed = LocalLogin(loginModel,false);
+                    passed = LocalLogin(loginModel,true);
                 }
                 catch (Exception ex)
                 {

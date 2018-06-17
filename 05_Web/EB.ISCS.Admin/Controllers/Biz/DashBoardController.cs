@@ -65,43 +65,43 @@ namespace EB.ISCS.Admin.Controllers.Biz
                     result.Data = QueryChartMapData();
                     break;
                 case (int)ChartBiz.TopN:
-                    result.Data = QueryMonthlyGather(ChartBiz.TopN);
+                    result.Data = QueryChartSourceData(ChartBiz.TopN);
                     break;
                 case (int)ChartBiz.BootomN:
-                    result.Data = QueryMonthlyGather(ChartBiz.BootomN);
+                    result.Data = QueryChartSourceData(ChartBiz.BootomN);
                     break;
                 case (int)ChartBiz.Sell_ForMonth:
-                    result.Data = QueryMonthlyGather(ChartBiz.Sell_ForMonth);
+                    result.Data = QueryChartSourceData(ChartBiz.Sell_ForMonth);
                     break;
                 case (int)ChartBiz.Flow_ForMonth:
-                    result.Data = QueryMonthlyGather(ChartBiz.Flow_ForMonth);
+                    result.Data = QueryChartSourceData(ChartBiz.Flow_ForMonth);
                     break;
                 case (int)ChartBiz.Order_Trans:
-                    result.Data = QueryMonthlyGather(ChartBiz.Order_Trans);
+                    result.Data = QueryChartSourceData(ChartBiz.Order_Trans);
                     break;
                 case (int)ChartBiz.Pay_Channel:
-                    result.Data = QueryMonthlyGather(ChartBiz.Pay_Channel);
+                    result.Data = QueryChartSourceData(ChartBiz.Pay_Channel);
                     break;
                 case (int)ChartBiz.Order_Status_ForMonth:
-                    result.Data = QueryMonthlyGather(ChartBiz.Order_Status_ForMonth);
+                    result.Data = QueryChartSourceData(ChartBiz.Order_Status_ForMonth);
                     break;
                 case (int)ChartBiz.Custom_Analy:
-                    result.Data = QueryYearGather(ChartBiz.Custom_Analy);
+                    result.Data = QueryChartSourceData(ChartBiz.Custom_Analy);
                     break;
                 case (int)ChartBiz.Custo_From_Analy:
-                    result.Data = QueryYearGather(ChartBiz.Custo_From_Analy);
+                    result.Data = QueryChartSourceData(ChartBiz.Custo_From_Analy);
                     break;
                 case (int)ChartBiz.Logistics_Segment_Time_Analy:
-                    result.Data = QueryYearGather(ChartBiz.Logistics_Segment_Time_Analy);
+                    result.Data = QueryChartSourceData(ChartBiz.Logistics_Segment_Time_Analy);
                     break;
                 case (int)ChartBiz.Logistics_SpendTime:
-                    result.Data = QueryYearGather(ChartBiz.Logistics_SpendTime);
+                    result.Data = QueryChartSourceData(ChartBiz.Logistics_SpendTime);
                     break;
                 case (int)ChartBiz.ComplainForYear:
-                    result.Data = QueryYearGather(ChartBiz.ComplainForYear);
+                    result.Data = QueryChartSourceData(ChartBiz.ComplainForYear);
                     break;
                 case (int)ChartBiz.Complain_Type:
-                    result.Data = QueryYearGather(ChartBiz.Complain_Type);
+                    result.Data = QueryChartSourceData(ChartBiz.Complain_Type);
                     break;
                 default:
                     break;
@@ -135,45 +135,39 @@ namespace EB.ISCS.Admin.Controllers.Biz
         }
 
         /// <summary>
-        /// 月报表
-        /// </summary>
-        /// <param name="biz">业务枚举</param>
-        /// <returns></returns>
-        private ChartModel QueryMonthlyGather(ChartBiz biz)
-        {
-            var random = new Random();
-            var chartData = GetSourceData(biz);
-            var charModel = new ChartModel()
-            {
-                XAxis = chartData.Item1,
-                Series = new List<dynamic>[] { chartData.Item2 }
-            };
-            return charModel;
-        }
-
-        /// <summary>
-        /// 年度报表
-        /// </summary>
-        /// <param name="biz">业务枚举</param>
-        /// <returns></returns>
-        private ChartModel QueryYearGather(ChartBiz biz)
-        {
-            var random = new Random();
-            var chartData = GetSourceData(biz);
-            var charModel = new ChartModel()
-            {
-                XAxis = chartData.Item1,
-                Series = new List<dynamic>[] { chartData.Item2 }
-            };
-            return charModel;
-        }
-
-        /// <summary>
-        /// 获取数据源
+        /// 获取Demo数据源
         /// </summary>
         /// <param name="biz"></param>
         /// <returns></returns>
-        private Tuple<List<dynamic>, List<dynamic>> GetSourceData(ChartBiz biz)
+        private ChartModel QueryChartSourceData(ChartBiz biz)
+        {
+            var model = GetServerSourceData(biz);
+            if (model == null)
+                model = GetDemoSourceData(biz);
+            return model;
+        }
+
+        /// <summary>
+        /// 获取Demo数据源
+        /// </summary>
+        /// <param name="biz"></param>
+        /// <returns></returns>
+        private ChartModel GetServerSourceData(ChartBiz biz)
+        {
+            var serviceReturn = ServiceHelper.CallService<ChartModel>($"{ServiceConst.BizApi.DashBoardGetDashBoardChartViewData}?id={(int)biz}&userId={CurrentUser.UserId}",
+      null, this.CurrentUser.Token);
+            if (serviceReturn.Code == (int)ResultCode.Success)
+                return serviceReturn.Data;
+            else
+                return null;
+        }
+
+        /// <summary>
+        /// 获取Demo数据源
+        /// </summary>
+        /// <param name="biz"></param>
+        /// <returns></returns>
+        private ChartModel GetDemoSourceData(ChartBiz biz)
         {
             var data = new Tuple<List<dynamic>, List<dynamic>>(item1: new List<dynamic>(), item2: new List<dynamic>());
             if (biz == ChartBiz.Complain_Type)
@@ -274,7 +268,7 @@ namespace EB.ISCS.Admin.Controllers.Biz
                      item2: new List<dynamic>() { 1, 5, 12, 18, 21, 25 }
                 );
             }
-            return data;
+            return new ChartModel() { Tag = "-Demo", XAxis = data.Item1, Series = new List<dynamic>[1] { data.Item2 } };
         }
     }
 }
