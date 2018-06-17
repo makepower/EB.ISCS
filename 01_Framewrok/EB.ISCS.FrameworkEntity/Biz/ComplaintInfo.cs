@@ -11,48 +11,48 @@ namespace Maticsoft.Model
     {
 
         /// <summary>
-        /// Id
+        /// 主键
         /// </summary>		
         [Key]
         public int Id { get; set; }
         /// <summary>
-        /// UserId
+        /// 用户ID
         /// </summary>		
         public int UserId { get; set; }
         /// <summary>
-        /// StoreId
+        /// 店铺ID
         /// </summary>		
         public int StoreId { get; set; }
         /// <summary>
-        /// OrderId
+        /// 订单ID
         /// </summary>		
         public int OrderId { get; set; }
         /// <summary>
-        /// WaybillId
+        /// 物流ID
         /// </summary>		
         public int WaybillId { get; set; }
         /// <summary>
-        /// Description
+        /// 描述
         /// </summary>		
         public string Description { get; set; }
         /// <summary>
-        /// 0 网上 2 电话  3 线下
+        ///  投诉类型 0"包裹丢失", 1"首次派送延误",2 "外包装破损", 3"包裹缺失", 4"包裹错误", 5"重量不符"
         /// </summary>		
         public int ComplaintType { get; set; }
         /// <summary>
-        /// 0 未处理   1  处理中  2 已完成 
+        ///  处理结果 0 未处理  1  处理中  2 已完成 
         /// </summary>		
         public int Status { get; set; }
         /// <summary>
-        /// Result
+        /// 投诉处理结果
         /// </summary>		
         public string Result { get; set; }
         /// <summary>
-        /// EditDate
+        /// 编辑时间
         /// </summary>		
         public DateTime EditDate { get; set; }
         /// <summary>
-        /// Remark
+        /// 备注
         /// </summary>		
         public string Remark { get; set; }
 

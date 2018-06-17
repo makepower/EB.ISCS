@@ -55,10 +55,10 @@
     <Compile Include="Biz\GoodInfo.cs" />
     <Compile Include="Biz\MonitorIndicatorGroup.cs" />
     <Compile Include="Biz\MonitorIndicator.cs" />
-    <Compile Include="Biz\OrderDetail.cs" />
     <Compile Include="Biz\OrderInfo.cs" />
     <Compile Include="Biz\ShipInfo.cs" />
     <Compile Include="Biz\SynchronizationConfig.cs" />
+    <Compile Include="Biz\Trader.cs" />
     <Compile Include="Biz\Trades.cs" />
     <Compile Include="Biz\WayBillInfo.cs" />
     <Compile Include="Biz\WayBillTraceInfo.cs" />

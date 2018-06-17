@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using System;
 
 namespace Maticsoft.Model.ISSC
 {
@@ -9,89 +8,68 @@ namespace Maticsoft.Model.ISSC
     [Table("Trades")]
     public class Trades
     {
-
         /// <summary>
-        /// id
+        /// 主键
         /// </summary>		
         public int Id { get; set; }
         /// <summary>
-        /// user_id
+        /// 用户ID
         /// </summary>		
         public int UserId { get; set; }
         /// <summary>
-        /// ship_id
+        /// 店铺ID
         /// </summary>		
         public int ShipId { get; set; }
         /// <summary>
-        /// seller_nick
+        /// 卖家昵称  (阿里旺旺,京东卖家)
         /// </summary>		
         public string SellerNick { get; set; }
         /// <summary>
-        /// payment
+        /// 买家昵称
+        /// </summary>		
+        public string BuyerNick { get; set; }
+        /// <summary>
+        /// 支付金额
         /// </summary>		
         public decimal Payment { get; set; }
         /// <summary>
-        /// seller_rate
+        /// 卖家折扣
         /// </summary>		
         public int SellerRate { get; set; }
         /// <summary>
-        /// post_fee
+        /// 邮费
         /// </summary>		
         public decimal PostFee { get; set; }
         /// <summary>
-        /// receiver_name
-        /// </summary>		
-        public string ReceiverName { get; set; }
-        /// <summary>
-        /// receiver_state
-        /// </summary>		
-        public string ReceiverState { get; set; }
-        /// <summary>
-        /// receiver_address
-        /// </summary>		
-        public string ReceiverAddress { get; set; }
-        /// <summary>
-        /// receiver_zip
-        /// </summary>		
-        public string ReceiverZip { get; set; }
-        /// <summary>
-        /// receiver_mobile
-        /// </summary>		
-        public string ReceiverMobile { get; set; }
-        /// <summary>
-        /// receiver_phone
-        /// </summary>		
-        public string ReceiverPhone { get; set; }
-        /// <summary>
-        /// consign_time
+        /// 交付时间
         /// </summary>		
         public string ConsignTime { get; set; }
         /// <summary>
-        /// received_payment
+        /// 已收货款
         /// </summary>		
         public decimal ReceivedPayment { get; set; }
         /// <summary>
-        /// receiver_country
+        /// 收获国家
         /// </summary>		
         public string ReceiverCountry { get; set; }
         /// <summary>
-        /// receiver_town
+        /// 收获城市
         /// </summary>		
         public string ReceiverTown { get; set; }
         /// <summary>
-        /// order_tax_fee
+        /// 订单税费
         /// </summary>		
         public decimal OrderTaxFee { get; set; }
         /// <summary>
-        /// shop_pick
+        /// 店铺折扣
         /// </summary>		
         public int ShopPick { get; set; }
         /// <summary>
-        /// tid
+        /// 交易Id
         /// </summary>		
         public int Tid { get; set; }
         /// <summary>
-        /// num
+        /// 交易数量
         /// </summary>		
         public decimal Num { get; set; }
         /// <summary>
@@ -99,79 +77,76 @@ namespace Maticsoft.Model.ISSC
         /// </summary>		
         public decimal NumIid { get; set; }
         /// <summary>
-        /// status
+        /// 状态
         /// </summary>		
         public string Status { get; set; }
         /// <summary>
-        /// title
+        /// 标题
         /// </summary>		
         public string Title { get; set; }
         /// <summary>
-        /// type
+        /// 类型
         /// </summary>		
         public string Type { get; set; }
         /// <summary>
-        /// price
+        /// 单价
         /// </summary>		
         public decimal Price { get; set; }
         /// <summary>
-        /// discount_fee
+        /// 折扣
         /// </summary>		
         public decimal DiscountFee { get; set; }
         /// <summary>
-        /// total_fee
+        /// 总费用
         /// </summary>		
         public decimal TotalFee { get; set; }
         /// <summary>
-        /// created
+        /// 创建人
         /// </summary>		
         public string Created { get; set; }
         /// <summary>
-        /// pay_time
+        /// 支付时间
         /// </summary>		
         public string PayTime { get; set; }
         /// <summary>
-        /// modified
+        /// 修改人
         /// </summary>		
         public string Modified { get; set; }
         /// <summary>
-        /// end_time
+        /// 结束时间
         /// </summary>		
         public string EndTime { get; set; }
+   
         /// <summary>
-        /// buyer_nick
-        /// </summary>		
-        public string BuyerNick { get; set; }
-        /// <summary>
-        /// has_buyer_message
+        /// 是否有买家留言信息
         /// </summary>		
         public int HasBuyerMessage { get; set; }
         /// <summary>
-        /// credit_card_fee
+        /// 信用卡
         /// </summary>		
         public decimal CreditCardFee { get; set; }
         /// <summary>
-        /// step_trade_status
+        /// 分期支付状态
         /// </summary>		
         public string StepTradeStatus { get; set; }
         /// <summary>
-        /// step_paid_fee
+        /// 分期支付费用
         /// </summary>		
         public string StepPaidFee { get; set; }
         /// <summary>
-        /// mark_desc
+        /// 标记
         /// </summary>		
         public string MarkDesc { get; set; }
         /// <summary>
-        /// shipping_type
+        /// 物流类型
         /// </summary>		
         public string ShippingType { get; set; }
         /// <summary>
-        /// adjust_fee
+        /// 调整费用
         /// </summary>		
         public string AdjustFee { get; set; }
         /// <summary>
-        /// trade_from
+        /// 交易来源
         /// </summary>		
         public string TradeFrom { get; set; }
 

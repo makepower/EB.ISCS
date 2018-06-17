@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using System;
 
 namespace Maticsoft.Model
 {
@@ -11,28 +10,28 @@ namespace Maticsoft.Model
     {
 
         /// <summary>
-        /// Id
+        /// 主键
         /// </summary>		
         [Key]
         public int Id { get; set; }
         /// <summary>
-        /// LogisticId
+        /// 本地物流ID
+        /// </summary>
+        public int WayBillId { get; set; }
+        /// <summary>
+        /// 供应商物流Id
         /// </summary>		
         public int LogisticId { get; set; }
         /// <summary>
-        /// AcceptTime
+        /// 接受时间
         /// </summary>		
         public string AcceptTime { get; set; }
         /// <summary>
-        /// AcceptStation
+        /// 接受状态
         /// </summary>		
         public string AcceptStation { get; set; }
         /// <summary>
-        /// SyncDate
-        /// </summary>		
-        public DateTime SyncDate { get; set; }
-        /// <summary>
-        /// Remark
+        /// 备注
         /// </summary>		
         public string Remark { get; set; }
 

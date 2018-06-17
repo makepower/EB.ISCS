@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Data;
 using Dapper;
 
 namespace Maticsoft.Model.ISSC
@@ -14,106 +11,98 @@ namespace Maticsoft.Model.ISSC
     {
 
         /// <summary>
-        /// Id
+        /// 主键
         /// </summary>		
         [Key]
         public int Id { get; set; }
         /// <summary>
-        /// trade_id
+        /// 交易ID
         /// </summary>		
         public int TradeId { get; set; }
         /// <summary>
-        /// item_meal_name
+        /// 项目名称
         /// </summary>		
-        public string item_meal_name { get; set; }
+        public string ItemMealName { get; set; }
         /// <summary>
-        /// seller_nick
+        ///  退款状态
         /// </summary>		
-        public string seller_nick { get; set; }
+        public string RefundStatus { get; set; }
         /// <summary>
-        /// buyer_nick
+        /// 标题
         /// </summary>		
-        public string buyer_nick { get; set; }
+        public string Title { get; set; }
         /// <summary>
-        /// refund_status
+        /// 单价
         /// </summary>		
-        public string refund_status { get; set; }
+        public decimal Price { get; set; }
         /// <summary>
-        /// title
+        /// 数量
         /// </summary>		
-        public string title { get; set; }
+        public decimal Num { get; set; }
         /// <summary>
-        /// price
+        /// 总费用
         /// </summary>		
-        public decimal price { get; set; }
+        public decimal TotalFee { get; set; }
         /// <summary>
-        /// num
+        /// 支付费用
         /// </summary>		
-        public decimal num { get; set; }
+        public decimal Payment { get; set; }
         /// <summary>
-        /// total_fee
+        /// 订单ID
         /// </summary>		
-        public decimal total_fee { get; set; }
+        public string Oid { get; set; }
         /// <summary>
-        /// payment
+        /// 类型
         /// </summary>		
-        public decimal payment { get; set; }
+        public string Type { get; set; }
         /// <summary>
-        /// oid
+        /// 打折费用
         /// </summary>		
-        public string oid { get; set; }
+        public decimal DiscountFee { get; set; }
         /// <summary>
-        /// type
+        /// 修正费用
         /// </summary>		
-        public string type { get; set; }
+        public decimal AdjustFee { get; set; }
         /// <summary>
-        /// discount_fee
+        /// 修改时间
         /// </summary>		
-        public decimal discount_fee { get; set; }
+        public DateTime Modified { get; set; }
         /// <summary>
-        /// adjust_fee
+        /// 订单属性
         /// </summary>		
-        public decimal adjust_fee { get; set; }
+        public string OrderAttr { get; set; }
         /// <summary>
-        /// modified
+        /// 物流类型
         /// </summary>		
-        public DateTime modified { get; set; }
+        public string ShippingType { get; set; }
         /// <summary>
-        /// order_attr
+        /// 绑定的子订单标号
         /// </summary>		
-        public string order_attr { get; set; }
+        public string BindOid { get; set; }
         /// <summary>
-        /// shipping_type
+        /// 快递公司
         /// </summary>		
-        public string shipping_type { get; set; }
+        public string LogisticsCompany { get; set; }
         /// <summary>
-        /// bind_oid
+        /// 发票编号 子订单运单号
         /// </summary>		
-        public string bind_oid { get; set; }
+        public string InvoiceNo { get; set; }
         /// <summary>
-        /// logistics_company
+        /// 是否代销
         /// </summary>		
-        public string logistics_company { get; set; }
+        public int IsDaixiao { get; set; }
         /// <summary>
-        /// invoice_no
+        /// 店铺编号
         /// </summary>		
-        public string invoice_no { get; set; }
+        public string StoreCode { get; set; }
         /// <summary>
-        /// is_daixiao
+        /// 结束时间
         /// </summary>		
-        public int is_daixiao { get; set; }
+        public DateTime EndTime { get; set; }
         /// <summary>
-        /// store_code
+        /// 备注
         /// </summary>		
-        public string store_code { get; set; }
-        /// <summary>
-        /// end_time
-        /// </summary>		
-        public DateTime end_time { get; set; }
-        /// <summary>
-        /// remark
-        /// </summary>		
-        public string remark { get; set; }
+        public string Remark { get; set; }
 
     }
 }

@@ -11,52 +11,52 @@ namespace Maticsoft.Model
     {
 
         /// <summary>
-        /// Id
+        /// 主键
         /// </summary>		
         [Key]
         public int Id { get; set; }
         /// <summary>
-        /// OrderId
+        /// 订单Id
         /// </summary>		
         public int OrderId { get; set; }
         /// <summary>
-        /// OrderCode
+        /// 订单编号
         /// </summary>		
         public string OrderCode { get; set; }
         /// <summary>
-        /// ShipperCode
+        /// 物流公司编号
         /// </summary>		
         public string ShipperCode { get; set; }
         /// <summary>
-        /// LogisticCode
+        /// 物流编号
         /// </summary>		
         public string LogisticCode { get; set; }
         /// <summary>
-        /// State
+        /// 物流状态
         /// </summary>		
         public int State { get; set; }
         /// <summary>
-        /// Success
+        /// 物流成功状态
         /// </summary>		
         public int Success { get; set; }
         /// <summary>
-        /// Reason
+        /// 原因
         /// </summary>		
         public string Reason { get; set; }
         /// <summary>
-        /// DeliveryAddress
+        /// 发货地址
         /// </summary>		
         public string DeliveryAddress { get; set; }
         /// <summary>
-        /// MailingAddress
+        /// 邮寄地址
         /// </summary>		
         public string MailingAddress { get; set; }
         /// <summary>
-        /// SyncDate
+        /// 同步时间
         /// </summary>		
         public DateTime SyncDate { get; set; }
         /// <summary>
-        /// Remark
+        /// 备注
         /// </summary>		
         public string Remark { get; set; }
 

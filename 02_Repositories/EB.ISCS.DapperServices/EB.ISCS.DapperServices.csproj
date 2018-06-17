@@ -68,7 +68,6 @@
     <Compile Include="InterFace\Biz\IGoodInfoService.cs" />
     <Compile Include="InterFace\Biz\IGoodMonitorTopNService.cs" />
     <Compile Include="InterFace\Biz\IMonitorIndicatorService.cs" />
-    <Compile Include="InterFace\Biz\IOrderDetailService.cs" />
     <Compile Include="InterFace\Biz\IOrderInfoService.cs" />
     <Compile Include="InterFace\Biz\IShipInfoService.cs" />
     <Compile Include="InterFace\Biz\ISynchronizationConfigService.cs" />
@@ -94,10 +93,10 @@
     <Compile Include="Repository\Biz\GoodInfoRepository.cs" />
     <Compile Include="Repository\Biz\GoodMonitorTopNRepository.cs" />
     <Compile Include="Repository\Biz\MonitorIndicatorRepository.cs" />
-    <Compile Include="Repository\Biz\OrderDetailRepository.cs" />
     <Compile Include="Repository\Biz\OrderInfoRepository.cs" />
     <Compile Include="Repository\Biz\ShipInfoRepository.cs" />
     <Compile Include="Repository\Biz\SynchronizationConfigRepository.cs" />
+    <Compile Include="Repository\Biz\TraderRepository.cs" />
     <Compile Include="Repository\Biz\TradesRepository.cs" />
     <Compile Include="Repository\Biz\WayBillInfoRepository.cs" />
     <Compile Include="Repository\Biz\WayBillTraceInfoRepository.cs" />
@@ -114,10 +113,10 @@
     <Compile Include="Services\Biz\GoodInfoService.cs" />
     <Compile Include="Services\Biz\GoodMonitorTopNService.cs" />
     <Compile Include="Services\Biz\MonitorIndicatorService.cs" />
-    <Compile Include="Services\Biz\OrderDetaiServicel.cs" />
     <Compile Include="Services\Biz\OrderInfoService.cs" />
     <Compile Include="Services\Biz\ShipInfoService.cs" />
     <Compile Include="Services\Biz\SynchronizationConfigService.cs" />
+    <Compile Include="Services\Biz\TraderService.cs" />
     <Compile Include="Services\Biz\TradesService.cs" />
     <Compile Include="Services\Biz\WayBillInfoService.cs" />
     <Compile Include="Services\Biz\WayBillTraceInfoService.cs" />

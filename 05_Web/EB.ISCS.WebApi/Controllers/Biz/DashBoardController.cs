@@ -180,6 +180,5 @@ namespace EB.ISCS.WebApi.Controllers.Biz
             }
             return ResponseResult<ChartModel>.GenSuccessResponse(data);
         }
-
     }
 }

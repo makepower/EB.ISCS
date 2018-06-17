@@ -53,6 +53,7 @@
     <Compile Include="Encryption\EncryptionAlgorithm.cs" />
     <Compile Include="Encryption\EncryptionHelper.cs" />
     <Compile Include="Encryption\EncryptTransform.cs" />
+    <Compile Include="Tools\AddressResolve.cs" />
     <Compile Include="Tools\AttributeExtensions.cs" />
     <Compile Include="Tools\DataMappingAttribute.cs" />
     <Compile Include="Tools\ExploreHelper.cs" />

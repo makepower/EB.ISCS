@@ -4,18 +4,18 @@ using System;
 namespace Maticsoft.Model
 {
     /// <summary>
-    ///SynchronizationConfig ：实体类
+    ///同步配置
     /// </summary>	
     [Table("SynchronizationConfig")]
     public class SynchronizationConfig
     {
 
         /// <summary>
-        /// ID
+        /// 主键
         /// </summary>		
         public int Id { get; set; }
         /// <summary>
-        /// UserId
+        /// 用户ID
         /// </summary>		
         public int UserId { get; set; }
         /// <summary>
@@ -27,23 +27,20 @@ namespace Maticsoft.Model
         /// </summary>		
         public string StoreIds { get; set; }
         /// <summary>
-        /// SyncPeriod
+        /// 同步周期
         /// </summary>		
         public int SyncPeriod { get; set; }
         /// <summary>
-        /// SyncUnit
+        /// 同步时间单位
         /// </summary>		
         public string SyncUnit { get; set; }
         /// <summary>
-        /// EditDate
+        /// 编辑时间
         /// </summary>		
         public DateTime EditDate { get; set; }
         /// <summary>
-        /// Remark
+        /// 备注
         /// </summary>		
         public string Remark { get; set; }
-
-
-
     }
 }

@@ -10,24 +10,24 @@ namespace Maticsoft.Model
     {
 
         /// <summary>
-        /// Id
+        /// 主键
         /// </summary>		
         [Key]
         public int Id { get; set; }
         /// <summary>
-        /// Name
+        /// 名称
         /// </summary>		
         public string Name { get; set; }
         /// <summary>
-        /// Code
+        /// 编码
         /// </summary>		
         public string Code { get; set; }
         /// <summary>
-        /// StoreId
+        /// 店铺ID
         /// </summary>		
         public int StoreId { get; set; }
         /// <summary>
-        /// Remark
+        /// 备注
         /// </summary>		
         public string Remark { get; set; }
 
