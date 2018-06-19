@@ -66,7 +66,7 @@
     <Compile Include="InterFace\Biz\IComplaintInfoService.cs" />
     <Compile Include="InterFace\Biz\IDataSyncRecordService.cs" />
     <Compile Include="InterFace\Biz\IGoodInfoService.cs" />
-    <Compile Include="InterFace\Biz\IGoodMonitorTopNService.cs" />
+    <Compile Include="InterFace\Biz\IMonitorIndicatorRecordService.cs" />
     <Compile Include="InterFace\Biz\IMonitorIndicatorService.cs" />
     <Compile Include="InterFace\Biz\IOrderInfoService.cs" />
     <Compile Include="InterFace\Biz\IShipInfoService.cs" />
@@ -91,7 +91,7 @@
     <Compile Include="Repository\Biz\ComplaintInfoRepository.cs" />
     <Compile Include="Repository\Biz\DataSyncRecordRepository.cs" />
     <Compile Include="Repository\Biz\GoodInfoRepository.cs" />
-    <Compile Include="Repository\Biz\GoodMonitorTopNRepository.cs" />
+    <Compile Include="Repository\Biz\MonitorIndicatorRecordRepository.cs" />
     <Compile Include="Repository\Biz\MonitorIndicatorRepository.cs" />
     <Compile Include="Repository\Biz\OrderInfoRepository.cs" />
     <Compile Include="Repository\Biz\ShipInfoRepository.cs" />
@@ -111,7 +111,7 @@
     <Compile Include="Services\Biz\ComplaintInfoService.cs" />
     <Compile Include="Services\Biz\DataSyncRecordService.cs" />
     <Compile Include="Services\Biz\GoodInfoService.cs" />
-    <Compile Include="Services\Biz\GoodMonitorTopNService.cs" />
+    <Compile Include="Services\Biz\MonitorIndicatorRecordService.cs" />
     <Compile Include="Services\Biz\MonitorIndicatorService.cs" />
     <Compile Include="Services\Biz\OrderInfoService.cs" />
     <Compile Include="Services\Biz\ShipInfoService.cs" />

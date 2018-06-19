@@ -20,20 +20,20 @@ namespace EB.ISCS.Admin.Controllers.Biz
         /// <returns></returns>
         public JsonResult TodayReal()
         {
-            var result = new BaseResult<List<IndicatorModel>>()
+            var result = new BaseResult<List<IndicatorSingleModel>>()
             {
                 Code = (int)ResultCode.Success,
-                Data = new List<IndicatorModel>()
+                Data = new List<IndicatorSingleModel>()
                 {
-                    new IndicatorModel(){ Id=1, Name=PayOrderNum, Value=180, MOM=3.1  },
-                      new IndicatorModel(){ Id=1, Name=PayMoney, Value=2120, MOM=2.2  },
-                        new IndicatorModel(){ Id=1, Name=VisitorNum, Value=358, MOM=-1.5  },
-                          new IndicatorModel(){ Id=1, Name=PayGoodNum, Value=113, MOM=16.8  }
+                    new IndicatorSingleModel(){ Id=1, Name=PayOrderNum, Value=180, MOM=3.1  },
+                      new IndicatorSingleModel(){ Id=1, Name=PayMoney, Value=2120, MOM=2.2  },
+                        new IndicatorSingleModel(){ Id=1, Name=VisitorNum, Value=358, MOM=-1.5  },
+                          new IndicatorSingleModel(){ Id=1, Name=PayGoodNum, Value=113, MOM=16.8  }
                 },
                 Message = string.Empty
             };
 
-            var serviceReturn = ServiceHelper.CallService<List<MonitorIndicator>>($"{ServiceConst.BizApi.DashBoardTodayRealMonitorIndicator}/{CurrentUser.UserId}",
+            var serviceReturn = ServiceHelper.CallService<List<IndicatorSingleModel>>($"{ServiceConst.BizApi.DashBoardTodayRealMonitorIndicator}/{CurrentUser.UserId}",
                null, this.CurrentUser.Token);
 
             if (serviceReturn.Code == (int)ResultCode.Success)

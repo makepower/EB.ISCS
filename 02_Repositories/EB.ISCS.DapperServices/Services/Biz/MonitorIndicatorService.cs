@@ -73,23 +73,5 @@ namespace EB.ISCS.DapperServices.Repository
         {
             return this._MonitorIndicatorRepository.GetAllList();
         }
-
-        /// <summary>
-        /// 获取今日运营监控指标
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<MonitorIndicator> GetTodayIndicator(string shipids)
-        {
-            return this._MonitorIndicatorRepository.GetTodayIndicator(shipids);
-        }
-
-        /// <summary>
-        /// 获取今日运营监控指标
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<MonitorIndicator> GetMonitorIndicatorBySeriesNum(int id)
-        {
-            return this._MonitorIndicatorRepository.GetMonitorIndicatorBySeriesNum(id);
-        }
     }
 }

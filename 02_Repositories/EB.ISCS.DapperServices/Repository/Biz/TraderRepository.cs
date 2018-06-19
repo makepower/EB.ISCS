@@ -8,7 +8,7 @@ using Dapper;
 
 namespace EB.ISCS.DapperServices.Repository.Biz
 {
-    public partial class TraderRepository : BaseRepository<Trader>
+    public partial class TraderRepository : BaseRepository<TraderInfo>
     {
         #region 构造 
         public TraderRepository(SqlServerProvider provider, OperateInfo oInfo = null) : base(provider, oInfo)
@@ -33,10 +33,10 @@ namespace EB.ISCS.DapperServices.Repository.Biz
         /// 获取所有的Maticsoft.Model.ComplaintInfo信息
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Trader> GetAllList()
+        public IEnumerable<TraderInfo> GetAllList()
         {
             var sql = @" select *   FROM Trader ";
-            return TraceExecFunc(() => this.Conn.Query<Trader>(sql));
+            return TraceExecFunc(() => this.Conn.Query<TraderInfo>(sql));
         }
         #endregion
     }

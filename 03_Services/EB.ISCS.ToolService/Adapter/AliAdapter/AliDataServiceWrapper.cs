@@ -22,7 +22,6 @@ namespace EB.ISCS.ToolService
         private TradesService tradesService;
         private OrderInfoService orderInfoService;
         private GoodInfoService goodInfoService;
-        private OrderDetailService orderDetailService;
         private DataSyncRecordService recordService;
         private DataSyncRecord dataSyncRecord;
         public AliDataServiceWrapper(string constr)
@@ -31,7 +30,6 @@ namespace EB.ISCS.ToolService
             goodInfoService = new GoodInfoService(tradesService);
             recordService = new DataSyncRecordService(tradesService);
             orderInfoService = new OrderInfoService(tradesService);
-            orderDetailService = new OrderDetailService(tradesService);
         }
 
         public void SyncData(ShipInfo info)
@@ -73,9 +71,6 @@ namespace EB.ISCS.ToolService
                 var order = o.ToLocalOrder(info);
                 order.TradeId = x.Id;
                 var id = orderInfoService.Add(order);
-                var detail = o.ToLocalOrderDetail(info);
-                detail.OrderId = id;
-                orderDetailService.Add(detail);
             });
         }
     }

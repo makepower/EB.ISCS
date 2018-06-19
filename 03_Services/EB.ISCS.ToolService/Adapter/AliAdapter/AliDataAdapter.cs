@@ -45,14 +45,5 @@ namespace EB.ISCS.ToolService.Adapter.AliAdapter
            
             return Mapper.Map<OrderInfo>(order); ;
         }
-
-        public static OrderDetail ToLocalOrderDetail(this Order order, ShipInfo ship)
-        {
-            var tradeList = new OrderDetail();
-            if (order == null)
-                return tradeList;
-
-            return Mapper.Map<OrderDetail>(order); ;
-        }
     }
 }

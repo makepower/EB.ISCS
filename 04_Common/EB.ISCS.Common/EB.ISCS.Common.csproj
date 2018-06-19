@@ -74,6 +74,7 @@
     <Compile Include="BaseController\NavigationModel.cs" />
     <Compile Include="BaseController\TreeItemViewModel.cs" />
     <Compile Include="DataModel\ChartModel.cs" />
+    <Compile Include="DataModel\IndicatorRecordViewModel.cs" />
     <Compile Include="Enum\EnumDefine.cs" />
     <Compile Include="Models\FormDataModel.cs" />
     <Compile Include="TreeNode.cs" />

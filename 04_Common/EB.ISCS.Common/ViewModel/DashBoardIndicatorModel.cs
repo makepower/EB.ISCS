@@ -1,6 +1,7 @@
 ﻿using Maticsoft.Model;
 using System;
 using System.ComponentModel;
+using EB.ISCS.Common.DataModel;
 
 namespace EB.ISCS.Common.ViewModel
 {
@@ -90,9 +91,9 @@ namespace EB.ISCS.Common.ViewModel
         #region 模型
 
         /// <summary>
-        /// 今日实时
+        /// 指标单值模型
         /// </summary>
-        public class IndicatorModel
+        public class IndicatorSingleModel
         {
             /// <summary>
             /// id
@@ -124,21 +125,28 @@ namespace EB.ISCS.Common.ViewModel
                 }
             }
 
-            public static implicit operator IndicatorModel(MonitorIndicator indicator)
+
+            /// <summary>
+            /// 指标单值模型缺省转换
+            /// </summary>
+            public static implicit operator IndicatorSingleModel(IndicatorRecordViewModel indicator)
             {
-                return new IndicatorModel()
+                var m = new IndicatorSingleModel()
                 {
-                    Id = indicator.Id,
-                    Name = indicator.Name,
-                    Value = (double)indicator.Value,
-                    MOM = (double)indicator.MoM
+                    Id = indicator.Define?.Id ?? 0,
+                    Name = indicator.Define?.Name
                 };
+                if (indicator.Records != null || indicator.Records.Length > 0)
+                {
+                    m.Value = (double)indicator.Records[0].Value;
+                    m.MOM = (double)indicator.Records[0].MoM;
+                }
+                return m;
             }
         }
         #endregion
 
     }
-
 
     #region 业务枚举
 

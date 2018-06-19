@@ -71,7 +71,7 @@ namespace EB.ISCS.WebApi.Controllers.Biz
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public ResponseResult<List<MonitorIndicatorGroup>> GetMonitorStstisForThirtyDays(int id)
+        public ResponseResult<List<MonitorIndicatorRecord>> GetMonitorStstisForThirtyDays(int id)
         {
             try
             {
@@ -79,19 +79,19 @@ namespace EB.ISCS.WebApi.Controllers.Biz
                 var shipService = GetService<ShipInfoService>();
                 var shipInfos = shipService.GetShipsByUserId(id);
                 var ids = shipInfos.First(x => x.Plat == (int)ApiPlatform.Local).Id.ToString();
-                var monitorService = GetService<GoodMonitorTopNService>();
+                var monitorService = GetService<MonitorIndicatorRecordService>();
                 var listResult = monitorService.GetMonitorStstisForThirtyDays(ids);
                 if (listResult == null)
                 {
                     code = ResultCode.Faild;
-                    return ResponseResult<List<MonitorIndicatorGroup>>.GenFaildResponse(code);
+                    return ResponseResult<List<MonitorIndicatorRecord>>.GenFaildResponse(code);
                 }
 
-                return ResponseResult<List<MonitorIndicatorGroup>>.GenSuccessResponse(listResult);
+                return ResponseResult<List<MonitorIndicatorRecord>>.GenSuccessResponse(listResult);
             }
             catch (Exception ex)
             {
-                return ResponseResult<List<MonitorIndicatorGroup>>.GenFaildResponse(ex.Message);
+                return ResponseResult<List<MonitorIndicatorRecord>>.GenFaildResponse(ex.Message);
             }
 
         }

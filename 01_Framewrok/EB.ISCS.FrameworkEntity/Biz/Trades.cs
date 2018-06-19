@@ -21,13 +21,13 @@ namespace Maticsoft.Model.ISSC
         /// </summary>		
         public int ShipId { get; set; }
         /// <summary>
-        /// 卖家昵称  (阿里旺旺,京东卖家)
+        /// 卖家id  (阿里旺旺,京东卖家)
         /// </summary>		
-        public string SellerNick { get; set; }
+        public string SellerId { get; set; }
         /// <summary>
-        /// 买家昵称
+        /// 买家Id
         /// </summary>		
-        public string BuyerNick { get; set; }
+        public string BuyerId { get; set; }
         /// <summary>
         /// 支付金额
         /// </summary>		
@@ -49,14 +49,6 @@ namespace Maticsoft.Model.ISSC
         /// </summary>		
         public decimal ReceivedPayment { get; set; }
         /// <summary>
-        /// 收获国家
-        /// </summary>		
-        public string ReceiverCountry { get; set; }
-        /// <summary>
-        /// 收获城市
-        /// </summary>		
-        public string ReceiverTown { get; set; }
-        /// <summary>
         /// 订单税费
         /// </summary>		
         public decimal OrderTaxFee { get; set; }
@@ -73,7 +65,7 @@ namespace Maticsoft.Model.ISSC
         /// </summary>		
         public decimal Num { get; set; }
         /// <summary>
-        /// num_iid
+        /// 交易数字编号
         /// </summary>		
         public decimal NumIid { get; set; }
         /// <summary>

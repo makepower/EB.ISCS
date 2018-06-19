@@ -47,14 +47,5 @@ namespace EB.ISCS.ToolService.Adapter.JdAdapter
 
             return Mapper.Map<OrderInfo>(order); ;
         }
-
-        public static OrderDetail ToLocalOrderDetail(this Jd.Api.Domain.OrderDetail order, ShipInfo ship)
-        {
-            var tradeList = new OrderDetail();
-            if (order == null)
-                return tradeList;
-
-            return Mapper.Map<OrderDetail>(order); ;
-        }
     }
 }

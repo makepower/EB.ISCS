@@ -22,7 +22,6 @@ namespace EB.ISCS.ToolService
         private TradesService tradesService;
         private OrderInfoService orderInfoService;
         private GoodInfoService goodInfoService;
-        private OrderDetailService orderDetailService;
         private DataSyncRecordService recordService;
         private DataSyncRecord dataSyncRecord;
 
@@ -32,7 +31,6 @@ namespace EB.ISCS.ToolService
             goodInfoService = new GoodInfoService(tradesService);
             recordService = new DataSyncRecordService(tradesService);
             orderInfoService = new OrderInfoService(tradesService);
-            orderDetailService = new OrderDetailService(tradesService);
         }
 
         public void SyncData(ShipInfo info)

@@ -5,8 +5,8 @@ namespace EB.ISCS.FrameworkEntity.Biz
     /// <summary>
     /// 交易人
     /// </summary>
-    [Table("Trader")]
-    public class Trader
+    [Table("TraderInfo")]
+    public class TraderInfo
     {
         /// <summary>
         /// 主键
@@ -14,9 +14,13 @@ namespace EB.ISCS.FrameworkEntity.Biz
         [Key]
         public string Id { get; set; }
         /// <summary>
-        /// 用户主键
+        /// 用户平台key
         /// </summary>
         public string UserKey { get; set; }
+        /// <summary>
+        /// 用户昵称
+        /// </summary>
+        public string UserNick { get; set; }
         /// <summary>
         /// 用户状态
         /// </summary>
@@ -34,7 +38,11 @@ namespace EB.ISCS.FrameworkEntity.Biz
         /// </summary>
         public string TelePhone { get; set; }
         /// <summary>
-        /// 用户主键
+        /// 邮编
+        /// </summary>
+        public string Zip { get; set; }
+        /// <summary>
+        /// 用户等级
         /// </summary>
         public string Level { get; set; }
         /// <summary>
@@ -58,7 +66,7 @@ namespace EB.ISCS.FrameworkEntity.Biz
         /// </summary>
         public string Remark { get; set; }
         /// <summary>
-        /// 编辑人员
+        /// 编辑时间
         /// </summary>
         public string EditDate { get; set; }
         /// <summary>
@@ -82,7 +90,7 @@ namespace EB.ISCS.FrameworkEntity.Biz
         /// <returns></returns>
         public override bool Equals(object obj)
         {
-            var o = obj as Trader;
+            var o = obj as TraderInfo;
             if (o == null)
                 return false;
             return UserKey.Equals(o.UserKey) && MobilePhone.Equals(o.MobilePhone);

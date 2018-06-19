@@ -35,7 +35,7 @@ namespace EB.ISCS.DapperServices.Services
             RegisterService<IMonitorIndicatorService, MonitorIndicatorService>();
             RegisterService<IComplaintInfoService, ComplaintInfoService>();
             RegisterService<IGoodInfoService, GoodInfoService>();
-            RegisterService<IGoodMonitorTopNService, GoodMonitorTopNService>();
+            RegisterService<IMonitorIndicatorRecordService, MonitorIndicatorRecordService>();
             RegisterService<IOrderInfoService, OrderInfoService>();
             RegisterService<IShipInfoService, ShipInfoService>();
             RegisterService<ISynchronizationConfigService, SynchronizationConfigService>();

@@ -7,17 +7,17 @@ namespace EB.ISCS.DapperServices.InterFace
     /// <summary>
 	 	///首页监控指标信息 ：接口类
 		/// </summary>		
-	interface IGoodMonitorTopNService : IService
+	interface IMonitorIndicatorRecordService : IService
 	{
 		 /// <summary>
 		 ///  新增
 		 /// </summary>
-         int Add(MonitorIndicatorGroup model,IDbTransaction transaction = null);
+         int Add(MonitorIndicatorRecord model,IDbTransaction transaction = null);
         
          /// <summary>
 		 ///  根据Id获取模型
 		 /// </summary>
-         MonitorIndicatorGroup GetModelById(int id);
+         MonitorIndicatorRecord GetModelById(int id);
         
         /// <summary>
         ///  删除GoodMonitorTopN，并记录删除人
@@ -30,12 +30,12 @@ namespace EB.ISCS.DapperServices.InterFace
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-	    bool Update(MonitorIndicatorGroup model,IDbTransaction transaction = null);
+	    bool Update(MonitorIndicatorRecord model,IDbTransaction transaction = null);
 		
 		/// <summary>
         /// 获取所有的GoodMonitorTopN信息
         /// </summary>
         /// <returns></returns>
-        IEnumerable<MonitorIndicatorGroup> GetAllList();
+        IEnumerable<MonitorIndicatorRecord> GetAllList();
 	}
 }

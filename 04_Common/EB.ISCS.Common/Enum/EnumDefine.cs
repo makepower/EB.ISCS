@@ -30,35 +30,6 @@ namespace EB.ISCS.Common.Enum
     }
 
     /// <summary>
-    /// 统计周期枚举
-    /// </summary>
-    public enum StatisPeriodType
-    {
-        /// <summary>
-        /// 1天
-        /// </summary>
-        [Description("1天")]
-        LastDay = 0,
-        /// <summary>
-        /// 7天
-        /// </summary>
-        [Description("7天")]
-        LastWeek,
-        /// <summary>
-        /// 30天
-        /// </summary>
-        [Description("30天")]
-        LastMonth,
-        /// <summary>
-        /// 90天
-        /// </summary>
-        [Description("90天")]
-        LastThreeMonths
-
-
-    }
-
-    /// <summary>
     /// 统计类型
     /// </summary>
     public enum StatisGroupType

@@ -19,7 +19,7 @@ namespace EB.ISCS.ToolService
         ShipInfoService _shopInfoService = null;
         SysUserService _sysUserService = null;
         MonitorIndicatorService _monitorIndicatorService = null;
-        GoodMonitorTopNService _goodMonitorTopNService = null;
+        MonitorIndicatorRecordService _monitorIndicatorRecordService = null;
         DataSyncRecordService _dataSyncRecordService = null;
 
         public StatisticalService()
@@ -28,7 +28,7 @@ namespace EB.ISCS.ToolService
             _shopInfoService = serviceProvider.GetService<ShipInfoService>();
             _sysUserService = serviceProvider.GetService<SysUserService>();
             _monitorIndicatorService = serviceProvider.GetService<MonitorIndicatorService>();
-            _goodMonitorTopNService = serviceProvider.GetService<GoodMonitorTopNService>();
+            _monitorIndicatorRecordService = serviceProvider.GetService<MonitorIndicatorRecordService>();
             _dataSyncRecordService = serviceProvider.GetService<DataSyncRecordService>();
         }
 
@@ -58,26 +58,22 @@ namespace EB.ISCS.ToolService
         {
             try
             {
-                var monitorResult = _monitorIndicatorService.GetTodayIndicator(enityShipIds);
+                var monitorResult = _monitorIndicatorRecordService.GetTodayIndicator(enityShipIds);
 
                 var gp = from p in monitorResult
-                         group p by p.Name into g
-                         select new MonitorIndicator()
+                         group p by p.IndicatorId into g
+                         select new MonitorIndicatorRecord()
                          {
-                             EnName = g.First().EnName,
-                             GroupName = g.First().GroupName,
                              Name = g.First().Name,
-                             ShortName = g.First().ShortName,
                              StatisDate = g.First().StatisDate,
-                             StatisGroupType = g.First().StatisGroupType,
                              Unit = g.First().Unit,
                              Value = g.Sum(x => x.Value)
                          };
 
-                System.Collections.Generic.IEnumerable<MonitorIndicator> lastMonitorIndicator = null;
+                System.Collections.Generic.IEnumerable<MonitorIndicatorRecord> lastMonitorIndicator = null;
                 if (syncRecord.Id > 0)
                 {
-                    lastMonitorIndicator = _monitorIndicatorService.GetMonitorIndicatorBySeriesNum(syncRecord.LastSynSeriesNum);
+                    lastMonitorIndicator = _monitorIndicatorRecordService.GetMonitorIndicatorBySeriesNum(syncRecord.LastSynSeriesNum);
                     syncRecord.LastSynSeriesNum += 1;
                     syncRecord.LastSynDate = DateTime.Now;
                 }
@@ -91,7 +87,7 @@ namespace EB.ISCS.ToolService
                         item.MoM = (item.Value - match.Value) / match.Value * 100;
                     }
                     item.ShipInfoId = virtualShip.Id;
-                    _monitorIndicatorService.Add(item);
+                    _monitorIndicatorRecordService.Add(item);
                 }
                 _dataSyncRecordService.Update(syncRecord);
             }
@@ -108,24 +104,21 @@ namespace EB.ISCS.ToolService
         private void StatisTopNIndicator(ShipInfo virtualShip, string enityShipIds, DataSyncRecord syncRecord)
         {
             // 统计动态监控指标
-            var topNResult = _goodMonitorTopNService.GetMonitorStstisForThirtyDays(enityShipIds);
+            var topNResult = _monitorIndicatorRecordService.GetMonitorStstisForThirtyDays(enityShipIds);
             var gp = from p in topNResult
-                     group p by new { p.StatisType, p.Name } into g
-                     select new MonitorIndicatorGroup()
+                     group p by p.Name into g
+                     select new MonitorIndicatorRecord()
                      {
                          Name = g.First().Name,
-                         ShortName = g.First().ShortName,
                          StatisDate = g.First().StatisDate,
                          Unit = g.First().Unit,
                          Value = g.Sum(x => x.Value),
-                         StatisPeriodType = g.First().StatisPeriodType,
-                         StatisType = g.First().StatisType,
                          ShipInfoId = virtualShip.Id,
                          SyncSerialNumber = syncRecord.LastSynSeriesNum
                      };
             foreach (var item in gp)
             {
-                _goodMonitorTopNService.Add(item);
+                _monitorIndicatorRecordService.Add(item);
             }
         }
 

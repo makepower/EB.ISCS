@@ -29,7 +29,7 @@ namespace EB.ISCS.DapperServices.Services.Biz
         /// <summary>
         ///  新增
         /// </summary>
-        public int Add(Trader model, IDbTransaction transaction = null)
+        public int Add(TraderInfo model, IDbTransaction transaction = null)
         {
             return _traderRepository.Insert(model, transaction);
         }
@@ -37,7 +37,7 @@ namespace EB.ISCS.DapperServices.Services.Biz
         /// <summary>
         ///  根据Id获取模型
         /// </summary>
-        public Trader GetModelById(int id)
+        public TraderInfo GetModelById(int id)
         {
             return _traderRepository.Get(id);
         }
@@ -55,7 +55,7 @@ namespace EB.ISCS.DapperServices.Services.Biz
         /// <summary>
         /// 更新一条数据
         /// </summary>
-        public bool Update(Trader model, IDbTransaction transaction = null)
+        public bool Update(TraderInfo model, IDbTransaction transaction = null)
         {
             return _traderRepository.Update(model, transaction);
         }
@@ -64,7 +64,7 @@ namespace EB.ISCS.DapperServices.Services.Biz
         /// 获取所有的Maticsoft.Model.GoodInfo信息
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Trader> GetAllList()
+        public IEnumerable<TraderInfo> GetAllList()
         {
             return this._traderRepository.GetAllList();
         }

@@ -1,4 +1,6 @@
 ﻿using EB.ISCS.FrameworkEntity.Base;
+using EB.ISCS.FrameworkHelp.Utilities;
+using Maticsoft.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -60,6 +62,14 @@ namespace EB.ISCS.Common.Models
                 rows = pagedList?.PagingData?.ToArray() ?? new List<T>().ToArray()
             };
             return json;
+        }
+
+        /// <summary>
+        /// 转为历史记录
+        /// </summary>	
+        public static MonitorIndicatorHistoryRecord ToHistory(this MonitorIndicatorRecord rd)
+        {
+            return EntityConvertExtensions.Mapper<MonitorIndicatorHistoryRecord, MonitorIndicatorRecord>(rd);
         }
     }
 }

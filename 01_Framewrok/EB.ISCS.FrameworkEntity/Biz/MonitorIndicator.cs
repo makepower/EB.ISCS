@@ -22,58 +22,45 @@ namespace Maticsoft.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 指标英文名称 如 Flow
+        /// 指标编码 如 Flow
         /// </summary>	
-        public string EnName { get; set; }
+        public string Code { get; set; }
         /// <summary>
         /// 指标缩写 如：F
         /// </summary>		
         public string ShortName { get; set; }
-        /// <summary>
-        /// 指标值 如：600
-        /// </summary>		
-        public decimal Value { get; set; }
-        /// <summary>
-        /// 统计时间 如：2018-06-08
-        /// </summary>		
-        public DateTime StatisDate { get; set; }
-
         /// <summary>
         /// 指标分组 备用 
         /// </summary>
         public string GroupName { get; set; }
 
         /// <summary>
-        /// 统计业务大类 0 运营指标  2 业务指标
+        /// 统计类型  eg：年-月-日-时-分-秒
         /// </summary>
-        public int StatisGroupType { get; set; }
+        public int StatisticalType { get; set; }
 
         /// <summary>
-        /// 环比指数
-        /// </summary>		
-        public decimal MoM { get; set; }
-        /// <summary>
-        /// 同比指数
-        /// </summary>		
-        public decimal YoY { get; set; }
+        /// 业务类型   eg：EB.ISCS.Common.Enum.StatisGroupType
+        /// </summary>
+        public int BizType { get; set; }
+
         /// <summary>
         /// 单位
         /// </summary>		
         public string Unit { get; set; }
+
+        /// <summary>
+        /// 统计间隔
+        /// </summary>		
+        public int Interval { get; set; }
+        /// <summary>
+        /// 统计数目
+        /// </summary>		
+        public int KeepNum { get; set; }
+
         /// <summary>
         /// 备注
         /// </summary>		
         public string Remark { get; set; }
-
-        /// <summary>
-        /// 店铺id
-        /// </summary>
-        public int ShipInfoId { get; set; }
-
-        /// <summary>
-        /// 同步序列号 递增
-        /// </summary>
-        public int SyncSerialNumber { get; set; }
-
     }
 }
