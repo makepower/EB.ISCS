@@ -34,6 +34,10 @@ namespace Maticsoft.Model
         /// 统计时间 或同步时间
         /// </summary>		
         public DateTime StatisDate { get; set; }
+        /// <summary>
+        /// 是否是统计记录 首页展示的是统计记录
+        /// </summary>
+        public bool IsStatisRecord { get; set; } = false;
 
         /// <summary>
         /// 指标Id 

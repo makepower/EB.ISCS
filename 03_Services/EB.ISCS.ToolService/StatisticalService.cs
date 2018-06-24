@@ -85,7 +85,8 @@ namespace EB.ISCS.ToolService
                              Name = g.First().Name,
                              StatisDate = g.First().StatisDate,
                              Unit = g.First().Unit,
-                             Value = g.Sum(x => x.Value)
+                             Value = g.Sum(x => x.Value),
+                             IsStatisRecord = true
                          };
 
                 foreach (var item in gp)
