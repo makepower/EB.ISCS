@@ -62,5 +62,10 @@ namespace Maticsoft.Model
         /// 备注
         /// </summary>		
         public string Remark { get; set; }
+
+        /// <summary>
+        /// 是否计算 同比环比
+        /// </summary>
+        public bool IsCalc { get; set; } = false;
     }
 }

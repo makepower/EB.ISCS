@@ -31,7 +31,7 @@ namespace EB.ISCS.FrameworkEntity
         /// </summary>
         public DateTime LastSynDate { get; set; }
         /// <summary>
-        /// 状态
+        /// 状态  0 失败 1 成功
         /// </summary>
         public int Status { get; set; }
         /// <summary>

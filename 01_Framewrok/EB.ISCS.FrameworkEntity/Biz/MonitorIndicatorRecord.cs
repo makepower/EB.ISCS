@@ -36,7 +36,7 @@ namespace Maticsoft.Model
         /// <summary>
         /// 指标Id 
         /// </summary>
-        public string IndicatorId { get; set; }
+        public int IndicatorId { get; set; }
         /// <summary>
         /// value
         /// </summary>		
@@ -45,6 +45,11 @@ namespace Maticsoft.Model
         /// 业务产生时间
         /// </summary>		
         public DateTime BizDate { get; set; }
+
+        /// <summary>
+        /// 是否是统计记录 首页展示的是统计记录
+        /// </summary>
+        public bool IsStatisRecord { get; set; } = false;
 
         /// <summary>
         /// 环比指数
@@ -74,6 +79,6 @@ namespace Maticsoft.Model
         /// </summary>
         [NotMapped]
         public string Name { get; set; }
- 
+
     }
 }

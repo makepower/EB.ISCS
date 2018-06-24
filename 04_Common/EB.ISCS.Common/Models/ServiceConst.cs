@@ -197,8 +197,6 @@ namespace EB.ISCS.Common.Models
     #region 业务服务
     public class BizApi
     {
-        public string DashBoardMonitorIndicator = "Biz/DashBoard/GetMonitorIndicator/{0}";
-        public string DashBoardMonitorTopN = "Biz/DashBoard/GetMonitorStstisForThirtyDays/{0}";
         public string DashBoardTodayRealMonitorIndicator = "Biz/DashBoard/GetTodayRealMonitorIndicator";
         public string DashBoardGetDashBoardChartViewData = "Biz/DashBoard/GetDashBoardChartViewData";
 

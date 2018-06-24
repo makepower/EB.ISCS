@@ -48,26 +48,14 @@ namespace EB.ISCS.DapperServices.Repository
         }
 
         /// <summary>
-        /// 获取今日运营监控指标
+        /// 获取所有的Maticsoft.Model.MonitorIndicator信息
         /// </summary>
-        /// <param name="where"></param>
         /// <returns></returns>
-        public IEnumerable<MonitorIndicator> GetTodayIndicator(string shipIds)
+        public MonitorIndicator GetByCode(string code)
         {
-            return GetAllList($" and StatisDate='{DateTime.Now.ToString("yyyy-MM-dd")}' and ShipInfoId in({shipIds})");
+            var sql = $@" select *   FROM MonitorIndicator where Code={code} ";
+            return TraceExecFunc(() => this.Conn.QueryFirst<MonitorIndicator>(sql));
         }
-
-        /// <summary>
-        /// 获取今日运营监控指标
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public IEnumerable<MonitorIndicator> GetMonitorIndicatorBySeriesNum(int id)
-        {
-            return GetAllList($" and SyncSerialNumber ={ id}");
-        }
-
-
         #endregion
     }
 }

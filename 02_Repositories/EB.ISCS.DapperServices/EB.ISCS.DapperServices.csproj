@@ -91,6 +91,7 @@
     <Compile Include="Repository\Biz\ComplaintInfoRepository.cs" />
     <Compile Include="Repository\Biz\DataSyncRecordRepository.cs" />
     <Compile Include="Repository\Biz\GoodInfoRepository.cs" />
+    <Compile Include="Repository\Biz\MonitorIndicatorHistoryRecordRepository.cs" />
     <Compile Include="Repository\Biz\MonitorIndicatorRecordRepository.cs" />
     <Compile Include="Repository\Biz\MonitorIndicatorRepository.cs" />
     <Compile Include="Repository\Biz\OrderInfoRepository.cs" />

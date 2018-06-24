@@ -71,5 +71,13 @@ namespace EB.ISCS.Common.Models
         {
             return EntityConvertExtensions.Mapper<MonitorIndicatorHistoryRecord, MonitorIndicatorRecord>(rd);
         }
+
+        /// <summary>
+        /// 转为当前记录
+        /// </summary>	
+        public static MonitorIndicatorRecord ToCurrent(this MonitorIndicatorHistoryRecord rd)
+        {
+            return EntityConvertExtensions.Mapper<MonitorIndicatorRecord, MonitorIndicatorHistoryRecord>(rd);
+        }
     }
 }

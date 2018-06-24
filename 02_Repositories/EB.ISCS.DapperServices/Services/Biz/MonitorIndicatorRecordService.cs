@@ -4,6 +4,9 @@ using EB.ISCS.DapperServices.Services;
 using Maticsoft.Model;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using EB.ISCS.Common.Models;
+
 namespace EB.ISCS.DapperServices.Repository
 {
 
@@ -14,7 +17,10 @@ namespace EB.ISCS.DapperServices.Repository
     {
 
         #region 构造 
-        private MonitorIndicatorRecordRepository _GoodMonitorTopNRepository;
+        private MonitorIndicatorRecordRepository _monitorIndicatorRecordRepository;
+        private MonitorIndicatorRepository _monitorIndicatorRepository;
+        private MonitorIndicatorHistoryRecordRepository _monitorIndicatorHistoryRecordRepository;
+
         public MonitorIndicatorRecordService() : this(string.Empty)
         {
 
@@ -22,12 +28,16 @@ namespace EB.ISCS.DapperServices.Repository
 
         public MonitorIndicatorRecordService(string connString) : base(connString)
         {
-            this._GoodMonitorTopNRepository = new MonitorIndicatorRecordRepository(Provider, OInfo);
+            this._monitorIndicatorRecordRepository = new MonitorIndicatorRecordRepository(Provider, OInfo);
+            _monitorIndicatorRepository = new MonitorIndicatorRepository(Provider, OInfo);
+            _monitorIndicatorHistoryRecordRepository = new MonitorIndicatorHistoryRecordRepository(Provider, OInfo);
         }
 
         public MonitorIndicatorRecordService(Service service) : base(service)
         {
-            this._GoodMonitorTopNRepository = new MonitorIndicatorRecordRepository(Provider, OInfo);
+            this._monitorIndicatorRecordRepository = new MonitorIndicatorRecordRepository(Provider, OInfo);
+            _monitorIndicatorRepository = new MonitorIndicatorRepository(Provider, OInfo);
+            _monitorIndicatorHistoryRecordRepository = new MonitorIndicatorHistoryRecordRepository(Provider, OInfo);
         }
         #endregion
 
@@ -36,7 +46,7 @@ namespace EB.ISCS.DapperServices.Repository
         /// </summary>
         public int Add(MonitorIndicatorRecord model, IDbTransaction transaction = null)
         {
-            return _GoodMonitorTopNRepository.Insert(model, transaction);
+            return _monitorIndicatorRecordRepository.Insert(model, transaction);
         }
 
         /// <summary>
@@ -44,7 +54,31 @@ namespace EB.ISCS.DapperServices.Repository
         /// </summary>
         public MonitorIndicatorRecord GetModelById(int id)
         {
-            return _GoodMonitorTopNRepository.Get(id);
+            return _monitorIndicatorRecordRepository.Get(id);
+        }
+
+        public bool RemoveRecord(int id)
+        {
+            return _monitorIndicatorRecordRepository.RemoveRecord(id);
+        }
+
+        /// <summary>
+        /// 添加历史记录
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
+        public int RemoveToHistory(IDbTransaction transaction = null, params MonitorIndicatorRecord[] modelList)
+        {
+            foreach (var model in modelList)
+            {
+                var recordId = model.Id;
+                model.Id = 0;
+                _monitorIndicatorHistoryRecordRepository.Insert(model.ToHistory(), transaction);
+                _monitorIndicatorRecordRepository.RemoveRecord(recordId, transaction);
+            }
+            return modelList?.Length ?? 0;
+
         }
 
         /// <summary>
@@ -54,7 +88,7 @@ namespace EB.ISCS.DapperServices.Repository
         /// <returns></returns>
         public bool Delete(DeleteModel model, IDbTransaction transaction = null)
         {
-            return this._GoodMonitorTopNRepository.Delete(model, transaction);
+            return this._monitorIndicatorRecordRepository.Delete(model, transaction);
         }
 
         /// <summary>
@@ -62,7 +96,7 @@ namespace EB.ISCS.DapperServices.Repository
         /// </summary>
         public bool Update(MonitorIndicatorRecord model, IDbTransaction transaction = null)
         {
-            return _GoodMonitorTopNRepository.Update(model, transaction);
+            return _monitorIndicatorRecordRepository.Update(model, transaction);
         }
 
         /// <summary>
@@ -71,29 +105,56 @@ namespace EB.ISCS.DapperServices.Repository
         /// <returns></returns>
         public IEnumerable<MonitorIndicatorRecord> GetAllList()
         {
-            return this._GoodMonitorTopNRepository.GetAllList();
+            return this._monitorIndicatorRecordRepository.GetAllList();
         }
 
         /// <summary>
-        /// 获取最近30天的汇总信息
-        /// 统计截至时间默认为前一天
+        /// 
         /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="code"></param>
         /// <returns></returns>
-        public IEnumerable<MonitorIndicatorRecord> GetMonitorStstisForThirtyDays(string shipIds)
+        public List<MonitorIndicatorRecord> QueryLastRecord(int userId, string code, bool isStatisRecord = true)
         {
-            return new List<MonitorIndicatorRecord>();
+            var indicator = _monitorIndicatorRepository.GetByCode(code);
+            var querySQL = $" and UserId={userId} and IndicatorId={indicator.Id} and IsStatisRecord ={isStatisRecord}";
+            return this._monitorIndicatorRecordRepository.GetAllList(querySQL)?.ToList();
         }
 
-        public IEnumerable<MonitorIndicatorRecord> GetTodayIndicator(string shipIds)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        public List<MonitorIndicatorRecord> QueryRecordByShipIds(int[] ids)
         {
-            return new List<MonitorIndicatorRecord>();
+            return _monitorIndicatorRecordRepository.GetAllList($" and ShipInfoId in({ string.Join(",", ids)})")?.ToList();
         }
 
-        public IEnumerable<MonitorIndicatorRecord> GetMonitorIndicatorBySeriesNum(int seriesNo)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
+        public List<MonitorIndicatorRecord> QueryMonitorIndicator(QueryRecordModel query)
         {
-            return new List<MonitorIndicatorRecord>();
+            var filterSql = $" and ShipInfoId ={ query.ShipId} and UserId={query.UserId} and SyncSerialNumber={query.SeriesNum}";
+            if (query.IndicatorId > 0)
+            {
+                filterSql += $" and query.IndicatorId={query.IndicatorId}";
+            }
+            var cur = _monitorIndicatorRecordRepository.GetAllList(filterSql)?.ToList();
+            if (cur == null || !cur.Any())
+            {
+                cur = new List<MonitorIndicatorRecord>();
+                _monitorIndicatorHistoryRecordRepository.GetAllList(filterSql)?.ToList().ForEach(d =>
+                {
+                    cur.Add(d.ToCurrent());
+                });
+            }
+            return cur;
         }
-
 
     }
 }

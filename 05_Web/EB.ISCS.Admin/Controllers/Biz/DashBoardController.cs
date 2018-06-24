@@ -2,8 +2,7 @@
 using EB.ISCS.Common.DataModel;
 using EB.ISCS.Common.Models;
 using EB.ISCS.Common.ViewModel;
-using Maticsoft.Model;
-using Newtonsoft.Json;
+using EB.ISCS.FrameworkHelp.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -23,14 +22,8 @@ namespace EB.ISCS.Admin.Controllers.Biz
             var result = new BaseResult<List<IndicatorSingleModel>>()
             {
                 Code = (int)ResultCode.Success,
-                Data = new List<IndicatorSingleModel>()
-                {
-                    new IndicatorSingleModel(){ Id=1, Name=PayOrderNum, Value=180, MOM=3.1  },
-                      new IndicatorSingleModel(){ Id=1, Name=PayMoney, Value=2120, MOM=2.2  },
-                        new IndicatorSingleModel(){ Id=1, Name=VisitorNum, Value=358, MOM=-1.5  },
-                          new IndicatorSingleModel(){ Id=1, Name=PayGoodNum, Value=113, MOM=16.8  }
-                },
-                Message = string.Empty
+                Data = new List<IndicatorSingleModel>() { },
+                Message = "暂无相关数据"
             };
 
             var serviceReturn = ServiceHelper.CallService<List<IndicatorSingleModel>>($"{ServiceConst.BizApi.DashBoardTodayRealMonitorIndicator}/{CurrentUser.UserId}",
@@ -38,18 +31,13 @@ namespace EB.ISCS.Admin.Controllers.Biz
 
             if (serviceReturn.Code == (int)ResultCode.Success)
             {
-                result.Data.Clear();
-                serviceReturn.Data.ForEach(t =>
-                {
-                    result.Data.Add(t);
-                });
+                result.Data = serviceReturn.Data;
             }
-
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>
-        /// 图标数据
+        /// 图表数据
         /// </summary>
         /// <param name="id">枚举</param>
         /// <returns></returns>
@@ -59,81 +47,12 @@ namespace EB.ISCS.Admin.Controllers.Biz
             {
                 Code = (int)ResultCode.Success
             };
-            switch (id)
-            {
-                case (int)ChartBiz.Map:
-                    result.Data = QueryChartMapData();
-                    break;
-                case (int)ChartBiz.TopN:
-                    result.Data = QueryChartSourceData(ChartBiz.TopN);
-                    break;
-                case (int)ChartBiz.BootomN:
-                    result.Data = QueryChartSourceData(ChartBiz.BootomN);
-                    break;
-                case (int)ChartBiz.Sell_ForMonth:
-                    result.Data = QueryChartSourceData(ChartBiz.Sell_ForMonth);
-                    break;
-                case (int)ChartBiz.Flow_ForMonth:
-                    result.Data = QueryChartSourceData(ChartBiz.Flow_ForMonth);
-                    break;
-                case (int)ChartBiz.Order_Trans:
-                    result.Data = QueryChartSourceData(ChartBiz.Order_Trans);
-                    break;
-                case (int)ChartBiz.Pay_Channel:
-                    result.Data = QueryChartSourceData(ChartBiz.Pay_Channel);
-                    break;
-                case (int)ChartBiz.Order_Status_ForMonth:
-                    result.Data = QueryChartSourceData(ChartBiz.Order_Status_ForMonth);
-                    break;
-                case (int)ChartBiz.Custom_Analy:
-                    result.Data = QueryChartSourceData(ChartBiz.Custom_Analy);
-                    break;
-                case (int)ChartBiz.Custo_From_Analy:
-                    result.Data = QueryChartSourceData(ChartBiz.Custo_From_Analy);
-                    break;
-                case (int)ChartBiz.Logistics_Segment_Time_Analy:
-                    result.Data = QueryChartSourceData(ChartBiz.Logistics_Segment_Time_Analy);
-                    break;
-                case (int)ChartBiz.Logistics_SpendTime:
-                    result.Data = QueryChartSourceData(ChartBiz.Logistics_SpendTime);
-                    break;
-                case (int)ChartBiz.ComplainForYear:
-                    result.Data = QueryChartSourceData(ChartBiz.ComplainForYear);
-                    break;
-                case (int)ChartBiz.Complain_Type:
-                    result.Data = QueryChartSourceData(ChartBiz.Complain_Type);
-                    break;
-                default:
-                    break;
-            }
-
+            var biz = EnumHelper.GetEnumByValue<ChartBiz>(id);
+            result.Data = QueryChartSourceData(biz);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
-        /// <summary>
-        /// 地图数据
-        /// </summary>
-        /// <returns></returns>
-        private ChartModel QueryChartMapData()
-        {
-            var random = new Random();
-            var proviceList = new string[] { "北京", "天津", "上海", "重庆", "河北", "河南", "云南",
-            "辽宁","黑龙江","湖南","安徽","山东","新疆","江苏","浙江","江西","湖北","广西",
-            "甘肃","山西","内蒙古","陕西","吉林","福建","贵州","广东","青海",
-            "西藏","四川","宁夏","海南","台湾","香港","澳门"};
-            var charData = new ChartModel()
-            {
-                Series = new List<dynamic>[] { new List<dynamic>() },
-                XAxis = new List<dynamic>()
-            };
-            charData.XAxis.AddRange(proviceList);
-            foreach (var item in proviceList)
-            {
-                charData.Series[0].Add(new { name = item, value = (int)(random.NextDouble() * 1000) });
-            }
-            return charData;
-        }
-
+        #region private method
         /// <summary>
         /// 获取Demo数据源
         /// </summary>
@@ -142,7 +61,7 @@ namespace EB.ISCS.Admin.Controllers.Biz
         private ChartModel QueryChartSourceData(ChartBiz biz)
         {
             var model = GetServerSourceData(biz);
-            if (model == null)
+            if (model == null && System.Configuration.ConfigurationManager.AppSettings["DashBoard_ShowDemoIfMissing"].ToLower().Equals(bool.TrueString))
                 model = GetDemoSourceData(biz);
             return model;
         }
@@ -154,8 +73,7 @@ namespace EB.ISCS.Admin.Controllers.Biz
         /// <returns></returns>
         private ChartModel GetServerSourceData(ChartBiz biz)
         {
-            var serviceReturn = ServiceHelper.CallService<ChartModel>($"{ServiceConst.BizApi.DashBoardGetDashBoardChartViewData}?id={(int)biz}&userId={CurrentUser.UserId}",
-      null, this.CurrentUser.Token);
+            var serviceReturn = ServiceHelper.CallService<ChartModel>($"{ServiceConst.BizApi.DashBoardGetDashBoardChartViewData}?id={(int)biz}&userId={CurrentUser.UserId}",null, this.CurrentUser.Token);
             if (serviceReturn.Code == (int)ResultCode.Success)
                 return serviceReturn.Data;
             else
@@ -268,7 +186,28 @@ namespace EB.ISCS.Admin.Controllers.Biz
                      item2: new List<dynamic>() { 1, 5, 12, 18, 21, 25 }
                 );
             }
+            else if (biz == ChartBiz.Map)
+            {
+                var random = new Random();
+                var proviceList = new string[] { "北京", "天津", "上海", "重庆", "河北", "河南", "云南",
+            "辽宁","黑龙江","湖南","安徽","山东","新疆","江苏","浙江","江西","湖北","广西",
+            "甘肃","山西","内蒙古","陕西","吉林","福建","贵州","广东","青海",
+            "西藏","四川","宁夏","海南","台湾","香港","澳门"};
+                var charData = new ChartModel()
+                {
+                    Series = new List<dynamic>[] { new List<dynamic>() },
+                    XAxis = new List<dynamic>()
+                };
+                charData.XAxis.AddRange(proviceList);
+                foreach (var item in proviceList)
+                {
+                    charData.Series[0].Add(new { name = item, value = (int)(random.NextDouble() * 1000) });
+                }
+                return charData;
+            }
             return new ChartModel() { Tag = "-Demo", XAxis = data.Item1, Series = new List<dynamic>[1] { data.Item2 } };
         }
+
+        #endregion
     }
 }
